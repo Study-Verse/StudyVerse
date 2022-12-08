@@ -1,0 +1,14 @@
+body{
+    display :flex;
+}
+#login-register-container{
+    justify-self: flex-end;
+    align-self: flex-end;
+}
+
+
+.display-none {
+    display:none;
+}
+
+
