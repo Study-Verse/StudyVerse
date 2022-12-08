@@ -5,6 +5,7 @@
     <title>Welcome</title>
     <link rel="stylesheet" th:href="@{/css/test.css}">
 
+
 </head>
 <body>
     <div id="login-register-container">
@@ -34,10 +35,12 @@
                 <label for="password">Password:</label>
                 <br>
                 <input id="password">
-
+                <br>
+                <input type="submit" value="Log In">
             </form>
         </div>
     </div>
+    <script th:src="@{/js/jquery-3.6.1.min.js}"></script>
     <script th:src="@{/js/main.js}"></script>
 </body>
 </html>
