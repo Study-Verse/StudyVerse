@@ -15,8 +15,13 @@ public class CardSet {
     @Column
     private String title;
 
-    @Column
-    @ManyToMany(mappedBy = "cardList")
+    @ManyToMany
+    @JoinTable
+            (
+            name = "card_sets_and_cards",
+            joinColumns = {@JoinColumn(name = "card_set_id")},
+            inverseJoinColumns ={@JoinColumn(name = "card_id")}
+            )
     private List<Card> cardList;
 
 

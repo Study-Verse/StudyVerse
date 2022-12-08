@@ -1,5 +1,6 @@
 package com.studyverse.Models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -19,9 +20,9 @@ public class Card {
 
     @Column String backFace;
 
-    @ManyToMany
-    @JoinTable(name = "card_sets_and_cards",
-    joinColumns = {@JoinColumn(name = "")})
+
+    @ManyToMany(mappedBy = "cardList")
+    @JsonIgnore
     private List<CardSet> cardSetList;
 
 
