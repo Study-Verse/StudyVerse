@@ -36,7 +36,11 @@ public class Card {
         this.backFace = backFace;
     }
 
-
+    public Card(long id, String frontFace, String backFace) {
+        this.id = id;
+        this.frontFace = frontFace;
+        this.backFace = backFace;
+    }
     //    setters and getters
 
 

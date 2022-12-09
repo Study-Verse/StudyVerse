@@ -12,6 +12,8 @@ public class CardSet {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    private String tag;
+
     @Column
     private String title;
 
@@ -24,9 +26,51 @@ public class CardSet {
             )
     private List<Card> cardList;
 
+//      Constructors
+    public CardSet() {
+    }
 
+    public CardSet(String tag, String title) {
+        this.tag = tag;
+        this.title = title;
+    }
 
+    public CardSet(long id, String tag, String title) {
+        this.id = id;
+        this.tag = tag;
+        this.title = title;
+    }
+//    Setters and getters
 
+    public long getId() {
+        return id;
+    }
 
+    public void setId(long id) {
+        this.id = id;
+    }
 
+    public String getTag() {
+        return tag;
+    }
+
+    public void setTag(String tag) {
+        this.tag = tag;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public List<Card> getCardList() {
+        return cardList;
+    }
+
+    public void setCardList(List<Card> cardList) {
+        this.cardList = cardList;
+    }
 }
