@@ -1,5 +1,6 @@
 package com.studyverse.Models;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -17,6 +18,10 @@ public class CardSet {
 
     @Column(nullable = false, length = 100)
     private String title;
+
+    @ManyToOne
+    @JsonManagedReference
+    private User user;
 
     @ManyToMany
     @JoinTable
@@ -73,5 +78,13 @@ public class CardSet {
 
     public void setCardList(List<Card> cardList) {
         this.cardList = cardList;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }
