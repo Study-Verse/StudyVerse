@@ -12,9 +12,10 @@ public class CardSet {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @Column(nullable = false,length = 80)
     private String tag;
 
-    @Column
+    @Column(nullable = false, length = 100)
     private String title;
 
     @ManyToMany
