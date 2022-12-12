@@ -3,24 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <title>Register</title>
-  <link rel="stylesheet" th:href="@{/css/login.css}">
+  <link rel="stylesheet" th:href="@{/css/register.css}">
   <script th:src="@{/js/jquery-3.6.1.min.js}"></script>
   <script th:src="@{/js/main.js}"></script>
 </head>
 <body>
-<h1>Register</h1>
-
-  <form th:action="@{/register}" th:method="POST" th:object="${user}">
-    <div class="signup-box">
-      <h1 class="heading">StudyVERSE</h1>
-      <h2>Register</h2>
-      <input type="text" class="username ele" placeholder="Create a Username" th:field="*{username}">
-      <input type="email" class="email ele" placeholder="Enter your Email" th:field="*{email}">
-      <input type="password" class="password ele" placeholder="Create a Password" th:field="*{password}">
-      <button class="clkbtn" type="submit">Signup</button>
-    </div>
-  </form>
-
-
+  <div class="container">
+      <form class="form-section" th:action="@{/register}" th:method="POST" th:object="${user}">
+        <div class="signup-box">
+          <h1 class="heading">StudyVERSE</h1>
+          <h2>Register</h2>
+          <input type="text" class="username input-design" placeholder="Create a Username" th:field="*{username}">
+          <input type="email" class="email input-design" placeholder="Enter your Email" th:field="*{email}">
+          <input type="password" class="password input-design" placeholder="Create a Password" th:field="*{password}">
+          <button class="sign-up-button" type="submit">Signup</button>
+        </div>
+    </form>
+  </div>
 </body>
 </html>
