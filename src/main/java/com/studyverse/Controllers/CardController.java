@@ -26,13 +26,13 @@ public class CardController {
         this.userDao = userDao;
     }
 
-    @GetMapping( )
+    @GetMapping()
     public String landingPage(){
         return "splashpage";
     }
 
 //    This lets you create a card set
-    @GetMapping("/create")
+    @GetMapping("create")
     public String createCard(Model model){
         List<User>users = userDao.findAll();
         model.addAttribute("users", users);
@@ -43,16 +43,15 @@ public class CardController {
 
 
 //    This let you post your card set
-    @PostMapping("/create")
+    @PostMapping("create")
     public String postCard(@ModelAttribute Card card){
         User user = Utils.currentUser();
         card.setUser(user);
         cardDao.save(card);
-        return "redirect:/flash/create";
+        return "redirect:/create";
     }
 
 
 
 }// END OF CARD CONTROLLER
 
-// Added notes for commit

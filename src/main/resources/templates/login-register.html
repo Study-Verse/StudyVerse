@@ -23,7 +23,7 @@
          login and the signup form -->
     <div class="form-section">
         <!-- login form -->
-        <form th:action="@{/login}" method="post">
+        <form th:action="@{/login}" th:method="post">
         <div class="login-box">
             <h1 class="heading">StudyVERSE</h1>
             <div th:if="${param.error}" class="invalidText">
