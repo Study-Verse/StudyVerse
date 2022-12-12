@@ -1,8 +1,7 @@
 package com.studyverse.Models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import jakarta.persistence.*;
-
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
@@ -27,6 +26,9 @@ public class User {
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "user")
     @JsonBackReference
     private List<CardSet> cardSetList;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
+    private List<Card> cardList;
 
 //    constructor
 

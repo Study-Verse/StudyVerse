@@ -1,7 +1,7 @@
 package com.studyverse.Models;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 import java.util.List;
 
