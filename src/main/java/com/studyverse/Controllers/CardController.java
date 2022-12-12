@@ -53,5 +53,11 @@ public class CardController {
 
 
 
+
+//    ============ study get mapping
+    @GetMapping("study-cards")
+    public String studyCards(){
+        return "/study";
+    }
 }// END OF CARD CONTROLLER
 
