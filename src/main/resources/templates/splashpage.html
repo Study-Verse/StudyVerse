@@ -3,12 +3,26 @@
 <head>
     <div th:replace="partials/partials :: head-fragment('Splash Page')"></div>
     <link rel="stylesheet" href="/css/global.css">
-    <link rel="stylesheet" href="../static/css/splashpage.css">
+    <link rel="stylesheet" href="/css/splashpage.css">
 </head>
 <body>
-<nav th:replace="partials/partials :: navbar"></nav>
 
-<footer th:replace="partials/partials :: footer-fragment"></footer>
+
+<div class="page-wrapper splash-page-wrapper">
+    <nav th:replace="partials/partials :: navbar"></nav>
+
+    <div class="container SPContainer" >
+        <div class="row">
+            <div class="column">
+                    <p class="SPHeading1">YOUR NUMBER ONE</p>
+                    <p class="SPHeading2">STUDY SPOT</p>
+            </div>
+        </div>
+    </div>
+    <footer th:replace="partials/partials :: footer-fragment"></footer>
+</div>
+
+
 <div th:replace="partials/partials :: scripts"></div>
 
 </body>

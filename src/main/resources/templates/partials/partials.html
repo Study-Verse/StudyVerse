@@ -38,7 +38,7 @@
         </div>
 
         <!-- Left Name Link -->
-        <div class="mx-auto order-0">
+        <div class=" mx-auto order-0">
             <a class="navbar-brand me-2" th:href="@{/}">StudyVERSE</a>
             <button id="navbar-toggler" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-nav">
         <span id="collapse-btn">
@@ -71,16 +71,19 @@
 </nav>
 
 <!--Footer Fragment-->
-<footer th:fragment="footer-fragment" id="footer" class="d-flex fixed-bottom">
-    <div class="d-flex">
-        <a class="about-footer me-auto" th:href="@{/about}">About</a>
+<footer th:fragment="footer-fragment" id="footer" class="container footer-container">
+    <div class="row">
+        <div class="col-lg-4 col-sm-12">
+            <a class="about-footer me-auto" th:href="@{/about}">About</a>
+        </div>
+        <div class="col-lg-4 col-sm-12">
+            <a class="contact-footer" th:href="@{/contact}">Contact</a>
+        </div>
+        <div class="col-lg-4 col-sm-12">
+            <span class="ms-auto">&#169; 2022 StudyVERSE Industries</span>
+        </div>
     </div>
-    <div class="d-flex">
-        <a class="contact-footer" th:href="@{/contact}">Contact</a>
-    </div>
-    <div class="d-flex">
-        <span class="ms-auto">&#169; 2022 StudyVERSE Industries</span>
-    </div>
+
 </footer>
 
 <!--Scripts Fragment-->

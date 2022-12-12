@@ -1,11 +1,37 @@
 *{
 	box-sizing: border-box;
+}
+
+body {
 	font-family: sans-serif;
 }
 
-#footer {
+.page-wrapper {
+	background-color: #2d0045;
+}
+
+.navbar, .container-fluid, .mx-auto, .navbar-brand, .navbar-toggler, .bi, .navbar-collapse {
+	background-color: #2d0045;
+}
+
+.navbar-brand{
+	font-weight: bold;
+	font-size: 16pt;
+	color: #FFFFFF;
+}
+
+.nav-link {
+	color: #FFFFFF;
+
+}
+
+#footer, .d-flex, .about-footer, .contact-footer, .ms-auto{
 	padding: 0.8rem;
+	background-color: #2d0045;
 }
-#footer>div {
-	flex: 1;
+
+.nav-item {
+	display: flex;
+	align-items: center;
 }
+
