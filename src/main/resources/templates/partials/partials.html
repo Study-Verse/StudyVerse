@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">>
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <!-- Head Fragment -->
     <div th:fragment="head-fragment(title)" th:remove="tag">
@@ -23,24 +23,23 @@
     <div class="container-fluid">
 
         <!-- Links on Left -->
-        <div class="navbar-collapse collapse w-100 order-1 order-lg-0 collapse-portion">
-            <ul class="navbar-nav me-auto">
-                <li sec:authorize="isAuthenticated()" class="nav-item">
-                    <a th:href="@{/posts}" class="nav-link" >All Posts</a>
-                </li>
-                <li sec:authorize="isAuthenticated()" class="nav-item">
-                    <a th:href="@{/posts/create}" class="nav-link">Create</a>
-                </li>
-                <li sec:authorize="isAnonymous()" class="nav-item">
-                    <a class="nav-link" th:href="@{/posts}">All Posts</a>
-                </li>
-            </ul>
-        </div>
+<!--        <div class="navbar-collapse collapse w-100 order-1 order-lg-0 collapse-portion">-->
+<!--            <ul class="navbar-nav me-auto">-->
+<!--                <li sec:authorize="isAuthenticated()" class="nav-item">-->
+<!--                    <a th:href="@{/register}" class="nav-link" >All Cards</a>-->
+<!--                </li>-->
+<!--                <li sec:authorize="isAuthenticated()" class="nav-item">-->
+<!--                    <a th:href="@{/posts/create}" class="nav-link">Create</a>-->
+<!--                </li>-->
+<!--                <li sec:authorize="isAnonymous()" class="nav-item">-->
+<!--                    <a class="nav-link" th:href="@{/posts}">All Posts</a>-->
+<!--                </li>-->
+<!--            </ul>-->
+<!--        </div>-->
 
-        <!-- Center Name Link -->
+        <!-- Left Name Link -->
         <div class="mx-auto order-0">
-            <a class="navbar-brand ps-3" th:href="@{/}">StudyVERSE</a>
-
+            <a class="navbar-brand me-2" th:href="@{/}">StudyVERSE</a>
             <button id="navbar-toggler" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-nav">
         <span id="collapse-btn">
             <i class="bi bi-list"></i>
@@ -51,16 +50,20 @@
         <!-- Links on Right -->
         <div class="navbar-collapse collapse w-100 order-3 collapse-portion">
             <ul class="navbar-nav ms-auto">
-                <li sec:authorize="isAuthenticated()" class="nav-item">
-                    <form id="site-bar-logout-form" th:action="@{/logout}" th:method="post">
-                        <a id="site-bar-logout-link" role="button" class="nav-link" href="#">Logout</a>
-                    </form>
-                </li>
+<!--                <li sec:authorize="isAuthenticated()" class="nav-item">-->
+<!--                    <form id="site-bar-logout-form" th:action="@{/logout}" th:method="post">-->
+<!--                        <a id="site-bar-logout-link" role="button" class="nav-link" href="#">Logout</a>-->
+<!--                    </form>-->
+<!--                </li>-->
+<!--                <li sec:authorize="isAnonymous()" class="nav-item">-->
+<!--                    <a class="nav-link" th:href="@{/register}">Signup</a>-->
+<!--                </li>-->
+                <form class="d-flex" id="site-bar-search" th:action="@{/search}" th:method="get">
+                    <input class="search-bar me-2" type="search" placeholder="Search" aria-label="Search">
+                    <a id="site-bar-search-link" role="button" class="nav-link" href="#">Search</a>
+                </form>
                 <li sec:authorize="isAnonymous()" class="nav-item">
-                    <a class="nav-link" th:href="@{/register}">Signup</a>
-                </li>
-                <li sec:authorize="isAnonymous()" class="nav-item">
-                    <a class="nav-link" th:href="@{/login}">Login</a>
+                    <a class="nav-link" th:href="@{/register}">Login</a>
                 </li>
             </ul>
         </div>
@@ -69,13 +72,13 @@
 
 <!--Footer Fragment-->
 <footer th:fragment="footer-fragment" id="footer" class="d-flex fixed-bottom">
-    <div class="d-flex justify-content-center">
+    <div class="d-flex">
         <a class="about-footer me-auto" th:href="@{/about}">About</a>
     </div>
-    <div class="d-flex justify-content-center">
+    <div class="d-flex">
         <a class="contact-footer" th:href="@{/contact}">Contact</a>
     </div>
-    <div class="d-flex justify-content-center">
+    <div class="d-flex">
         <span class="ms-auto">&#169; 2022 StudyVERSE Industries</span>
     </div>
 </footer>

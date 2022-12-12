@@ -9,7 +9,7 @@ import java.util.List;
 @Controller
 public class CardController {
 
-    @GetMapping()
+    @GetMapping("/")
     public String landingPage(){
         return "splashpage";
     }
