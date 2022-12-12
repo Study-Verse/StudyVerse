@@ -1,10 +1,21 @@
 *{
 	box-sizing: border-box;
 	font-family: sans-serif;
+	background-color: rgb(45 0 69);
 }
 
-#footer {
+.navbar, .container-fluid, .mx-auto, .navbar-brand, .navbar-toggler, .bi {
+	background-color: slateblue;
+}
+
+.navbar-brand{
+	font-weight: bold;
+	font-size: 16pt;
+}
+
+#footer, .d-flex, .about-footer, .contact-footer, .ms-auto{
 	padding: 0.8rem;
+	background-color: slateblue;
 }
 #footer>div {
 	flex: 1;
