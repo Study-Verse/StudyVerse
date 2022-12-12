@@ -23,16 +23,21 @@
          login and the signup form -->
     <div class="form-section">
         <!-- login form -->
-        <form>
+        <form th:action="@{/login}" method="post">
         <div class="login-box">
             <h1 class="heading">StudyVERSE</h1>
+            <div th:if="${param.error}" class="invalidText">
+                Invalid Username and Password
+            </div>
+
             <h2>Log In</h2>
             <input type="email" class="email ele" placeholder="Email">
             <input type="password" class="password ele" placeholder="Password">
             <button class="clkbtn" type="submit">Login</button>
         </div>
         </form>
-        <!-- signup form -->
+
+    <!-- signup form -->
         <form th:action="@{/register}" th:method="POST" th:object="${user}">
         <div class="signup-box">
             <h1 class="heading">StudyVERSE</h1>

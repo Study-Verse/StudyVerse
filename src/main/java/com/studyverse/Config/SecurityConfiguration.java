@@ -17,8 +17,8 @@ public class SecurityConfiguration {
         http.authorizeHttpRequests()
                 .antMatchers("/createCard")
                 .authenticated()
-                .antMatchers("/login").permitAll()
-                .and().formLogin().loginPage("/login-register").defaultSuccessUrl("")
+                .antMatchers("/login-register").permitAll()
+                .and().formLogin().loginPage("/login-register").defaultSuccessUrl("/")
                 .and().logout()
                 .and().httpBasic();
         return http.build();
