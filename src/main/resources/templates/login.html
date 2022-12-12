@@ -1,46 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Welcome</title>
-    <link rel="stylesheet" th:href="@{/css/test.css}">
-
-
-</head>
-<body>
-    <div id="login-register-container">
-        <div id="register">
-            <form>
-                <label for="create-username">Create UserName:</label>
-                <br>
-                <input id="create-username">
-                <br>
-                <label for="create-email">Enter your Email:</label>
-                <br>
-                <input id="create-email">
-                <br>
-                <label for="create-password">Create a Password:</label>
-                <br>
-                <input id="create-password" type="password">
-                <br>
-                <input type="submit" value="Sign Up!">
-            </form>
-        </div>
-        <div id="login">
-            <form>
-                <label for="username">UserName:</label>
-                <br>
-                <input id="username">
-                <br>
-                <label for="password">Password:</label>
-                <br>
-                <input id="password">
-                <br>
-                <input type="submit" value="Log In">
-            </form>
-        </div>
-    </div>
+    <link rel="stylesheet" th:href="@{/css/login.css}">
     <script th:src="@{/js/jquery-3.6.1.min.js}"></script>
     <script th:src="@{/js/main.js}"></script>
+</head>
+<body>
+<header>
+    <h1 class="heading">StudyVERSE</h1>
+    <h3 class="title">Login or Register</h3>
+</header>
+
+<!-- container div -->
+<div class="container">
+
+    <!-- upper button section to select
+         the login or signup form -->
+    <div class="slider"></div>
+    <div class="btn">
+        <button class="login">Login</button>
+        <button class="signup">Signup</button>
+    </div>
+
+    <!-- Form section that contains the
+         login and the signup form -->
+    <div class="form-section">
+
+        <!-- login form -->
+        <div class="login-box">
+            <input type="email"
+                   class="email ele"
+                   placeholder="youremail@email.com">
+            <input type="password"
+                   class="password ele"
+                   placeholder="password">
+            <button class="clkbtn">Login</button>
+        </div>
+
+        <!-- signup form -->
+        <div class="signup-box">
+            <input type="text"
+                   class="name ele"
+                   placeholder="Enter your name">
+            <input type="email"
+                   class="email ele"
+                   placeholder="youremail@email.com">
+            <input type="password"
+                   class="password ele"
+                   placeholder="password">
+            <input type="password"
+                   class="password ele"
+                   placeholder="Confirm password">
+            <button class="clkbtn">Signup</button>
+        </div>
+    </div>
+</div>
+<script th:src="@{js/jquery-3.6.1.min.js}"></script>
+<script th:src="@{js/main.js}"></script>
 </body>
 </html>
