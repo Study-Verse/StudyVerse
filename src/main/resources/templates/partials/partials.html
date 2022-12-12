@@ -23,19 +23,19 @@
     <div class="container-fluid">
 
         <!-- Links on Left -->
-<!--        <div class="navbar-collapse collapse w-100 order-1 order-lg-0 collapse-portion">-->
-<!--            <ul class="navbar-nav me-auto">-->
-<!--                <li sec:authorize="isAuthenticated()" class="nav-item">-->
-<!--                    <a th:href="@{/register}" class="nav-link" >All Cards</a>-->
-<!--                </li>-->
+        <div class="navbar-collapse collapse w-100 order-1 order-lg-0 collapse-portion">
+            <ul class="navbar-nav me-auto">
+                <li sec:authorize="isAuthenticated()" class="nav-item">
+                    <a th:href="@{/register}" class="nav-link" >All Cards</a>
+                </li>
 <!--                <li sec:authorize="isAuthenticated()" class="nav-item">-->
 <!--                    <a th:href="@{/posts/create}" class="nav-link">Create</a>-->
 <!--                </li>-->
 <!--                <li sec:authorize="isAnonymous()" class="nav-item">-->
 <!--                    <a class="nav-link" th:href="@{/posts}">All Posts</a>-->
 <!--                </li>-->
-<!--            </ul>-->
-<!--        </div>-->
+            </ul>
+        </div>
 
         <!-- Left Name Link -->
         <div class="mx-auto order-0">
@@ -63,7 +63,7 @@
                     <a id="site-bar-search-link" role="button" class="nav-link" href="#">Search</a>
                 </form>
                 <li sec:authorize="isAnonymous()" class="nav-item">
-                    <a class="nav-link" th:href="@{/register}">Login</a>
+                    <a class="nav-link" th:href="@{/login}">Login</a>
                 </li>
             </ul>
         </div>

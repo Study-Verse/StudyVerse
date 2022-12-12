@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>register</title>
+  <meta charset="UTF-8">
+  <title>Register</title>
+  <link rel="stylesheet" th:href="@{/css/login.css}">
+  <script th:src="@{/js/jquery-3.6.1.min.js}"></script>
+  <script th:src="@{/js/main.js}"></script>
 </head>
 <body>
-<h1>register</h1>
-<div>
+<h1>Register</h1>
+
   <form th:action="@{/register}" th:method="POST" th:object="${user}">
     <div class="signup-box">
       <h1 class="heading">StudyVERSE</h1>
@@ -17,6 +20,7 @@
       <button class="clkbtn" type="submit">Signup</button>
     </div>
   </form>
-</div>
+
+
 </body>
 </html>
