@@ -32,9 +32,15 @@ public class UserController {
 
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         usersDao.save(user);
-        return "redirect:/";
+        return "redirect:/login";
     }
 
 
 
+
+    //    ============ dashboard get mapping
+    @GetMapping("/dashboard")
+    public String dashboard(){
+        return "/dashboard";
+    }
 } // End of UserController
