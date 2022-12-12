@@ -44,11 +44,14 @@ public class CardController {
 
 
 //    This let you post your card set
-//    @PostMapping("/create")
-//    public String postCard(@ModelAttribute Card card){
-//
-//    }
-//
+    @PostMapping("/create")
+    public String postCard(@ModelAttribute Card card){
+//        card.setUser(user);
+        cardDao.save(card);
+
+        return "redirect:/flash/create";
+    }
+
 
 
 }// END OF CARD CONTROLLER
