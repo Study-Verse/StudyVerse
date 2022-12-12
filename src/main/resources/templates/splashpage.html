@@ -6,17 +6,22 @@
     <link rel="stylesheet" href="/css/splashpage.css">
 </head>
 <body>
-<nav th:replace="partials/partials :: navbar"></nav>
 
-<div class="SPContainer">
-</div>
 
 <div class="page-wrapper splash-page-wrapper">
-    <img class="image splash-page-logo" src=/img/dorm-studying.jpeg>
-    <h1 class="SPHeading">Your &#35 1 study spot!</h1>
+    <nav th:replace="partials/partials :: navbar"></nav>
+
+    <div class="container SPContainer" >
+        <div class="row">
+            <div class="column">
+                    <h1 class="SPHeading">Your &#35 1 study spot!</h1>
+            </div>
+        </div>
+    </div>
+    <footer th:replace="partials/partials :: footer-fragment"></footer>
 </div>
 
-<footer th:replace="partials/partials :: footer-fragment"></footer>
+
 <div th:replace="partials/partials :: scripts"></div>
 
 </body>

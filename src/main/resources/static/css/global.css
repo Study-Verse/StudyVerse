@@ -1,22 +1,37 @@
 *{
 	box-sizing: border-box;
-	font-family: sans-serif;
-	background-color: rgb(45 0 69);
 }
 
-.navbar, .container-fluid, .mx-auto, .navbar-brand, .navbar-toggler, .bi {
-	background-color: slateblue;
+body {
+	font-family: sans-serif;
+}
+
+.page-wrapper {
+	background-color: rgb(45, 0, 69);
+}
+
+.navbar, .container-fluid, .mx-auto, .navbar-brand, .navbar-toggler, .bi, .navbar-collapse {
+	background-color: #2d0045;
 }
 
 .navbar-brand{
 	font-weight: bold;
 	font-size: 16pt;
+	color: antiquewhite;
+}
+
+.nav-link {
+	color: antiquewhite;
+
 }
 
 #footer, .d-flex, .about-footer, .contact-footer, .ms-auto{
 	padding: 0.8rem;
-	background-color: slateblue;
+	background-color: #2d0045;
 }
-#footer>div {
-	flex: 1;
+
+.nav-item {
+	display: flex;
+	align-items: center;
 }
+

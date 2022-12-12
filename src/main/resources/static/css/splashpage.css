@@ -1,5 +1,27 @@
+.SPContainer {
+	display: flex;
+	flex-direction: column;
+	padding: 0;
+	background-image: url("/img/dorm-studying.jpeg");
+	flex-grow: 1;
+	background-size: cover;
+	background-position: center center;
+	justify-content: center;
+}
+.container{
+	max-width: none!important;
+	margin-left: 0!important;
+	margin-right: 0!important;
+}
+
+.page-wrapper{
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
 .page-wrapper.splash-page-wrapper{
-	background-color: rgba(45, 0, 69);
+	/*background-color: rgba(45, 0, 69);*/
 	align-items: center;
 	justify-content: center;
 	width: 100%;
@@ -14,5 +36,4 @@
 	font-size: 2.75rem;
 	letter-spacing: normal;
 	line-height: 1.28;
-	position: absolute;
 }
