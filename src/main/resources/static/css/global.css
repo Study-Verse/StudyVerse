@@ -1,0 +1,11 @@
+*{
+	box-sizing: border-box;
+	font-family: sans-serif;
+}
+
+#footer {
+	padding: 0.8rem;
+}
+#footer>div {
+	flex: 1;
+}

@@ -15,11 +15,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 
 @Controller
-@RequestMapping("/flash")
+@RequestMapping("/")
 public class CardController {
 
     private final CardRepository cardDao;
-
     private final UserRepository userDao;
 
     public CardController(CardRepository cardDao, UserRepository userDao) {
@@ -31,7 +30,6 @@ public class CardController {
     public String landingPage(){
         return "splashpage";
     }
-
 
 //    This lets you create a card set
     @GetMapping("/create")
