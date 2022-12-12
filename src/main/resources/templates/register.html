@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>register</title>
+</head>
+<body>
+<h1>register</h1>
+<div>
+  <form th:action="@{/register}" th:method="POST" th:object="${user}">
+    <div class="signup-box">
+      <h1 class="heading">StudyVERSE</h1>
+      <h2>Register</h2>
+      <input type="text" class="username ele" placeholder="Create a Username" th:field="*{username}">
+      <input type="email" class="email ele" placeholder="Enter your Email" th:field="*{email}">
+      <input type="password" class="password ele" placeholder="Create a Password" th:field="*{password}">
+      <button class="clkbtn" type="submit">Signup</button>
+    </div>
+  </form>
+</div>
+</body>
+</html>
