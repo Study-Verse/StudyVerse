@@ -19,15 +19,6 @@ body {
     background-color: rgb(231, 231, 231);
 }
 
-header {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-}
-
 .heading {
     color: green;
 }
@@ -91,22 +82,21 @@ header {
     display: flex;
     position: relative;
     transition: all 0.5s ease-in-out;
-    left: 0px;
+    left: 0;
 }
 
 .form-section-move {
     left: -500px;
 }
 
-.login-box,
-.signup-box {
+.login-box, .signup-box {
     height: 100%;
     width: 500px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 0px 40px;
+    padding: 0 40px;
 }
 
 .login-box {
@@ -203,6 +193,7 @@ header {
 }
 
 @media screen and (max-width: 320px) {
+
     .container {
         height: 600px;
         width: 250px;

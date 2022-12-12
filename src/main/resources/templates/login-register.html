@@ -8,11 +8,6 @@
     <script th:src="@{/js/main.js}"></script>
 </head>
 <body>
-<header>
-    <h1 class="heading">StudyVERSE</h1>
-    <h3 class="title">Login or Register</h3>
-</header>
-
 <!-- container div -->
 <div class="container">
 
@@ -27,34 +22,27 @@
     <!-- Form section that contains the
          login and the signup form -->
     <div class="form-section">
-
         <!-- login form -->
+        <form>
         <div class="login-box">
-            <input type="email"
-                   class="email ele"
-                   placeholder="youremail@email.com">
-            <input type="password"
-                   class="password ele"
-                   placeholder="password">
-            <button class="clkbtn">Login</button>
+            <h1 class="heading">StudyVERSE</h1>
+            <h2>Log In</h2>
+            <input type="email" class="email ele" placeholder="Email">
+            <input type="password" class="password ele" placeholder="Password">
+            <button class="clkbtn" type="submit">Login</button>
         </div>
-
+        </form>
         <!-- signup form -->
+        <form th:action="@{/register}" th:method="POST" th:object="${user}">
         <div class="signup-box">
-            <input type="text"
-                   class="name ele"
-                   placeholder="Enter your name">
-            <input type="email"
-                   class="email ele"
-                   placeholder="youremail@email.com">
-            <input type="password"
-                   class="password ele"
-                   placeholder="password">
-            <input type="password"
-                   class="password ele"
-                   placeholder="Confirm password">
-            <button class="clkbtn">Signup</button>
+            <h1 class="heading">StudyVERSE</h1>
+            <h2>Register</h2>
+            <input type="text" class="username ele" placeholder="Create a Username" th:field="*{username}">
+            <input type="email" class="email ele" placeholder="Enter your Email" th:field="*{email}">
+            <input type="password" class="password ele" placeholder="Create a Password" th:field="*{password}">
+            <button class="clkbtn" type="submit">Signup</button>
         </div>
+        </form>
     </div>
 </div>
 <script th:src="@{js/jquery-3.6.1.min.js}"></script>
