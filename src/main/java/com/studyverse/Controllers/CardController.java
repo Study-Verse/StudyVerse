@@ -26,7 +26,7 @@ public class CardController {
         this.userDao = userDao;
     }
 
-    @GetMapping()
+    @GetMapping
     public String landingPage(){
         return "splashpage";
     }

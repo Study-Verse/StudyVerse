@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" th:href="@{/css/login.css}">
+    <script th:src="@{/js/jquery-3.6.1.min.js}"></script>
+    <script th:src="@{/js/main.js}"></script>
+</head>
+<body>
+<div class="container">
+    <div class="form-section">
+<!--         Form section that contains the-->
+<!--         login form -->
+        <form th:action="@{/login}" method="post">
+            <div class="login-box">
+                <h1 class="heading">StudyVERSE</h1>
+                <div th:if="${param.error}" class="invalidText">
+                    Invalid Username and Password
+                </div>
+
+                <h2>Log In</h2>
+                <input type="text" name="username" class="email ele" placeholder="Username">
+                <input type="password" name="password" class="password ele" placeholder="Password">
+                <button class="clkbtn" type="submit" value="Log in">Login</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script th:src="@{js/jquery-3.6.1.min.js}"></script>
+<script th:src="@{js/main.js}"></script>
+
+</body>
+</html>

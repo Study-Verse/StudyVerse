@@ -24,13 +24,12 @@ public class UserController {
     @GetMapping("/register")
     public String showRegistrationForm(Model model){
         model.addAttribute("user", new User());
-        return "/login-register";
+        return "/register";
     }
 
     @PostMapping("/register")
     public String registerUser(@ModelAttribute User user){
 
-//        user.setPassword(passwordEncoder.encode(user.getPassword()));
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         usersDao.save(user);
         return "redirect:/";
