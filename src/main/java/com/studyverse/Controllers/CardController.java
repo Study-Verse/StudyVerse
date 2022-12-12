@@ -74,11 +74,5 @@ public class CardController {
     public String test(){
         return "/self-test";
     }
-
-    //    ============ dashboard get mapping
-    @GetMapping("dashboard")
-    public String dashboard(){
-        return "/dashboard";
-    }
 }// END OF CARD CONTROLLER
 

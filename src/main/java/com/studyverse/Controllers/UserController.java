@@ -37,4 +37,10 @@ public class UserController {
 
 
 
+
+    //    ============ dashboard get mapping
+    @GetMapping("/dashboard")
+    public String dashboard(){
+        return "/dashboard";
+    }
 } // End of UserController
