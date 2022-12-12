@@ -15,10 +15,10 @@ public class SecurityConfiguration {
     @Bean
     SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests()
-                .antMatchers("/blog_profile")
+                .antMatchers("/createCard")
                 .authenticated()
                 .antMatchers("/login").permitAll()
-                .and().formLogin().loginPage("/login-register").defaultSuccessUrl("/splashpage")
+                .and().formLogin().loginPage("/login-register").defaultSuccessUrl("")
                 .and().logout()
                 .and().httpBasic();
         return http.build();
