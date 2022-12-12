@@ -1,6 +1,7 @@
 package com.studyverse.Models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import javax.persistence.*;
 
 import java.util.List;
@@ -24,6 +25,10 @@ public class Card {
     @ManyToMany(mappedBy = "cardList")
     @JsonIgnore
     private List<CardSet> cardSetList;
+
+    @ManyToOne
+    @JsonManagedReference
+    private User user;
 
 
 //    constructors
@@ -66,5 +71,21 @@ public class Card {
 
     public void setBackFace(String backFace) {
         this.backFace = backFace;
+    }
+
+    public List<CardSet> getCardSetList() {
+        return cardSetList;
+    }
+
+    public void setCardSetList(List<CardSet> cardSetList) {
+        this.cardSetList = cardSetList;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

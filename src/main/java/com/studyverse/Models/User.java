@@ -27,6 +27,9 @@ public class User {
     @JsonBackReference
     private List<CardSet> cardSetList;
 
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
+    private List<Card> cardList;
+
 //    constructor
 
 
