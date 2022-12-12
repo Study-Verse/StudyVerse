@@ -7,7 +7,7 @@ body {
 }
 
 .page-wrapper {
-	background-color: rgb(45, 0, 69);
+	background-color: #2d0045;
 }
 
 .navbar, .container-fluid, .mx-auto, .navbar-brand, .navbar-toggler, .bi, .navbar-collapse {
@@ -17,11 +17,11 @@ body {
 .navbar-brand{
 	font-weight: bold;
 	font-size: 16pt;
-	color: antiquewhite;
+	color: #FFFFFF;
 }
 
 .nav-link {
-	color: antiquewhite;
+	color: #FFFFFF;
 
 }
 
