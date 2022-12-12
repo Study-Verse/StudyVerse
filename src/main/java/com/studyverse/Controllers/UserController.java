@@ -29,6 +29,8 @@ public class UserController {
 
     @PostMapping("/register")
     public String registerUser(@ModelAttribute User user){
+
+//        user.setPassword(passwordEncoder.encode(user.getPassword()));
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         usersDao.save(user);
         return "redirect:/login-register";
