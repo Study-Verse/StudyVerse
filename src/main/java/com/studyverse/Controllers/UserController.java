@@ -2,6 +2,7 @@ package com.studyverse.Controllers;
 
 import com.studyverse.Models.User;
 import com.studyverse.Repositories.UserRepository;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,8 +14,11 @@ public class UserController {
 
     private final UserRepository usersDao;
 
-    public UserController(UserRepository usersDao) {
+    private final PasswordEncoder passwordEncoder;
+
+    public UserController(UserRepository usersDao, PasswordEncoder passwordEncoder) {
         this.usersDao = usersDao;
+        this.passwordEncoder = passwordEncoder;
     }
 
     @GetMapping("/register")
@@ -25,7 +29,7 @@ public class UserController {
 
     @PostMapping("/register")
     public String registerUser(@ModelAttribute User user){
-//        user.setPassword(passwordEncoder.encode(user.getPassword()));
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
         usersDao.save(user);
         return "redirect:/login-register";
     }
