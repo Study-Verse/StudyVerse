@@ -1,5 +1,9 @@
-$("#register").onclick(function(){
-    $("#login").toggleClass("display-none");
-})
+$(".signup").click(function(){
+    $(".slider").addClass("moveslider");
+    $(".form-section").addClass("form-section-move");
+});
 
-alert("Hello");
+$(".login").click(function() {
+    $(".slider").removeClass("moveslider");
+    $(".form-section").removeClass("form-section-move");
+});
