@@ -1,43 +1,28 @@
 package com.studyverse.Services;
 
-import org.springframework.security.core.GrantedAuthority;
+import com.studyverse.Models.StudyVerseUserDetails;
+import com.studyverse.Models.User;
+import com.studyverse.Repositories.UserRepository;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
-import java.util.Collection;
+public class SpringUserDetailService implements UserDetailsService {
 
-public class SpringUserDetailService implements UserDetails {
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+    public final UserRepository userDao;
+
+    public SpringUserDetailService(UserRepository userDao) {
+        this.userDao = userDao;
     }
 
-    @Override
-    public String getPassword() {
-        return null;
-    }
 
     @Override
-    public String getUsername() {
-        return null;
-    }
-
-    @Override
-    public boolean isAccountNonExpired() {
-        return false;
-    }
-
-    @Override
-    public boolean isAccountNonLocked() {
-        return false;
-    }
-
-    @Override
-    public boolean isCredentialsNonExpired() {
-        return false;
-    }
-
-    @Override
-    public boolean isEnabled() {
-        return false;
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        User user = userDao.findByUsername(username);
+        if(user == null){
+            throw new UsernameNotFoundException("User details not found for user " + username);
+        }else {
+            return new StudyVerseUserDetails(user.getId(),user.getEmail(),user.getUsername(),user.getPassword());
+        }
     }
 }
