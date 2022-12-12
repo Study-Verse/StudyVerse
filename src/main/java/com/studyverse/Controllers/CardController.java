@@ -4,6 +4,7 @@ import com.studyverse.Models.Card;
 import com.studyverse.Models.User;
 import com.studyverse.Repositories.CardRepository;
 import com.studyverse.Repositories.UserRepository;
+import com.studyverse.Services.Utils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -46,9 +47,9 @@ public class CardController {
 //    This let you post your card set
     @PostMapping("/create")
     public String postCard(@ModelAttribute Card card){
-//        card.setUser(user);
+        User user = Utils.currentUser();
+        card.setUser(user);
         cardDao.save(card);
-
         return "redirect:/flash/create";
     }
 
