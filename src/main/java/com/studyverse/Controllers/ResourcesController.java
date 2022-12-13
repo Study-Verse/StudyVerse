@@ -14,10 +14,16 @@ public class ResourcesController {
     }
 
 
-    @GetMapping("/bookView/{isbn}")
-    public String showBookView(Model model, @PathVariable int isbn){
-        model.addAttribute("isbn", isbn);
-        return "/bookView";
-    }
+//    @GetMapping("/bookView.html?isbn=0470371749")
+//    public String showBookView(Model model, @PathVariable int isbn){
+//        model.addAttribute("isbn", isbn);
+//        return "/bookView";
+//    }
+
+//    @GetMapping("/bookView/{isbn}")
+//    public String showBookView1(Model model, @PathVariable int isbn){
+//        model.addAttribute("isbn", isbn);
+//        return "/bookView";
+//    }
 
 }
