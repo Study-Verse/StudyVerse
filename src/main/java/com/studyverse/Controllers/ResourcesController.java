@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 public class ResourcesController {
 
     @GetMapping("/books")
-    public String showBookPage(){
+    public String showBookPage() {
         return "/resources";
     }
 
@@ -20,9 +20,8 @@ public class ResourcesController {
 //        return "/bookView";
 //    }
 
-//    @GetMapping("/bookView/{isbn}")
-//    public String showBookView1(Model model, @PathVariable int isbn){
-//        model.addAttribute("isbn", isbn);
+//    @GetMapping("/bookView")
+//    public String showBookView1(){
 //        return "/bookView";
 //    }
 
