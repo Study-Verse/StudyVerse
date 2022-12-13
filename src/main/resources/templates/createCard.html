@@ -9,7 +9,7 @@
 <fieldset class="middleForm">
     <nav th:replace="partials/partials.html :: navbar"></nav>
 
-    <form class="formMiddle" th:action="@{/create}" th:method="post" th:object="${card}">
+    <form class="formMiddle" th:action="@{/create}" th:method="POST" th:object="${card}">
         <label for="frontFace">FrontFace:</label>
         <input type="text" id="frontFace" name="frontFace" th:field="*{frontFace}">
         <label for="backFace">Back Face:</label>
