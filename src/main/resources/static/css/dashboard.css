@@ -1,0 +1,32 @@
+body{
+    background-color: rgb(45 0 69);
+}
+
+#card-set-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+.card-sets{
+    position: relative;
+}
+
+.card-sets svg {
+    position: absolute;
+    top:5px;
+    right:5px;
+}
+.card-sets svg:hover {
+    color: rgb(250 110 255);
+}
+.card-title{
+    color: rgb(250 110 255);
+}
+.card-sets{
+    margin: 1rem;
+    height: 184px;
+    width: 334px;
+    background-color: #18021b;
+}
