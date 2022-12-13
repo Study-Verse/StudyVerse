@@ -1,11 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
+    <div th:replace="partials/partials :: head-fragment('Study')"></div>
+    <link rel="stylesheet" href="/css/global.css">
     <meta charset="UTF-8">
     <title>Study</title>
 </head>
 <body>
-<h1>Study</h1>
+<nav th:replace="partials/partials :: navbar"></nav>
 
+<script th:src="@{js/jquery-3.6.1.min.js}"></script>
+<script th:src="@{js/main.js}"></script>
+<script th:src="@{/js/sitebar.js}"></script>
 </body>
 </html>

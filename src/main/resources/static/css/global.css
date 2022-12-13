@@ -6,6 +6,24 @@ body {
 	font-family: sans-serif;
 }
 
+#site-bar-search-link {
+	align-self: center;
+}
+
+#searchUL {
+	padding: 0;
+}
+.search-bar{
+	outline: none;
+	border: none;
+	background-color: #4d1a53;
+	color: white;
+	border-radius: 50px;
+	padding-left: 30px;
+	font-size: 18px;
+}
+
+
 .page-wrapper {
 	background-color: #2d0045;
 }
