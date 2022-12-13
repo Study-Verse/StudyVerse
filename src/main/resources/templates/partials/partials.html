@@ -28,12 +28,15 @@
                 <li sec:authorize="isAuthenticated()" class="nav-item">
                     <a th:href="@{/register}" class="nav-link" >All Cards</a>
                 </li>
-<!--                <li sec:authorize="isAuthenticated()" class="nav-item">-->
-<!--                    <a th:href="@{/posts/create}" class="nav-link">Create</a>-->
-<!--                </li>-->
-<!--                <li sec:authorize="isAnonymous()" class="nav-item">-->
-<!--                    <a class="nav-link" th:href="@{/posts}">All Posts</a>-->
-<!--                </li>-->
+                <li sec:authorize="isAuthenticated()" class="nav-item">
+                    <a th:href="@{/create}" class="nav-link">Create</a>
+                </li>
+                <li sec:authorize="isAuthenticated()" class="nav-item">
+                    <a class="nav-link" th:href="@{/study-cards}">Study</a>
+                </li>
+                <li sec:authorize="isAuthenticated()" class="nav-item">
+                    <a class="nav-link" th:href="@{self-test}">Test</a>
+                </li>
             </ul>
         </div>
 
