@@ -7,7 +7,9 @@
     <script src="/js/books.js"></script>
 </head>
 <body>
-
+<div class="page-wrapper">
+    <nav th:replace="partials/partials :: navbar"></nav>
+</div>
 <div class="container">
     <div id="title" class="center">
         <h1 id="header" class="text-center mt-5">Book Finder</h1>
@@ -19,6 +21,7 @@
         </div>
     </div>
 
+
     <div class="book-list" >
         <h2 class="text-center">Search Result</h2>
         <div id="list-output" class="">
@@ -28,6 +31,9 @@
         </div>
     </div>
 </div>
+<script th:src="@{js/jquery-3.6.1.min.js}"></script>
+<script th:src="@{js/main.js}"></script>
+<script th:src="@{/js/sitebar.js}"></script>
 
 </body>
 </html>
