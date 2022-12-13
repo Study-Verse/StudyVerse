@@ -23,18 +23,19 @@
     <div class="container-fluid">
 
         <!-- Links on Left -->
-        <div class="navbar-collapse collapse w-100 order-1 order-lg-0 collapse-portion">
-            <ul class="navbar-nav me-auto">
-                <li sec:authorize="isAuthenticated()" class="nav-item">
+        <div class="navbar-collapse collapse w-100 order-1 order-lg-0
+             collapse-portion">
+            <ul class="navbar-nav me-auto" sec:authorize="isAuthenticated()" >
+                <li class="nav-item">
                     <a th:href="@{/register}" class="nav-link" >All Cards</a>
                 </li>
-                <li sec:authorize="isAuthenticated()" class="nav-item">
+                <li class="nav-item">
                     <a th:href="@{/create-set}" class="nav-link">Create</a>
                 </li>
-                <li sec:authorize="isAuthenticated()" class="nav-item">
+                <li class="nav-item">
                     <a class="nav-link" th:href="@{/study-cards}">Study</a>
                 </li>
-                <li sec:authorize="isAuthenticated()" class="nav-item">
+                <li class="nav-item">
                     <a class="nav-link" th:href="@{self-test}">Test</a>
                 </li>
                 <li sec:authorize="isAuthenticated()" class="nav-item">
