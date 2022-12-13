@@ -64,11 +64,7 @@ public class CardController {
         return "/study";
     }
 
-    //    ============ resources get mapping
-    @GetMapping("resources")
-    public String resources(){
-        return "/resources";
-    }
+
 
     //    ============ self test get mapping
     @GetMapping("self-test")
