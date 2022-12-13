@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <div th:replace="partials/partials :: head-fragment('Create a card set')"></div>
+    <link rel="stylesheet" th:href="@{/css/global.css}">
+    <link rel="stylesheet" th:href="@{/css/create-set.css}">
+</head>
+<body>
+<nav th:replace="partials/partials.html :: navbar"></nav>
+<div class="container">
+    <form class="form-section" th:action="@{/create-set}" method="post" th:object="${newCardSet}">
+        <div class="create-set-box">
+            <h1 class="heading">StudyVERSE</h1>
+            <h2>Create a Set</h2>
+            <input type="text" th:field="*{title}" name="set-title" class="input-design" placeholder="Title of Set">
+            <input type="text" th:field="*{tag}" name="set-tag" class="input-design" placeholder="Tags">
+            <button class="create-set-button" type="submit">Create Set</button>
+        </div>
+    </form>
+</div>
+<script th:src="@{js/jquery-3.6.1.min.js}"></script>
+<script th:src="@{js/main.js}"></script>
+</body>
+</html>

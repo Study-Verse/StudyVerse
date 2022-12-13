@@ -1,6 +1,7 @@
 package com.studyverse.Controllers;
 
 import com.studyverse.Models.Card;
+import com.studyverse.Models.CardSet;
 import com.studyverse.Models.User;
 import com.studyverse.Repositories.CardRepository;
 import com.studyverse.Repositories.UserRepository;
@@ -32,12 +33,12 @@ public class CardController {
     }
 
 //    This lets you create a card set
-    @GetMapping("create")
+    @GetMapping("card-create")
     public String createCard(Model model){
         List<User>users = userDao.findAll();
         model.addAttribute("users", users);
         model.addAttribute("card", new Card());
-        return "createCard";
+        return "/createCard";
     }
 
 
