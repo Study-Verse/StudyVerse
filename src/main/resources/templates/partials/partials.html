@@ -28,12 +28,15 @@
                 <li sec:authorize="isAuthenticated()" class="nav-item">
                     <a th:href="@{/register}" class="nav-link" >All Cards</a>
                 </li>
-<!--                <li sec:authorize="isAuthenticated()" class="nav-item">-->
-<!--                    <a th:href="@{/posts/create}" class="nav-link">Create</a>-->
-<!--                </li>-->
-<!--                <li sec:authorize="isAnonymous()" class="nav-item">-->
-<!--                    <a class="nav-link" th:href="@{/posts}">All Posts</a>-->
-<!--                </li>-->
+                <li sec:authorize="isAuthenticated()" class="nav-item">
+                    <a th:href="@{/create}" class="nav-link">Create</a>
+                </li>
+                <li sec:authorize="isAuthenticated()" class="nav-item">
+                    <a class="nav-link" th:href="@{/study-cards}">Study</a>
+                </li>
+                <li sec:authorize="isAuthenticated()" class="nav-item">
+                    <a class="nav-link" th:href="@{self-test}">Test</a>
+                </li>
             </ul>
         </div>
 
@@ -50,14 +53,6 @@
         <!-- Links on Right -->
         <div class="navbar-collapse collapse w-100 order-3 collapse-portion">
             <ul class="navbar-nav ms-auto">
-<!--                <li sec:authorize="isAuthenticated()" class="nav-item">-->
-<!--                    <form id="site-bar-logout-form" th:action="@{/logout}" th:method="post">-->
-<!--                        <a id="site-bar-logout-link" role="button" class="nav-link" href="#">Logout</a>-->
-<!--                    </form>-->
-<!--                </li>-->
-<!--                <li sec:authorize="isAnonymous()" class="nav-item">-->
-<!--                    <a class="nav-link" th:href="@{/register}">Signup</a>-->
-<!--                </li>-->
                 <form class="d-flex" id="site-bar-search" th:action="@{/search}" th:method="get">
                     <input class="search-bar me-2" type="search" placeholder="Search" aria-label="Search">
                     <a id="site-bar-search-link" role="button" class="nav-link" href="#">Search</a>
@@ -65,12 +60,24 @@
                 <li sec:authorize="isAnonymous()" class="nav-item">
                     <a class="nav-link" th:href="@{/login}">Login</a>
                 </li>
-                <!-- More links here... -->
-                <li>
-                    <form th:action="@{/logout}" th:method="post">
-                        <button class="btn-link btn" style="margin-top: 8px">Logout</button>
+                <li sec:authorize="isAuthenticated()" class="nav-item">
+                    <form id="site-bar-logout-form" th:action="@{/logout}" th:method="post">
+                        <a id="site-bar-logout-link" role="button" class="nav-link" href="#">Logout</a>
                     </form>
                 </li>
+                <li sec:authorize="isAnonymous()" class="nav-item">
+                    <a class="nav-link" th:href="@{/register}">Signup</a>
+                </li>
+
+<!--                <li sec:authorize="isAnonymous()" class="nav-item">-->
+<!--                    <a class="nav-link" th:href="@{/login}">Login</a>-->
+<!--                </li>-->
+                <!-- More links here... -->
+<!--                <li>-->
+<!--                    <form th:action="@{/logout}" th:method="post">-->
+<!--                        <button class="btn-link btn" style="margin-top: 8px">Logout</button>-->
+<!--                    </form>-->
+<!--                </li>-->
             </ul>
         </div>
     </div>

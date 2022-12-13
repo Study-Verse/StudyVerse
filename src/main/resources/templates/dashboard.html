@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Dashboard</title>
+    <div th:replace="partials/partials :: head-fragment('Splash Page')"></div>
+    <link rel="stylesheet" href="/css/global.css">
 </head>
 <body>
+<div class="page-wrapper splash-page-wrapper">
+    <nav th:replace="partials/partials :: navbar"></nav>
+</div>
 <h1>Dashboard</h1>
+
+<footer th:replace="partials/partials :: footer-fragment"></footer>
+<div th:replace="partials/partials :: scripts"></div>
+
 
 <h2 class="favorite-sets">Your favorite sets:</h2>
 <div>
@@ -22,6 +29,7 @@
 <div class="books">
     <p>Books using api</p>
 </div>
+
 
 </body>
 </html>
