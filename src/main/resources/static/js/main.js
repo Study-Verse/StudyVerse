@@ -6,4 +6,6 @@ $(".signup").click(function(){
 $(".login").click(function() {
     $(".slider").removeClass("moveslider");
     $(".form-section").removeClass("form-section-move");
+
+  alert("yoooo");
 });
