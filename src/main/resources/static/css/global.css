@@ -53,3 +53,9 @@ body {
 	align-items: center;
 }
 
+.container{
+	max-width: none!important;
+	margin-left: 0!important;
+	margin-right: 0!important;
+}
+
