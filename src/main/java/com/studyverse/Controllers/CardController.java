@@ -33,7 +33,7 @@ public class CardController {
     }
 
 //    This lets you create a card set
-    @GetMapping("create")
+    @GetMapping("card-create")
     public String createCard(Model model){
         List<User>users = userDao.findAll();
         model.addAttribute("users", users);
