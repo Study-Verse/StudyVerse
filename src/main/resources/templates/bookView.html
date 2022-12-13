@@ -1,5 +1,4 @@
-<!DOCTYPE html "-//W3C//DTD XHTML 1.0 Strict//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <div th:replace="partials/partials :: head-fragment('Book View')"></div>
@@ -11,6 +10,8 @@
     <script type="text/javascript" src="https://www.google.com/books/jsapi.js"></script>
 </head>
 <body>
+<nav th:replace="partials/partials :: navbar"></nav>
+
 <div class="container">
     <div class="text-center" id="viewerCanvas" style="width: 800px; height: 600px"></div>
     <h1>Hello</h1>
@@ -18,9 +19,11 @@
 
 <script type="text/javascript">
     google.books.load();
-
+    console.log(google.books);
     function initialize() {
         let viewer = new google.books.DefaultViewer(document.getElementById('viewerCanvas'));
+        console.log("In initialize. Full url: ");
+        console.log(document.URL);
         let index = document.URL.indexOf('?');
         if (index > 0) {
             bookIsbn = document.URL.substring(index, document.URL.length).split("=")[1];

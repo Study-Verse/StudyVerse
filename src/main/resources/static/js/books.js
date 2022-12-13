@@ -90,7 +90,7 @@ $(document).ready(function() {
 
         // (BAD) http://localhost:63342/Practice-Code/bookView.html?isbn=9780131872486
         // (GOOD) http://localhost:63342/Practice-Code/bookView.html?_ijt=9780991229048=RELOAD_ON_SAVE
-        let viewUrl = 'bookView.html?isbn='+bookIsbn; //constructing link for book viewer
+        let viewUrl = 'bookView/'+bookIsbn; //constructing link for book viewer
         //This creates the cards
         let htmlCard = `<div class="col-lg-6">
        <div class="card" style="">
