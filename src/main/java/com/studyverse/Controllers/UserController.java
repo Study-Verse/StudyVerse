@@ -41,15 +41,4 @@ public class UserController {
 
 
 
-    //    ============ dashboard get mapping
-    @GetMapping("/dashboard")
-    public String dashboard(Model model){
-//        getting logged in user
-        User user = Utils.currentUser();
-//        getting the list of card sets the current user has
-        List<CardSet> cardSetList = user.getCardSetList();
-//        passing that list to the view via model attribute
-        model.addAttribute("cardSetList",cardSetList);
-        return "/dashboard";
-    }
 } // End of UserController
