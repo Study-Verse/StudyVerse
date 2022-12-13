@@ -5,31 +5,20 @@
     <link rel="stylesheet" href="/css/global.css">
 </head>
 <body>
-<div class="page-wrapper splash-page-wrapper">
-    <nav th:replace="partials/partials :: navbar"></nav>
-</div>
-<h1>Dashboard</h1>
+    <div class="page-wrapper splash-page-wrapper">
+        <nav th:replace="partials/partials :: navbar"></nav>
+    </div>
+
+   <div id="card-set-wrapper" th:each="cardSet: ${cardSetList}">
+       <div>
+       <h1 th:text="${cardSet.getTitle()}"></h1>
+       <h2 th:text="${cardSet.getTag()}"></h2>
+       </div>
+   </div>
 
 
 
-
-<h2 class="favorite-sets">Your favorite sets:</h2>
-<div>
-    <p>fav sets here</p>
-</div>
-
-<h2>Your sets</h2>
-<!--<div class="card-sets">-->
-<!--    <p>fav sets here</p>-->
-<!--    <div th:each="${cardSetList}"></div>-->
-<!--</div>-->
-
-<h2>Recommended Books</h2>
-<div class="books">
-    <p>Books using api</p>
-</div>
-
-<footer th:replace="partials/partials :: footer-fragment"></footer>
-<div th:replace="partials/partials :: scripts"></div>
+    <footer th:replace="partials/partials :: footer-fragment"></footer>
+    <div th:replace="partials/partials :: scripts"></div>
 </body>
 </html>
