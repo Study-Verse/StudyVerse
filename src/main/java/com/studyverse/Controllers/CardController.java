@@ -38,7 +38,7 @@ public class CardController {
         List<User>users = userDao.findAll();
         model.addAttribute("users", users);
         model.addAttribute("card", new Card());
-        return "createCard";
+        return "/createCard";
     }
 
 
