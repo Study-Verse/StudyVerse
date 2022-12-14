@@ -13,10 +13,14 @@ body{
     position: relative;
 }
 
-.card-sets svg {
+.svg {
     position: absolute;
     top:5px;
     right:5px;
+}
+
+.display-none{
+    display: none;
 }
 .card-sets svg:hover {
     color: rgb(250 110 255);

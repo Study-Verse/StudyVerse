@@ -1,9 +1,7 @@
-$(".signup").click(function(){
-    $(".slider").addClass("moveslider");
-    $(".form-section").addClass("form-section-move");
-});
+$(".card-sets").mouseenter(function (){
+    $(".svg").removeClass("display-none");
+})
 
-$(".login").click(function() {
-    $(".slider").removeClass("moveslider");
-    $(".form-section").removeClass("form-section-move");
-});
+$(".card-sets").mouseleave(function (){
+    $(".svg").addClass("display-none");
+})
