@@ -35,7 +35,7 @@
            <div class="card-modal display-none">
                <div class="card-modal-content">
                    <span class="close">&times;</span>
-                   <form>
+                   <form th:action="@{|/card-set-edit/${cardSet.getId()}|}" method="post" >
                        <div class="create-set-box">
                            <h1 class="heading">StudyVERSE</h1>
                            <h2>Edit Your Set</h2>
