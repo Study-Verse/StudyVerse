@@ -71,9 +71,13 @@ body {
 		padding: 0;
 		color: white;
 	}
-	#site-bar-search{
-		right: -8px;
-		text-align: center;
+	.bi-search{
+		visibility: visible;
 	}
+
+	.search-bar{
+
+	}
+
 }
 

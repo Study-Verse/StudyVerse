@@ -54,12 +54,15 @@
         </div>
 
         <!-- Links on Right -->
-        <div class="navbar-collapse collapse w-100 order-3 collapse-portion">
+        <div class="navbar-collapse search-bar collapse w-100 order-3 collapse-portion ml-auto">
             <ul class="navbar-nav ms-auto" id="searchUL">
-                <form class="d-flex" id="site-bar-search" th:action="@{/search}" th:method="get">
+                <form class="d-flex" id="site-bar-search" sec:authorize="isAuthenticated()" th:action="@{/search}" th:method="get">
                     <input class="search-bar me-2" type="search" placeholder="Search" aria-label="Search">
                     <a id="site-bar-search-link" role="button" class="nav-link" href="#">Search</a>
                 </form>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16" visibility="hidden">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                </svg>
                 <li sec:authorize="isAnonymous()" class="nav-item">
                     <a class="nav-link" th:href="@{/login}">Login</a>
                 </li>
