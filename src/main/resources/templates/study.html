@@ -10,13 +10,19 @@
 <div class="page-wrapper splash-page-wrapper">
     <nav th:replace="partials/partials :: navbar"></nav>
 </div>
-
+<!--container to populate cards individually -->
+<div id="study-card-container" class="container">
+    <div></div>
+    <button>Previous</button>
+    <button>Next</button>
+</div>
 
 <br>
 
 
 <footer th:replace="partials/partials :: footer-fragment"></footer>
 <div th:replace="partials/partials :: scripts"></div>
+<script th:src="@{js/study.js}"></script>
 <script th:src="@{js/jquery-3.6.1.min.js}"></script>
 <script th:src="@{js/main.js}"></script>
 <script th:src="@{/js/sitebar.js}"></script>
