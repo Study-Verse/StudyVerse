@@ -4,14 +4,12 @@ import com.studyverse.Models.Card;
 import com.studyverse.Models.CardSet;
 import com.studyverse.Models.User;
 import com.studyverse.Repositories.CardRepository;
+import com.studyverse.Repositories.CardSetRepository;
 import com.studyverse.Repositories.UserRepository;
 import com.studyverse.Services.Utils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,9 +20,18 @@ public class CardController {
     private final CardRepository cardDao;
     private final UserRepository userDao;
 
-    public CardController(CardRepository cardDao, UserRepository userDao) {
+    private final CardSetRepository cardSetDao;
+
+    public CardController(CardRepository cardDao, UserRepository userDao, CardSetRepository cardSetDao) {
         this.cardDao = cardDao;
         this.userDao = userDao;
+        this.cardSetDao = cardSetDao;
+    }
+
+//  cards api call
+    @GetMapping("card-api")
+    public @ResponseBody List<Card> cardsApi() {
+        return cardSetDao.findById(1).getCardList();
     }
 
     @GetMapping
@@ -32,7 +39,7 @@ public class CardController {
         return "splashpage";
     }
 
-//    This lets you create a card set
+//    This lets you create a card
     @GetMapping("card-create")
     public String createCard(Model model){
         List<User>users = userDao.findAll();
@@ -53,15 +60,10 @@ public class CardController {
     }
 
 
-
-
-
-
-
-//    ============ study get mapping
+    //    ============ study get mapping
     @GetMapping("study-cards")
-    public String studyCards(){
-        return "/study";
+    public String studyCards() {
+       return "study";
     }
 
 

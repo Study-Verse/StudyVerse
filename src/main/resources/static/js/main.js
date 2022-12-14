@@ -1,4 +1,5 @@
 
+
 //function for letting the SVGs show on mouseOver
 if(window.innerWidth > 768){
     $(".card-sets").mouseenter(function (){
