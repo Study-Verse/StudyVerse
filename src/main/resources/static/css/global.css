@@ -48,6 +48,11 @@ body {
 	background-color: #2d0045;
 }
 
+#footer {
+	position: fixed;
+	bottom: 0;
+}
+
 .nav-item {
 	display: flex;
 	align-items: center;
@@ -57,5 +62,16 @@ body {
 	max-width: none!important;
 	margin-left: 0!important;
 	margin-right: 0!important;
+}
+
+/*medium screen*/
+@media screen and (max-width: 992px){
+	.about-footer, .contact-footer, .ms-auto {
+		padding: 0;
+		color: antiquewhite;
+	}
+	.nav-link {
+		visibility: visible;
+	}
 }
 
