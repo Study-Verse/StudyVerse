@@ -7,9 +7,7 @@ import com.studyverse.Repositories.UserRepository;
 import com.studyverse.Services.Utils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -47,6 +45,17 @@ public class CardSetController {
         List<CardSet> cardSetList = cardSetDao.findByUserId(user);
         model.addAttribute("cardSetList",cardSetList);
         return "/dashboard";
+    }
+
+
+    @PostMapping("/card-set-edit/{cardId}")
+    public String submitCardSetEdit(@RequestParam(name="edit-title") String title,
+                                    @RequestParam(name="edit-tag") String tag, @PathVariable long cardId){
+        CardSet editCard = cardSetDao.findById(cardId);
+        editCard.setTitle(title);
+        editCard.setTag(tag);
+        cardSetDao.save(editCard);
+        return "redirect:/dashboard";
     }
 
 
