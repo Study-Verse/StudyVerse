@@ -83,6 +83,7 @@ body {
 	}
 	.bi-search{
 		visibility: visible;
+		position: absolute;
 	}
 
 	.search-bar{
