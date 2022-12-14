@@ -49,7 +49,7 @@ public class CardController {
         User user = Utils.currentUser();
         card.setUser(user);
         cardDao.save(card);
-        return "redirect:/create";
+        return "redirect:/card-create";
     }
 
 
