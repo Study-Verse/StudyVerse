@@ -29,7 +29,7 @@ $(document).ready(function(){
 
 
 
-    $(".deleteButton").click(function(event){
+    $(".trash-svg").click(function(event){
         window.location.replace(`${$(this).attr("data-id")}/delete`)
     });
 
