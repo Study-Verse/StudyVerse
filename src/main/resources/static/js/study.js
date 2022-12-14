@@ -14,6 +14,7 @@ $(function (){
                     })// end of for each
                 })
 }
+getCardList()
 
 
     //get the first card in the array of objects from json
