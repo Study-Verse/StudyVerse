@@ -27,6 +27,14 @@ $(document).ready(function(){
     $(".close").on("click", function(){
         $(".card-modal").addClass("display-none");
     })
+
+
+
+    $(".trash-svg").click(function(event){
+        window.location.replace(`${$(this).attr("data-id")}/delete`)
+    });
+
+
 })//End of document.ready
 
 //End of Modal Functions

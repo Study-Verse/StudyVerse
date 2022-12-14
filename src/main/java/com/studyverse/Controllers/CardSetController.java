@@ -60,4 +60,17 @@ public class CardSetController {
 
 
 
+
+
+
+//    This deletes the card
+    @GetMapping("/{id}/delete")
+    public String deleteCardSet(@PathVariable long id, CardSet cardSet){
+        User user = Utils.currentUser();
+        cardSet.setUser(user);
+        CardSet card = cardSetDao.findById(id);
+        cardSetDao.delete(card);
+        return "redirect:/dashboard";
+    }
+
 }//End of class
