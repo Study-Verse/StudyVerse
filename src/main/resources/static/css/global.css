@@ -43,6 +43,16 @@ body {
 
 }
 
+.navbar-brand:hover{
+	color: lavender;
+
+}
+
+.nav-link:hover {
+	color: lavender;
+
+}
+
 #footer, .d-flex, .about-footer, .contact-footer, .ms-auto{
 	padding: 0.8rem;
 	background-color: #2d0045;
