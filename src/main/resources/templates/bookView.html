@@ -1,0 +1,46 @@
+<!DOCTYPE>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:replace="partials/partials :: head-fragment('Book View')"></div>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/books.css">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>Google Books Embedded Viewer API Example</title>
+    <script src="/js/books.js"></script>
+    <script type="text/javascript" src="https://www.google.com/books/jsapi.js"></script>
+</head>
+<body>
+<nav th:replace="partials/partials :: navbar"></nav>
+
+<div class="container">
+    <div class="text-center" id="viewerCanvas" style="width: 800px; height: 600px"></div>
+    <h1>Hello</h1>
+</div>
+
+<script type="text/javascript">
+    google.books.load();
+    console.log(google.books);
+    function initialize() {
+        let viewer = new google.books.DefaultViewer(document.getElementById('viewerCanvas'));
+        console.log("In initialize. Full url: ");
+        console.log(document.URL);
+        let index = document.URL.indexOf('?');
+        if (index > 0) {
+            bookIsbn = document.URL.substring(index, document.URL.length).split("=")[1];
+            console.log(bookIsbn);
+        }
+        // Mountain view
+        // viewer.load('ISBN:0738531367'); //for test purpose
+
+        // item.volumeInfo.industryIdentifiers[1].identifier
+        // viewer.load('ISBN:0131872486'); // more tests
+
+        viewer.load('ISBN:' + bookIsbn);
+
+    }
+    google.books.setOnLoadCallback(initialize);
+</script>
+
+
+</body>
+</html>
