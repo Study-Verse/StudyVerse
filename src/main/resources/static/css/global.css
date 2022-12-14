@@ -46,6 +46,7 @@ body {
 #footer, .d-flex, .about-footer, .contact-footer, .ms-auto{
 	padding: 0.8rem;
 	background-color: #2d0045;
+	color: white;
 }
 
 #footer {
@@ -68,10 +69,7 @@ body {
 @media screen and (max-width: 992px){
 	.about-footer, .contact-footer, .ms-auto {
 		padding: 0;
-		color: antiquewhite;
-	}
-	.nav-link {
-		visibility: visible;
+		color: white;
 	}
 }
 
