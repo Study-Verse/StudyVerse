@@ -33,4 +33,16 @@ public class ResourcesController {
         return returnString;
     }
 
+
+
+
+//     View for wikipedia
+
+    @GetMapping("/wiki")
+    public String showWiki(){
+        return "/wikipedia";
+    }
+
+
+
 }

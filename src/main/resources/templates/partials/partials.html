@@ -45,6 +45,9 @@
                 <li sec:authorize="isAuthenticated()" class="nav-item">
                     <a class="nav-link" th:href="@{books}">Books</a>
                 </li>
+                <li sec:authorize="isAuthenticated()" class="nav-item">
+                    <a class="nav-link" th:href="@{wiki}">Wikipedia</a>
+                </li>
             </ul>
         </div>
 
