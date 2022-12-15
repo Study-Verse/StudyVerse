@@ -29,9 +29,9 @@ public class CardController {
     }
 
 //  cards api call
-    @GetMapping("card-api")
-    public @ResponseBody List<Card> cardsApi() {
-        return cardSetDao.findById(1).getCardList();
+    @GetMapping("{id}/card-api")
+    public @ResponseBody List<Card> cardsApi(@PathVariable long id) {
+        return cardSetDao.findById(id).getCardList();
     }
 
     @GetMapping
@@ -60,7 +60,7 @@ public class CardController {
     }
 
 
-    //    ============ study get mapping
+//        ============ study get mapping
     @GetMapping("study-cards")
     public String studyCards() {
        return "study";
