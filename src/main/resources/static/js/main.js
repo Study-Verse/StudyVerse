@@ -36,10 +36,9 @@ $(document).ready(function(){
 
 
     $(".cardButton").click(function (){
-        console.log(`("data-id")}/study`)
-        window.location.replace(`
-        ${$(this).attr("data-id")}/study
-        `)
+        // alert("yo")
+        console.log(`/study/${$(this).attr("card-set-id")}`)
+        window.location.replace(`/study-cards/${$(this).attr("card-set-id")}`)
     });
 
 })//End of document.ready

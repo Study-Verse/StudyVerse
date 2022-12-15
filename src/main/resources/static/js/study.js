@@ -1,8 +1,10 @@
 $(function (){
 
+    let CardSetId = $("#card-set").val();
+    console.log($(CardSetId).val())
 
         function getCardList(){
-                fetch(`/${id}/card-api"`)
+                fetch(`/card-api/${CardSetId}`)
                 .then(response => response.json())
                 .then(data =>{
                     console.log(data)

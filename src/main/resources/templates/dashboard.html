@@ -32,7 +32,13 @@
            </div>
            <h1 class="card-title" th:text="${cardSet.getTitle()}"></h1>
            <h2 th:text="${cardSet.getTag()}"></h2>
-           <a th:href="@{/{id}/study(id=${cardSet.id})}"  th:cardSet-id="${cardSet.id}" class="cardButton"><button>Cards</button></a>
+
+<!--           <a th:href="@{/{id}/study(id=${cardSet.id})}"  th:cardSet-id="${cardSet.id}" class="cardButton">-->
+<!--           </a>-->
+
+               <button class="cardButton" th:card-set-id="${cardSet.id}">Study</button>
+
+
            <!--Modal-->
            <div class="card-modal display-none">
                <div class="card-modal-content">
@@ -50,8 +56,6 @@
            </div>
 <!--           End of Modal-->
        </div>
-
-
    </div>
 
     <footer th:replace="partials/partials :: footer-fragment"></footer>
