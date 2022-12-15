@@ -1,13 +1,13 @@
 $(function (){
 
         function getCardList(){
-                fetch("card-api")
+                fetch(`/${id}/card-api"`)
                 .then(response => response.json())
                 .then(data =>{
                     console.log(data)
                     data.forEach((card) =>{
                         console.log(card)
-                        $("#study-card-container").prepend(`
+                        $("#study-card-container").append(`
                             <p>${card.frontFace}</p>
                             <p>${card.backFace}</p>
                         `)
@@ -24,6 +24,7 @@ getCardList()
     //get the current card index in the list and add one to the index to get the next one
     function getNextCard(cardListArray){
     }
+
 
 
 
