@@ -35,7 +35,7 @@ public class StudyVerseUserDetails extends User implements UserDetails{
     public StudyVerseUserDetails() {
     }
 
-    public StudyVerseUserDetails(long id, String email, String username, String password) {
-        super(id, email, username, password);
+    public StudyVerseUserDetails(long id, String username, String email, String password) {
+        super(id, username, email, password);
     }
 }
