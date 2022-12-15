@@ -35,6 +35,13 @@ $(document).ready(function(){
     });
 
 
+    $(".cardButton").click(function (){
+        console.log(`("data-id")}/study`)
+        window.location.replace(`
+        ${$(this).attr("data-id")}/study
+        `)
+    });
+
 })//End of document.ready
 
 //End of Modal Functions
