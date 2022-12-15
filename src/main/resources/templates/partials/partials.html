@@ -12,10 +12,10 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
         <link rel="stylesheet" th:href="@{/css/global.css}">
         <script th:src="@{/js/jquery-3.6.1.min.js}"></script>
-        <script src="../../static/js/search.js"></script>
-
+        <script th:src="@{/js/main.js}"></script>
     </div>
     <title>Partials</title>
+
 </head>
 <body>
 
@@ -48,7 +48,7 @@
             </ul>
         </div>
 
-        <!-- Center Name Link -->
+        <!-- Left Name Link -->
         <div class=" mx-auto order-0">
             <a class="navbar-brand me-2" th:href="@{/}">StudyVERSE</a>
             <button id="navbar-toggler" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".collapse-portion">
@@ -59,41 +59,41 @@
         </div>
 
         <!-- Links on Right -->
-        <div class= "navbar-collapse search-bar collapse w-100 order-3 collapse-portion ml-auto">
+        <div class="navbar-collapse collapse w-100 order-3 collapse-portion">
             <ul class="navbar-nav ms-auto" id="searchUL">
-                    <form class="d-flex search-bar" id="site-bar-search" sec:authorize="isAuthenticated()" th:action="@{/search}" th:method="get">
-                        <input class="search-bar me-2" type="search" placeholder="Search" aria-label="Search">
-                        <a id="site-bar-search-link" role="button" class="nav-link" href="#">Search</a>
-                    </form>
-                <span class="icon">
-                    <ion-icon name="search-outline" class="searchBtn"></ion-icon>
-                    <ion-icon name="close-outline" class="closeBtn"></ion-icon>
-                </span>
+                <form class="d-flex" id="site-bar-search" th:action="@{/search}" th:method="get">
+                    <input class="search-bar me-2" type="search" placeholder="Search" aria-label="Search">
+                    <a id="site-bar-search-link" role="button" class="nav-link" href="#">Search</a>
+                </form>
                 <li sec:authorize="isAnonymous()" class="nav-item">
                     <a class="nav-link" th:href="@{/login}">Login</a>
-                </li>
-                <li sec:authorize="isAuthenticated()" class="nav-item">
-                    <form id="site-bar-logout-form" th:action="@{/logout}" th:method="post">
-                        <a id="site-bar-logout-link" role="button" class="nav-link" href="#">Logout</a>
-                    </form>
                 </li>
                 <li sec:authorize="isAnonymous()" class="nav-item">
                     <a class="nav-link" th:href="@{/register}">Signup</a>
                 </li>
+                <!--Profile-->
 
-<!--                <li sec:authorize="isAnonymous()" class="nav-item">-->
-<!--                    <a class="nav-link" th:href="@{/login}">Login</a>-->
-<!--                </li>-->
-                <!-- More links here... -->
-<!--                <li>-->
-<!--                    <form th:action="@{/logout}" th:method="post">-->
-<!--                        <button class="btn-link btn" style="margin-top: 8px">Logout</button>-->
-<!--                    </form>-->
-<!--                </li>-->
+               <li id="profile-dropdown" sec:authorize="isAuthenticated()">
+                   <div class="dropstart">
+                       <a type="button" data-bs-toggle="dropdown"
+                          aria-expanded="false">
+                           <div class="user-profile-logo">
+
+                           </div>
+                       </a>
+                       <ul class="dropdown-menu profile-dropdown-menu">
+                           <li><a>Account Settings</a></li>
+                           <li> <form id="logoutForm" th:action="@{/logout}" method="post">
+                           </form><a href="#" onclick="document.getElementById('logoutForm').submit();">Log Out</a></li>
+                       </ul>
+                   </div>
+                   </li>
+                <!--End of profile-->
+
             </ul>
-        </div><!-- END OF navbar-collapse -->
-    </div><!-- END OF container-fluid -->
-</nav><!-- END OF NAV BAR -->
+        </div>
+    </div>
+</nav>
 
 <!--Footer Fragment-->
 <footer th:fragment="footer-fragment" id="footer" class="container footer-container">
@@ -116,8 +116,6 @@
     <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script th:src="@{/js/sitebar.js}"></script>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </div>
 
 </body>
