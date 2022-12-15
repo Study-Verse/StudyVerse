@@ -1,10 +1,13 @@
 package com.studyverse.Controllers;
 
+import com.studyverse.Models.Card;
 import com.studyverse.Models.CardSet;
 import com.studyverse.Models.User;
+import com.studyverse.Repositories.CardRepository;
 import com.studyverse.Repositories.CardSetRepository;
 import com.studyverse.Repositories.UserRepository;
 import com.studyverse.Services.Utils;
+import jdk.jshell.execution.Util;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -14,15 +17,18 @@ import java.util.List;
 @Controller
 public class CardSetController {
 
+    private final CardRepository cardDao;
+
     private final CardSetRepository cardSetDao;
 
     private final UserRepository userDao;
 
-    public CardSetController(CardSetRepository cardSetDao, UserRepository userDao) {
+
+    public CardSetController(CardRepository cardDao, CardSetRepository cardSetDao, UserRepository userDao) {
+        this.cardDao = cardDao;
         this.cardSetDao = cardSetDao;
         this.userDao = userDao;
     }
-
 
     @GetMapping("/create-set")
     public String createCardSetForm(Model model){
@@ -60,6 +66,14 @@ public class CardSetController {
 
 
 
+
+//    This takes you to study but with your cards
+    @GetMapping("/{id}/study")
+    public String yourStudyCards(Model model, @PathVariable long id){
+        Card card = cardDao.findById(id);
+        User user = Utils.currentUser();
+        return "redirect:/study-cards";
+    }
 
 
 
