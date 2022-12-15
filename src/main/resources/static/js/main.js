@@ -1,5 +1,3 @@
-
-
 //function for letting the SVGs show on mouseOver
 if(window.innerWidth > 768){
     $(".card-sets").mouseenter(function (){
@@ -17,7 +15,6 @@ if(window.innerWidth < 768){
     $(".svg").removeClass("display-none");
 }
 
-
 //Modal Functions
 $(document).ready(function(){
 
@@ -28,12 +25,9 @@ $(document).ready(function(){
         $(".card-modal").addClass("display-none");
     })
 
-
-
     $(".trash-svg").click(function(event){
         window.location.replace(`${$(this).attr("data-id")}/delete`)
     });
-
 
     $(".cardButton").click(function (){
         // alert("yo")
@@ -43,4 +37,4 @@ $(document).ready(function(){
 
 })//End of document.ready
 
-//End of Modal Functions
+

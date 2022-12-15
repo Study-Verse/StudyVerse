@@ -48,7 +48,9 @@
                            <h1 class="heading">StudyVERSE</h1>
                            <h2>Edit Your Set</h2>
                            <input type="text" name="edit-title" class="input-design" th:value="${cardSet.getTitle()}">
+                           <br>
                            <input type="text" name="edit-tag" class="input-design" th:value="${cardSet.getTag()}">
+                           <br>
                            <button class="edit-set-button" type="submit">Edit Set</button>
                        </div>
                    </form>
@@ -61,6 +63,5 @@
     <footer th:replace="partials/partials :: footer-fragment"></footer>
     <script th:src="@{js/main.js}"></script>
     <div th:replace="partials/partials :: scripts"></div>
-    <script th:src="@{/js/main.js}"></script>
 </body>
 </html>
