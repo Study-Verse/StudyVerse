@@ -73,3 +73,17 @@
 	text-transform: uppercase;
 	color: #FFFFFF;
 }
+
+@media (max-width: 600px){
+	.SPContainer{
+		display: flex;
+		flex-direction: column;
+		padding: 0;
+		background-image: url("/img/dorm-studying.jpeg"),linear-gradient(0deg, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.42));
+		background-blend-mode: color;
+		flex-grow: 1;
+		object-fit: scale-down;
+		max-width: 100%;
+
+	}
+}

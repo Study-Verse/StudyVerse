@@ -114,23 +114,27 @@ body {
 /*// X-Small devices (portrait phones, less than 576px)*/
 /*// No media query for `xs` since this is the default in Bootstrap*/
 
-/*// Small devices (landscape phones, 576px and up)*!*!*/
-@media (min-width: 576px) {
-	.search-bar{
+/*// Small devices (landscape phones, 576px and down)*!*!*/
+@media (max-width: 576px) {
+	#site-bar-search{
 		position: absolute;
-		top: 0.5em;
+		top: 0;
+		margin-bottom: 5px;
+		width: 9rem;
 	}
+
 
 }
 
 /*// Medium devices (tablets, 768px and up)*!*!*/
 @media (min-width: 768px) {
-
 }
 
 /*// Large devices (desktops, 992px and up)*!*!*/
-@media (min-width: 992px) {
-
+@media (max-width: 992px) {
+	.icon{
+		display: none;
+	}
 }
 
 /*// X-Large devices (large desktops, 1200px and up)*!*!*/
