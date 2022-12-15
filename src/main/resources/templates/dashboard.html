@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml" lang="en">
 <head>
-    <div th:replace="partials/partials :: head-fragment('Splash Page')"></div>
+    <div th:replace="partials/partials :: head-fragment('Home')"></div>
     <link rel="stylesheet" href="/css/global.css">
     <link rel="stylesheet" th:href="@{/css/dashboard.css}">
 
@@ -13,7 +13,7 @@
     </div>
     <!--End of Nav Bar-->
    <div id="card-set-wrapper">
-       <div class="card-sets" th:each="cardSet: ${cardSetList}">
+       <div  class="card-sets"  th:each="cardSet: ${cardSetList}">
            <div class="svg display-none">
            <!--Edit Svg-->
            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -32,10 +32,11 @@
            </div>
            <h1 class="card-title" th:text="${cardSet.getTitle()}"></h1>
            <h2 th:text="${cardSet.getTag()}"></h2>
+           <a th:href="@{/{id}/study(id=${cardSet.id})}"  th:data-id="${cardSet.id}" class="cardButton"><button>Cards</button></a>
            <!--Modal-->
            <div class="card-modal display-none">
                <div class="card-modal-content">
-                   <span class="close">&times;</span>
+                   <span class="close">&times</span>
                    <form th:action="@{|/card-set-edit/${cardSet.getId()}|}" method="post" >
                        <div class="create-set-box">
                            <h1 class="heading">StudyVERSE</h1>
