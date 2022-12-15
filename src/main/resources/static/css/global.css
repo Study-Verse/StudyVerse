@@ -25,11 +25,12 @@ body {
 
 
 .page-wrapper {
-	background-color: #2d0045;
+	background-color: rgb(89 37 182);
 }
 
 .navbar, .container-fluid, .mx-auto, .navbar-brand, .navbar-toggler, .bi, .navbar-collapse {
-	background-color: #2d0045;
+	background-color: rgb(89 37 182);
+	cursor: pointer;
 }
 
 .navbar-brand{
@@ -53,9 +54,13 @@ body {
 
 }
 
+.icon{
+	visibility: hidden;
+}
+
 #footer, .d-flex, .about-footer, .contact-footer, .ms-auto{
 	padding: 0.8rem;
-	background-color: #2d0045;
+	background-color: rgb(89 37 182);
 	color: white;
 }
 
@@ -81,14 +86,62 @@ body {
 		padding: 0;
 		color: white;
 	}
-	.bi-search{
-		visibility: visible;
-		position: absolute;
+
+	#site-bar-search-link {
+		visibility: collapse;
 	}
 
-	.search-bar{
+	.icon{
+		display: flex;
+		position: relative;
+		visibility: visible;
+	}
 
+	.searchBtn {
+		position: relative;
+		left: 0;
+		top: 2.5px;
+		transition: 0.5s ease-in-out;
+	}
+
+	.navbar-toggler{
+		position: absolute;
+		right: 0;
 	}
 
 }
+
+/*// X-Small devices (portrait phones, less than 576px)*/
+/*// No media query for `xs` since this is the default in Bootstrap*/
+
+/*// Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
+
+}
+
+/*// Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+
+}
+
+/*// Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+
+}
+
+/*// X-Large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+
+}
+
+/*// XX-Large devices (larger desktops, 1400px and up)*/
+@media (min-width: 1400px) {
+	.search-bar-btn{
+		display: flex;
+	}
+
+}
+
+
+
 
