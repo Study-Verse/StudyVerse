@@ -1,0 +1,6 @@
+#study-card-container {
+    width: 210px;
+    height: 140px;
+    position: relative;
+    perspective: 1000px;
+}
