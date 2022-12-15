@@ -11,6 +11,8 @@
     <div class="page-wrapper splash-page-wrapper">
         <nav th:replace="partials/partials :: navbar"></nav>
     </div>
+<!--    <h5 th:text="${#authentication.principal.getUsername}"></h5>-->
+    <h3>Welcome: <span th:text="${#authentication.principal.username}"></span></h3>
     <!--End of Nav Bar-->
    <div id="card-set-wrapper">
        <div  class="card-sets"  th:each="cardSet: ${cardSetList}">
