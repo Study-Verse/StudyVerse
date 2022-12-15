@@ -2,7 +2,8 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <div th:replace="partials/partials :: head-fragment('Study')"></div>
-    <link rel="stylesheet" href="/css/global.css">
+    <link th:rel="stylesheet" th:href="@{/css/global.css}">
+    <link th:rel="stylesheet" th:href="@{/static/css/study.css}">
     <title>Study</title>
 </head>
 <body>
@@ -10,20 +11,24 @@
     <nav th:replace="partials/partials :: navbar"></nav>
 </div>
 <h2>cards go here</h2>
+
+<!--<div  hidden th:object="${card-set}" >-->
+<!--<div id="hidden-id" th:text="*{id}"></div>-->
+<!--</div>-->
+<input hidden id="card-set" th:value="${cardSet.id}">
+
 <!--container to populate cards individually -->
-<div id="study-card-container" class="container">
-    <button>Previous</button>
-    <button>Next</button>
+<div id="study-card-container">
+
 </div>
 
-<br>
 
 
 <footer th:replace="partials/partials :: footer-fragment"></footer>
 <div th:replace="partials/partials :: scripts"></div>
-<script th:src="@{js/study.js}"></script>
-<script th:src="@{js/jquery-3.6.1.min.js}"></script>
-<script th:src="@{js/main.js}"></script>
+<script th:src="@{/js/study.js}"></script>
+<script th:src="@{/js/jquery-3.6.1.min.js}"></script>
+<script th:src="@{/js/main.js}"></script>
 <script th:src="@{/js/sitebar.js}"></script>
 </body>
 </html>
