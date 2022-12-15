@@ -39,6 +39,12 @@ public class UserController {
     }
 
 
+//    Takes you to the profile
+
+    @GetMapping("/profile")
+    public String profile(){
+        return "/profile";
+    }
 
 
 } // End of UserController

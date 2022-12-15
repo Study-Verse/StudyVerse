@@ -38,6 +38,11 @@ public class Card {
         this.frontFace = frontFace;
         this.backFace = backFace;
     }
+
+    public Card(long id) {
+        this.id = id;
+    }
+
     //End of Constructors
 
 
@@ -72,5 +77,7 @@ public class Card {
     public void setUser(User user) {
         this.user = user;
     }
+
+
     //End of Setters and Getters
 }//End of Class
