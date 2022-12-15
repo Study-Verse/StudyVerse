@@ -57,21 +57,18 @@
                 </span>
             </button>
         </div>
-        <div class="search-bar-btn">
-            <form class="d-flex" id="site-bar-search" sec:authorize="isAuthenticated()" th:action="@{/search}" th:method="get">
-                <input class="searchBar me-2" type="search" placeholder="Search" aria-label="Search">
-                <a id="site-bar-search-link" role="button" class="nav-link" href="#">Search</a>
-            </form>
-        </div>
-        <!-- Links on Right -->
-        <div class= "searchBar navbar-collapse collapse w-100 order-3 collapse-portion ml-auto">
-            <ul class="navbar-nav ms-auto" id="searchUL">
 
+        <!-- Links on Right -->
+        <div class= "navbar-collapse collapse w-100 order-3 collapse-portion ml-auto">
+            <ul class="navbar-nav ms-auto" id="searchUL">
+                    <form class="d-flex search-bar" id="site-bar-search" sec:authorize="isAuthenticated()" th:action="@{/search}" th:method="get">
+                        <input class="search-bar me-2" type="search" placeholder="Search" aria-label="Search">
+                        <a id="site-bar-search-link" role="button" class="nav-link" href="#">Search</a>
+                    </form>
                 <span class="icon">
                     <ion-icon name="search-outline" class="searchBtn"></ion-icon>
                     <ion-icon name="close-outline" class="closeBtn"></ion-icon>
                 </span>
-
                 <li sec:authorize="isAnonymous()" class="nav-item">
                     <a class="nav-link" th:href="@{/login}">Login</a>
                 </li>

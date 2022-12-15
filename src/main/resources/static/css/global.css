@@ -55,7 +55,7 @@ body {
 }
 
 .icon{
-	visibility: hidden;
+	display: none;
 }
 
 #footer, .d-flex, .about-footer, .contact-footer, .ms-auto{
@@ -114,31 +114,35 @@ body {
 /*// X-Small devices (portrait phones, less than 576px)*/
 /*// No media query for `xs` since this is the default in Bootstrap*/
 
-/*// Small devices (landscape phones, 576px and up)*/
+/*// Small devices (landscape phones, 576px and up)*!*!*/
 @media (min-width: 576px) {
+	.search-bar{
+		position: absolute;
+		top: 0.5em;
+	}
 
 }
 
-/*// Medium devices (tablets, 768px and up)*/
+/*// Medium devices (tablets, 768px and up)*!*!*/
 @media (min-width: 768px) {
 
 }
 
-/*// Large devices (desktops, 992px and up)*/
+/*// Large devices (desktops, 992px and up)*!*!*/
 @media (min-width: 992px) {
 
 }
 
-/*// X-Large devices (large desktops, 1200px and up)*/
+/*// X-Large devices (large desktops, 1200px and up)*!*!*/
 @media (min-width: 1200px) {
 
 }
 
-/*// XX-Large devices (larger desktops, 1400px and up)*/
+/*// XX-Large devices (larger desktops, 1400px and up)*!*!*/
 @media (min-width: 1400px) {
-	.search-bar-btn{
-		display: flex;
-	}
+	/*.search-bar-btn{*/
+	/*	display: flex;*/
+	/*}*/
 
 }
 
