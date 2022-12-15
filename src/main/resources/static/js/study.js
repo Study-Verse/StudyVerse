@@ -1,7 +1,10 @@
 $(function (){
 
+    let CardSetId = $("#card-set").val();
+    console.log($(CardSetId).val())
+
         function getCardList(){
-                fetch(`/${id}/card-api"`)
+                fetch(`/card-api/${CardSetId}`)
                 .then(response => response.json())
                 .then(data =>{
                     console.log(data)
@@ -13,12 +16,13 @@ $(function (){
                         `)
                     })// end of for each
                 })
-}
-getCardList()
+}// end of getCardList function
+    getCardList()
 
 
     //get the first card in the array of objects from json
-    function getFirstCard(){
+    function getFirstCard(array){
+        return array[0]
     }
 
     //get the current card index in the list and add one to the index to get the next one

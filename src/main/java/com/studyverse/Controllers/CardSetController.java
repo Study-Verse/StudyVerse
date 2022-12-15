@@ -55,8 +55,7 @@ public class CardSetController {
 
 
     @PostMapping("/card-set-edit/{cardId}")
-    public String submitCardSetEdit(@RequestParam(name="edit-title") String title,
-                                    @RequestParam(name="edit-tag") String tag, @PathVariable long cardId){
+    public String submitCardSetEdit(@RequestParam(name="edit-title") String title, @RequestParam(name="edit-tag") String tag, @PathVariable long cardId){
         CardSet editCard = cardSetDao.findById(cardId);
         editCard.setTitle(title);
         editCard.setTag(tag);
@@ -65,15 +64,13 @@ public class CardSetController {
     }
 
 
-
-
 //    This takes you to study but with your cards
-    @GetMapping("/{id}/study")
-    public String yourStudyCards(Model model, @PathVariable long id){
-        Card card = cardDao.findById(id);
-        User user = Utils.currentUser();
-        return "redirect:/study-cards";
-    }
+//    @PostMapping("/dashboard/{set-id}")
+//    public String yourStudyCards(@PathVariable long id,Model model){
+//        CardSet set = cardSetDao.findById(id);
+//        model.addAttribute(set);
+//        return "redirect:/study/{set-id}";
+//    }
 
 
 
@@ -86,5 +83,4 @@ public class CardSetController {
         cardSetDao.delete(card);
         return "redirect:/dashboard";
     }
-
 }//End of class
