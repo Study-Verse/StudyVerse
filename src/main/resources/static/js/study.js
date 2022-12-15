@@ -2,7 +2,7 @@ $(function (){
 
     function getCardList(){
         getFirstCard()
-                fetch("card-api")
+                fetch(`${id}/card-api`)
                 .then(response => response.json())
                 .then(data =>{
                     getFirstCard(data)
