@@ -14,7 +14,7 @@ public class CardSet {
     private long id;
     @Column(nullable = false,length = 80)
     private String tag;
-    @Column(nullable = false, length = 100)
+    @Column(nullable = false, length = 30)
     private String title;
     @ManyToOne
     @JsonManagedReference
