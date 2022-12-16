@@ -22,8 +22,6 @@
 .SPContainer, .column, .container-pitch {
 	justify-content: center;
 	align-items: center;
-
-
 }
 
 .page-wrapper{
@@ -82,6 +80,10 @@
 
 .omit{
 	text-transform: none;
+}
+
+.content-title{
+	color: #F2C75B;
 }
 
 @media (max-width: 600px){
