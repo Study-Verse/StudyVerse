@@ -1,10 +1,9 @@
 $(function (){
 
-    let CardSetId = $("#card-set").val();
-    console.log($(CardSetId).val())
-
+    // getting the ID from the window #no need for hidden div
+    let cardSetId = window.location.pathname.split("/")[2];
         function getCardList(){
-                fetch(`/card-api/${CardSetId}`)
+                fetch(`/card-api/${cardSetId}`)
                 .then(response => response.json())
                 .then(data =>{
                     console.log(data)

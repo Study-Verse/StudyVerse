@@ -29,9 +29,8 @@ $(document).ready(function(){
         window.location.replace(`${$(this).attr("data-id")}/delete`)
     });
 
+    // on dashboard view this function will redirect the url to the url with the card set id
     $(".cardButton").click(function (){
-        // alert("yo")
-        console.log(`/study/${$(this).attr("card-set-id")}`)
         window.location.replace(`/study-cards/${$(this).attr("card-set-id")}`)
     });
 
