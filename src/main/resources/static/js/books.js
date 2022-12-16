@@ -150,7 +150,7 @@ $(document).ready(function() {
             bookIsbn2 = item2.volumeInfo.industryIdentifiers[1].identifier
             bookImg2 = (item2.volumeInfo.imageLinks) ? item2.volumeInfo.imageLinks.thumbnail : placeHldr ;
 
-            item3 = response.items[i+1];
+            item3 = response.items[i+2];
             title3 = item3.volumeInfo.title;
             author3 = item3.volumeInfo.authors;
             publisher3 = item3.volumeInfo.publisher;
@@ -159,11 +159,11 @@ $(document).ready(function() {
             bookImg3 = (item3.volumeInfo.imageLinks) ? item3.volumeInfo.imageLinks.thumbnail : placeHldr ;
 
             // in production code, item.text should have the HTML entities escaped.
-            containerBook.innerHTML += '<div class="row mt-4">' +
+            containerBook.innerHTML +=
                 formatOutput2(bookImg1, title1, author1, publisher1, bookLink1, bookIsbn) +
                 formatOutput2(bookImg2, title2, author2, publisher2, bookLink2, bookIsbn2) +
                 formatOutput2(bookImg3, title3, author3, publisher3, bookLink3, bookIsbn3)
-                '</div>';
+               ;
 
         }
     }
@@ -173,26 +173,18 @@ $(document).ready(function() {
 
         let viewUrl = 'bookView/'+bookIsbn; //constructing link for book viewer
         //This creates the cards
-        let htmlCard = `<div class="col-6">
-       <div class="card" style="">
-         <div class="row no-gutters">
-           <div class="col-md-6">
-             <img src="${bookImg}" class="card-img" alt="...">
+        let htmlCard = `
+           <div>
+             <img src="${bookImg}" alt="Book Image">
            </div>
-           <div class="col-md-6">
-             <div class="card-body">
+           <div>
                <h5 class="card-title">${title}</h5>
                <p class="card-text">Author: ${author}</p>
                <p class="card-text">Publisher: ${publisher}</p>
                <a target="_blank" href="${viewUrl}" class="btn btn-secondary">Read Book</a>
-             </div>
-           </div>
-         </div>
-       </div>
-     </div>`
+           </div>`
         return htmlCard;
     }
-
 
     function getRandomBooks(){
         $.ajax({
@@ -204,9 +196,6 @@ $(document).ready(function() {
             }
         })
     }
-
     getRandomBooks();
-
-
 
 });
