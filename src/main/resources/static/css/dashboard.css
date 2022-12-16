@@ -2,6 +2,10 @@ body{
     background-color: ghostwhite;
 }
 
+#containerBook{
+    display: flex;
+    flex-wrap: wrap;
+}
 #create-form{
     text-align: center;
 }
