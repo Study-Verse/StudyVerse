@@ -11,9 +11,28 @@
     <div class="page-wrapper splash-page-wrapper">
         <nav th:replace="partials/partials :: navbar"></nav>
     </div>
-<!--    <h5 th:text="${#authentication.principal.getUsername}"></h5>-->
-    <h3>Welcome: <span th:text="${#authentication.principal.username}"></span></h3>
     <!--End of Nav Bar-->
+    <!--    <h5 th:text="${#authentication.principal.getUsername}"></h5>-->
+    <div id="welcome-create-header">
+    <h3>Welcome: <span th:text="${#authentication.principal.username}"></span></h3>
+   <button id="create-set-button">Create New Set</button>
+        <div class="card-modal display-none">
+            <div class="card-modal-content">
+                <span class="close">&times</span>
+                <form method="post" th:action="@{/create-set}" id="create-form">
+                    <div class="create-set-box">
+                        <h1 class="heading">StudyVERSE</h1>
+                        <h2>Create a Set</h2>
+                        <input type="text" name="set-title" class="input-design" placeholder="Set Title">
+                        <br>
+                        <input type="text" name="set-tag" class="input-design" placeholder="Set Tags">
+                        <br>
+                        <button class="create-set-button" type="submit">Create Set</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
    <div id="card-set-wrapper">
        <div  class="card-sets"  th:each="cardSet: ${cardSetList}">
            <div class="svg display-none">
@@ -34,13 +53,7 @@
            </div>
            <h1 class="card-title" th:text="${cardSet.getTitle()}"></h1>
            <h2 th:text="${cardSet.getTag()}"></h2>
-
-<!--           <a th:href="@{/{id}/study(id=${cardSet.id})}"  th:cardSet-id="${cardSet.id}" class="cardButton">-->
-<!--           </a>-->
-
-               <button class="cardButton" th:card-set-id="${cardSet.id}">Study</button>
-
-
+           <button class="cardButton" th:card-set-id="${cardSet.id}">Study</button>
            <!--Modal-->
            <div class="card-modal display-none">
                <div class="card-modal-content">
@@ -58,7 +71,7 @@
                    </form>
                </div>
            </div>
-<!--           End of Modal-->
+            <!--End of Modal-->
        </div>
    </div>
 
