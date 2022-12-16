@@ -37,7 +37,7 @@ $(document).ready(function(){
 
     //Create Set Modal
     $("#create-set-button").on("click", function(){
-        $(this).siblings(".card-modal").removeClass("display-none");
+        $(this).parent().siblings(".card-modal").removeClass("display-none");
     })//End of modal on click function
     $(".close").on("click", function(){
         $(".card-modal").addClass("display-none");

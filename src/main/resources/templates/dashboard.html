@@ -12,27 +12,28 @@
         <nav th:replace="partials/partials :: navbar"></nav>
     </div>
     <!--End of Nav Bar-->
-    <!--    <h5 th:text="${#authentication.principal.getUsername}"></h5>-->
     <div id="welcome-create-header">
     <h3>Welcome: <span th:text="${#authentication.principal.username}"></span></h3>
-   <button id="create-set-button">Create New Set</button>
-        <div class="card-modal display-none">
-            <div class="card-modal-content">
-                <span class="close">&times</span>
-                <form method="post" th:action="@{/create-set}" id="create-form">
-                    <div class="create-set-box">
-                        <h1 class="heading">StudyVERSE</h1>
-                        <h2>Create a Set</h2>
-                        <input type="text" name="set-title" class="input-design" placeholder="Set Title">
-                        <br>
-                        <input type="text" name="set-tag" class="input-design" placeholder="Set Tags">
-                        <br>
-                        <button class="create-set-button" type="submit">Create Set</button>
-                    </div>
-                </form>
-            </div>
+    <button id="create-set-button">Create New Set</button>
+    </div>
+
+    <div class="card-modal display-none">
+        <div class="card-modal-content">
+            <span class="close">&times</span>
+            <form method="post" th:action="@{/create-set}" id="create-form">
+                <div class="create-set-box">
+                    <h1 class="heading">StudyVERSE</h1>
+                    <h2>Create a Set</h2>
+                    <input type="text" name="set-title" class="input-design" placeholder="Set Title">
+                    <br>
+                    <input type="text" name="set-tag" class="input-design" placeholder="Set Tags">
+                    <br>
+                    <button class="create-set-button" type="submit">Create Set</button>
+                </div>
+            </form>
         </div>
     </div>
+
    <div id="card-set-wrapper">
        <div  class="card-sets"  th:each="cardSet: ${cardSetList}">
            <div class="svg display-none">
@@ -75,8 +76,15 @@
        </div>
    </div>
 
+    <div id="containerBook">
+
+    </div>
+
+
+
     <footer th:replace="partials/partials :: footer-fragment"></footer>
     <script th:src="@{js/main.js}"></script>
+    <script th:src="@{js/books.js}"></script>
     <div th:replace="partials/partials :: scripts"></div>
 </body>
 </html>
