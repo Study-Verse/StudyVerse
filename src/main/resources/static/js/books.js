@@ -57,7 +57,6 @@ $(document).ready(function() {
             author1 = item.volumeInfo.authors;
             publisher1 = item.volumeInfo.publisher;
             bookLink1 = item.volumeInfo.previewLink;
-            console.log("changes on line 60")
             bookIsbn = item.volumeInfo.industryIdentifiers[1].identifier
             bookImg1 = (item.volumeInfo.imageLinks) ? item.volumeInfo.imageLinks.thumbnail : placeHldr ;
 
@@ -70,7 +69,7 @@ $(document).ready(function() {
             bookImg2 = (item2.volumeInfo.imageLinks) ? item2.volumeInfo.imageLinks.thumbnail : placeHldr ;
 
             // in production code, item.text should have the HTML entities escaped.
-            outputList.innerHTML += '<div class="row mt-4">' +
+                outputList.innerHTML += '<div class="row mt-4">' +
                 formatOutput(bookImg1, title1, author1, publisher1, bookLink1, bookIsbn) +
                 formatOutput(bookImg2, title2, author2, publisher2, bookLink2, bookIsbn2) +
                 '</div>';
@@ -111,6 +110,64 @@ $(document).ready(function() {
      </div>`
         return htmlCard;
     }
+
+
+
+    // Output for books so we can get three random books
+
+
+
+
+    let containerBook = document.getElementById("containerBook")
+
+    let randomBook = $(".card-title")[Math.floor(Math.random()* $(".card-title").length)].innerHTML;
+    console.log(randomBook);
+
+
+    function getRandomBooks(){
+        $.ajax({
+            url: bookUrl + randomBook,
+            dataType: "json",
+            success: function (randomResponse) {
+                console.log(randomResponse)
+                $("#containerBook").append(
+                    formatOutput(randomResponse)
+                );
+            }
+        })
+    }
+
+    getRandomBooks();
+
+
+    function displayResults2(response) {
+        for (let i = 0; i < response.items.length; i+=2) {
+            item = response.items[i];
+            title1 = item.volumeInfo.title;
+            author1 = item.volumeInfo.authors;
+            publisher1 = item.volumeInfo.publisher;
+            bookLink1 = item.volumeInfo.previewLink;
+            bookIsbn = item.volumeInfo.industryIdentifiers[1].identifier
+            bookImg1 = (item.volumeInfo.imageLinks) ? item.volumeInfo.imageLinks.thumbnail : placeHldr ;
+
+            item2 = response.items[i+1];
+            title2 = item2.volumeInfo.title;
+            author2 = item2.volumeInfo.authors;
+            publisher2 = item2.volumeInfo.publisher;
+            bookLink2 = item2.volumeInfo.previewLink;
+            bookIsbn2 = item2.volumeInfo.industryIdentifiers[1].identifier
+            bookImg2 = (item2.volumeInfo.imageLinks) ? item2.volumeInfo.imageLinks.thumbnail : placeHldr ;
+
+            // in production code, item.text should have the HTML entities escaped.
+            containerBook.innerHTML += '<div class="row mt-4">' +
+                formatOutput(bookImg1, title1, author1, publisher1, bookLink1, bookIsbn) +
+                formatOutput(bookImg2, title2, author2, publisher2, bookLink2, bookIsbn2) +
+                '</div>';
+
+        }
+    }
+
+
 
 
 
