@@ -150,7 +150,7 @@ $(document).ready(function() {
             bookIsbn2 = item2.volumeInfo.industryIdentifiers[1].identifier
             bookImg2 = (item2.volumeInfo.imageLinks) ? item2.volumeInfo.imageLinks.thumbnail : placeHldr ;
 
-            item3 = response.items[i+1];
+            item3 = response.items[i+2];
             title3 = item3.volumeInfo.title;
             author3 = item3.volumeInfo.authors;
             publisher3 = item3.volumeInfo.publisher;
