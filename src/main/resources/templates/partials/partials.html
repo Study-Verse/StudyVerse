@@ -30,10 +30,10 @@
                 <li class="nav-item">
                     <a th:href="@{dashboard}" class="nav-link" >Home</a>
                 </li>
-                <li class="nav-item">
+                <li sec:authorize="isAuthenticated()" class="nav-item">
                     <a th:href="@{/create-set}" class="nav-link">Create</a>
                 </li>
-                <li class="nav-item">
+                <li sec:authorize="isAuthenticated()" class="nav-item">
                     <a class="nav-link" th:href="@{/study-cards}">Study</a>
                 </li>
                 <li class="nav-item">

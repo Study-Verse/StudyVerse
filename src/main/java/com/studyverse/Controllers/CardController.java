@@ -66,6 +66,7 @@ public class CardController {
     public String studyCards(@PathVariable long id,Model model) {
        model.addAttribute("cardSet",cardSetDao.findById(id));
         return "/study";
+
     }
 
 
