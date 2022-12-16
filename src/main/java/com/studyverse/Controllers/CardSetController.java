@@ -16,33 +16,55 @@ import java.util.List;
 
 @Controller
 public class CardSetController {
-
+    //Repositories
     private final CardRepository cardDao;
-
     private final CardSetRepository cardSetDao;
-
     private final UserRepository userDao;
+    //End of Repositories
 
-
+    //Constructor
     public CardSetController(CardRepository cardDao, CardSetRepository cardSetDao, UserRepository userDao) {
         this.cardDao = cardDao;
         this.cardSetDao = cardSetDao;
         this.userDao = userDao;
     }
+    //End of Constructor
 
-    @GetMapping("/create-set")
-    public String createCardSetForm(Model model){
-        model.addAttribute("newCardSet", new CardSet());
-        return "/cardset-create";
-    }
-
+    //CREATE SET
     @PostMapping("/create-set")
-    public String createCardSet(@ModelAttribute CardSet cardSet){
+    public String createCardSet(@RequestParam(name="set-title") String title,
+                                @RequestParam(name="set-tag") String tag){
         User user = Utils.currentUser();
+        CardSet cardSet = new CardSet();
+        cardSet.setTitle(title);
+        cardSet.setTag(tag);
         cardSet.setUser(user);
         cardSetDao.save(cardSet);
         return "redirect:/card-create";
     }
+    //END OF CREATE SET
+
+    //EDIT SET
+    @PostMapping("/card-set-edit/{cardId}")
+    public String submitCardSetEdit(@RequestParam(name="edit-title") String title, @RequestParam(name="edit-tag") String tag, @PathVariable long cardId){
+        CardSet editCard = cardSetDao.findById(cardId);
+        editCard.setTitle(title);
+        editCard.setTag(tag);
+        cardSetDao.save(editCard);
+        return "redirect:/dashboard";
+    }
+    //END OF EDIT SET
+
+    //DELETE SET
+    @GetMapping("/{id}/delete")
+    public String deleteCardSet(@PathVariable long id, CardSet cardSet){
+        User user = Utils.currentUser();
+        cardSet.setUser(user);
+        CardSet card = cardSetDao.findById(id);
+        cardSetDao.delete(card);
+        return "redirect:/dashboard";
+    }
+    //END OF DELETE SET
 
     //    ============ dashboard get mapping
     @GetMapping("/dashboard")
@@ -53,17 +75,6 @@ public class CardSetController {
         return "/dashboard";
     }
 
-
-    @PostMapping("/card-set-edit/{cardId}")
-    public String submitCardSetEdit(@RequestParam(name="edit-title") String title, @RequestParam(name="edit-tag") String tag, @PathVariable long cardId){
-        CardSet editCard = cardSetDao.findById(cardId);
-        editCard.setTitle(title);
-        editCard.setTag(tag);
-        cardSetDao.save(editCard);
-        return "redirect:/dashboard";
-    }
-
-
 //    This takes you to study but with your cards
 //    @PostMapping("/dashboard/{set-id}")
 //    public String yourStudyCards(@PathVariable long id,Model model){
@@ -72,15 +83,4 @@ public class CardSetController {
 //        return "redirect:/study/{set-id}";
 //    }
 
-
-
-//    This deletes the card
-    @GetMapping("/{id}/delete")
-    public String deleteCardSet(@PathVariable long id, CardSet cardSet){
-        User user = Utils.currentUser();
-        cardSet.setUser(user);
-        CardSet card = cardSetDao.findById(id);
-        cardSetDao.delete(card);
-        return "redirect:/dashboard";
-    }
 }//End of class
