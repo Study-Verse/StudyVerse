@@ -18,16 +18,21 @@ if(window.innerWidth < 768){
 //Modal Functions
 $(document).ready(function(){
     //Edit Modal
-    $(".edit-svg").on("click", function(){
-        $(this).parent().siblings(".card-modal").removeClass("display-none");
-    })//End of modal on click function
-    $(".close").on("click", function(){
-        $(".card-modal").addClass("display-none");
-    })
     //End of Edit Modal
+
+
+
     $(".trash-svg").click(function(event){
         window.location.replace(`${$(this).attr("data-id")}/delete`)
     });
+    $(".edit-svg").on("click", function(){
+        $(this).parent().siblings(".card-modal").removeClass("display-none");
+    });
+    //End of modal on click function
+    $(".close").on("click", function(){
+        $(".card-modal").addClass("display-none");
+    });
+
 
     // on dashboard view this function will redirect the url to the url with the card set id
     $(".card-sets").click(function (){

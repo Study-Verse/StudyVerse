@@ -37,7 +37,7 @@
         <div id="acc-wrapper">
             <div class="accordion row">
 
-           <div  class=" column-4"  th:each="cardSet: ${cardSetList}">
+           <div  class="card-sets column-4"  th:each="cardSet: ${cardSetList}">
                <div class="svg display-none">
                    <!--Edit Svg-->
                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -54,10 +54,8 @@
                    </svg>
                    <!--End of Trash Svg-->
                </div>
-               <div class="card-sets" th:card-set-id="${cardSet.id}">
-                   <h1 class="card-title" th:text="${cardSet.getTitle()}"></h1>
-                   <h2 th:text="${cardSet.getTag()}"></h2>
-               </div>
+               <h1 class="card-title" th:text="${cardSet.getTitle()}"></h1>
+               <h2 th:text="${cardSet.getTag()}"></h2>
                <!--Modal-->
                <div class="card-modal display-none">
                    <div class="card-modal-content">
