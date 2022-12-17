@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml" lang="en">
 <head>
     <div th:replace="partials/partials :: head-fragment('Home')"></div>
@@ -54,8 +55,7 @@
                     <!--End of Trash Svg-->
                 </div>
                 <h1 class="card-title" th:text="${cardSet.getTitle()}"></h1>
-                <h2 th:text="${cardSet.getTag()}"></h2>
-                <button class="cardButton" th:card-set-id="${cardSet.id}">Study</button>
+                <h2 class="card-tag" th:text="${cardSet.getTag()}"></h2>
                 <!--Modal-->
                 <div class="card-modal display-none">
                     <div class="card-modal-content">

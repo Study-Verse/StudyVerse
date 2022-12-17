@@ -50,7 +50,7 @@ body{
     position: relative;
     overflow-wrap: break-word;
     text-align: center;
-    margin: 0 4px;
+    margin: 10px 4px;
 }
 
 .svg {
