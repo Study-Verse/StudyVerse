@@ -36,8 +36,7 @@
         <!--This is the beginning-->
         <div id="acc-wrapper">
             <div class="accordion row">
-
-           <div  class="card-sets column-4"  th:each="cardSet: ${cardSetList}">
+           <div  class="card-sets column-4"  th:each="cardSet: ${cardSetList}" th:card-set-id="${cardSet.id}">
                <div class="svg display-none">
                    <!--Edit Svg-->
                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
