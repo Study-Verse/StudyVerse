@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
     // let item, title, author, publisher, bookLink, bookImg;
     let outputList = document.getElementById("list-output");
     let bookUrl = "https://www.googleapis.com/books/v1/volumes?q=";
@@ -125,7 +126,7 @@ $(document).ready(function() {
 
     let containerBook = document.getElementById("containerBook")
 
-    let randomBook = $(".card-title")[Math.floor(Math.random()* $(".card-title").length)].innerHTML;
+    let randomBook = $(".card-tag")[Math.floor(Math.random()* $(".card-tag").length)].innerHTML;
     console.log(randomBook);
 
 
@@ -197,5 +198,6 @@ $(document).ready(function() {
         })
     }
     getRandomBooks();
+
 
 });
