@@ -125,7 +125,7 @@ $(document).ready(function() {
 
     let containerBook = document.getElementById("containerBook")
 
-    let randomBook = $(".card-title")[Math.floor(Math.random()* $(".card-title").length)].innerHTML;
+    let randomBook = $(".card-tag")[Math.floor(Math.random()* $(".card-tag").length)].innerHTML;
     console.log(randomBook);
 
 

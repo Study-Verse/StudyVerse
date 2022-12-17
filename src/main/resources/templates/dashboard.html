@@ -53,7 +53,7 @@
            <!--End of Trash Svg-->
            </div>
            <h1 class="card-title" th:text="${cardSet.getTitle()}"></h1>
-           <h2 th:text="${cardSet.getTag()}"></h2>
+           <h2 hidden class="card-tag" th:text="${cardSet.getTag()}"></h2>
            <button class="cardButton" th:card-set-id="${cardSet.id}">Study</button>
            <!--Modal-->
            <div class="card-modal display-none">
