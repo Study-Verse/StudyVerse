@@ -7,85 +7,85 @@
 
 </head>
 <body>
-    <!--Nav Bar-->
-    <div class="page-wrapper splash-page-wrapper">
-        <nav th:replace="partials/partials :: navbar"></nav>
-    </div>
-    <!--End of Nav Bar-->
-    <div id="welcome-create-header">
+<!--Nav Bar-->
+<div class="page-wrapper splash-page-wrapper">
+    <nav th:replace="partials/partials :: navbar"></nav>
+</div>
+<!--End of Nav Bar-->
+<div id="welcome-create-header">
     <h3>Welcome: <span th:text="${#authentication.principal.username}"></span></h3>
     <button id="create-set-button">Create New Set</button>
-    </div>
-    <div class="card-modal display-none">
-        <div class="card-modal-content">
-            <span class="close">&times</span>
-            <form method="post" th:action="@{/create-set}" id="create-form">
-                <div class="create-set-box">
-                    <h1 class="heading">StudyVERSE</h1>
-                    <h2>Create a Set</h2>
-                    <input type="text" name="set-title" class="input-design" placeholder="Set Title">
-                    <br>
-                    <input type="text" name="set-tag" class="input-design" placeholder="Set Tags">
-                    <br>
-                    <button class="create-set-button" type="submit">Create Set</button>
-                </div>
-            </form>
-        </div>
-    </div>
-    <div class="cards-book-wrapper">
-        <!--This is the beginning-->
-        <div id="acc-wrapper">
-            <div class="accordion row">
-           <div  class="card-sets column-4"  th:each="cardSet: ${cardSetList}" th:card-set-id="${cardSet.id}">
-               <div class="svg display-none">
-                   <!--Edit Svg-->
-                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                         class="bi bi-pencil-square edit-svg" viewBox="0 0 16 16">
-                       <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-                       <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
-                   </svg>
-                   <!--End of Edit Svg-->
-                   <!--Trash Svg-->
-                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" th:data-id="${cardSet.id}"
-                        class="bi bi-trash trash-svg" viewBox="0 0 16 16">
-                       <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
-                       <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
-                   </svg>
-                   <!--End of Trash Svg-->
-               </div>
-               <h1 class="card-title" th:text="${cardSet.getTitle()}"></h1>
-               <h2 th:text="${cardSet.getTag()}"></h2>
-               <!--Modal-->
-               <div class="card-modal display-none">
-                   <div class="card-modal-content">
-                       <span class="close">&times</span>
-                       <form th:action="@{|/card-set-edit/${cardSet.getId()}|}" method="post" >
-                           <div class="create-set-box">
-                               <h1 class="heading">StudyVERSE</h1>
-                               <h2>Edit Your Set</h2>
-                               <input type="text" name="edit-title" class="input-design" th:value="${cardSet.getTitle()}">
-                               <br>
-                               <input type="text" name="edit-tag" class="input-design" th:value="${cardSet.getTag()}">
-                               <br>
-                               <button class="edit-set-button" type="submit">Edit Set</button>
-                           </div>
-                       </form>
-                   </div>
-               </div>
-                <!--End of Modal-->
-           </div>
-       </div>
+</div>
+<div class="card-modal display-none">
+    <div class="card-modal-content">
+        <span class="close">&times</span>
+        <form method="post" th:action="@{/create-set}" id="create-form">
+            <div class="create-set-box">
+                <h1 class="heading">StudyVERSE</h1>
+                <h2>Create a Set</h2>
+                <input type="text" name="set-title" class="input-design" placeholder="Set Title">
+                <br>
+                <input type="text" name="set-tag" class="input-design" placeholder="Set Tags">
+                <br>
+                <button class="create-set-button" type="submit">Create Set</button>
             </div>
-        <!--This is the end-->
-        <div id="containerBook">
+        </form>
+    </div>
+</div>
+<div class="cards-book-wrapper">
+    <!--This is the beginning-->
+    <div id="acc-wrapper">
+        <div class="accordion row">
+            <div  class="card-sets column-4"  th:each="cardSet: ${cardSetList}">
+                <div class="svg display-none">
+                    <!--Edit Svg-->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                         class="bi bi-pencil-square edit-svg" viewBox="0 0 16 16">
+                        <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                        <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                    </svg>
+                    <!--End of Edit Svg-->
+                    <!--Trash Svg-->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" th:data-id="${cardSet.id}"
+                         class="bi bi-trash trash-svg" viewBox="0 0 16 16">
+                        <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                        <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                    </svg>
+                    <!--End of Trash Svg-->
+                </div>
+                <h1 class="card-title" th:text="${cardSet.getTitle()}"></h1>
+                <h2 class="card-tag" th:text="${cardSet.getTag()}"></h2>
+                <!--Modal-->
+                <div class="card-modal display-none">
+                    <div class="card-modal-content">
+                        <span class="close">&times</span>
+                        <form th:action="@{|/card-set-edit/${cardSet.getId()}|}" method="post" >
+                            <div class="create-set-box">
+                                <h1 class="heading">StudyVERSE</h1>
+                                <h2>Edit Your Set</h2>
+                                <input type="text" name="edit-title" class="input-design" th:value="${cardSet.getTitle()}">
+                                <br>
+                                <input type="text" name="edit-tag" class="input-design" th:value="${cardSet.getTag()}">
+                                <br>
+                                <button class="edit-set-button" type="submit">Edit Set</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!--End of Modal-->
+            </div>
         </div>
-
+    </div>
+    <!--This is the end-->
+    <div id="containerBook">
     </div>
 
+</div>
 
-    <footer th:replace="partials/partials :: footer-fragment"></footer>
-    <script th:src="@{js/main.js}"></script>
-    <script th:src="@{js/books.js}"></script>
-    <div th:replace="partials/partials :: scripts"></div>
+
+<footer th:replace="partials/partials :: footer-fragment"></footer>
+<script th:src="@{js/main.js}"></script>
+<script th:src="@{js/books.js}"></script>
+<div th:replace="partials/partials :: scripts"></div>
 </body>
 </html>
