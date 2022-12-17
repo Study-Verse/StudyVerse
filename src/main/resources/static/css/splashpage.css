@@ -86,6 +86,17 @@
 	color: #F2C75B;
 }
 
+.content-text{
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+.rectangle{
+	height: 50px;
+	width: 100px;
+	background-color: #5EC5DF;
+}
+
 @media (max-width: 600px){
 	.SPContainer{
 		display: flex;
