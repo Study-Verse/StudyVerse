@@ -12,20 +12,15 @@
   <nav th:replace="partials/partials :: navbar"></nav>
 </div>
 <!--End of Nav Bar-->
-<div id="welcome-create-header">
-  <h3>Welcome: <span th:text="${#authentication.principal.username}"></span></h3>
-  <button id="create-set-button">Create New Set</button>
+
+<div>
+
+
+
 </div>
-
-
-
-
-
-
 
 <footer th:replace="partials/partials :: footer-fragment"></footer>
 <script th:src="@{js/main.js}"></script>
-<script th:src="@{js/books.js}"></script>
 <div th:replace="partials/partials :: scripts"></div>
 
 </body>
