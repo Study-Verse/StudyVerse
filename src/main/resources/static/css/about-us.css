@@ -1,7 +1,20 @@
 body{
-    background-color: wheat;
+    background-image: url("/img/pillarsOfCreatino.png");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-.creator-card{
-    height: 40%;
+
+.card{
+    height: 20rem;
+    width: 20rem;
+    overflow-y: scroll;
+}
+
+.card-body{
+    display: none;
+}
+
+.card-img-top{
+    object-fit: fill;
 }
