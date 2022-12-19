@@ -17,15 +17,13 @@ if(window.innerWidth < 768){
 
 //Modal Functions
 $(document).ready(function(){
-    //Edit Modal
-    //End of Edit Modal
-
-
 
     $(".trash-svg").click(function(event){
+        event.stopPropagation();
         window.location.replace(`${$(this).attr("data-id")}/delete`)
     });
-    $(".edit-svg").on("click", function(){
+    $(".edit-svg").on("click", function(event){
+        event.stopPropagation();
         $(this).parent().siblings(".card-modal").removeClass("display-none");
     });
     //End of modal on click function
@@ -38,7 +36,9 @@ $(document).ready(function(){
     $(".card-info").click(function (){
         window.location.replace(`/study-cards/${$(this).attr("card-set-id")}`)
     });
-
+    $(".card-modal").click(function(event){
+        event.stopPropagation();
+    })
 
     //Create Set Modal
     $("#create-set-button").on("click", function(){
@@ -49,5 +49,3 @@ $(document).ready(function(){
     })
     //End of Create Set Modal
 })//End of document.ready
-
-
