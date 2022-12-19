@@ -4,6 +4,14 @@ body{
     background-size: cover;
 }
 
+h2{
+    text-align: center;
+    color: lightskyblue;
+}
+
+.card-colum{
+    text-align: center;
+}
 
 .card{
     height: 20rem;
