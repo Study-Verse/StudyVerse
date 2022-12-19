@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+  <div th:replace="partials/partials :: head-fragment('About Us')"></div>
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/about-us.css">
+
+
+</head>
+<body>
+<div class="page-wrapper splash-page-wrapper">
+  <!--Nav Bar-->
+  <nav th:replace="partials/partials :: navbar"></nav>
+</div>  <!--End of Nav Bar-->
+<!--  End of page wrapper-->
+
+  <div class="row mt-5 mx-3">
+<!--    David-->
+
+    <div class="col-6 col-lg-3">
+        <h2>David Lara</h2>
+      <div class="card mb-4 box-shadow">
+        <img class="card-img-top" alt="Thumbnail [100%x225]" src="/img/david.png" data-holder-rendered="true">
+        <div class="card-body">
+          <p class="card-text">Insert Funny quote here...</p>
+        </div>
+      </div>
+    </div>
+<!--    Valeria-->
+    <div class="col-6 col-lg-3">
+        <h2>Valeria Canizales</h2>
+      <div class="card mb-4 box-shadow">
+        <img class="card-img-top"  alt="Thumbnail [100%x225]" src="#" data-holder-rendered="true">
+        <div class="card-body">
+          <p class="card-text">Insert Funny quote here...</p>
+        </div>
+      </div>
+    </div>
+<!--    Nazareth-->
+
+    <div class="col-6 col-lg-3">
+        <h2>Nazareth Briseño</h2>
+      <div class="card mb-4 box-shadow">
+        <img class="card-img-top" alt="Thumbnail [100%x225]"
+             src="/img/nazareth.jpg" data-holder-rendered="true">
+        <div class="card-body">
+          <p class="card-text">Insert Funny quote here...</p>
+        </div>
+      </div>
+    </div>
+<!--    Fernando-->
+
+    <div class="card-colum col-6 col-lg-3">
+        <h2>Fernando Lopez</h2>
+      <div class="card mb-4 box-shadow">
+        <img class="card-img-top" src="/img/fernando.png" data-holder-rendered="true">
+        <div class="card-body">
+          <p class="card-text">Insert Funny quote here...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+<!--  End of row for creators cards-->
+
+
+
+<footer th:replace="partials/partials :: footer-fragment"></footer>
+<script th:src="@{js/main.js}"></script>
+<div th:replace="partials/partials :: scripts"></div>
+
+</body>
+</html>

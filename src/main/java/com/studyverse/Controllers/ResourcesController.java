@@ -45,4 +45,10 @@ public class ResourcesController {
 
 
 
+//    About Us view
+    @GetMapping("/about-us")
+    public String aboutUs(){
+        return "/about-us";
+    }
+
 }
