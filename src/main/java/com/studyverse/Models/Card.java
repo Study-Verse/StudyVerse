@@ -3,6 +3,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import javax.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -23,7 +24,12 @@ public class Card {
     @ManyToOne
     @JsonManagedReference
     private User user;
-    //End of Instance Variables
+
+
+
+    //End of Variables
+
+
 
 
     //Constructors
