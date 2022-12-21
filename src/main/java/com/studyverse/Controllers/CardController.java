@@ -29,6 +29,19 @@ public class CardController {
         this.cardSetDao = cardSetDao;
     }
 
+//    Method to add a card set to a new card
+    public Card addingCardSetIdToCardList (Card card, long id){
+//      for the given card access its list of card Sets it belongs to
+        List<CardSet> cardSetList = card.getCardSetList();
+//      add the given cardSet id to the list of card sets it belongs to
+        cardSetList.add(cardSetList.size()+1, cardSetDao.findById(id));
+//      set the newly modified card set list
+        card.setCardSetList(cardSetList);
+//      finally save the modified card
+        cardDao.save(card);
+        return card;
+    }
+
 //  cards api call
     @GetMapping("card-api/{id}")
     public @ResponseBody List<Card> cardsApi(@PathVariable long id) {
@@ -41,25 +54,25 @@ public class CardController {
     }
 
 //    This lets you create a card
-    @GetMapping("card-create")
-    public String createCard(Model model){
-        List<User>users = userDao.findAll();
-        model.addAttribute("users", users);
+    @GetMapping("card-create/{id}")
+    public String createCard(Model model, @PathVariable long id){
+        CardSet set = cardSetDao.findById(id);
+        List<Card> cardList = set.getCardList();
+        model.addAttribute("cardList",cardList);
         model.addAttribute("card", new Card());
         return "/createCard";
     }
-
-
 
 //    This let you post your card set
     @PostMapping("create")
     public String postCard(@ModelAttribute Card card){
         User user = Utils.currentUser();
+
         card.setUser(user);
+
         cardDao.save(card);
         return "redirect:/card-create";
     }
-
 
 //        ============ study get mapping
 

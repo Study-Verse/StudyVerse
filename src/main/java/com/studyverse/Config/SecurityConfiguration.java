@@ -15,8 +15,8 @@ public class SecurityConfiguration {
     @Bean
     SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests()
-                .antMatchers("/create-set","/create","/study-cards","/resources","/self-test","/dashboard").authenticated()
-                .antMatchers("/","/register","/login").permitAll()
+                .antMatchers("/create-set","/create","/study-cards","/resources","/self-test","/dashboard", "/wiki","/books").authenticated()
+                .antMatchers("/","/register","/login","/about-us").permitAll()
                 .and().formLogin().loginPage("/login").defaultSuccessUrl("/dashboard")
                 .and().logout().logoutSuccessUrl("/")
                 .and().httpBasic();

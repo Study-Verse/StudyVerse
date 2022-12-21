@@ -6,9 +6,10 @@
     <link rel="stylesheet" href="../static/css/splashpage.css">
 </head>
 <body>
+<!--nav bar-->
+<nav th:replace="partials/partials.html :: navbar"></nav>
+<!--form to make a new card-->
 <fieldset class="middleForm">
-    <nav th:replace="partials/partials.html :: navbar"></nav>
-
     <form class="formMiddle" th:action="@{/create}" th:method="POST" th:object="${card}">
         <label for="frontFace">FrontFace:</label>
         <input type="text" id="frontFace" name="frontFace" th:field="*{frontFace}">
@@ -17,6 +18,13 @@
         <input type="submit" value="submit">
     </form>
 </fieldset>
+<!--Printing out the current sets cards -->
+<div th:each="cards: ${cardList}">
+    <div class="cardItem">
+        <p th:text="${cards.getFrontFace()}"></p>
+        <p th:text="${cards.getBackFace()}"></p>
+    </div>
+</div>
 
 <footer th:replace="partials/partials :: footer-fragment"></footer>
 <div th:replace="partials/partials :: scripts"></div>

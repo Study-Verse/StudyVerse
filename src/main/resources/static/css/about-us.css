@@ -1,0 +1,28 @@
+body{
+    background-image: url("/img/pillarsOfCreatino.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h2{
+    text-align: center;
+    color: lightskyblue;
+}
+
+.card-colum{
+    text-align: center;
+}
+
+.card{
+    height: 20rem;
+    width: 20rem;
+    overflow-y: scroll;
+}
+
+.card-body{
+    display: none;
+}
+
+.card-img-top{
+    object-fit: cover;
+}

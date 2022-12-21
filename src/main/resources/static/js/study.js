@@ -1,5 +1,6 @@
 $(function (){
     // getting the ID from the window #no need for hidden div
+    console.log(window.location.pathname)
     let cardSetId = window.location.pathname.split("/")[2];
     function getCardList(){
                 fetch(`/card-api/${cardSetId}`)

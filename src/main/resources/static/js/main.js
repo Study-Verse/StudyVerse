@@ -17,23 +17,27 @@ if(window.innerWidth < 768){
 
 //Modal Functions
 $(document).ready(function(){
-    //Edit Modal
-    $(".edit-svg").on("click", function(){
+
+    $(".trash-svg").click(function(event){
+        event.stopPropagation();
+        window.location.replace(`${$(this).attr("data-id")}/delete`)
+    });
+    $(".edit-svg").on("click", function(event){
+        event.stopPropagation();
         $(this).parent().siblings(".card-modal").removeClass("display-none");
-    })//End of modal on click function
+    });
+    //End of modal on click function
     $(".close").on("click", function(){
         $(".card-modal").addClass("display-none");
-    })
-    //End of Edit Modal
-    $(".trash-svg").click(function(event){
-        window.location.replace(`${$(this).attr("data-id")}/delete`)
     });
 
     // on dashboard view this function will redirect the url to the url with the card set id
-    $(".cardButton").click(function (){
+    $(".card-info").click(function (){
         window.location.replace(`/study-cards/${$(this).attr("card-set-id")}`)
     });
-
+    $(".card-modal").click(function(event){
+        event.stopPropagation();
+    })
 
     //Create Set Modal
     $("#create-set-button").on("click", function(){
@@ -44,5 +48,3 @@ $(document).ready(function(){
     })
     //End of Create Set Modal
 })//End of document.ready
-
-
