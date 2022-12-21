@@ -31,9 +31,9 @@ $(document).ready(function(){
         $(".card-modal").addClass("display-none");
     });
 
-
+    console.log($(this).attr("card-set-id"))
     // on dashboard view this function will redirect the url to the url with the card set id
-    $(".card-sets").click(function (){
+    $(".card-info").click(function (){
         window.location.replace(`/study-cards/${$(this).attr("card-set-id")}`)
     });
     $(".card-modal").click(function(event){

@@ -42,7 +42,6 @@ public class CardController {
         return card;
     }
 
-
 //  cards api call
     @GetMapping("card-api/{id}")
     public @ResponseBody List<Card> cardsApi(@PathVariable long id) {
@@ -68,7 +67,9 @@ public class CardController {
     @PostMapping("create")
     public String postCard(@ModelAttribute Card card){
         User user = Utils.currentUser();
+
         card.setUser(user);
+
         cardDao.save(card);
         return "redirect:/card-create";
     }
