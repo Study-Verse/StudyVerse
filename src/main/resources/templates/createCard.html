@@ -17,6 +17,13 @@
         <input type="submit" value="submit">
     </form>
 </fieldset>
+<!--Printing out the current sets cards -->
+<div th:each="cards: ${cardList}">
+    <div class="cardItem">
+        <p th:text="${cards.getFrontFace()}"></p>
+        <p th:text="${cards.getBackFace()}"></p>
+    </div>
+</div>
 
 <footer th:replace="partials/partials :: footer-fragment"></footer>
 <div th:replace="partials/partials :: scripts"></div>
