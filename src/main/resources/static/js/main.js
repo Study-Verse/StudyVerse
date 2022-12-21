@@ -1,3 +1,7 @@
+function goToCardSet(cardSetId){
+    window.location.replace(`/study-cards/${cardSetId}`)
+
+}
 //function for letting the SVGs show on mouseOver
 if(window.innerWidth > 768){
     $(".card-sets").mouseenter(function (){
@@ -32,9 +36,10 @@ $(document).ready(function(){
     });
 
     // on dashboard view this function will redirect the url to the url with the card set id
-    $(".card-info").click(function (){
-        window.location.replace(`/study-cards/${$(this).attr("card-set-id")}`)
-    });
+    // $(".card-info").click(function (){
+    //     window.location.replace(`/study-cards/${$(this).attr("card-set-id")}`)
+    // });
+
     $(".card-modal").click(function(event){
         event.stopPropagation();
     })
