@@ -6,9 +6,10 @@
     <link rel="stylesheet" href="../static/css/splashpage.css">
 </head>
 <body>
+<!--nav bar-->
+<nav th:replace="partials/partials.html :: navbar"></nav>
+<!--form to make a new card-->
 <fieldset class="middleForm">
-    <nav th:replace="partials/partials.html :: navbar"></nav>
-
     <form class="formMiddle" th:action="@{/create}" th:method="POST" th:object="${card}">
         <label for="frontFace">FrontFace:</label>
         <input type="text" id="frontFace" name="frontFace" th:field="*{frontFace}">
