@@ -9,8 +9,11 @@
 <body>
 <nav th:replace="partials/partials :: navbar"></nav>
 
-<script th:src="@{js/jquery-3.6.1.min.js}"></script>
+
+
+<div th:replace="partials/partials :: scripts"></div>
 <script th:src="@{js/main.js}"></script>
 <script th:src="@{/js/sitebar.js}"></script>
+
 </body>
 </html>
