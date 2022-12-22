@@ -40,7 +40,7 @@ public class CardSetController {
         cardSet.setTag(tag);
         cardSet.setUser(user);
         cardSetDao.save(cardSet);
-        return "redirect:/card-create";
+        return "redirect:/card-create/{id}";
     }
     //END OF CREATE SET
 
