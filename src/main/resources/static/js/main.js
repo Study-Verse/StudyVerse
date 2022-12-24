@@ -21,6 +21,11 @@ if(window.innerWidth < 768){
 
 //Modal Functions
 $(document).ready(function(){
+    $(".plus-svg").click(function(event){
+        event.stopPropagation();
+        console.log(`/card-create/${(this).attr("data-id")}`)
+        // window.location.replace(`/card-create/${(this).attr("data-id")}`)
+    });
 
     $(".trash-svg").click(function(event){
         event.stopPropagation();
