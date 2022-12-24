@@ -23,9 +23,9 @@ if(window.innerWidth < 768){
 $(document).ready(function(){
 
     // this redirects to the view where you can add cards to your set
-    $(".plus-svg").on("click", function(){
-        console.log(`/card-create/${(this).attr("data-id")}`)
-        window.location.replace(`/card-create/${(this).attr("data-id")}`)
+    $(".add-cards").on("click", function(event){
+        event.stopPropagation()
+        window.location.replace(`/card-create/${$(this).attr("data-name")}`)
     });
 
     // this deletes card sets

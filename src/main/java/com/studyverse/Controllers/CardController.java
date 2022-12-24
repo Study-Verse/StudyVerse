@@ -81,29 +81,6 @@ public class CardController {
         return "/createCard";
     }
 
-//    This let you post your card set
-//<<<<<<< HEAD
-//    @PostMapping("create")
-//    public String postCard(@ModelAttribute Card card,@ModelAttribute CardSet set){
-//        User user = Utils.currentUser();
-//
-//        long id = set.getId();
-//
-//        CardSet cardSet = cardSetDao.findById(id);
-//
-//        List<Card> cardList = cardSet.getCardList();
-//
-//        card.setUser(user);
-//
-//        cardDao.save(card);
-//
-//        cardList.add(card);
-//
-//        cardSetDao.save(cardSet);
-//
-//
-//        return "redirect:/card-create/{id}";
-//=======
     @PostMapping("card-create/{id}")
     public String postCard(@ModelAttribute Card card, @ModelAttribute List<Card>cardList){
         CardSet set = new CardSet();
@@ -118,7 +95,6 @@ public class CardController {
     }
 
 //        ============ study get mapping
-
     @GetMapping("study-cards/{id}")
     public String studyCards() {
         return "/study";
