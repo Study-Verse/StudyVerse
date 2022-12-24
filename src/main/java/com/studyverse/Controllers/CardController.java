@@ -30,17 +30,33 @@ public class CardController {
     }
 
 //    Method to add a card set to a new card
-    public Card addingCardSetIdToCardList (Card card, long id){
-//      for the given card access its list of card Sets it belongs to
-        List<CardSet> cardSetList = card.getCardSetList();
-//      add the given cardSet id to the list of card sets it belongs to
-        cardSetList.add(cardSetList.size()+1, cardSetDao.findById(id));
-//      set the newly modified card set list
-        card.setCardSetList(cardSetList);
-//      finally save the modified card
-        cardDao.save(card);
-        return card;
-    }
+//    public Card addingCardSetIdToCardList (Card card, long id){
+////
+////        CardSet cardSet = cardSetDao.findById(id);
+////
+////        List<Card> cardList = cardSet.getCardList();
+////
+////        cardList.add(cardList.size()+1, card);
+////
+////        cardSetDao.save(cardSet);
+//    return card;
+//    }
+////    Method to add a card set to a new card
+//    public Card addingCardSetIdToCardList (Card card, long id){
+////      for the given card access its list of card Sets it belongs to
+//        List<CardSet> cardSetList = card.getCardSetList();
+//        if (cardSetList == null){
+//            cardSetList.add(cardSetDao.findById(id));
+//        } else {
+////      add the given cardSet id to the list of card sets it belongs to
+//        cardSetList.add(cardSetList.size()+1, cardSetDao.findById(id));
+////      set the newly modified card set list
+//        card.setCardSetList(cardSetList);
+//        }
+////      finally save the modified card
+//        cardDao.save(card);
+//        return card;
+//    }
 
 //  cards api call
     @GetMapping("card-api/{id}")
@@ -65,7 +81,6 @@ public class CardController {
         return "/createCard";
     }
 
-//    This let you post your card set
     @PostMapping("card-create/{id}")
     public String postCard(@ModelAttribute Card card, @ModelAttribute List<Card>cardList){
         CardSet set = new CardSet();
@@ -80,7 +95,6 @@ public class CardController {
     }
 
 //        ============ study get mapping
-
     @GetMapping("study-cards/{id}")
     public String studyCards() {
         return "/study";

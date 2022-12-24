@@ -22,10 +22,19 @@ if(window.innerWidth < 768){
 //Modal Functions
 $(document).ready(function(){
 
+    // this redirects to the view where you can add cards to your set
+    $(".add-cards").on("click", function(event){
+        event.stopPropagation()
+        window.location.replace(`/card-create/${$(this).attr("data-name")}`)
+    });
+
+    // this deletes card sets
     $(".trash-svg").click(function(event){
         event.stopPropagation();
         window.location.replace(`${$(this).attr("data-id")}/delete`)
     });
+
+    // model pop-up functionality for each set
     $(".edit-svg").on("click", function(event){
         event.stopPropagation();
         $(this).parent().siblings(".card-modal").removeClass("display-none");
