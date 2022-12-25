@@ -1,4 +1,5 @@
 
+
 let contentArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
 
 document.getElementById("save_card").addEventListener("click", () => {
@@ -82,3 +83,5 @@ addFlashcard = () => {
     question.value = "";
     answer.value = "";
 }
+
+

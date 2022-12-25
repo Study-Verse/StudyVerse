@@ -80,10 +80,11 @@
                                     <input type="text" name="edit-tag" class="input-design" th:value="${cardSet.getTag()}">
                                     <br>
                                     <button class="edit-set-button" type="submit">Edit Set</button>
+<!--                            this button redirects you to the creat-card/{id} -->
+                                    <button class="add-cards edit-set-button " th:data-name="${cardSet.getId()}">Add Cards</button>
                                 </div>
                             </form>
-<!--                            this button redirects you to the creat-card/{id} -->
-                            <button class="add-cards edit-set-button " th:data-name="${cardSet.getId()}">Add Cards</button>
+
                         </div>
                     </div>
                     <!--End of Modal-->
