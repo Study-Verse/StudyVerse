@@ -16,13 +16,13 @@ h2{
 .card{
     height: 20rem;
     width: 20rem;
-    overflow-y: scroll;
+    overflow-y: hidden;
 }
 
 .card-body{
     display: none;
 }
 
-.card-img-top{
+.picture{
     object-fit: cover;
 }
