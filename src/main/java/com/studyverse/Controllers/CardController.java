@@ -20,7 +20,6 @@ public class CardController {
 
     private final CardRepository cardDao;
     private final UserRepository userDao;
-
     private final CardSetRepository cardSetDao;
 
     public CardController(CardRepository cardDao, UserRepository userDao, CardSetRepository cardSetDao) {
@@ -28,35 +27,6 @@ public class CardController {
         this.userDao = userDao;
         this.cardSetDao = cardSetDao;
     }
-
-//    Method to add a card set to a new card
-//    public Card addingCardSetIdToCardList (Card card, long id){
-////
-////        CardSet cardSet = cardSetDao.findById(id);
-////
-////        List<Card> cardList = cardSet.getCardList();
-////
-////        cardList.add(cardList.size()+1, card);
-////
-////        cardSetDao.save(cardSet);
-//    return card;
-//    }
-////    Method to add a card set to a new card
-//    public Card addingCardSetIdToCardList (Card card, long id){
-////      for the given card access its list of card Sets it belongs to
-//        List<CardSet> cardSetList = card.getCardSetList();
-//        if (cardSetList == null){
-//            cardSetList.add(cardSetDao.findById(id));
-//        } else {
-////      add the given cardSet id to the list of card sets it belongs to
-//        cardSetList.add(cardSetList.size()+1, cardSetDao.findById(id));
-////      set the newly modified card set list
-//        card.setCardSetList(cardSetList);
-//        }
-////      finally save the modified card
-//        cardDao.save(card);
-//        return card;
-//    }
 
 //  cards api call
     @GetMapping("card-api/{id}")
@@ -73,24 +43,18 @@ public class CardController {
     @GetMapping("card-create/{id}")
     public String createCard(Model model, @PathVariable long id){
         CardSet set = cardSetDao.findById(id);
-        List<Card> cardList = set.getCardList();
         model.addAttribute("cardSet", set);
-        model.addAttribute("cardList",cardList);
         model.addAttribute("card", new Card());
-
         return "/createCard";
     }
 
     @PostMapping("card-create/{id}")
-    public String postCard(@ModelAttribute Card card, @ModelAttribute List<Card>cardList){
-        CardSet set = new CardSet();
+    public String postCard(@ModelAttribute Card card, @PathVariable long id){
         User user = Utils.currentUser();
-        cardList.add(card);
-        set.setCardList(cardList);
         card.setUser(user);
-
+        cardSetDao.findById(id).getCardList().add(card);
         cardDao.save(card);
-        return "redirect:/card-create/{id}";
+        return "redirect:/card-create/" + id;
 
     }
 
@@ -99,15 +63,11 @@ public class CardController {
     public String studyCards() {
         return "/study";
     }
-
-
-
     //    ============ self test get mapping
     @GetMapping("self-test")
     public String test(){
         return "/self-test";
     }
-
 
 //  This takes you to the create card html
     @GetMapping("/create")
