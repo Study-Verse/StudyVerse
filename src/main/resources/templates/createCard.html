@@ -31,11 +31,10 @@
 
                 <h2>Create Flashcard</h2>
                 <form class="formMiddle" th:action="@{/card-create/{id}(id = ${cardSet.id})}" th:method="POST" th:object="${card}">
-                    <input hidden th:object="${cardSet}" th:value="cardSet.id">
                     <label for="frontFace">Question</label>
                     <input type="text" id="frontFace" name="frontFace" th:field="*{frontFace}">
                     <br>
-                    <label for="backFace" maxlength="280" th:field="*{backFace}">Answer</label>
+                    <label for="backFace">Answer</label>
                     <input type="text" id="backFace" name="backFace" th:field="*{backFace}">
                     <div>
                         <input id="save_card" type="submit" value="submit">
