@@ -9,9 +9,7 @@
 <body>
 <!--nav bar-->
 <nav th:replace="partials/partials.html :: navbar"></nav>
-
-
-<main>
+<!--<main>-->
 
     <header>
         <div class="container">
@@ -24,7 +22,7 @@
             </div>
         </div>
     </header>
-
+<!-- This section is where the model form binding to make a card is-->
     <section>
         <div class="container">
             <div id="create_card">
@@ -46,36 +44,17 @@
         </div>
     </section>
 
-
-    <!--&lt;!&ndash;form to make a new card&ndash;&gt;-->
-    <!--<fieldset class="middleForm">-->
-    <!--    <form class="formMiddle" th:action="@{/create}" th:method="POST" th:object="${card}">-->
-    <!--        <label for="frontFace">FrontFace:</label>-->
-    <!--        <input type="text" id="frontFace" name="frontFace" th:field="*{frontFace}">-->
-    <!--        <label for="backFace">Back Face:</label>-->
-    <!--        <input type="text" id="backFace" name="backFace" th:field="*{backFace}">-->
-    <!--        <input type="submit" value="submit">-->
-    <!--    </form>-->
-    <!--</fieldset>-->
-    <!--&lt;!&ndash;Printing out the current sets cards &ndash;&gt;-->
-
-    <div th:each="cards: ${cardList}">
-        <div class="cardItem">
-            <p th:text="${cards.getFrontFace()}"></p>
-            <p th:text="${cards.getBackFace()}"></p>
+<!-- This section will show the cards in the current set as you add them -->
+    <div class="vertical-accordion">
+        <div th:each="cards: ${cardList}">
+            <div class="cardItem flashcard">
+                <p  th:text="${cards.getFrontFace()}"></p>
+                <p  th:text="${cards.getBackFace()}"></p>
+            </div>
         </div>
     </div>
 
-
-    <section>
-        <div class="container">
-            <div id="flashcards"></div>
-        </div>
-    </section>
-
-</main>
-
-
+<!--</main>&lt;!&ndash; End of main&ndash;&gt; -->
 
 
 <footer th:replace="partials/partials :: footer-fragment"></footer>
@@ -83,108 +62,3 @@
 
 </body>
 </html>
-<!--<!DOCTYPE html>-->
-<!--<html xmlns:th="http://www.thymeleaf.org" lang="en">-->
-<!--<head>-->
-<!--    <div th:replace="partials/partials :: head-fragment('Create a card')"></div>-->
-<!--    <link rel="stylesheet" href="/css/global.css">-->
-<!--    <link rel="stylesheet" href="../static/css/splashpage.css">-->
-<!--    <link rel="stylesheet" href="/css/flashcard.css">-->
-<!--</head>-->
-<!--<body>-->
-<!--&lt;!&ndash;nav bar&ndash;&gt;-->
-<!--<nav th:replace="partials/partials.html :: navbar"></nav>-->
-<!--<<<<<<< HEAD-->
-<!--&lt;!&ndash;form to make a new card&ndash;&gt;-->
-<!--<fieldset class="middleForm">-->
-<!--    <form class="formMiddle" th:action="@{/create}" th:method="POST" th:object="${card}">-->
-<!--        <input hidden th:object="${cardSet}">-->
-<!--        <label for="frontFace">FrontFace:</label>-->
-<!--        <input type="text" id="frontFace" name="frontFace" th:field="*{frontFace}">-->
-<!--        <label for="backFace">Back Face:</label>-->
-<!--        <input type="text" id="backFace" name="backFace" th:field="*{backFace}">-->
-<!--        <input type="submit" value="submit">-->
-<!--    </form>-->
-<!--</fieldset>-->
-<!--&lt;!&ndash;Printing out the current sets cards &ndash;&gt;-->
-<!--<div th:each="cards: ${cardList}">-->
-<!--    <div class="cardItem">-->
-<!--        <p th:text="${cards.getFrontFace()}"></p>-->
-<!--        <p th:text="${cards.getBackFace()}"></p>-->
-<!--=======-->
-
-
-<!--<main>-->
-
-<!--    <header>-->
-<!--        <div class="container">-->
-<!--            <div id="header">-->
-<!--                <h1>Flashcards</h1>-->
-<!--                <div>-->
-<!--                    <button id="show_card_box">Add Card</button>-->
-<!--                    <button id="delete_cards">Del Cards</button>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </header>-->
-
-<!--    <section>-->
-<!--        <div class="container">-->
-<!--            <div id="create_card">-->
-
-<!--                <h2>Create Flashcard</h2>-->
-<!--                <form class="formMiddle" th:action="@{/card-create/{id}(id = ${cardSet.id})}" th:method="POST" th:object="${card}">-->
-<!--                <input hidden th:object="${cardSet}" th:value="cardSet.id">-->
-<!--                <label for="frontFace">Question</label>-->
-<!--                    <input type="text" id="frontFace" name="frontFace" th:field="*{frontFace}">-->
-<!--                    <br>-->
-<!--                <label for="backFace" maxlength="280" th:field="*{backFace}">Answer</label>-->
-<!--                    <input type="text" id="backFace" name="backFace" th:field="*{backFace}">-->
-<!--                <div>-->
-<!--                    <input id="save_card" type="submit" value="submit">-->
-<!--                </div>-->
-<!--                </form>-->
-<!--                <button id="close_card_box">Close</button>-->
-
-<!--            </div>-->
-<!--        </div>-->
-<!--    </section>-->
-
-
-<!--    &lt;!&ndash;&lt;!&ndash;form to make a new card&ndash;&gt;&ndash;&gt;-->
-<!--    &lt;!&ndash;<fieldset class="middleForm">&ndash;&gt;-->
-<!--    &lt;!&ndash;    <form class="formMiddle" th:action="@{/create}" th:method="POST" th:object="${card}">&ndash;&gt;-->
-<!--    &lt;!&ndash;        <label for="frontFace">FrontFace:</label>&ndash;&gt;-->
-<!--    &lt;!&ndash;        <input type="text" id="frontFace" name="frontFace" th:field="*{frontFace}">&ndash;&gt;-->
-<!--    &lt;!&ndash;        <label for="backFace">Back Face:</label>&ndash;&gt;-->
-<!--    &lt;!&ndash;        <input type="text" id="backFace" name="backFace" th:field="*{backFace}">&ndash;&gt;-->
-<!--    &lt;!&ndash;        <input type="submit" value="submit">&ndash;&gt;-->
-<!--    &lt;!&ndash;    </form>&ndash;&gt;-->
-<!--    &lt;!&ndash;</fieldset>&ndash;&gt;-->
-<!--    &lt;!&ndash;&lt;!&ndash;Printing out the current sets cards &ndash;&gt;&ndash;&gt;-->
-
-<!--    <div th:each="cards: ${cardList}">-->
-<!--        <div class="cardItem">-->
-<!--            <p th:text="${cards.getFrontFace()}"></p>-->
-<!--            <p th:text="${cards.getBackFace()}"></p>-->
-<!--        </div>-->
-<!--&gt;>>>>>> main-->
-<!--    </div>-->
-
-
-<!--    <section>-->
-<!--        <div class="container">-->
-<!--            <div id="flashcards"></div>-->
-<!--        </div>-->
-<!--    </section>-->
-
-<!--</main>-->
-
-
-
-
-<!--<footer th:replace="partials/partials :: footer-fragment"></footer>-->
-<!--<div th:replace="partials/partials :: scripts"></div>-->
-
-<!--</body>-->
-<!--</html>-->

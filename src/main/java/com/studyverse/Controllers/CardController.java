@@ -46,6 +46,7 @@ public class CardController {
     public String createCard(Model model, @PathVariable long setId){
         CardSet set = cardSetDao.findById(setId);
         model.addAttribute("cardSet", set);
+        model.addAttribute("cardList",set.getCardList());
         Card newCard = new Card();
         model.addAttribute("card", newCard);
         model.addAttribute("cardId1", newCard.getId());
