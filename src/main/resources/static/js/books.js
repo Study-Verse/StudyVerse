@@ -178,7 +178,7 @@ $(document).ready(function() {
            <div>
              <img src="${bookImg}" alt="Book Image">
            </div>
-           <div>
+           <div id="bookinfo">
                <h5 class="card-title">${title}</h5>
                <p class="card-text">Author: ${author}</p>
                <p class="card-text">Publisher: ${publisher}</p>

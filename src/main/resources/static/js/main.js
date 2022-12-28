@@ -35,8 +35,7 @@ $(document).ready(function(){
 
     // this redirects to the view where you can add cards to your set
     $(".add-cards").on("click", function(event){
-        event.stopPropagation()
-        console.log(`/card-create/`)
+        event.stopPropagation();
         window.location.replace(`/card-create/${$(this).attr("data-name")}`)
     });
 
