@@ -25,10 +25,10 @@ button:hover{
     background-color: rgba(0, 0, 0, 0.1);
 }
 
-.container{
-    width: 1280px;
-    margin: auto;
-}
+/*.container{*/
+/*    width: 1280px;*/
+/*    margin: auto;*/
+/*}*/
 
 header{background-color: #fff;}
 
@@ -105,7 +105,9 @@ header{background-color: #fff;}
 
 .fa-minus:hover{color: red;}
 
-.vertical-accordion{
+
+/* Vertical card display*/
+.vertical-display{
     display:flex;
     flex-direction: column;
     flex-wrap:nowrap;
