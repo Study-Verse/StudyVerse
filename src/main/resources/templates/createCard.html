@@ -9,8 +9,7 @@
 <body>
 <!--nav bar-->
 <nav th:replace="partials/partials.html :: navbar"></nav>
-
-<main>
+<!--<main>-->
 
     <header>
         <div class="container">
@@ -23,7 +22,7 @@
             </div>
         </div>
     </header>
-
+<!-- This section is where the model form binding to make a card is-->
     <section>
         <div class="container">
             <div id="create_card">
@@ -46,14 +45,16 @@
     </section>
 
 <!-- This section will show the cards in the current set as you add them -->
-    <div th:each="cards: ${cardList}">
-        <div class="cardItem flashcard">
-            <p  th:text="${cards.getFrontFace()}"></p>
-            <p  th:text="${cards.getBackFace()}"></p>
+    <div class="vertical-accordion">
+        <div th:each="cards: ${cardList}">
+            <div class="cardItem flashcard">
+                <p  th:text="${cards.getFrontFace()}"></p>
+                <p  th:text="${cards.getBackFace()}"></p>
+            </div>
         </div>
     </div>
 
-</main>
+<!--</main>&lt;!&ndash; End of main&ndash;&gt; -->
 
 
 <footer th:replace="partials/partials :: footer-fragment"></footer>

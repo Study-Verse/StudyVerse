@@ -105,6 +105,17 @@ header{background-color: #fff;}
 
 .fa-minus:hover{color: red;}
 
+.vertical-accordion{
+    display:flex;
+    flex-direction: column;
+    flex-wrap:nowrap;
+    overflow:scroll;
+    width:100%;
+    height:350px
+}
+
+
+
 @media(max-width:1280px){
     .container{width: 100%;}
 }
