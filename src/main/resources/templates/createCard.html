@@ -5,13 +5,12 @@
     <link rel="stylesheet" href="/css/global.css">
     <link rel="stylesheet" th:href="@{/css/splashpage.css}">
     <link rel="stylesheet" th:href="@{/css/flashcard.css}">
+    <link rel="stylesheet" th:href="@{/css/createCard.css}">
 </head>
 <body>
 <!--nav bar-->
 <nav th:replace="partials/partials.html :: navbar"></nav>
 
-
-<main>
 
     <header>
         <div class="container">
@@ -24,9 +23,10 @@
             </div>
         </div>
     </header>
-
+<div class="row">
+<!-- This section is where the model form binding to make a card is-->
     <section>
-        <div class="container">
+        <div class="container column">
             <div id="create_card">
 
                 <h2>Create Flashcard</h2>
@@ -47,23 +47,16 @@
     </section>
 
 
-
-    <div th:each="cards: ${cardList}">
-        <div class="cardItem">
-            <p th:text="${cards.getFrontFace()}"></p>
-            <p th:text="${cards.getBackFace()}"></p>
+<!-- This section will show the cards in the current set as you add them -->
+    <div class="vertical-display column">
+        <div th:each="cards: ${cardList}">
+            <div class="cardItem flashcard">
+                <p  th:text="${cards.getFrontFace()}"></p>
+                <p  th:text="${cards.getBackFace()}"></p>
+            </div>
         </div>
     </div>
-
-
-    <section>
-        <div class="container">
-            <div id="flashcards"></div>
-        </div>
-    </section>
-
-</main>
-
+</div>
 
 
 
@@ -72,3 +65,4 @@
 
 </body>
 </html>
+
