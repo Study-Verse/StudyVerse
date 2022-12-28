@@ -25,10 +25,6 @@ button:hover{
     background-color: rgba(0, 0, 0, 0.1);
 }
 
-/*.container{*/
-/*    width: 1280px;*/
-/*    margin: auto;*/
-/*}*/
 
 header{background-color: #fff;}
 
@@ -49,11 +45,10 @@ header{background-color: #fff;}
 #create_card{
     /*display: none;*/
     width: 370px;
-    margin:auto;
     padding: 20px;
-    margin-top: 10px;
+    margin: 10px auto auto;
     background: whitesmoke;
-    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.9);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.9);
 }
 
 #create_card h2{
@@ -77,9 +72,8 @@ header{background-color: #fff;}
     align-items: center;
     flex-wrap: wrap;
     width: 100%;
-    margin: auto;
-    margin-top: 10px;
-    padding: 0px 10px;
+    margin: 10px auto auto;
+    padding: 0 10px;
 }
 
 .flashcard{
@@ -87,9 +81,11 @@ header{background-color: #fff;}
     height: 200px;
     word-wrap: break-word;
     margin: 10px;
-    background:#fff;
+    background:#4d1a53;
+    color: white;
+    text-align: center;
     cursor: pointer;
-    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.9);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.9);
     position: relative;
 }
 
@@ -111,9 +107,9 @@ header{background-color: #fff;}
     display:flex;
     flex-direction: column;
     flex-wrap:nowrap;
-    overflow:scroll;
+    overflow-y:scroll;
     width:100%;
-    height:350px
+    height:530px
 }
 
 
