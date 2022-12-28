@@ -27,3 +27,8 @@ h2 {
     margin-top: 50px;
     visibility: hidden;
 }
+
+/*This hides the cards when you search for a book*/
+/*.hideCards {*/
+/*    display: none;*/
+/*}*/
