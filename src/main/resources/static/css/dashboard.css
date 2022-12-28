@@ -5,7 +5,16 @@ body{
 #containerBook{
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
+
+/*book info is in books.js*/
+#bookinfo {
+    margin: auto;
+    margin-left: inherit;
+    padding-left: 1rem;
+}
+
 #create-form{
     text-align: center;
 }
