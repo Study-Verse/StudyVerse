@@ -48,7 +48,6 @@ public class CardController {
         model.addAttribute("cardSet", set);
         Card newCard = new Card();
         model.addAttribute("card", newCard);
-        model.addAttribute("cardId1", newCard.getId());
         return "/createCard";
     }
 
@@ -75,12 +74,6 @@ public class CardController {
         return "/self-test";
     }
 
-//  This takes you to the create card html
-    @GetMapping("/create")
-    public String createCards(Model model){
-        model.addAttribute("card", new Card());
-        return "/createCard";
-    }
 
 }// END OF CARD CONTROLLER
 
