@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.websocket.server.PathParam;
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -39,24 +40,29 @@ public class CardController {
         return "splashpage";
     }
 
-//    This lets you create a card
-    @GetMapping("card-create/{id}")
-    public String createCard(Model model, @PathVariable long id){
-        CardSet set = cardSetDao.findById(id);
+
+    //    This lets you create a card
+    @GetMapping("card-create/{setId}")
+    public String createCard(Model model, @PathVariable long setId){
+        CardSet set = cardSetDao.findById(setId);
         model.addAttribute("cardSet", set);
-        model.addAttribute("card", new Card());
+        Card newCard = new Card();
+        model.addAttribute("card", newCard);
+        model.addAttribute("cardId1", newCard.getId());
         return "/createCard";
     }
 
-    @PostMapping("card-create/{id}")
-    public String postCard(@ModelAttribute Card card, @PathVariable long id){
+    @PostMapping("card-create/{setId}")
+    public String postCard(@PathVariable long setId, @ModelAttribute Card card){
         User user = Utils.currentUser();
         card.setUser(user);
-        cardSetDao.findById(id).getCardList().add(card);
+        cardSetDao.findById(setId).getCardList().add(card);
         cardDao.save(card);
-        return "redirect:/card-create/" + id;
-
+        card.setCardSetList(new ArrayList<>());
+        card.getCardSetList().add(cardSetDao.findById(setId));
+        return "redirect:/card-create/" + setId;
     }
+
 
 //        ============ study get mapping
     @GetMapping("study-cards/{id}")
