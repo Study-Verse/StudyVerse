@@ -10,7 +10,6 @@
 <!--nav bar-->
 <nav th:replace="partials/partials.html :: navbar"></nav>
 
-
 <main>
 
     <header>
@@ -48,7 +47,7 @@
 
 <!-- This section will show the cards in the current set as you add them -->
     <div th:each="cards: ${cardList}">
-        <div class="cardItem">
+        <div class="cardItem flashcard">
             <p  th:text="${cards.getFrontFace()}"></p>
             <p  th:text="${cards.getBackFace()}"></p>
         </div>
