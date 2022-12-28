@@ -35,6 +35,8 @@ $(document).ready(function() {
                         $("#title").animate({'margin-top': '5px'}, 1000); //search box animation
                         $(".book-list").css("visibility", "visible");
                         displayResults(response);
+                        // I added this extra function to hide the cards when you search for a book
+                        $(".hideCards").hide()
                     }
                 },
                 error: function () {
@@ -88,8 +90,7 @@ $(document).ready(function() {
     function formatOutput(bookImg, title, author, publisher, bookLink, bookIsbn) {
         // console.log(title + ""+ author +" "+ publisher +" "+ bookLink+" "+ bookImg)
 
-        // (BAD) http://localhost:63342/Practice-Code/bookView.html?isbn=9780131872486
-        // (GOOD) http://localhost:63342/Practice-Code/bookView.html?_ijt=9780991229048=RELOAD_ON_SAVE
+
         let viewUrl = 'bookView/'+bookIsbn; //constructing link for book viewer
         //This creates the cards
         let htmlCard = `<div class="col-lg-6">
@@ -198,6 +199,16 @@ $(document).ready(function() {
         })
     }
     getRandomBooks();
+
+
+
+
+// //     hides the cards when you search for a book
+//     $(".hideCardsbutton").click(function (){
+//         alert("hi")
+//         $(".hideCards").hide()
+//     })
+
 
 
 });
