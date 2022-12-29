@@ -33,7 +33,8 @@
                 <form class="formMiddle" th:action="@{/card-create/{id}(id = ${cardSet.id})}" th:method="POST" th:object="${card}">
                     <label for="frontFaceAdd">Question</label>
                     <br>
-                    <input type="text" id="frontFaceAdd" name="frontFace" th:field="*{frontFace}">
+                    <input type="text" id="frontFaceAdd" maxlength="255" name="frontFace" th:field="*{frontFace}">
+                    <span id="frontRemainingChars"></span>
                     <br>
                     <label for="backFaceAdd">Answer</label>
                     <br>

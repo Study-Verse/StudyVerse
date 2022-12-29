@@ -56,14 +56,19 @@ $(document).ready(function(){
         $(".card-modal").addClass("display-none");
     })
 
+    //Edit Set Page - Remaining characters for front face and back face
     $(window).on("click", function(){
         $("#backRemainingChars").css("display", "none");
+        $("#frontRemainingChars").css("display", "none");
     })
     $("#backFaceAdd").on("click" ,(e) =>  { e.stopPropagation(); $("#backRemainingChars").css("display", "")});
     $("#backFaceAdd").on("input", function(e){
         $("#backRemainingChars").css("display", "");
-        console.log($("#backFaceAdd").attr("maxlength"));
-        console.log($("#backFaceAdd").attr("maxlength") - $("#backFaceAdd").val().length);
         $("#backRemainingChars").text($("#backFaceAdd").attr("maxlength") - $("#backFaceAdd").val().length);
+    })
+    $("#frontFaceAdd").on("click" ,(e) =>  { e.stopPropagation(); $("#frontRemainingChars").css("display", "")});
+    $("#frontFaceAdd").on("input", function(e){
+        $("#frontRemainingChars").css("display", "");
+        $("#frontRemainingChars").text($("#frontFaceAdd").attr("maxlength") - $("#frontFaceAdd").val().length);
     })
 })//End of document.ready
