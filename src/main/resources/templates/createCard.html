@@ -52,6 +52,7 @@
         <div th:each="cards: ${cardList}">
             <div class="cardItem flashcard">
                 <p  th:text="${cards.getFrontFace()}"></p>
+                <hr>
                 <p  th:text="${cards.getBackFace()}"></p>
             </div>
         </div>
