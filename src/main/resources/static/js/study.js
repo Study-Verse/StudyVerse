@@ -9,8 +9,8 @@ $(function (){
                     console.log(data)
                     data.forEach((card) =>{
                         $("#study-card-container").append(`
-                        <div class="carousel">
-                               <div class="carousel__cell"
+                        <div class="flashcard">
+                               <div class="card-body"
                                     <p>${card.frontFace}</p>
                                     <p>${card.backFace}</p>
                                 </div>

@@ -27,3 +27,24 @@
 .carousel__cell:nth-child(1) { transform: rotateY(  0deg) translateZ(288px); }
 .carousel__cell:nth-child(2) { transform: rotateY( 40deg) translateZ(288px); }
 .carousel__cell:nth-child(3) { transform: rotateY( 80deg) translateZ(288px); }
+
+#study-card-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: auto;
+    padding: 0px 10px;
+}
+
+.flashcard{
+    width: 370px;
+    height: 200px;
+    word-wrap: break-word;
+    margin: 10px;
+    background:#fff;
+    cursor: pointer;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.9);
+    position: relative;
+}
