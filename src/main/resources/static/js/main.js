@@ -71,4 +71,44 @@ $(document).ready(function(){
         $("#frontRemainingChars").css("display", "");
         $("#frontRemainingChars").text($("#frontFaceAdd").attr("maxlength") - $("#frontFaceAdd").val().length);
     })
+
+
+
+
+//     Search bar
+
+
+
+    // This gets the button
+
+        $("#site-bar-search-link").click(function (){
+        let value = $(this).val().toLowerCase();
+        console.log(value);
+        let cardSetId = window.location.pathname.split("/")[2];
+        function getCardList(){
+            fetch(`/card-api/${cardSetId}`)
+                .then(response => response.json())
+                .then(data =>{
+                    data.forEach((card) =>{
+                        $(".study-card-container").append(`
+                        <div class="flashcard">
+                               <div class="card-inner"
+                                    <div class="front-face">
+                                        <p>${card.frontFace}</p>
+                                    </div>
+                                    <div class="back-face">
+                                         <p>${card.backFace}</p>
+                                    </div>
+                                </div> 
+                        </div>
+                        `)
+                    })// end of for each
+                })
+        }// end of getCardList function
+        getCardList()
+
+    })
+
+
+
 })//End of document.ready
