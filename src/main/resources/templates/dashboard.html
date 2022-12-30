@@ -12,10 +12,12 @@
         <nav th:replace="partials/partials :: navbar"></nav>
     </div>
 
+<!--    This welcomes you with your username and tells you to create a new set-->
     <div id="welcome-create-header">
         <h3>Welcome: <span th:text="${#authentication.principal.username}"></span></h3>
         <button id="create-set-button">Create New Set</button>
     </div>
+
 
     <div class="card-modal display-none">
         <div class="card-modal-content">
@@ -36,6 +38,7 @@
     <div class="cards-book-wrapper">
         <!--This is the beginning-->
         <div id="acc-wrapper">
+            <h3>Your Cards</h3>
             <div class="accordion row">
                 <div  class="card-sets column-4" th:data-name="${cardSet.getId()}" th:each="cardSet: ${cardSetList}" onclick="goToCardSet(this.getAttribute('data-name'))">
                     <div class="svg display-none">
@@ -91,6 +94,11 @@
             </div>
         </div>
         <!--This is the end-->
+
+
+
+
+<!--        This is for the recommended books section-->
         <div id="randomBooksContainer">
         <h3>Recommended Books</h3>
         <div id="containerBook">
