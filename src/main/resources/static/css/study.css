@@ -48,3 +48,58 @@
 
 
 
+#carouselWrapper{
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+#carouselWrapper .carouselButtons {
+    position: absolute;
+    top: 50%;
+}
+#carouselWrapper .prev {
+    right: 90%
+}
+#carouselWrapper .next {
+    left: 90%
+}
+.carousel {
+    display: flex;
+    scroll-snap-type: x mandatory;
+}
+.carousel-flashcard {
+    width: 300px;
+    height: 200px;
+    perspective: 1000px;
+    scroll-snap-align: start;
+}
+.carousel-flashcard .carousel-front-face,
+.carousel-flashcard .carousel-back-face {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    transition: transform 0.4s ease-in-out;
+}
+.carousel-flashcard .carousel-front-face {
+    background-color: #ccc;
+    transform: rotateY(0deg);
+}
+.carousel-flashcard .carousel-back-face {
+    background-color: #b70606;
+    transform: rotateY(180deg);
+}
+.carousel-flashcard.flipped .carousel-front-face {
+    transform: rotateY(180deg);
+}
+.carousel-flashcard.flipped .carousel-back-face {
+    transform: rotateY(0deg);
+}
+.carousel-flashcard.active {
+    display: flex;
+}
+.carousel-flashcard:not(.active) {
+    display: none;
+}

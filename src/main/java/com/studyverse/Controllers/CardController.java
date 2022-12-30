@@ -66,7 +66,8 @@ public class CardController {
 
 //        ============ study get mapping
     @GetMapping("study-cards/{id}")
-    public String studyCards() {
+    public String studyCards(Model model, @PathVariable long id) {
+        model.addAttribute("eachCard", cardSetDao.findById(id).getCardList());
         return "/study";
     }
     //    ============ self test get mapping
