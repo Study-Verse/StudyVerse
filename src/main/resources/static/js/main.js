@@ -11,14 +11,12 @@ if(window.innerWidth > 768){
         $(this).children(".svg").addClass("display-none");
     })
 }
-
 //Function to show the SVGs automatically if the screen size is smaller than 768, this doesn't work on resizing the
 // screen only if you start off at that screen size
 if(window.innerWidth < 768){
     $(".svg").removeClass("display-none");
 }
 
-//Modal Functions
 $(document).ready(function(){
 
     // this deletes card sets
@@ -53,9 +51,24 @@ $(document).ready(function(){
     //Create Set Modal
     $("#create-set-button").on("click", function(){
         $(this).parent().siblings(".card-modal").removeClass("display-none");
-    })//End of modal on click function
+    })
     $(".close").on("click", function(){
         $(".card-modal").addClass("display-none");
     })
-    //End of Create Set Modal
+
+    //Edit Set Page - Remaining characters for front face and back face
+    $(window).on("click", function(){
+        $("#backRemainingChars").css("display", "none");
+        $("#frontRemainingChars").css("display", "none");
+    })
+    $("#backFaceAdd").on("click" ,(e) =>  { e.stopPropagation(); $("#backRemainingChars").css("display", "")});
+    $("#backFaceAdd").on("input", function(e){
+        $("#backRemainingChars").css("display", "");
+        $("#backRemainingChars").text($("#backFaceAdd").attr("maxlength") - $("#backFaceAdd").val().length);
+    })
+    $("#frontFaceAdd").on("click" ,(e) =>  { e.stopPropagation(); $("#frontRemainingChars").css("display", "")});
+    $("#frontFaceAdd").on("input", function(e){
+        $("#frontRemainingChars").css("display", "");
+        $("#frontRemainingChars").text($("#frontFaceAdd").attr("maxlength") - $("#frontFaceAdd").val().length);
+    })
 })//End of document.ready

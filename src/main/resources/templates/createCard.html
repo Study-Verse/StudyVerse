@@ -31,11 +31,15 @@
 
                 <h2>Create Flashcard</h2>
                 <form class="formMiddle" th:action="@{/card-create/{id}(id = ${cardSet.id})}" th:method="POST" th:object="${card}">
-                    <label for="frontFace">Question</label>
-                    <input type="text" id="frontFace" name="frontFace" th:field="*{frontFace}">
+                    <label for="frontFaceAdd">Question</label>
                     <br>
-                    <label for="backFace">Answer</label>
-                    <input type="text" id="backFace" name="backFace" th:field="*{backFace}">
+                    <input type="text" id="frontFaceAdd" maxlength="255" name="frontFace" th:field="*{frontFace}">
+                    <span id="frontRemainingChars"></span>
+                    <br>
+                    <label for="backFaceAdd">Answer</label>
+                    <br>
+                    <input type="text" id="backFaceAdd" maxlength="255" name="backFace" th:field="*{backFace}">
+                    <span id="backRemainingChars"></span>
                     <div>
                         <input id="save_card" type="submit" value="submit">
                     </div>
@@ -52,6 +56,7 @@
         <div th:each="cards: ${cardList}">
             <div class="cardItem flashcard">
                 <p  th:text="${cards.getFrontFace()}"></p>
+                <hr>
                 <p  th:text="${cards.getBackFace()}"></p>
             </div>
         </div>
