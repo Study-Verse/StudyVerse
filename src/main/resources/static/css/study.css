@@ -68,10 +68,11 @@
     scroll-snap-type: x mandatory;
 }
 .carousel-flashcard {
-    width: 300px;
-    height: 200px;
+    width: 670px;
+    height: 410px;
     perspective: 1000px;
     scroll-snap-align: start;
+    text-align: center;
 }
 .carousel-flashcard .carousel-front-face,
 .carousel-flashcard .carousel-back-face {
