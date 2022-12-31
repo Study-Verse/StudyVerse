@@ -3,31 +3,71 @@
 <head>
     <div th:replace="partials/partials :: head-fragment('Create a card')"></div>
     <link rel="stylesheet" href="/css/global.css">
-    <link rel="stylesheet" href="../static/css/splashpage.css">
+    <link rel="stylesheet" th:href="@{/css/splashpage.css}">
+    <link rel="stylesheet" th:href="@{/css/flashcard.css}">
+    <link rel="stylesheet" th:href="@{/css/createCard.css}">
 </head>
 <body>
 <!--nav bar-->
 <nav th:replace="partials/partials.html :: navbar"></nav>
-<!--form to make a new card-->
-<fieldset class="middleForm">
-    <form class="formMiddle" th:action="@{/create}" th:method="POST" th:object="${card}">
-        <label for="frontFace">FrontFace:</label>
-        <input type="text" id="frontFace" name="frontFace" th:field="*{frontFace}">
-        <label for="backFace">Back Face:</label>
-        <input type="text" id="backFace" name="backFace" th:field="*{backFace}">
-        <input type="submit" value="submit">
-    </form>
-</fieldset>
-<!--Printing out the current sets cards -->
-<div th:each="cards: ${cardList}">
-    <div class="cardItem">
-        <p th:text="${cards.getFrontFace()}"></p>
-        <p th:text="${cards.getBackFace()}"></p>
+
+
+    <header>
+        <div class="container">
+            <div id="header">
+                <h1>Flashcards</h1>
+                <div>
+                    <button id="show_card_box">Add Card</button>
+                    <button id="delete_cards">Del Cards</button>
+                </div>
+            </div>
+        </div>
+    </header>
+<div class="row">
+<!-- This section is where the model form binding to make a card is-->
+    <section>
+        <div class="container column">
+            <div id="create_card">
+
+                <h2>Create Flashcard</h2>
+                <form class="formMiddle" th:action="@{/card-create/{id}(id = ${cardSet.id})}" th:method="POST" th:object="${card}">
+                    <label for="frontFaceAdd">Question</label>
+                    <br>
+                    <input type="text" id="frontFaceAdd" maxlength="255" name="frontFace" th:field="*{frontFace}">
+                    <span id="frontRemainingChars"></span>
+                    <br>
+                    <label for="backFaceAdd">Answer</label>
+                    <br>
+                    <input type="text" id="backFaceAdd" maxlength="255" name="backFace" th:field="*{backFace}">
+                    <span id="backRemainingChars"></span>
+                    <div>
+                        <input id="save_card" type="submit" value="submit">
+                    </div>
+                </form>
+                <button id="close_card_box">Close</button>
+
+            </div>
+        </div>
+    </section>
+
+
+<!-- This section will show the cards in the current set as you add them -->
+    <div class="vertical-display column">
+        <div th:each="cards: ${cardList}">
+            <div class="cardItem flashcard">
+                <p  th:text="${cards.getFrontFace()}"></p>
+                <hr>
+                <p  th:text="${cards.getBackFace()}"></p>
+            </div>
+        </div>
     </div>
 </div>
+
+
 
 <footer th:replace="partials/partials :: footer-fragment"></footer>
 <div th:replace="partials/partials :: scripts"></div>
 
 </body>
 </html>
+

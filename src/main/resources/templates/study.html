@@ -2,17 +2,37 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <div th:replace="partials/partials :: head-fragment('Study')"></div>
-    <link th:rel="stylesheet" th:href="@{/css/global.css}">
-    <link th:rel="stylesheet" th:href="@{/static/css/study.css}">
+    <link th:rel="stylesheet" th:href="@{/css/study.css}">
     <title>Study</title>
 </head>
 <body>
 <div class="page-wrapper splash-page-wrapper">
     <nav th:replace="partials/partials :: navbar"></nav>
 </div>
-<h2>cards go here</h2>
+<!--<h2>cards go here</h2>-->
+<!--<div class="study-card-container"></div>-->
 
-<div id="study-card-container"></div>
+
+<div id="carouselWrapper">
+    <div th:each="card: ${eachCard}" class="carousel">
+        <div class="carousel-flashcard">
+            <div th:text="${card.getFrontFace()}" class="carousel-front-face">
+
+            </div>
+            <div th:text="${card.getBackFace()}" class="carousel-back-face">
+
+            </div>
+        </div>
+
+    </div>
+    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="carouselButtons prev bi bi-arrow-left-circle" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="carouselButtons next bi bi-arrow-right-circle" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+    </svg>
+</div>
+
 
 
 
