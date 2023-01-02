@@ -86,15 +86,23 @@
 	color: #F2C75B;
 }
 
-.content-text{
+.content-text {
 	padding-left: 30px;
 	padding-right: 30px;
 }
 
+.message{
+	display: flex;
+	align-items: center;
+	text-align: center;
+}
+
 .rectangle{
-	height: 50px;
-	width: 100px;
+	height: 50mm;
+	width: 90mm;
 	background-color: #5EC5DF;
+	opacity: 60%;
+
 }
 
 @media (max-width: 600px){
