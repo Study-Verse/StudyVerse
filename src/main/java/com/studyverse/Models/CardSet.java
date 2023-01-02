@@ -17,10 +17,10 @@ public class CardSet {
     private String tag;
     @Column(nullable = false, length = 30)
     private String title;
-    @ManyToOne (cascade = CascadeType.ALL)
+    @ManyToOne
     @JsonManagedReference
     private User user;
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable
             (
             name = "card_sets_and_cards",
