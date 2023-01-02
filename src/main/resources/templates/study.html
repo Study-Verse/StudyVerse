@@ -22,7 +22,13 @@
             <div th:text="${card.getBackFace()}" class="carousel-back-face">
 
             </div>
+            <!--Start of Play Svg-->
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"  id="soundSVG" class="bi bi-play-circle-fill" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z"/>
+            </svg>
+            <!--End of Play Svg-->
         </div>
+
 
     </div>
     <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor" class="carouselButtons prev bi-arrow-left-circle" viewBox="0 0 16 16">
@@ -41,5 +47,8 @@
 <script th:src="@{/js/study.js}"></script>
 <script th:src="@{/js/main.js}"></script>
 <script th:src="@{/js/sitebar.js}"></script>
+<script th:src="@{/js/textToSpeech.js}"></script>
+<script th:src="@{/js/jquery3.6.3.js}"></script>
+
 </body>
 </html>
