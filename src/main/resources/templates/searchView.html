@@ -8,7 +8,9 @@
 <body>
 <nav th:replace="partials/partials :: navbar"></nav>
 
-
+<div th:each="cardSet : ${cardSets}">
+    <p th:text="${cardSet.title}"></p>
+</div>
 
 
 

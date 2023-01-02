@@ -78,11 +78,7 @@ public class CardController {
     }
 
 
-//    This is the Search view
-    @GetMapping("/search/{tag}")
-    public String searchView(){
-        return "/searchView";
-    }
+
 
 
 
