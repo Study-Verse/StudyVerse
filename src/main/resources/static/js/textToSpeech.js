@@ -13,6 +13,26 @@ window.speechSynthesis.onvoiceschanged = () => {
     voices.forEach((voice, i) => (voiceSelect.options[i] = new Option(voice.name, i)));
 };
 
+// Adding event listener for play button
+$("#soundSVG").on('click', () => {
+    speech.text = $(".carousel-front-face").text();
+    window.speechSynthesis.speak(speech);
+});
+
+$("#soundSVG").on('click', () => {
+    speech.text = $(".carousel-back-face").text();
+    window.speechSynthesis.speak(speech);
+});
+
+//copy
+//     document.querySelector("#start").addEventListener("click", () => {
+//         // Set the text property with the value of the textarea
+//         speech.text = document.querySelector("textarea").value;
+//
+//         // Start Speaking
+//         window.speechSynthesis.speak(speech);
+//     });
+
 // Adding event listener to button for TTS
 $("#talk").on('click', () => {
     speech.text = document.querySelector("textarea").value;

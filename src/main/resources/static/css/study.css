@@ -102,3 +102,7 @@
 .carousel-flashcard:not(.active) {
     display: none;
 }
+
+.bi-play-circle-fill {
+    z-index: 1;
+}
