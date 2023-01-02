@@ -69,6 +69,7 @@ public class CardController {
     public String studyCards(Model model, @PathVariable long id) {
         model.addAttribute("eachCard", cardSetDao.findById(id).getCardList());
         return "/study";
+
     }
     //    ============ self test get mapping
     @GetMapping("self-test")

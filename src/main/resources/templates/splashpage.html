@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html" lang="en">
 <head>
     <div th:replace="partials/partials :: head-fragment('Splash Page')"></div>
     <link rel="stylesheet" href="/css/global.css">
@@ -10,7 +10,7 @@
 
 <div class="page-wrapper splash-page-wrapper">
     <nav th:replace="partials/partials :: navbar"></nav>
-
+<!--Intro message-->
     <div class="container SPContainer" >
         <div class="row">
             <div class="column">
@@ -19,10 +19,38 @@
             </div>
         </div>
     </div>
-    <footer th:replace="partials/partials :: footer-fragment"></footer>
+<!--    Pitch-->
+    <div class="container-pitch">
+        <div class="row">
+            <div class="column">
+                <p class="message">Actively engage in learning in the most effective and portable way known to students</p>
+            </div>
+        </div>
+    </div>
+    <div class="container-content">
+        <div class="row">
+            <div class="column">
+                <h3 class="content-title">Versatile learning for free</h3><div>
+                <br>
+                <br>
+        <div class="row content-text">
+            <div class="col-6">
+                <p class="content-desc">Take <span class="omit">StudyVERSE</span> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem beatae dolor ducimus esse quas ut veniam veritatis! Adipisci animi, eius iste nam optio quasi quos, sequi sint velit vitae, voluptatibus!</p>
+            </div>
+            <div class="col-6">
+                <div class="rectangle"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
 </div>
 
-
+<!--<footer th:replace="partials/partials :: footer-fragment"></footer>-->
 <div th:replace="partials/partials :: scripts"></div>
 
 </body>
