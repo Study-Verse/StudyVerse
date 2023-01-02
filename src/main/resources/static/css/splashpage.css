@@ -19,11 +19,9 @@
 	display: flex;
 	flex-direction: column;
 }
-.SPContainer .column {
+.SPContainer, .column, .container-pitch {
 	justify-content: center;
 	align-items: center;
-
-
 }
 
 .page-wrapper{
@@ -72,4 +70,51 @@
 	text-align: center;
 	text-transform: uppercase;
 	color: #FFFFFF;
+}
+
+.container-pitch, .content-desc{
+	color: white;
+	text-transform: uppercase;
+	font-size: 20px;
+}
+
+.omit{
+	text-transform: none;
+}
+
+.content-title{
+	color: #F2C75B;
+}
+
+.content-text {
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+.message{
+	display: flex;
+	align-items: center;
+	text-align: center;
+}
+
+.rectangle{
+	height: 50mm;
+	width: 90mm;
+	background-color: #5EC5DF;
+	opacity: 60%;
+
+}
+
+@media (max-width: 600px){
+	.SPContainer{
+		display: flex;
+		flex-direction: column;
+		padding: 0;
+		background-image: url("/img/dorm-studying.jpeg"),linear-gradient(0deg, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.42));
+		background-blend-mode: color;
+		flex-grow: 1;
+		object-fit: scale-down;
+		max-width: 100%;
+
+	}
 }
