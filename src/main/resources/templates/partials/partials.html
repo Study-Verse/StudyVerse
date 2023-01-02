@@ -64,9 +64,9 @@
         <!-- Links on Right -->
         <div class="navbar-collapse collapse w-100 order-3 collapse-portion">
             <ul class="navbar-nav ms-auto" id="searchUL">
-                <form class="d-flex" id="site-bar-search" th:action="@{/search}" th:method="get">
-                    <input class="search-bar me-2" type="search" placeholder="Search" aria-label="Search">
-                    <a id="site-bar-search-link" role="button" class="nav-link" href="#">Search</a>
+                <form class="d-flex" id="site-bar-search"  th:method="get">
+                    <input class="search-bar me-2" type="search" placeholder="Search" aria-label="Search" id="searchForCards">
+                    <a id="site-bar-search-link" role="button" class="nav-link">Search</a>
                 </form>
                 <li sec:authorize="isAnonymous()" class="nav-item">
                     <a class="nav-link" th:href="@{/login}">Login</a>

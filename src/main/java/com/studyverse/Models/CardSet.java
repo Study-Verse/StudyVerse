@@ -17,7 +17,7 @@ public class CardSet {
     private String tag;
     @Column(nullable = false, length = 30)
     private String title;
-    @ManyToOne
+    @ManyToOne (cascade = CascadeType.ALL)
     @JsonManagedReference
     private User user;
     @ManyToMany

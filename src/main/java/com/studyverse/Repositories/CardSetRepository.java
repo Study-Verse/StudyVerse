@@ -10,4 +10,6 @@ CardSet findById(long id);
 
 List<CardSet> findByUserId(long id);
 
+List<CardSet> findByTag(String tag);
+
 }
