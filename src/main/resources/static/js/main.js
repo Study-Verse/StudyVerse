@@ -71,4 +71,25 @@ $(document).ready(function(){
         $("#frontRemainingChars").css("display", "");
         $("#frontRemainingChars").text($("#frontFaceAdd").attr("maxlength") - $("#frontFaceAdd").val().length);
     })
+
+    let editSetFlashCard = $(".edit-set-flashcard");
+    editSetFlashCard.on("click", function(){
+        if($(this).children(".cardButtonsWrapper").css("display") === "none"){
+            $(this).children(".cardButtonsWrapper").css("display", "flex");
+            $(this).children(".cardButtonsWrapper").css("width", "15%");
+            $(this).children(".cardTextWrapper").css("width", "85%");
+        } else {
+            $(this).children(".cardButtonsWrapper").css("display", "none");
+            $(this).children(".cardButtonsWrapper").css("width", "");
+            $(this).children(".cardTextWrapper").css("width", "100%");
+        }
+    })
+
+    editSetFlashCard.on("mouseleave", function(){
+        $(this).children(".cardButtonsWrapper").css("display", "none");
+        $(this).children(".cardButtonsWrapper").css("width", "");
+        $(this).children(".cardTextWrapper").css("width", "100%");
+    })
+
+
 })//End of document.ready
