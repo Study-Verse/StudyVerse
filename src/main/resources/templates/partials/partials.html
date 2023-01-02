@@ -13,6 +13,7 @@
         <link rel="stylesheet" th:href="@{/css/global.css}">
         <script th:src="@{/js/jquery3.6.3.js}"></script>
         <script th:src="@{/js/main.js}"></script>
+
     </div>
     <title>Partials</title>
 
@@ -36,6 +37,7 @@
                 <li class="nav-item">
                     <a class="nav-link" th:href="@{/self-test}">Test</a>
                 </li>
+                <li sec:authorize="isAuthenticated()" class="nav-item">
                 <li class="nav-item">
                     <a class="nav-link" th:href="@{/profile}">Profile</a>
                 </li>
