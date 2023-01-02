@@ -1,3 +1,4 @@
+$(function (){
 // Creating instance for speech synthesis
 let speech = new SpeechSynthesisUtterance();
 
@@ -13,7 +14,7 @@ window.speechSynthesis.onvoiceschanged = () => {
 };
 
 // Adding event listener to button for TTS
-document.querySelector("#talk").addEventListener("click", () => {
+$("#talk").on('click', () => {
     speech.text = document.querySelector("textarea").value;
 });
 
@@ -89,5 +90,7 @@ document.querySelector("#cancel").addEventListener("click", () => {
     // Cancel the speechSynthesis instance
     window.speechSynthesis.cancel();
 });
+
+});// end of js file
 
 
