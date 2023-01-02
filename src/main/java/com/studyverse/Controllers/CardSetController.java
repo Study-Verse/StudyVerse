@@ -75,12 +75,12 @@ public class CardSetController {
         return "/dashboard";
     }
 
-//    This takes you to study but with your cards
-//    @PostMapping("/dashboard/{set-id}")
-//    public String yourStudyCards(@PathVariable long id,Model model){
-//        CardSet set = cardSetDao.findById(id);
-//        model.addAttribute(set);
-//        return "redirect:/study/{set-id}";
-//    }
+    //    This is the Search view
+    @GetMapping("/search/{tag}")
+    public String searchView(Model model, @PathVariable String tag){
+        model.addAttribute("cardSets", cardSetDao.findByTag(tag));
+        return "/searchView";
+    }
+
 
 }//End of class

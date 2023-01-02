@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <div th:replace="partials/partials :: head-fragment('Study')"></div>
+    <link th:rel="stylesheet" th:href="@{/css/study.css}">
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" th:href="@{/css/dashboard.css}">
+    <title>Study</title>
+</head>
+<body>
+<nav th:replace="partials/partials :: navbar"></nav>
+
+<!--<div th:each="cardSet : ${cardSets}">-->
+<!--    <div class="card-info" th:card-set-id="${cardSet.id}">-->
+<!--        <h1 class="card-title" th:text="${cardSet.getTitle()}"></h1>-->
+<!--        <h2 class="card-tag" th:text="${cardSet.getTag()}"></h2>-->
+<!--    </div>-->
+
+<!--</div>-->
+
+<div class="cards-book-wrapper">
+    <!--This is the beginning-->
+    <div id="acc-wrapper">
+        <div class="accordion row">
+            <div  class="card-sets column-4" th:data-name="${cardSet.getId()}" th:each="cardSet: ${cardSets}" onclick="goToCardSet(this.getAttribute('data-name'))">
+                <div class="card-info" th:card-set-id="${cardSet.id}">
+                    <h1 class="card-title" th:text="${cardSet.getTitle()}"></h1>
+                    <h2 class="card-tag" th:text="${cardSet.getTag()}"></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<footer th:replace="partials/partials :: footer-fragment"></footer>
+<div th:replace="partials/partials :: scripts"></div>
+<script th:src="@{js/main.js}"></script>
+
+<script th:src="@{/js/sitebar.js}"></script>
+</body>
+</html>
