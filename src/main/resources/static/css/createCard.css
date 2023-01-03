@@ -3,3 +3,7 @@
     grid-auto-flow: column;
     height: 10vh;
 }
+
+.card-buttons-delete {
+    all: unset;
+}
