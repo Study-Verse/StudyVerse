@@ -24,7 +24,6 @@ $(document).ready(function(){
         event.stopPropagation();
         window.location.replace(`${$(this).attr("data-id")}/delete`)
     });
-
     // model pop-up functionality for each set
     $(".edit-svg").on("click", function(event){
         event.stopPropagation();
@@ -43,11 +42,9 @@ $(document).ready(function(){
         $(".card-modal").addClass("display-none");
     });
 
-
     $(".card-modal").click(function(event){
         event.stopPropagation();
     })
-
     //Create Set Modal
     $("#create-set-button").on("click", function(){
         $(this).parent().siblings(".card-modal").removeClass("display-none");
@@ -62,12 +59,12 @@ $(document).ready(function(){
         $("#frontRemainingChars").css("display", "none");
     })
     $("#backFaceAdd").on("click" ,(e) =>  { e.stopPropagation(); $("#backRemainingChars").css("display", "")});
-    $("#backFaceAdd").on("input", function(e){
+    $("#backFaceAdd").on("input", function(){
         $("#backRemainingChars").css("display", "");
         $("#backRemainingChars").text($("#backFaceAdd").attr("maxlength") - $("#backFaceAdd").val().length);
     })
     $("#frontFaceAdd").on("click" ,(e) =>  { e.stopPropagation(); $("#frontRemainingChars").css("display", "")});
-    $("#frontFaceAdd").on("input", function(e){
+    $("#frontFaceAdd").on("input", function(){
         $("#frontRemainingChars").css("display", "");
         $("#frontRemainingChars").text($("#frontFaceAdd").attr("maxlength") - $("#frontFaceAdd").val().length);
     })
@@ -91,5 +88,16 @@ $(document).ready(function(){
         $(this).children(".cardTextWrapper").css("width", "100%");
     })
 
+    $(".card-buttons-edit").on("click", function(){
+        let childrenP = $(this).parent().siblings(".cardTextWrapper").children("p");
+        let childrenForm = $(this).parent().siblings(".cardTextWrapper").children("form");
+        if(childrenP.css("display") === "none"){
+            childrenP.css("display", "")
+            childrenForm.css("display", "none");
+        } else {
+            childrenP.css("display", "none")
+            childrenForm.css("display", "");
+        }
+    })
 
 })//End of document.ready
