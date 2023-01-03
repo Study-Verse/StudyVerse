@@ -17,16 +17,20 @@
     <div th:each="card: ${eachCard}" class="carousel">
         <div class="carousel-flashcard">
             <div class="carousel-front-face">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="soundSVG bi bi-play-circle-fill" viewBox="0 0 16 16">
-                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z"/>
-                </svg>
                 <th:block th:text="${card.getFrontFace()}"></th:block>
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="soundSVG bi bi-play-circle-fill" viewBox="0 0 16 16">
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z"/>
+                    </svg>
+                </div>
             </div>
             <div class="carousel-back-face">
                 <th:block th:text="${card.getBackFace()}"></th:block>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="soundSVG bi bi-play-circle-fill" viewBox="0 0 16 16">
-                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z"/>
-                </svg>
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="soundSVG bi bi-play-circle-fill" viewBox="0 0 16 16">
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z"/>
+                    </svg>
+                </div>
                 <!--End of Play Svg-->
             </div>
 
