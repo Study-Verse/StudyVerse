@@ -10,10 +10,13 @@
 </head>
 <body>
     <nav th:replace="partials/partials :: navbar"></nav>
-<div class="flex">
+<!-- Make a new quiz-->
 
+<!-- Search for a quiz-->
 
-<div class="wrapper">
+<!-- Quiz -->
+<div class="flex" hidden>
+    <div class="wrapper">
     <div class = "quiz-container">
         <div class = "quiz-head">
             <h1 class = "quiz-title">Quiz Game</h1>
@@ -38,7 +41,6 @@
             </div>
         </div><!--End of quiz body-->
 </div><!--end of quiz wrapper-->
-
 </div>
 
 <footer th:replace="partials/partials :: footer-fragment"></footer>
