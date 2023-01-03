@@ -1,12 +1,12 @@
 $(function (){
 
-fetch("https://opentdb.com/api.php?amount=10")
-    .then(response => response.json())
-    .then(data =>
-        {
-            console.log(data)
-        }
-    )
+// fetch("https://opentdb.com/api.php?amount=10")
+//     .then(response => response.json())
+//     .then(data =>
+//         {
+//             console.log(data)
+//         }
+//     )
 
     const _question = document.getElementById('question');
     const _options = document.querySelector('.quiz-options');
