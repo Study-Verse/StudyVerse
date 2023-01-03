@@ -18,7 +18,6 @@
                 <h1>Flashcards</h1>
                 <div>
                     <button id="show_card_box">Add Card</button>
-                    <button id="delete_cards">Del Cards</button>
                 </div>
             </div>
         </div>
@@ -32,12 +31,12 @@
                 <form class="formMiddle" th:action="@{/card-create/{id}(id = ${cardSet.id})}" th:method="POST" th:object="${card}">
                     <label for="frontFaceAdd">Question</label>
                     <br>
-                    <input type="text" id="frontFaceAdd" maxlength="255" name="frontFace" th:field="*{frontFace}">
+                    <input type="text" id="frontFaceAdd" maxlength="500" name="frontFace" th:field="*{frontFace}">
                     <span id="frontRemainingChars"></span>
                     <br>
                     <label for="backFaceAdd">Answer</label>
                     <br>
-                    <input type="text" id="backFaceAdd" maxlength="255" name="backFace" th:field="*{backFace}">
+                    <input type="text" id="backFaceAdd" maxlength="500" name="backFace" th:field="*{backFace}">
                     <span id="backRemainingChars"></span>
                     <div>
                         <input id="save_card" type="submit" value="submit">
