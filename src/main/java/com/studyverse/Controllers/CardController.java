@@ -63,7 +63,24 @@ public class CardController {
         return "redirect:/card-create/" + setId;
     }
 
+    @PostMapping("edit-card/{cardId}/{setId}")
+    public String editCard(@RequestParam (name="edit-card-front-face") String frontFace,
+                           @RequestParam (name="edit-card-back-face") String backFace, @PathVariable long cardId,
+                           @PathVariable long setId){
+        Card editedCard = cardDao.findById(cardId);
+        editedCard.setFrontFace(frontFace);
+       editedCard.setBackFace(backFace);
+       cardDao.save(editedCard);
+        return "redirect:/card-create/" + setId;
+    }
 
+    @PostMapping("/delete-card/{cardId}/{cardSetId}")
+    public String deleteCard(@PathVariable long cardId, @PathVariable long cardSetId){
+        Card cardToDelete = cardDao.findById(cardId);
+        cardSetDao.findById(cardSetId).getCardList().remove(cardToDelete);
+        cardDao.delete(cardToDelete);
+        return "redirect:/card-create/" + cardSetId;
+    }
 //        ============ study get mapping
     @GetMapping("study-cards/{id}")
     public String studyCards(Model model, @PathVariable long id) {
