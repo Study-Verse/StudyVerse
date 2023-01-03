@@ -66,7 +66,6 @@ header{background-color: #fff;}
 .edit-set-flashcard{
     display: flex;
     width: 370px;
-    height: 200px;
     margin: 10px;
     background-color:#4d1a53;
     color: white;
@@ -80,7 +79,6 @@ header{background-color: #fff;}
     background-color:#2f1046;
     flex-direction: column;
     justify-content: space-evenly;
-    height:100%;
 }
 .edit-set-flashcard .cardTextWrapper {
     width: 100%;
@@ -93,15 +91,15 @@ header{background-color: #fff;}
 .edit-set-flashcard .card-buttons:hover {
     color: rgb(250 110 255);
 }
-
+.cardTextWrapper p{
+    overflow-wrap: break-word;
+}
 /* Vertical card display*/
 .vertical-display{
     display:flex;
     flex-direction: column;
     flex-wrap:nowrap;
-    overflow-y:scroll;
     width:100%;
-    height:530px
 }
 @media(max-width:1280px){
     .container{width: 100%;}

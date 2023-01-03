@@ -1,4 +1,4 @@
-$(function (){
+$(document).ready(function (){
 // Creating instance for speech synthesis
 let speech = new SpeechSynthesisUtterance();
 
@@ -14,13 +14,9 @@ window.speechSynthesis.onvoiceschanged = () => {
 };
 
 // Adding event listener for play button
-$("#soundSVG").on('click', () => {
-    speech.text = $(".carousel-front-face").text();
-    window.speechSynthesis.speak(speech);
-});
-
-$("#soundSVG").on('click', () => {
-    speech.text = $(".carousel-back-face").text();
+$(".soundSVG").on('click', function(e)  {
+    e.stopPropagation();
+    speech.text = $(this).parent().text();
     window.speechSynthesis.speak(speech);
 });
 

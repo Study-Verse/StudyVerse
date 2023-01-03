@@ -67,6 +67,7 @@
     perspective: 1000px;
     scroll-snap-align: start;
     text-align: center;
+
 }
 .carousel-flashcard .carousel-front-face,
 .carousel-flashcard .carousel-back-face {
@@ -90,6 +91,10 @@
 .carousel-flashcard .carousel-back-face {
     transform: rotateY(180deg);
 }
+.carousel-flashcard .soundSVG {
+    height: 25px;
+    width: 25px;
+}
 .carousel-flashcard.flipped .carousel-front-face {
     transform: rotateY(180deg);
 }
@@ -103,6 +108,3 @@
     display: none;
 }
 
-.bi-play-circle-fill {
-    z-index: 1;
-}
