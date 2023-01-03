@@ -7,9 +7,7 @@ import com.studyverse.Services.Utils;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -42,9 +40,18 @@ public class UserController {
 //    Takes you to the profile
 
     @GetMapping("/profile")
-    public String profile(){
+    public String profile(Model model){
+        model.addAttribute("user", new User());
         return "/profile";
     }
+
+//  Edit profile
+    @PostMapping ("/profile/edit")
+    String editProfile(@ModelAttribute User user){
+        usersDao.findById(Utils.currentUser().getId());
+        return "/profile/edit";
+    }
+
 
 
 } // End of UserController
