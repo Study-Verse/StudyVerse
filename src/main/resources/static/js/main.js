@@ -100,4 +100,25 @@ $(document).ready(function(){
         }
     })
 
+
+
+//    This is to close the add a card and close it
+    document.getElementById("save_card").addEventListener("click", () => {
+        addFlashcard();
+    });
+
+
+//  This show the create flashcard box
+    document.getElementById("show_card_box").addEventListener("click", () => {
+        document.getElementById("create_card").style.display = "block";
+    });
+
+
+//  This closes the create flashcard box
+    document.getElementById("close_card_box").addEventListener("click", () => {
+        document.getElementById("create_card").style.display = "none";
+    });
+
+//^^^^
+
 })//End of document.ready
