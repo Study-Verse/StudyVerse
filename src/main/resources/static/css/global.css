@@ -1,6 +1,6 @@
-*{
-	box-sizing: border-box;
-}
+/**{*/
+/*	box-sizing: border-box;*/
+/*}*/
 
 html:focus-within{
 	scroll-behavior: smooth;
@@ -13,11 +13,9 @@ body {
 .dropdown-menu{
 	color: white;
 }
-
 #logoutForm{
 	display: none;
 }
-
 .profile-dropdown-menu{
 	text-align: center;
 	background-color: #4e1a53;
@@ -36,7 +34,6 @@ body {
 #site-bar-search-link {
 	align-self: center;
 }
-
 #searchUL {
 	padding: 0;
 }
@@ -49,64 +46,50 @@ body {
 	padding-left: 30px;
 	font-size: 18px;
 }
-
-
 .page-wrapper {
 	background-color: rgb(89 37 182);
 }
-
-.navbar, .container-fluid, .mx-auto, .navbar-brand, .navbar-toggler, .bi, .navbar-collapse {
-	background-color: rgb(89 37 182);
-	cursor: pointer;
+.navbar {
+	background-color: #2f1046;
 }
-
 .navbar-brand{
 	font-weight: bold;
 	font-size: 16pt;
 	color: #FFFFFF;
 }
-
 .nav-link {
 	color: #FFFFFF;
 
 }
-
 .navbar-brand:hover{
 	color: lavender;
 
 }
-
 .nav-link:hover {
 	color: lavender;
 
 }
-
 .icon{
 	display: none;
 }
-
-#footer, .d-flex, .about-footer, .contact-footer, .ms-auto{
+#footer{
 	padding: 0.8rem;
-	background-color: rgb(89 37 182);
+	background-color: #2f1046;
 	color: white;
 }
-
 #footer {
 	position: fixed;
 	bottom: 0;
 }
-
 .nav-item {
 	display: flex;
 	align-items: center;
 }
-
 .container{
 	max-width: none!important;
 	margin-left: 0!important;
 	margin-right: 0!important;
 }
-
 #profile-dropdown{
 	display: flex;
 	align-items: center;
@@ -118,41 +101,31 @@ body {
 	background-color: blue;
 }
 
-
 /*medium screen*/
 @media screen and (max-width: 992px){
 	.about-footer, .contact-footer, .ms-auto {
 		padding: 0;
 		color: white;
 	}
-
 	#site-bar-search-link {
 		visibility: collapse;
 	}
-
 	.icon{
 		display: flex;
 		position: relative;
 		visibility: visible;
 	}
-
 	.searchBtn {
 		position: relative;
 		left: 0;
 		top: 2.5px;
 		transition: 0.5s ease-in-out;
 	}
-
 	.navbar-toggler{
 		position: absolute;
 		right: 0;
 	}
-
 }
-
-/*// X-Small devices (portrait phones, less than 576px)*/
-/*// No media query for `xs` since this is the default in Bootstrap*/
-
 /*// Small devices (landscape phones, 576px and down)*!*!*/
 @media (max-width: 576px) {
 	#site-bar-search{
@@ -164,28 +137,21 @@ body {
 
 
 }
-
 /*// Medium devices (tablets, 768px and up)*!*!*/
 @media (min-width: 768px) {
 }
-
 /*// Large devices (desktops, 992px and up)*!*!*/
 @media (max-width: 992px) {
 	.icon{
 		display: none;
 	}
 }
-
 /*// X-Large devices (large desktops, 1200px and up)*!*!*/
 @media (min-width: 1200px) {
 
 }
-
 /*// XX-Large devices (larger desktops, 1400px and up)*!*!*/
 @media (min-width: 1400px) {
-	/*.search-bar-btn{*/
-	/*	display: flex;*/
-	/*}*/
 
 }
 
