@@ -2,80 +2,72 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <div th:replace="partials/partials :: head-fragment('Create a card')"></div>
-    <link rel="stylesheet" href="/css/global.css">
-    <link rel="stylesheet" th:href="@{/css/splashpage.css}">
-    <link rel="stylesheet" th:href="@{/css/flashcard.css}">
+    <link rel="stylesheet" th:href="@{/css/global.css}">
     <link rel="stylesheet" th:href="@{/css/createCard.css}">
 </head>
 <body>
-<!--nav bar-->
-<nav th:replace="partials/partials.html :: navbar"></nav>
-
-
+    <nav th:replace="partials/partials.html :: navbar"></nav>
     <header>
-        <div class="container">
-            <div id="header">
-                <h1>Flashcards</h1>
-                <div>
-                    <button id="show_card_box">Add Card</button>
-                </div>
-            </div>
-        </div>
-    </header>
-<div class="row">
-<!-- This section is where the model form binding to make a card is-->
-    <section>
-        <div class="container column">
-            <div id="create_card">
-                <h2>Create Flashcard</h2>
-                <form class="formMiddle" th:action="@{/card-create/{id}(id = ${cardSet.id})}" th:method="POST" th:object="${card}">
-                    <label for="frontFaceAdd">Question</label>
-                    <br>
-                    <input type="text" id="frontFaceAdd" maxlength="500" name="frontFace" th:field="*{frontFace}">
-                    <span id="frontRemainingChars"></span>
-                    <br>
-                    <label for="backFaceAdd">Answer</label>
-                    <br>
-                    <input type="text" id="backFaceAdd" maxlength="500" name="backFace" th:field="*{backFace}">
-                    <span id="backRemainingChars"></span>
+            <div class="container">
+                <div id="header">
+                    <h1>Flashcards</h1>
                     <div>
-                        <input id="save_card" type="submit" value="submit">
+                        <button id="show_card_box">Add Card</button>
                     </div>
-                </form>
-                <button id="close_card_box">Close</button>
-
-            </div>
-        </div>
-    </section>
-
-
-<!-- This section will show the cards in the current set as you add them -->
-    <div class="vertical-display column">
-        <div th:each="cards: ${cardList}">
-            <div class="cardItem edit-set-flashcard">
-                <div class="cardButtonsWrapper">
-                    <button class="card-buttons card-buttons-edit">Edit Card</button>
-                    <form th:method="Post" th:action="@{|/delete-card/${cards.getId()}/${cardSet.getId()}|}">
-                        <button type="submit">
-                            Delete Card
-                        </button>
-                    </form>
                 </div>
-                <div class="cardTextWrapper">
-                    <form class="edit-form" th:method="Post" th:action="@{|/edit-card/${cards.getId()}/${cardSet.getId()}|}">
-                        <p class="pForFrontFace" contenteditable="false" th:text ="${cards.getFrontFace()}"></p>
-                        <p class="pForBackFace" contenteditable="false" th:text="${cards.getBackFace()}"></p>
-                        <input type="hidden" name="editFrontFace" class="hiddenInputForFront" th:value="${cards.getFrontFace()}" />
-                        <input type="hidden" name="editBackFace" class="hiddenInputForBack" th:value="${cards.getBackFace()}" />
-                        <button type="submit" style="display:none">Submit</button>
+            </div>
+        </header>
+
+    <div class="edit-set-page-container">
+        <!--Add card form-->
+        <section>
+            <div class="container column">
+                <div id="create_card">
+                    <h2>Create Flashcard</h2>
+                    <form class="formMiddle" th:action="@{/card-create/{id}(id = ${cardSet.id})}" th:method="POST" th:object="${card}">
+                        <label for="frontFaceAdd">Question</label>
+                        <br>
+                        <input type="text" id="frontFaceAdd" maxlength="500" name="frontFace" th:field="*{frontFace}">
+                        <span id="frontRemainingChars"></span>
+                        <br>
+                        <label for="backFaceAdd">Answer</label>
+                        <br>
+                        <input type="text" id="backFaceAdd" maxlength="500" name="backFace" th:field="*{backFace}">
+                        <span id="backRemainingChars"></span>
+                        <div>
+                            <input id="save_card" type="submit" value="submit">
+                        </div>
                     </form>
+                    <button id="close_card_box">Close</button>
+
+                </div>
+            </div>
+        </section>
+        <!--Show all cards in the deck-->
+        <div class="column">
+            <div th:each="cards: ${cardList}">
+                <div class="cardItem edit-set-flashcard">
+                    <div class="cardButtonsWrapper">
+                        <button class="card-buttons card-buttons-edit">Edit Card</button>
+                        <form th:method="Post" th:action="@{|/delete-card/${cards.getId()}/${cardSet.getId()}|}">
+                            <button type="submit">
+                                Delete Card
+                            </button>
+                        </form>
+                    </div>
+                    <div class="cardTextWrapper">
+                        <form class="edit-form" th:method="Post" th:action="@{|/edit-card/${cards.getId()}/${cardSet.getId()}|}">
+                            <p class="pForFrontFace" contenteditable="false" th:text ="${cards.getFrontFace()}"></p>
+                            <p class="pForBackFace" contenteditable="false" th:text="${cards.getBackFace()}"></p>
+                            <input type="hidden" name="editFrontFace" class="hiddenInputForFront" th:value="${cards.getFrontFace()}" />
+                            <input type="hidden" name="editBackFace" class="hiddenInputForBack" th:value="${cards.getBackFace()}" />
+                            <button type="submit" style="display:none">Submit</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-
-
 
 <footer th:replace="partials/partials :: footer-fragment"></footer>
 <div th:replace="partials/partials :: scripts"></div>

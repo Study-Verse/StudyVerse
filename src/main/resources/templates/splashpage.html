@@ -6,39 +6,19 @@
     <link rel="stylesheet" href="/css/splashpage.css">
 </head>
 <body>
-
-
-<div class="page-wrapper splash-page-wrapper">
-    <nav th:replace="partials/partials :: navbar"></nav>
-<!--Intro message-->
-    <div class="container SPContainer" >
-        <div class="row">
-            <div class="column">
-                    <p class="SPHeading1">YOUR NUMBER ONE</p>
-                    <p class="SPHeading2">STUDY SPOT</p>
+    <div class="page-wrapper splash-page-wrapper">
+        <nav th:replace="partials/partials :: navbar"></nav>
+         <!--Intro message-->
+        <div class="container SPContainer" >
+            <div class="row">
+                <div class="column">
+                        <p class="SPHeading1">YOUR NUMBER ONE</p>
+                        <p class="SPHeading2">STUDY SPOT</p>
+                </div>
             </div>
         </div>
+        <footer th:replace="partials/partials :: footer-fragment"></footer>
+        <div th:replace="partials/partials :: scripts"></div>
     </div>
-<!--    Pitch-->
-    <div class="container-pitch">
-        <div class="row">
-            <div class="column">
-                <br><br>
-                <p class="message">Actively engage in learning in the most effective and portable way known to students</p>
-            </div>
-        </div>
-    </div>
-
-
-
-
-
-
-
-</div>
-
-<!--<footer th:replace="partials/partials :: footer-fragment"></footer>-->
-<div th:replace="partials/partials :: scripts"></div>
-
 </body>
 </html>
