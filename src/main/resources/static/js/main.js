@@ -73,12 +73,8 @@ $(document).ready(function(){
     editSetFlashCard.on("click", function(){
         if($(this).children(".cardButtonsWrapper").css("display") === "none"){
             $(this).children(".cardButtonsWrapper").css("display", "flex");
-            $(this).children(".cardButtonsWrapper").css("width", "15%");
-            $(this).children(".cardTextWrapper").css("width", "85%");
         } else {
             $(this).children(".cardButtonsWrapper").css("display", "none");
-            $(this).children(".cardButtonsWrapper").css("width", "");
-            $(this).children(".cardTextWrapper").css("width", "100%");
         }
     })
 
@@ -89,18 +85,36 @@ $(document).ready(function(){
     })
 
     $(".card-buttons-edit").on("click", function(){
-        let childrenP = $(this).parent().siblings(".cardTextWrapper").children("p");
-        let childrenForm = $(this).parent().siblings(".cardTextWrapper").children("form");
-        if(childrenP.css("display") === "none"){
-            childrenP.css("display", "")
-            childrenForm.css("display", "none");
+        let pTags = $(this).parent().siblings(".cardTextWrapper").children("form").children("p");
+        let submitButton = $(this).parent().siblings(".cardTextWrapper").children("form").children("button");
+        if(pTags.attr("contenteditable") === "true"){
+            pTags.attr("contenteditable", "false");
+            submitButton.css("display", "none");
+            pTags.removeClass("p-tags-active");
+
         } else {
-            childrenP.css("display", "none")
-            childrenForm.css("display", "");
+            pTags.attr("contenteditable", "true");
+            pTags.addClass("p-tags-active");
+            submitButton.css("display", "");
+            $(this).parent().siblings(".cardTextWrapper").children("form").children(".pForFrontFace").focus()
         }
     })
-
-
+    $('.pForFrontFace').on("click", function(e) {
+        if ($(this).hasClass("p-tags-active")) {
+            e.stopPropagation();
+        }
+    });
+    $('.pForBackFace').on("click", function(e){
+        if($(this).hasClass("p-tags-active")){
+            e.stopPropagation();
+        }
+        })
+    $('.pForFrontFace').on('input', function() {
+        $(this).siblings('.hiddenInputForFront').val($(this).text());
+    });
+    $('.pForBackFace').on('input', function() {
+        $(this).siblings('.hiddenInputForBack').val($(this).text());
+    });
 
 //    This is to close the add a card and close it
     document.getElementById("save_card").addEventListener("click", () => {

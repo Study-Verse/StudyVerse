@@ -63,15 +63,14 @@ public class CardController {
         return "redirect:/card-create/" + setId;
     }
 
-    @PostMapping("edit-card/{cardId}/{setId}")
-    public String editCard(@RequestParam (name="edit-card-front-face") String frontFace,
-                           @RequestParam (name="edit-card-back-face") String backFace, @PathVariable long cardId,
-                           @PathVariable long setId){
-        Card editedCard = cardDao.findById(cardId);
-        editedCard.setFrontFace(frontFace);
+    @PostMapping("/edit-card/{cardId}/{cardSetId}")
+    public String editCard(@RequestParam (name="editFrontFace") String frontFace,
+                           @RequestParam (name="editBackFace") String backFace, @PathVariable long cardId, @PathVariable long cardSetId){
+       Card editedCard = cardDao.findById(cardId);
+       editedCard.setFrontFace(frontFace);
        editedCard.setBackFace(backFace);
        cardDao.save(editedCard);
-        return "redirect:/card-create/" + setId;
+        return "redirect:/card-create/" + cardSetId;
     }
 
     @PostMapping("/delete-card/{cardId}/{cardSetId}")
