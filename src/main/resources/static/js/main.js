@@ -84,6 +84,7 @@ $(document).ready(function(){
         $(this).children(".cardTextWrapper").css("width", "100%");
     })
 
+// Edit card button functionality
     $(".card-buttons-edit").on("click", function(){
         let pTags = $(this).parent().siblings(".cardTextWrapper").children("form").children("p");
         let submitButton = $(this).parent().siblings(".cardTextWrapper").children("form").children("button");
@@ -134,5 +135,41 @@ $(document).ready(function(){
     });
 
 //^^^^
+
+//Edit user details functionality
+        $(".edit-user-info-btn").on('click', function(e){
+            alert("hey");
+            // let form = $(this).attr('form');
+            // $.get(form, function(user, status){
+            //     $('.changed-username').val(user.username);
+            //     $('.changed-email').val(user, email);
+            // });
+            // $('.profile-edit-modal').modal();
+        })
+
+// Stephen's code for edit post
+    // $(document).ready(function(){
+    //     // Event listener to redirect when .editButton clicked
+    //     $(".editButton").on('click', function(e){
+    //         window.location.replace(`/posts/${$(this).attr("data-id")}/edit`);
+    //     });
+    // });
+
+
+    // $(".card-buttons-edit").on("click", function(){
+    //     let pTags = $(this).parent().siblings(".cardTextWrapper").children("form").children("p");
+    //     let submitButton = $(this).parent().siblings(".cardTextWrapper").children("form").children("button");
+    //     if(pTags.attr("contenteditable") === "true"){
+    //         pTags.attr("contenteditable", "false");
+    //         submitButton.css("display", "none");
+    //         pTags.removeClass("p-tags-active");
+    //
+    //     } else {
+    //         pTags.attr("contenteditable", "true");
+    //         pTags.addClass("p-tags-active");
+    //         submitButton.css("display", "");
+    //         $(this).parent().siblings(".cardTextWrapper").children("form").children(".pForFrontFace").focus()
+    //     }
+    // })
 
 })//End of document.ready
