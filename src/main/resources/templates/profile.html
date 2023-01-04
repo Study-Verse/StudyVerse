@@ -2,8 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" lang="en">
 <head>
   <div th:replace="partials/partials :: head-fragment(' Profile')"></div>
-  <link rel="stylesheet" href="/css/global.css">
-  <link rel="stylesheet" href="/css/profile.css">
+  <link th:rel="stylesheet" th:href="@{/css/profile.css}">
 
 </head>
 <body>
@@ -56,7 +55,7 @@
       </div>
     </div>
     <!--      Beginning of user info-->
-    <div class="col-lg-8">
+    <div class="col-lg-8 user-info">
       <div class="card mb-4">
         <div class="card-body">
           <div class="row">
@@ -71,33 +70,86 @@
             </div>
             <div class="col-sm-9">
               <p class="text-muted mb-0"><span th:text="${#authentication.principal.email}"/></p>
+              <!--    Second try: editing user info-->
+              <div class="user-Item edit-user-info">
+                <div class="edit-user-info-btn">
+                  <button class="user-info-btn" data-toggle="modal" data-target="profile-edit-modal" type="submit">Edit</button>
+                  <form th:method="Post" th:action="@{|/edit-info/${user.getUsername()}/${user.getEmail()}|}"></form>
+                </div>
+              </div>
+<!--              end of editing user info-->
             </div>
           </div>
-          <button class="edit-user-info btn-primary" id="edit-profile-button">Update</button>
           <!--            End of info on table-->
         </div>
       </div>
     </div>
 
-    <!--      Beginning of edit modal-->
-    <div class="profile-edit-modal display-none">
-      <div class="profile-edit-content">
-        <form th:action="@{/profile/edit}" method="post" th:object="${user}"></form>
-        <div class="edit-info-popup display-hidden">
-          <h5>Edit info</h5>
-            <input type="text" name="edit-username" class="changed-username" th:value="${user.getUsername()}">
-            <br>
-            <input type="text" name="edit-email" class="changed-email" th:value="${user.getEmail()}">
-            <br>
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </form>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        </div>
-<!--        <button class="edit-user-info-btn" id="edit-profile-button" data-toggle="modal" data-target="profile-edit-modal" type="submit">Update</button>-->
-      </div>
-    </div>
+    <!--      Beginning of edit modal first try-->
+<!--    <div class="profile-edit-modal display-none">-->
+<!--      <div class="profile-edit-content">-->
+<!--        <form th:action="@{/profile/edit}" method="post" th:object="${user}"></form>-->
+<!--        <div class="edit-info-popup display-hidden">-->
+<!--          <h5>Edit info</h5>-->
+<!--            <input type="text" name="edit-username" class="changed-username" th:value="${user.getUsername()}">-->
+<!--            <br>-->
+<!--            <input type="text" name="edit-email" class="changed-email" th:value="${user.getEmail()}">-->
+<!--            <br>-->
+<!--            <button type="submit" class="btn btn-primary">Submit</button>-->
+<!--          </form>-->
+<!--          <div class="modal-footer">-->
+<!--            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
+<!--        </div>-->
+<!--&lt;!&ndash;        <button class="edit-user-info-btn" id="edit-profile-button" data-toggle="modal" data-target="profile-edit-modal" type="submit">Update</button>&ndash;&gt;-->
+<!--      </div>-->
+<!--    </div>-->
 
+
+
+              <p class="mb-0">Full Name</p>
+            </div>
+            <div class="col-sm-9">
+              <p class="text-muted mb-0">Johnatan Smith</p>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-sm-3">
+              <p class="mb-0">Email</p>
+            </div>
+            <div class="col-sm-9">
+              <p class="text-muted mb-0">example@example.com</p>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-sm-3">
+              <p class="mb-0">Phone</p>
+            </div>
+            <div class="col-sm-9">
+              <p class="text-muted mb-0">(097) 234-5678</p>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-sm-3">
+              <p class="mb-0">Mobile</p>
+            </div>
+            <div class="col-sm-9">
+              <p class="text-muted mb-0">(098) 765-4321</p>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-sm-3">
+              <p class="mb-0">Address</p>
+            </div>
+            <div class="col-sm-9">
+              <p class="text-muted mb-0">Bay Area, San Francisco, CA</p>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="row">
         <div class="col-md-6">
           <div class="card mb-4 mb-md-0">
@@ -108,6 +160,17 @@
               <div class="progress rounded" style="height: 5px;">
                 <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80"
                      aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+              <p class="mt-4 mb-1" style="font-size: .77rem;">Website Markup</p>
+              <div class="progress rounded" style="height: 5px;">
+                <div class="progress-bar" role="progressbar" style="width: 72%" aria-valuenow="72"
+                     aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+              <p class="mt-4 mb-1" style="font-size: .77rem;">One Page</p>
+              <div class="progress rounded" style="height: 5px;">
+                <div class="progress-bar" role="progressbar" style="width: 89%" aria-valuenow="89"
+                     aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
               </div>
               <p class="mt-4 mb-1" style="font-size: .77rem;">Website Markup</p>
               <div class="progress rounded" style="height: 5px;">
@@ -168,9 +231,53 @@
       </div>
     </div>
   </div>
+  </div>
 </section>
 
+<div id="container">
+  <div id="header">
+    <div id="monthDisplay"></div>
+    <div>
+      <button id="backButton">Back</button>
+      <button id="nextButton">Next</button>
+    </div>
+  </div>
+
+  <div id="weekdays">
+    <div>Sunday</div>
+    <div>Monday</div>
+    <div>Tuesday</div>
+    <div>Wednesday</div>
+    <div>Thursday</div>
+    <div>Friday</div>
+    <div>Saturday</div>
+  </div>
+
+  <div id="calendar"></div>
+</div>
+
+<div id="newEventModal">
+  <h2>New Event</h2>
+
+  <input id="eventTitleInput" placeholder="Event Title" />
+
+  <button id="saveButton">Save</button>
+  <button id="cancelButton">Cancel</button>
+</div>
+
+<div id="deleteEventModal">
+  <h2>Event</h2>
+
+  <p id="eventText"></p>
+
+  <button id="deleteButton">Delete</button>
+  <button id="closeButton">Close</button>
+</div>
+
+<div id="modalBackDrop"></div>
+
 <footer th:replace="partials/partials :: footer-fragment"></footer>
+<script th:src="@{/js/profile.js}"></script>
 
 <script th:src="@{js/main.js}"></script>
 
