@@ -65,6 +65,7 @@ header{background-color: #fff;}
 }
 .edit-set-flashcard{
     display: flex;
+    flex-direction: column;
     width: 370px;
     margin: 10px;
     background-color:#4d1a53;
@@ -77,17 +78,13 @@ header{background-color: #fff;}
 .edit-set-flashcard .cardButtonsWrapper {
     display:none;
     background-color:#2f1046;
-    flex-direction: column;
     justify-content: space-evenly;
 }
 .edit-set-flashcard .cardTextWrapper {
     width: 100%;
 
 }
-.edit-set-flashcard .card-buttons {
-    height: 100%;
-    width: 58px;
-}
+
 .edit-set-flashcard .card-buttons:hover {
     color: rgb(250 110 255);
 }

@@ -24,7 +24,6 @@ $(document).ready(function(){
         event.stopPropagation();
         window.location.replace(`${$(this).attr("data-id")}/delete`)
     });
-
     // model pop-up functionality for each set
     $(".edit-svg").on("click", function(event){
         event.stopPropagation();
@@ -43,11 +42,9 @@ $(document).ready(function(){
         $(".card-modal").addClass("display-none");
     });
 
-
     $(".card-modal").click(function(event){
         event.stopPropagation();
     })
-
     //Create Set Modal
     $("#create-set-button").on("click", function(){
         $(this).parent().siblings(".card-modal").removeClass("display-none");
@@ -62,12 +59,12 @@ $(document).ready(function(){
         $("#frontRemainingChars").css("display", "none");
     })
     $("#backFaceAdd").on("click" ,(e) =>  { e.stopPropagation(); $("#backRemainingChars").css("display", "")});
-    $("#backFaceAdd").on("input", function(e){
+    $("#backFaceAdd").on("input", function(){
         $("#backRemainingChars").css("display", "");
         $("#backRemainingChars").text($("#backFaceAdd").attr("maxlength") - $("#backFaceAdd").val().length);
     })
     $("#frontFaceAdd").on("click" ,(e) =>  { e.stopPropagation(); $("#frontRemainingChars").css("display", "")});
-    $("#frontFaceAdd").on("input", function(e){
+    $("#frontFaceAdd").on("input", function(){
         $("#frontRemainingChars").css("display", "");
         $("#frontRemainingChars").text($("#frontFaceAdd").attr("maxlength") - $("#frontFaceAdd").val().length);
     })
@@ -76,12 +73,8 @@ $(document).ready(function(){
     editSetFlashCard.on("click", function(){
         if($(this).children(".cardButtonsWrapper").css("display") === "none"){
             $(this).children(".cardButtonsWrapper").css("display", "flex");
-            $(this).children(".cardButtonsWrapper").css("width", "15%");
-            $(this).children(".cardTextWrapper").css("width", "85%");
         } else {
             $(this).children(".cardButtonsWrapper").css("display", "none");
-            $(this).children(".cardButtonsWrapper").css("width", "");
-            $(this).children(".cardTextWrapper").css("width", "100%");
         }
     })
 
@@ -91,5 +84,55 @@ $(document).ready(function(){
         $(this).children(".cardTextWrapper").css("width", "100%");
     })
 
+    $(".card-buttons-edit").on("click", function(){
+        let pTags = $(this).parent().siblings(".cardTextWrapper").children("form").children("p");
+        let submitButton = $(this).parent().siblings(".cardTextWrapper").children("form").children("button");
+        if(pTags.attr("contenteditable") === "true"){
+            pTags.attr("contenteditable", "false");
+            submitButton.css("display", "none");
+            pTags.removeClass("p-tags-active");
+
+        } else {
+            pTags.attr("contenteditable", "true");
+            pTags.addClass("p-tags-active");
+            submitButton.css("display", "");
+            $(this).parent().siblings(".cardTextWrapper").children("form").children(".pForFrontFace").focus()
+        }
+    })
+    $('.pForFrontFace').on("click", function(e) {
+        if ($(this).hasClass("p-tags-active")) {
+            e.stopPropagation();
+        }
+    });
+    $('.pForBackFace').on("click", function(e){
+        if($(this).hasClass("p-tags-active")){
+            e.stopPropagation();
+        }
+        })
+    $('.pForFrontFace').on('input', function() {
+        $(this).siblings('.hiddenInputForFront').val($(this).text());
+    });
+    $('.pForBackFace').on('input', function() {
+        $(this).siblings('.hiddenInputForBack').val($(this).text());
+    });
+
+//    This is to close the add a card and close it
+    document.getElementById("save_card").addEventListener("click", () => {
+        addFlashcard();
+    });
+
+
+//  This show the create flashcard box
+    document.getElementById("show_card_box").addEventListener("click", () => {
+        document.getElementById("create_card").style.display = "block";
+    });
+
+
+//  This closes the create flashcard box
+    document.getElementById("close_card_box").addEventListener("click", () => {
+        document.getElementById("create_card").style.display = "none";
+    });
+
+//^^^^
 
 })//End of document.ready
