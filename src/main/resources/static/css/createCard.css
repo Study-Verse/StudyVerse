@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+:root {
+    --pageMainColor: #2f1046;
+    --pageSecondaryColor: #4d1a53;
+    --buttonColor: #4d1a53;
+}
 *{
     margin: 0;
     padding: 0;
@@ -9,7 +14,9 @@
     flex-direction: column;
     align-items: center;
 }
-
+.header-button-holder {
+    margin-right: 10px;
+}
 body{
     font-family: 'Nunito', sans-serif;
     font-size: 1rem;
@@ -21,24 +28,22 @@ button{
     cursor: pointer;
     border: 1px solid lightgray;
     border-radius: 5px;
-    background: whitesmoke;
+    font-family: inherit;
+    background-color: var(--buttonColor);
+    color: white;
 }
 button:hover{
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color:#64316a;
 }
-header{background-color: #fff;}
-#header{
-    display: flex;
+header{
+    color:white;
+    display:flex;
     justify-content: space-between;
     align-items: center;
-    min-height: 70px;
-    padding: 0 20px;
-    background: #fff;
+    background-color: var(--pageMainColor);
 }
-#header button{
-    font-family: inherit;
-    border: 1px solid red;
-}
+
+
 #create_card{
     /*display: none;*/
     width: 370px;
@@ -74,7 +79,7 @@ header{background-color: #fff;}
     flex-direction: column;
     width: 700px;
     margin: 10px;
-    background-color:#4d1a53;
+    background-color: var(--pageMainColor);
     color: white;
     text-align: center;
     cursor: pointer;
@@ -83,15 +88,11 @@ header{background-color: #fff;}
 }
 .edit-set-flashcard .cardButtonsWrapper {
     display:none;
-    background-color:#2f1046;
+    background-color: var(--pageSecondaryColor);
     justify-content: space-evenly;
 }
 .edit-set-flashcard .cardTextWrapper {
     width: 100%;
-
-}
-.edit-set-flashcard .card-buttons:hover {
-    color: rgb(250 110 255);
 }
 .cardTextWrapper p{
     overflow-wrap: break-word;
@@ -113,9 +114,7 @@ header{background-color: #fff;}
     width: 100%;
 }
 
-@media(max-width:1280px){
-    .container{width: 100%;}
-}
+
 @media(max-width:768px){
     .flashcard{margin: auto;}
 
@@ -124,7 +123,6 @@ header{background-color: #fff;}
         margin-bottom: 10px;
     }
 }
-
 @media(max-width: 705px){
     .edit-set-flashcard{
         width: 620px;
@@ -141,6 +139,14 @@ header{background-color: #fff;}
 @media(max-width: 560px){
     .edit-set-flashcard{
         width: 505px;
+    }
+    .cardTextWrapper p {
+        width: 490px;
+    }
+}
+@media(max-width: 504px){
+    .edit-set-flashcard{
+        width: 495px;
     }
     .cardTextWrapper p {
         width: 490px;

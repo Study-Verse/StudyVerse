@@ -8,13 +8,9 @@
 <body>
     <nav th:replace="partials/partials.html :: navbar"></nav>
     <header>
-            <div class="container">
-                <div id="header">
-                    <h1 th:text="'CardSet: ' + ${cardSet.getTitle()}"></h1>
-                    <div>
-                        <button id="show_card_box">Add Card</button>
-                    </div>
-                </div>
+            <h1 th:text="'CardSet: ' + ${cardSet.getTitle()}"></h1>
+            <div class="header-button-holder">
+                <button id="show_card_box">Add Card</button>
             </div>
         </header>
 
@@ -47,14 +43,7 @@
         <div class="column">
             <div th:each="cards: ${cardList}">
                 <div class="cardItem edit-set-flashcard">
-                    <div class="cardButtonsWrapper">
-                        <button class="card-buttons card-buttons-edit">Edit Card</button>
-                        <form th:method="Post" th:action="@{|/delete-card/${cards.getId()}/${cardSet.getId()}|}">
-                            <button type="submit">
-                                Delete Card
-                            </button>
-                        </form>
-                    </div>
+
                     <div class="cardTextWrapper">
                         <form class="edit-form" th:method="Post" th:action="@{|/edit-card/${cards.getId()}/${cardSet.getId()}|}">
                             <p class="pForFrontFace" contenteditable="false" th:text ="${cards.getFrontFace()}"></p>
@@ -63,6 +52,15 @@
                             <input type="hidden" name="editFrontFace" class="hiddenInputForFront" th:value="${cards.getFrontFace()}" />
                             <input type="hidden" name="editBackFace" class="hiddenInputForBack" th:value="${cards.getBackFace()}" />
                             <button type="submit" style="display:none">Submit</button>
+                            <button class="cancelButtonForEdit" style="display: none">Cancel</button>
+                        </form>
+                    </div>
+                    <div class="cardButtonsWrapper">
+                        <button class="card-buttons card-buttons-edit">Edit Card</button>
+                        <form th:method="Post" th:action="@{|/delete-card/${cards.getId()}/${cardSet.getId()}|}">
+                            <button type="submit">
+                                Delete Card
+                            </button>
                         </form>
                     </div>
                 </div>
@@ -72,7 +70,7 @@
 
 <footer th:replace="partials/partials :: footer-fragment"></footer>
 <div th:replace="partials/partials :: scripts"></div>
-
+<script th:src="@{/js/createCard.js}"></script>
 </body>
 </html>
 
