@@ -1,3 +1,6 @@
+/*.edit-user-info-btn {*/
+/*	all: unset;*/
+/*}*/
 
 button {
     width: 75px;
@@ -117,4 +120,13 @@ button {
     height: 100vh;
     position: absolute;
     background-color: rgba(0,0,0,0.8);
+}
+
+.display-none {
+    display: none;
+}
+
+.profile-edit-modal{
+    position: fixed;
+    z-index: 1;
 }
