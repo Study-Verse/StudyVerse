@@ -140,8 +140,13 @@ initButtons();
 load();
 
 //Edit user details functionality
-    $(".user-info-btn").on('click', function(e){
-        let userContent = $(this).parent().siblings(".user-info").children("p");
-
-    })
+//     $(".user-info-btn").on('click', function(e){
+//         e.preventDefault();
+//         let userContent = $(this).parent().parent("form").children("input");
+//        if(userContent.attr("disabled", "true")){
+//            userContent.removeAttr("disabled", "false");
+//        } else {
+//            userContent.attr("disabled");
+//        }
+//     });
 });

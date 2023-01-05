@@ -60,23 +60,22 @@
         <div class="card-body">
           <div class="row">
             <div class="col-sm-3">
-              <p class="mb-0">Username: <span th:text="${#authentication.principal.username}"/></p>
+
             </div>
           </div>
           <hr>
           <div class="row">
             <div class="col-sm-3">
-              <p class="mb-0">Email: </p>
-            </div>
-            <div class="col-sm-9">
-              <p class="text-muted mb-0"><span th:text="${#authentication.principal.email}"/></p>
+              <form th:method="Post" th:action="@{/profile}" th:object="${user}">
+                <input class="mb-0" name="username" th:field="*{username}">
+              <input class="text-muted mb-0" name="email" th:field="*{email}">
+                <input type="hidden" name="id" th:field="*{id}">
               <!--    Second try: editing user info-->
-              <div class="user-Item edit-user-info">
                 <div class="edit-user-info-btn">
-                  <button class="user-info-btn" data-toggle="modal" data-target="profile-edit-modal" type="submit">Edit</button>
-                  <form th:method="Post" th:action="@{|/edit-info/${user.getUsername()}/${user.getEmail()}|}"></form>
+                  <button class="user-info-btn" type="button">Edit</button>
+                  <button class="user-submit-btn">Submit</button>
                 </div>
-              </div>
+              </form>
 <!--              end of editing user info-->
             </div>
           </div>
@@ -84,26 +83,6 @@
         </div>
       </div>
     </div>
-
-    <!--      Beginning of edit modal first try-->
-<!--    <div class="profile-edit-modal display-none">-->
-<!--      <div class="profile-edit-content">-->
-<!--        <form th:action="@{/profile/edit}" method="post" th:object="${user}"></form>-->
-<!--        <div class="edit-info-popup display-hidden">-->
-<!--          <h5>Edit info</h5>-->
-<!--            <input type="text" name="edit-username" class="changed-username" th:value="${user.getUsername()}">-->
-<!--            <br>-->
-<!--            <input type="text" name="edit-email" class="changed-email" th:value="${user.getEmail()}">-->
-<!--            <br>-->
-<!--            <button type="submit" class="btn btn-primary">Submit</button>-->
-<!--          </form>-->
-<!--          <div class="modal-footer">-->
-<!--            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
-<!--        </div>-->
-<!--&lt;!&ndash;        <button class="edit-user-info-btn" id="edit-profile-button" data-toggle="modal" data-target="profile-edit-modal" type="submit">Update</button>&ndash;&gt;-->
-<!--      </div>-->
-<!--    </div>-->
-
 
 
               <p class="mb-0">Full Name</p>
