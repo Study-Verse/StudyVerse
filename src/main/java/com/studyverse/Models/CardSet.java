@@ -44,7 +44,6 @@ public class CardSet {
     }
     //End of Constructors
 
-
     //Setters and getters
     public long getId() {
         return id;
