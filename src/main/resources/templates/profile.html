@@ -124,11 +124,15 @@
   <div id="newEventModal">
     <h2>New Event</h2>
     <form class="form-section" th:action="@{/addEvent}" method="post" th:object="${events}">
-      <input type="text" name="events" class="input-design" placeholder="events" th:field="*{title}">
+<!--      <input type="text" name="events" class="input-design" placeholder="events" th:field="*{title}">-->
       <button  class="submit" type="submit" value="submit" id="saveButton">Save</button>
       <button id="cancelButton">Cancel</button>
     </form>
   </div>
+
+
+
+
 
 
   <div id="deleteEventModal">
@@ -140,6 +144,9 @@
 
   <div id="modalBackDrop"></div>
 </div>
+
+
+
 
 
 

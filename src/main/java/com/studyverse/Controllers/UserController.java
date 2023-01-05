@@ -41,15 +41,19 @@ public class UserController {
 
     @GetMapping("/profile")
     public String profile(Model model){
-        model.addAttribute("user", new User());
+        model.addAttribute("user",usersDao.findById(Utils.currentUser().getId()));
         return "/profile";
     }
 
 //  Edit profile
-    @PostMapping ("/profile/edit")
-    String editProfile(@ModelAttribute User user){
-        usersDao.findById(Utils.currentUser().getId());
-        return "/profile/edit";
+    @PostMapping ("/profile")
+    String editProfile(@RequestParam(name="username") String username, @RequestParam(name="email")String email, @RequestParam(name="id") long id, Model model){
+        model.addAttribute("user",usersDao.findById(Utils.currentUser().getId()));
+        User user = usersDao.findById(id);
+        user.setUsername(username);
+        user.setEmail(email);
+        usersDao.save(user);
+        return "profile";
     }
 
 

@@ -54,80 +54,59 @@ $(document).ready(function(){
         interval: 10000
     })
 
-    $('.carousel .carousel-item').each(function() {
+    $('.carousel .carousel-item').each(function(){
         var minPerSlide = 3;
         var next = $(this).next();
         if (!next.length) {
             next = $(this).siblings(':first');
-            next.children(':first-child').clone().appendTo($(this));
-        };
+        }
+        next.children(':first-child').clone().appendTo($(this));
 
-            for (var i = 0; i < minPerSlide; i++) {
-                next = next.next();
-                if (!next.length) {
-                    next = $(this).siblings(':first');
-                }
+        for (var i=0;i<minPerSlide;i++) {
+            next=next.next();
+            if (!next.length) {
+                next = $(this).siblings(':first');
             }
 
-
-        })
-
-// Edit card button functionality
-    $(".card-buttons-edit").on("click", function(){
-        let pTags = $(this).parent().siblings(".cardTextWrapper").children("form").children("p");
-        let submitButton = $(this).parent().siblings(".cardTextWrapper").children("form").children("button");
-        if(pTags.attr("contenteditable") === "true"){
-            pTags.attr("contenteditable", "false");
-            submitButton.css("display", "none");
-            pTags.removeClass("p-tags-active");
-
-        } else {
-            pTags.attr("contenteditable", "true");
-            pTags.addClass("p-tags-active");
-            submitButton.css("display", "");
-            $(this).parent().siblings(".cardTextWrapper").children("form").children(".pForFrontFace").focus()
-        }
-    })
-    $('.pForFrontFace').on("click", function(e) {
-        if ($(this).hasClass("p-tags-active")) {
-            e.stopPropagation();
+            next.children(':first-child').clone().appendTo($(this));
         }
     });
 
-//Edit user details functionality
-        $(".edit-user-info-btn").on('click', function(e){
-            alert("hey");
-            // let form = $(this).attr('form');
-            // $.get(form, function(user, status){
-            //     $('.changed-username').val(user.username);
-            //     $('.changed-email').val(user, email);
-            // });
-            // $('.profile-edit-modal').modal();
-        })
-
-// Stephen's code for edit post
-    // $(document).ready(function(){
-    //     // Event listener to redirect when .editButton clicked
-    //     $(".editButton").on('click', function(e){
-    //         window.location.replace(`/posts/${$(this).attr("data-id")}/edit`);
-    //     });
-    // });
 
 
-    // $(".card-buttons-edit").on("click", function(){
-    //     let pTags = $(this).parent().siblings(".cardTextWrapper").children("form").children("p");
-    //     let submitButton = $(this).parent().siblings(".cardTextWrapper").children("form").children("button");
-    //     if(pTags.attr("contenteditable") === "true"){
-    //         pTags.attr("contenteditable", "false");
-    //         submitButton.css("display", "none");
-    //         pTags.removeClass("p-tags-active");
-    //
-    //     } else {
-    //         pTags.attr("contenteditable", "true");
-    //         pTags.addClass("p-tags-active");
-    //         submitButton.css("display", "");
-    //         $(this).parent().siblings(".cardTextWrapper").children("form").children(".pForFrontFace").focus()
-    //     }
-    // })
+
+
+
+
+
+
+
+
+    $("#myCarousel").carousel();
+
+    // Enable Carousel Indicators
+    $(".item1").click(function(){
+        $("#myCarousel").carousel(0);
+    });
+    $(".item2").click(function(){
+        $("#myCarousel").carousel(1);
+    });
+    $(".item3").click(function(){
+        $("#myCarousel").carousel(2);
+    });
+    $(".item4").click(function(){
+        $("#myCarousel").carousel(3);
+    });
+
+    // Enable Carousel Controls
+    $(".left").click(function(){
+        $("#myCarousel").carousel("prev");
+    });
+    $(".right").click(function(){
+        $("#myCarousel").carousel("next");
+    });
+
+
+
 
 })//End of document.ready
