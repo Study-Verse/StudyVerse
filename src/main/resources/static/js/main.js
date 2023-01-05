@@ -1,4 +1,3 @@
-
 function goToCardSet(cardSetId){
     window.location.replace(`/study-cards/${cardSetId}`)
 }
@@ -19,7 +18,6 @@ if(window.innerWidth < 768){
 }
 
 $(document).ready(function(){
-
     // this deletes card sets
     $(".trash-svg").click(function(event){
         event.stopPropagation();
@@ -30,15 +28,12 @@ $(document).ready(function(){
         event.stopPropagation();
         $(this).parent().siblings(".card-modal").removeClass("display-none");
     });
-
     // this redirects to the view where you can add cards to your set
     $(".add-cards").on("click", function(event){
         event.stopPropagation();
         window.location.replace(`/card-create/${$(this).attr("data-name")}`)
     });
 
-
-    //End of modal on click function
     $(".close").on("click", function(){
         $(".card-modal").addClass("display-none");
     });
@@ -50,6 +45,7 @@ $(document).ready(function(){
     $("#create-set-button").on("click", function(){
         $(this).parent().siblings(".card-modal").removeClass("display-none");
     })
+
     $(".close").on("click", function(){
         $(".card-modal").addClass("display-none");
     })
@@ -158,9 +154,5 @@ $(document).ready(function(){
             next.children(':first-child').clone().appendTo($(this));
         }
     });
-
-
-
-
 
 })//End of document.ready
