@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
   <div th:replace="partials/partials :: head-fragment(' Profile')"></div>
   <link th:rel="stylesheet" th:href="@{/css/profile.css}">
@@ -174,7 +175,8 @@
   </div>
 </section>
 
-<div id="container">
+<div id="container" sec:authorize="isAuthenticated()">
+  <input type="hidden" th:user-id="${#authentication.principal.id}" id="user-id">
   <div id="header">
     <div id="monthDisplay"></div>
     <div>

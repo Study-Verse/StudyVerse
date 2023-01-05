@@ -83,7 +83,7 @@ button {
     width: 350px;
     top: 100px;
     left: calc(50% - 175px);
-    position: absolute;
+    position: fixed;
     font-family: sans-serif;
 }
 #eventTitleInput {
@@ -115,6 +115,6 @@ button {
     z-index: 10;
     width: 100vw;
     height: 100vh;
-    position: absolute;
+    position: fixed;
     background-color: rgba(0,0,0,0.8);
 }
