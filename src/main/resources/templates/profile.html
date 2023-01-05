@@ -2,8 +2,8 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
-  <div th:replace="partials/partials :: head-fragment(' Profile')"></div>
-  <link th:rel="stylesheet" th:href="@{/css/profile.css}">
+    <div th:replace="partials/partials :: head-fragment(' Profile')"></div>
+    <link th:rel="stylesheet" th:href="@{/css/profile.css}">
 
 
 </head>
@@ -12,79 +12,79 @@
 <h1>Profile</h1>
 
 <div class="row">
-  <div class="col-lg-2">
-    <div class="card mb-4">
-      <div class="card-body text-center">
+    <div class="col-lg-2">
+        <div class="card mb-4">
+            <div class="card-body text-center">
 
-        <div id="profile-info-container">
-          <form id="profilePicForm" th:method="Post" th:action="@{/profilePic}" style="display: none">
-            <input name="profilePicInput" id="profilePicInput" type="text">
-          </form>
-          <img th:if="${user.getProfilePic() != null}"
-               th:src="${user.getProfilePic()}" alt="Profile Picture"
-               class="profileImg rounded-circle img-fluid" style="width: 150px;"/>
-          <img th:if="${user.getProfilePic() == null}"
-               th:src="@{https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp}" alt="Profile Picture"
-               class="profileImg rounded-circle img-fluid" style="width: 150px;"/>
-          <p id="profilePicChangeButton">Change</p>
+                <div id="profile-info-container">
+                    <form id="profilePicForm" th:method="Post" th:action="@{/profilePic}" style="display: none">
+                        <input name="profilePicInput" id="profilePicInput" type="text">
+                    </form>
+                    <img th:if="${user.getProfilePic() != null}"
+                         th:src="${user.getProfilePic()}" alt="Profile Picture"
+                         class="profileImg rounded-circle img-fluid" style="width: 150px;"/>
+                    <img th:if="${user.getProfilePic() == null}"
+                         th:src="@{https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp}" alt="Profile Picture"
+                         class="profileImg rounded-circle img-fluid" style="width: 150px;"/>
+                    <p id="profilePicChangeButton">Change</p>
+                </div>
+
+                <h5 class="my-3 mt-3"><span th:text="${#authentication.principal.username}"></span></h5>
+
+            </div>
         </div>
 
-        <h5 class="my-3 mt-3"><span th:text="${#authentication.principal.username}"></span></h5>
-
-      </div>
     </div>
-
-  </div>
-  <div class="col-lg-8">
-    <div class="card mb-4">
-      <div class="card-body">
-        <div class="row">
-          <div class="col-sm-3">
-            <p class="mb-0">Username:</p>
-          </div>
-          <div class="col-sm-9">
-            <p class="text-muted mb-0"><span th:text="${#authentication.principal.username}"></span></p>
-          </div>
+    <div class="col-lg-8">
+        <div class="card mb-4">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <p class="mb-0">Username:</p>
+                    </div>
+                    <div class="col-sm-9">
+                        <p class="text-muted mb-0"><span th:text="${#authentication.principal.username}"></span></p>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <p class="mb-0">Email</p>
+                    </div>
+                    <div class="col-sm-9">
+                        <p class="text-muted mb-0"><span th:text="${#authentication.principal.email}"></span></p>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <p class="mb-0">Phone</p>
+                    </div>
+                    <div class="col-sm-9">
+                        <p class="text-muted mb-0">(097) 234-5678</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <p class="mb-0">Mobile</p>
+                    </div>
+                    <div class="col-sm-9">
+                        <p class="text-muted mb-0">(098) 765-4321</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <p class="mb-0">Address</p>
+                    </div>
+                    <div class="col-sm-9">
+                        <p class="text-muted mb-0">Bay Area, San Francisco, CA</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <hr>
-        <div class="row">
-          <div class="col-sm-3">
-            <p class="mb-0">Email</p>
-          </div>
-          <div class="col-sm-9">
-            <p class="text-muted mb-0"><span th:text="${#authentication.principal.email}"></span></p>
-          </div>
-        </div>
-        <hr>
-        <div class="row">
-          <div class="col-sm-3">
-            <p class="mb-0">Phone</p>
-          </div>
-          <div class="col-sm-9">
-            <p class="text-muted mb-0">(097) 234-5678</p>
-          </div>
-        </div>
-        <hr>
-        <div class="row">
-          <div class="col-sm-3">
-            <p class="mb-0">Mobile</p>
-          </div>
-          <div class="col-sm-9">
-            <p class="text-muted mb-0">(098) 765-4321</p>
-          </div>
-        </div>
-        <hr>
-        <div class="row">
-          <div class="col-sm-3">
-            <p class="mb-0">Address</p>
-          </div>
-          <div class="col-sm-9">
-            <p class="text-muted mb-0">Bay Area, San Francisco, CA</p>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
 </div>
 
 
@@ -98,51 +98,51 @@
 <!--      <div th:data-currentEvents="${currentEvents}" id="current"></div>-->
 
 <div id="MiddleCalendar" class="calenderContainer mb-5">
-  <div id="container" sec:authorize="isAuthenticated()">
-    <input type="hidden" th:user-id="${#authentication.principal.id}" id="user-id">
-    <div id="header">
-      <div id="monthDisplay"></div>
-      <div>
-        <button id="backButton">Back</button>
-        <button id="nextButton">Next</button>
-      </div>
+    <div id="container" sec:authorize="isAuthenticated()">
+        <input type="hidden" th:user-id="${#authentication.principal.id}" id="user-id">
+        <div id="header">
+            <div id="monthDisplay"></div>
+            <div>
+                <button id="backButton">Back</button>
+                <button id="nextButton">Next</button>
+            </div>
+        </div>
+
+        <div id="weekdays">
+            <div>Sunday</div>
+            <div>Monday</div>
+            <div>Tuesday</div>
+            <div>Wednesday</div>
+            <div>Thursday</div>
+            <div>Friday</div>
+            <div>Saturday</div>
+        </div>
+
+        <div id="calendar"></div>
     </div>
 
-    <div id="weekdays">
-      <div>Sunday</div>
-      <div>Monday</div>
-      <div>Tuesday</div>
-      <div>Wednesday</div>
-      <div>Thursday</div>
-      <div>Friday</div>
-      <div>Saturday</div>
+    <div id="newEventModal">
+        <h2>New Event</h2>
+        <form class="form-section" th:action="@{/addEvent}" method="post" th:object="${events}">
+            <input type="text" name="events" class="input-design" placeholder="events" th:field="*{title}">
+            <button  class="submit" type="submit" value="submit" id="saveButton">Save</button>
+            <button id="cancelButton">Cancel</button>
+        </form>
     </div>
 
-    <div id="calendar"></div>
-  </div>
-
-  <div id="newEventModal">
-    <h2>New Event</h2>
-    <form class="form-section" th:action="@{/addEvent}" method="post" th:object="${events}">
-<!--      <input type="text" name="events" class="input-design" placeholder="events" th:field="*{title}">-->
-      <button  class="submit" type="submit" value="submit" id="saveButton">Save</button>
-      <button id="cancelButton">Cancel</button>
-    </form>
-  </div>
 
 
 
 
 
+    <div id="deleteEventModal">
+        <h2>Event</h2>
+        <p id="eventText"></p>
+        <button id="deleteButton">Delete</button>
+        <button id="closeButton">Close</button>
+    </div>
 
-  <div id="deleteEventModal">
-    <h2>Event</h2>
-    <p id="eventText"></p>
-    <button id="deleteButton">Delete</button>
-    <button id="closeButton">Close</button>
-  </div>
-
-  <div id="modalBackDrop"></div>
+    <div id="modalBackDrop"></div>
 </div>
 
 
