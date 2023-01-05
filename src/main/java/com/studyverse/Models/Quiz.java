@@ -16,6 +16,8 @@ public class Quiz {
     @JsonBackReference
     private List<Question> questionList;
 
+    @ManyToOne
+    private User user;
 
 // constructors
     public Quiz() {

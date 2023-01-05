@@ -14,11 +14,9 @@ public class Question {
     @Column(length = 500)
     private String questionBody;
 
-    @Column
     @ManyToOne
     private Quiz quiz;
 
-    @Column
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "question")
     @JsonBackReference
     private List<Answer> answerList;
