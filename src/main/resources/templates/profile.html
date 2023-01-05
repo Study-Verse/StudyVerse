@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
   <div th:replace="partials/partials :: head-fragment(' Profile')"></div>
   <link th:rel="stylesheet" th:href="@{/css/profile.css}">
@@ -27,32 +28,6 @@
           </div>
         </div>
       </div>
-      <div class="card mb-4 mb-lg-0">
-        <div class="card-body p-0">
-          <ul class="list-group list-group-flush rounded-3">
-            <li class="list-group-item d-flex justify-content-between align-items-center p-3">
-              <i class="fas fa-globe fa-lg text-warning"></i>
-              <p class="mb-0">https://mdbootstrap.com</p>
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center p-3">
-              <i class="fab fa-github fa-lg" style="color: #333333;"></i>
-              <p class="mb-0">mdbootstrap</p>
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center p-3">
-              <i class="fab fa-twitter fa-lg" style="color: #55acee;"></i>
-              <p class="mb-0">@mdbootstrap</p>
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center p-3">
-              <i class="fab fa-instagram fa-lg" style="color: #ac2bac;"></i>
-              <p class="mb-0">mdbootstrap</p>
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center p-3">
-              <i class="fab fa-facebook-f fa-lg" style="color: #3b5998;"></i>
-              <p class="mb-0">mdbootstrap</p>
-            </li>
-          </ul>
-        </div>
-      </div>
     </div>
     <!--      Beginning of user info-->
     <div class="col-lg-8 user-info">
@@ -60,55 +35,33 @@
         <div class="card-body">
           <div class="row">
             <div class="col-sm-3">
-
             </div>
           </div>
           <hr>
           <div class="row">
             <div class="col-sm-3">
               <form th:method="Post" th:action="@{/profile}" th:object="${user}">
-                <input class="mb-0" name="username" th:field="*{username}">
-              <input class="text-muted mb-0" name="email" th:field="*{email}">
-                <input type="hidden" name="id" th:field="*{id}">
+                <div class="row">
+                  <div class="col-sm-9">
+                    <p class="mb-0">Username</p>
+                    <input class="mb-0" name="username" th:field="*{username}">
+                  </div>
+                  <hr>
+                  <div class="col-sm-3">
+                    <p class="mb-0">Email</p>
+                    <div class="col-sm-9">
+                      <input class="text-muted mb-0" name="email" th:field="*{email}">
+                      <input type="hidden" name="id" th:field="*{id}">
+                    </div>
+                  </div>
+            </div>
               <!--    Second try: editing user info-->
                 <div class="edit-user-info-btn">
                   <button class="user-info-btn" type="button">Edit</button>
                   <button class="user-submit-btn">Submit</button>
                 </div>
-              </form>
-<!--              end of editing user info-->
-            </div>
-          </div>
-          <!--            End of info on table-->
-        </div>
-      </div>
-    </div>
-
-
-              <p class="mb-0">Full Name</p>
-            </div>
-            <div class="col-sm-9">
-              <p class="text-muted mb-0">Johnatan Smith</p>
-            </div>
           </div>
           <hr>
-          <div class="row">
-            <div class="col-sm-3">
-              <p class="mb-0">Email</p>
-            </div>
-            <div class="col-sm-9">
-              <p class="text-muted mb-0">example@example.com</p>
-            </div>
-          </div>
-          <hr>
-          <div class="row">
-            <div class="col-sm-3">
-              <p class="mb-0">Phone</p>
-            </div>
-            <div class="col-sm-9">
-              <p class="text-muted mb-0">(097) 234-5678</p>
-            </div>
-          </div>
           <hr>
           <div class="row">
             <div class="col-sm-3">
@@ -129,91 +82,26 @@
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-md-6">
-          <div class="card mb-4 mb-md-0">
-            <div class="card-body">
-              <p class="mb-4"><span class="text-primary font-italic me-1">assigment</span> Project Status
-              </p>
-              <p class="mb-1" style="font-size: .77rem;">Web Design</p>
-              <div class="progress rounded" style="height: 5px;">
-                <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80"
-                     aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-              <p class="mt-4 mb-1" style="font-size: .77rem;">Website Markup</p>
-              <div class="progress rounded" style="height: 5px;">
-                <div class="progress-bar" role="progressbar" style="width: 72%" aria-valuenow="72"
-                     aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-              <p class="mt-4 mb-1" style="font-size: .77rem;">One Page</p>
-              <div class="progress rounded" style="height: 5px;">
-                <div class="progress-bar" role="progressbar" style="width: 89%" aria-valuenow="89"
-                     aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-              </div>
-              <p class="mt-4 mb-1" style="font-size: .77rem;">Website Markup</p>
-              <div class="progress rounded" style="height: 5px;">
-                <div class="progress-bar" role="progressbar" style="width: 72%" aria-valuenow="72"
-                     aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-              <p class="mt-4 mb-1" style="font-size: .77rem;">One Page</p>
-              <div class="progress rounded" style="height: 5px;">
-                <div class="progress-bar" role="progressbar" style="width: 89%" aria-valuenow="89"
-                     aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-              <p class="mt-4 mb-1" style="font-size: .77rem;">Mobile Template</p>
-              <div class="progress rounded" style="height: 5px;">
-                <div class="progress-bar" role="progressbar" style="width: 55%" aria-valuenow="55"
-                     aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-              <p class="mt-4 mb-1" style="font-size: .77rem;">Backend API</p>
-              <div class="progress rounded mb-2" style="height: 5px;">
-                <div class="progress-bar" role="progressbar" style="width: 66%" aria-valuenow="66"
-                     aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="card mb-4 mb-md-0">
-            <div class="card-body">
-              <p class="mb-4"><span class="text-primary font-italic me-1">assigment</span> Project Status
-              </p>
-              <p class="mb-1" style="font-size: .77rem;">Web Design</p>
-              <div class="progress rounded" style="height: 5px;">
-                <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80"
-                     aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-              <p class="mt-4 mb-1" style="font-size: .77rem;">Website Markup</p>
-              <div class="progress rounded" style="height: 5px;">
-                <div class="progress-bar" role="progressbar" style="width: 72%" aria-valuenow="72"
-                     aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-              <p class="mt-4 mb-1" style="font-size: .77rem;">One Page</p>
-              <div class="progress rounded" style="height: 5px;">
-                <div class="progress-bar" role="progressbar" style="width: 89%" aria-valuenow="89"
-                     aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-              <p class="mt-4 mb-1" style="font-size: .77rem;">Mobile Template</p>
-              <div class="progress rounded" style="height: 5px;">
-                <div class="progress-bar" role="progressbar" style="width: 55%" aria-valuenow="55"
-                     aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-              <p class="mt-4 mb-1" style="font-size: .77rem;">Backend API</p>
-              <div class="progress rounded mb-2" style="height: 5px;">
-                <div class="progress-bar" role="progressbar" style="width: 66%" aria-valuenow="66"
-                     aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
   </div>
+  </div>
+              </form>
+<!--              end of editing user info-->
+            </div>
+          </div>
+          <!--            End of info on table-->
+        </div>
+      </div>
+    </div>
+
+
+
 </section>
 
-<div id="container">
+<div id="MiddleCalendar">
+<div id="container" sec:authorize="isAuthenticated()">
+  <input type="hidden" th:user-id="${#authentication.principal.id}" id="user-id">
   <div id="header">
     <div id="monthDisplay"></div>
     <div>
@@ -261,8 +149,8 @@
 <script th:src="@{js/main.js}"></script>
 
 <div th:replace="partials/partials :: scripts"></div>
+</div>
 
 </body>
 </html>
 
-<!-- Need to refactor-->
