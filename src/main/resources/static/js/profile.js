@@ -142,5 +142,6 @@ load();
 //Edit user details functionality
     $(".user-info-btn").on('click', function(e){
         let userContent = $(this).parent().siblings(".user-info").children("p");
+
     })
 });
