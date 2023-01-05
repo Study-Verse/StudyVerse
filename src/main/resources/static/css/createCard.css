@@ -108,6 +108,10 @@ header{background-color: #fff;}
     flex-direction: column;
     align-items: center;
 }
+.hrForCards{
+    color:white;
+    width: 100%;
+}
 
 @media(max-width:1280px){
     .container{width: 100%;}
@@ -118,6 +122,28 @@ header{background-color: #fff;}
     .flashcard{
         margin-top: 10px;
         margin-bottom: 10px;
+    }
+}
+
+@media(max-width: 705px){
+    .edit-set-flashcard{
+        width: 620px;
+    }
+}
+@media(max-width: 625px){
+    .edit-set-flashcard{
+        width: 560px;
+    }
+    .cardTextWrapper p {
+        width: 530px;
+    }
+}
+@media(max-width: 560px){
+    .edit-set-flashcard{
+        width: 505px;
+    }
+    .cardTextWrapper p {
+        width: 490px;
     }
 }
 @media(max-width:480px){

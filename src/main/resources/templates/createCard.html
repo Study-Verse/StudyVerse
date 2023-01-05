@@ -10,7 +10,7 @@
     <header>
             <div class="container">
                 <div id="header">
-                    <h1>Flashcards</h1>
+                    <h1 th:text="'CardSet: ' + ${cardSet.getTitle()}"></h1>
                     <div>
                         <button id="show_card_box">Add Card</button>
                     </div>
@@ -58,6 +58,7 @@
                     <div class="cardTextWrapper">
                         <form class="edit-form" th:method="Post" th:action="@{|/edit-card/${cards.getId()}/${cardSet.getId()}|}">
                             <p class="pForFrontFace" contenteditable="false" th:text ="${cards.getFrontFace()}"></p>
+                            <hr class="hrForCards">
                             <p class="pForBackFace" contenteditable="false" th:text="${cards.getBackFace()}"></p>
                             <input type="hidden" name="editFrontFace" class="hiddenInputForFront" th:value="${cards.getFrontFace()}" />
                             <input type="hidden" name="editBackFace" class="hiddenInputForBack" th:value="${cards.getBackFace()}" />
