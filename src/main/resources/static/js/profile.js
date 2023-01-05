@@ -15,8 +15,12 @@ function openModal(date) {
     const eventForDay = events.find(e => e.date === clicked);
 
     if (eventForDay) {
-        document.getElementById('eventText').innerText = eventForDay.title;
-        deleteEventModal.style.display = 'block';
+        for (let i = 0; i<events.length; i++) {
+            if (currentUserId == events[i].user) {
+                document.getElementById('eventText').innerText = eventForDay.title;
+                deleteEventModal.style.display = 'block';
+            }
+        }
     } else {
         newEventModal.style.display = 'block';
     }
@@ -67,9 +71,18 @@ function load() {
 
             if (eventForDay) {
                 const eventDiv = document.createElement('div');
-                eventDiv.classList.add('event');
-                eventDiv.innerText = eventForDay.title;
-                daySquare.appendChild(eventDiv);
+                for (let i = 0; i<events.length; i++){
+                    if (currentUserId == events[i].user) {
+                        eventDiv.classList.add('event')
+                        eventDiv.innerText = eventForDay.title;
+                        daySquare.appendChild(eventDiv);
+                    }
+                }
+                // eventDiv.classList.add('event');
+
+
+
+
             }
 
             daySquare.addEventListener('click', () => openModal(dayString));
@@ -91,6 +104,9 @@ function closeModal() {
     load();
 }
 
+
+let currentUserId = $("#user-id").attr("user-id")
+
 function saveEvent() {
     if (eventTitleInput.value) {
         eventTitleInput.classList.remove('error');
@@ -98,6 +114,7 @@ function saveEvent() {
         events.push({
             date: clicked,
             title: eventTitleInput.value,
+            user: currentUserId
         });
 
         localStorage.setItem('events', JSON.stringify(events));
