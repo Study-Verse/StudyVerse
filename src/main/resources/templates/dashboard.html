@@ -9,7 +9,7 @@
 <body>
     <!--Nav-->
     <div class="page-wrapper splash-page-wrapper">
-        <nav th:replace="partials/partials :: navbar"></nav>
+        <nav th:replace="partials/partials :: navbar(user=${user})"></nav>
     </div>
 
     <div id="welcome-create-header">
