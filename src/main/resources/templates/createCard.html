@@ -6,7 +6,7 @@
     <link rel="stylesheet" th:href="@{/css/createCard.css}">
 </head>
 <body>
-    <nav th:replace="partials/partials.html :: navbar"></nav>
+    <nav th:replace="partials/partials :: navbar(user=${user})"></nav>
     <header>
             <h1 th:text="'CardSet: ' + ${cardSet.getTitle()}"></h1>
             <div class="header-button-holder">
