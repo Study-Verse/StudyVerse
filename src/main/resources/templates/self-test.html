@@ -9,7 +9,7 @@
 
 </head>
 <body>
-    <nav th:replace="partials/partials :: navbar"></nav>
+    <nav th:replace="partials/partials :: navbar(user=${user})"></nav>
 <!-- Make a new quiz-->
     <div>
         <form method="POST" th:action="@{/newQuiz}" th:object="${newQuiz}">

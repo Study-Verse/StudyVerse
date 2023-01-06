@@ -94,11 +94,10 @@ body {
 	display: flex;
 	align-items: center;
 }
-.user-profile-logo{
+.user-profile-logo, .profileImg, .user-profile-badge{
 	height: 40px;
 	width: 40px;
 	border-radius: 100%;
-	background-color: blue;
 }
 
 /*medium screen*/
