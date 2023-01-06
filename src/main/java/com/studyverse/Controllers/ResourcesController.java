@@ -10,13 +10,13 @@ public class ResourcesController {
 
     @GetMapping("/books")
     public String showBookPage() {
-        return "/resources";
+        return "resources";
     }
 
 
     @GetMapping("/bookView")
     public String showBookView1(){
-        return "/bookView";
+        return "bookView";
     }
 
     @GetMapping("/bookView/{isbn}")
@@ -32,7 +32,7 @@ public class ResourcesController {
 
     @GetMapping("/wiki")
     public String showWiki(){
-        return "/wikipedia";
+        return "wikipedia";
     }
 
 
@@ -40,7 +40,7 @@ public class ResourcesController {
 //    About Us view
     @GetMapping("/about-us")
     public String aboutUs(){
-        return "/about-us";
+        return "about-us";
     }
 
 }
