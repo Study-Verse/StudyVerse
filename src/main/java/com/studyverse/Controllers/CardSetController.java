@@ -72,14 +72,14 @@ public class CardSetController {
         long user = Utils.currentUser().getId();
         List<CardSet> cardSetList = cardSetDao.findByUserId(user);
         model.addAttribute("cardSetList",cardSetList);
-        return "/dashboard";
+        return "dashboard";
     }
 
     //    This is the Search view
     @GetMapping("/search/{tag}")
     public String searchView(Model model, @PathVariable String tag){
         model.addAttribute("cardSets", cardSetDao.findByTag(tag));
-        return "/searchView";
+        return "searchView";
     }
 
 
