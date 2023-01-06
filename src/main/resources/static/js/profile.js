@@ -1,4 +1,4 @@
-$('document').ready(function(){
+$('document').ready(async function(){
 
 let nav = 0;
 let clicked = null;
@@ -152,7 +152,11 @@ function initButtons() {
 initButtons();
 load();
 
-const client = filestack.init(FILESTACKKEY);
+const keys = (await fetch(
+    `${window.location.protocol}//${window.location.host}/keys`)
+    .then(results => results.json()));
+
+const client = filestack.init(keys.fileStackKey);
 $("#profilePicChangeButton").on("click", function(){
     client.picker({
         accept: ["image/*"],
