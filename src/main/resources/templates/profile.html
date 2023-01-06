@@ -54,33 +54,32 @@
                       <input type="hidden" name="id" th:field="*{id}">
                     </div>
                   </div>
-                </div>
+            </div>
               </form>
 
               <!--    Second try: editing user info-->
-              <div class="edit-user-info-btn">
-                <button class="user-info-btn" type="button">Edit</button>
-                <button class="user-submit-btn">Submit</button>
-              </div>
+                <div class="edit-user-info-btn">
+                  <button class="user-info-btn" type="button">Edit</button>
+                  <button class="user-submit-btn">Submit</button>
+                </div>
+          </div>
+          <hr>
+          <hr>
+          <div class="row">
+            <div class="col-sm-3">
+              <p class="mb-0">Mobile</p>
             </div>
-            <hr>
-            <hr>
-            <div class="row">
-              <div class="col-sm-3">
-                <p class="mb-0">Mobile</p>
-              </div>
-              <div class="col-sm-9">
-                <p class="text-muted mb-0">(098) 765-4321</p>
-              </div>
+            <div class="col-sm-9">
+              <p class="text-muted mb-0">(098) 765-4321</p>
             </div>
-            <hr>
-            <div class="row">
-              <div class="col-sm-3">
-                <p class="mb-0">Address</p>
-              </div>
-              <div class="col-sm-9">
-                <p class="text-muted mb-0">Bay Area, San Francisco, CA</p>
-              </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-sm-3">
+              <p class="mb-0">Address</p>
+            </div>
+            <div class="col-sm-9">
+              <p class="text-muted mb-0">Bay Area, San Francisco, CA</p>
             </div>
           </div>
         </div>
@@ -88,69 +87,71 @@
     </div>
   </div>
   </div>
-  <!--              end of editing user info-->
   </div>
-  </div>
-  <!--            End of info on table-->
-  </div>
-  </div>
-  </div>
+<!--              end of editing user info-->
+            </div>
+          </div>
+          <!--            End of info on table-->
+        </div>
+      </div>
+    </div>
 
 
 
 </section>
 
 <div id="MiddleCalendar">
-  <div id="container" sec:authorize="isAuthenticated()">
-    <input type="hidden" th:user-id="${#authentication.principal.id}" id="user-id">
-    <div id="header">
-      <div id="monthDisplay"></div>
-      <div>
-        <button id="backButton">Back</button>
-        <button id="nextButton">Next</button>
-      </div>
+<div id="container" sec:authorize="isAuthenticated()">
+  <input type="hidden" th:user-id="${#authentication.principal.id}" id="user-id">
+  <div id="header">
+    <div id="monthDisplay"></div>
+    <div>
+      <button id="backButton">Back</button>
+      <button id="nextButton">Next</button>
     </div>
-
-    <div id="weekdays">
-      <div>Sunday</div>
-      <div>Monday</div>
-      <div>Tuesday</div>
-      <div>Wednesday</div>
-      <div>Thursday</div>
-      <div>Friday</div>
-      <div>Saturday</div>
-    </div>
-
-    <div id="calendar"></div>
   </div>
 
-  <div id="newEventModal">
-    <h2>New Event</h2>
-
-    <input id="eventTitleInput" placeholder="Event Title" />
-
-    <button id="saveButton">Save</button>
-    <button id="cancelButton">Cancel</button>
+  <div id="weekdays">
+    <div>Sunday</div>
+    <div>Monday</div>
+    <div>Tuesday</div>
+    <div>Wednesday</div>
+    <div>Thursday</div>
+    <div>Friday</div>
+    <div>Saturday</div>
   </div>
 
-  <div id="deleteEventModal">
-    <h2>Event</h2>
+  <div id="calendar"></div>
+</div>
 
-    <p id="eventText"></p>
+<div id="newEventModal">
+  <h2>New Event</h2>
 
-    <button id="deleteButton">Delete</button>
-    <button id="closeButton">Close</button>
-  </div>
+  <input id="eventTitleInput" placeholder="Event Title" />
 
-  <div id="modalBackDrop"></div>
+  <button id="saveButton">Save</button>
+  <button id="cancelButton">Cancel</button>
+</div>
 
-  <footer th:replace="partials/partials :: footer-fragment"></footer>
-  <script th:src="@{/js/profile.js}"></script>
+<div id="deleteEventModal">
+  <h2>Event</h2>
 
-  <script th:src="@{js/main.js}"></script>
+  <p id="eventText"></p>
 
-  <div th:replace="partials/partials :: scripts"></div>
+  <button id="deleteButton">Delete</button>
+  <button id="closeButton">Close</button>
+</div>
+
+<div id="modalBackDrop"></div>
+
+<footer th:replace="partials/partials :: footer-fragment"></footer>
+<script th:src="@{/js/profile.js}"></script>
+
+<script th:src="@{js/main.js}"></script>
+
+<div th:replace="partials/partials :: scripts"></div>
 </div>
 
 </body>
 </html>
+

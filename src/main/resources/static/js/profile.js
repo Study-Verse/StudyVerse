@@ -74,7 +74,8 @@ function load() {
             if (eventForDay) {
                 const eventDiv = document.createElement('div');
                 for (let i = 0; i<events.length; i++){
-                    if (currentUserId == events[i].user) {
+                        console.log(events[i].user);
+                    if (currentUserId === events[i].user) {
                         eventDiv.classList.add('event')
                         eventDiv.innerText = eventForDay.title;
                         daySquare.appendChild(eventDiv);
