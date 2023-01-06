@@ -1,5 +1,4 @@
 package com.studyverse.Models;
-
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import javax.persistence.*;
 import java.util.List;
@@ -32,6 +31,10 @@ public class User {
 
 
     //Constructors
+    @Column
+    private String profilePictureURL;
+//    constructor
+
     public User() {
     }
     public User(long id, String username, String email){
@@ -49,10 +52,8 @@ public class User {
         this.email = email;
         this.password = password;
     }
-    //End of Constructors
 
-
-    //Setters and Getters
+//    setters and getters
     public long getId() {
         return id;
     }
@@ -92,3 +93,4 @@ public class User {
 
 
 }//End of class
+

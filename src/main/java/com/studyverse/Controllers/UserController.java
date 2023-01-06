@@ -56,6 +56,7 @@ public class UserController {
         User user = usersDao.findById(Utils.currentUser().getId());
         user.setProfilePic(url);
         usersDao.save(user);
+
         return "redirect:/profile";
     }
 
