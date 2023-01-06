@@ -23,6 +23,8 @@ public class User {
     private List<Card> cardList;
     @Column
     private String profilePic;
+
+
     //End of Instance Variables
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
