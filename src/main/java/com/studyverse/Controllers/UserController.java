@@ -13,11 +13,8 @@ import java.util.List;
 
 @Controller
 public class UserController {
-
     private final UserRepository usersDao;
-
     private final PasswordEncoder passwordEncoder;
-
     public UserController(UserRepository usersDao, PasswordEncoder passwordEncoder) {
         this.usersDao = usersDao;
         this.passwordEncoder = passwordEncoder;
@@ -36,9 +33,7 @@ public class UserController {
         return "redirect:/login";
     }
 
-
 //    Takes you to the profile
-
     @GetMapping("/profile")
     public String profile(Model model){
         model.addAttribute("user",usersDao.findById(Utils.currentUser().getId()));
@@ -56,6 +51,12 @@ public class UserController {
         return "profile";
     }
 
-
+    @PostMapping("/profilePic")
+    public String profilePic(@RequestParam(name="profilePicInput") String url){
+        User user = usersDao.findById(Utils.currentUser().getId());
+        user.setProfilePic(url);
+        usersDao.save(user);
+        return "redirect:/profile";
+    }
 
 } // End of UserController
