@@ -1,9 +1,5 @@
 $('document').ready(function(){
 
-    // $('#editButton').on('click', function (e){
-    //     $('editModal').modal();
-    // });
-
 let nav = 0;
 let clicked = null;
 let events = localStorage.getItem('events') ? JSON.parse(localStorage.getItem('events')) : [];
@@ -111,7 +107,6 @@ function closeModal() {
     load();
 }
 
-
 let currentUserId = $("#user-id").attr("user-id")
 
 function saveEvent() {
@@ -157,14 +152,23 @@ function initButtons() {
 initButtons();
 load();
 
-//Edit user details functionality
-//     $(".user-info-btn").on('click', function(e){
-//         e.preventDefault();
-//         let userContent = $(this).parent().parent("form").children("input");
-//        if(userContent.attr("disabled", "true")){
-//            userContent.removeAttr("disabled", "false");
-//        } else {
-//            userContent.attr("disabled");
-//        }
-//     });
+const client = filestack.init(FILESTACKKEY);
+$("#profilePicChangeButton").on("click", function(){
+    client.picker({
+        accept: ["image/*"],
+    transformations: {
+      circle: true,
+      crop: false,
+      rotate: false,
+      force: true
+    },
+    onFileUploadFinished: function(file){
+      $("#profilePicInput").val(file.url);
+      $("#profilePicForm").submit();
+    }
+  }).open();
+})
+
+
+
 });
