@@ -30,13 +30,25 @@ public class Quiz {
         this.id = id;
     }
 
-    public Quiz(long id, List<Question> questionList) {
+    public Quiz(long id, String tag) {
         this.id = id;
+        this.tag = tag;
+    }
+
+    public Quiz(long id, String tag, List<Question> questionList) {
+        this.id = id;
+        this.tag = tag;
         this.questionList = questionList;
     }
 
+    public Quiz(long id, String tag, List<Question> questionList, User user) {
+        this.id = id;
+        this.tag = tag;
+        this.questionList = questionList;
+        this.user = user;
+    }
 
-//    setters and getters
+    //    setters and getters
     public long getId() {
         return id;
     }
@@ -51,5 +63,21 @@ public class Quiz {
 
     public void setQuestionList(List<Question> questionList) {
         this.questionList = questionList;
+    }
+
+    public String getTag() {
+        return tag;
+    }
+
+    public void setTag(String tag) {
+        this.tag = tag;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

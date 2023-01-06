@@ -7,4 +7,5 @@ public interface QuizRepository extends JpaRepository<Quiz, Long> {
     Quiz findQuizById (long id);
 
     Quiz findByTag(String tag);
+
 }
