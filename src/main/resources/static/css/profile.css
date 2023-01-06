@@ -1,4 +1,40 @@
 
+#profile-info-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width:fit-content;
+    border-radius: 50%;
+}
+#profile-info-container img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    z-index: 0;
+}
+#profile-info-container p {
+    position: absolute;
+    cursor: pointer;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #726d6db5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 1;
+    top: 0;
+}
+
+#profile-info-container:hover p {
+    visibility: visible;
+    opacity: 1;
+}
+
 button {
     width: 75px;
     cursor: pointer;
@@ -9,7 +45,6 @@ button {
     border-radius: 5px;
     color: white;
 }
-
 #header {
     padding: 10px;
     color: #d36c6c;
@@ -55,7 +90,6 @@ button {
 .day:hover {
     background-color: #e8faed;
 }
-
 .day + #currentDay {
     background-color:#e8f4fa;
 }
@@ -83,7 +117,7 @@ button {
     width: 350px;
     top: 100px;
     left: calc(50% - 175px);
-    position: absolute;
+    position: fixed;
     font-family: sans-serif;
 }
 #eventTitleInput {
@@ -115,6 +149,13 @@ button {
     z-index: 10;
     width: 100vw;
     height: 100vh;
-    position: absolute;
+    position: fixed;
     background-color: rgba(0,0,0,0.8);
+}
+.display-none {
+    display: none;
+}
+#MiddleCalendar {
+    display: flex;
+    justify-content: center;
 }

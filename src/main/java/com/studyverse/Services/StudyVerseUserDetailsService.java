@@ -25,4 +25,6 @@ public class StudyVerseUserDetailsService implements UserDetailsService {
             return new com.studyverse.Models.StudyVerseUserDetails(user.getId(),user.getUsername(),user.getEmail(),user.getPassword());
         }
     }
+
+
 }

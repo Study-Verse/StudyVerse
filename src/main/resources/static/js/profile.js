@@ -1,3 +1,5 @@
+$('document').ready(function(){
+
 let nav = 0;
 let clicked = null;
 let events = localStorage.getItem('events') ? JSON.parse(localStorage.getItem('events')) : [];
@@ -15,8 +17,12 @@ function openModal(date) {
     const eventForDay = events.find(e => e.date === clicked);
 
     if (eventForDay) {
-        document.getElementById('eventText').innerText = eventForDay.title;
-        deleteEventModal.style.display = 'block';
+        for (let i = 0; i<events.length; i++) {
+            if (currentUserId == events[i].user) {
+                document.getElementById('eventText').innerText = eventForDay.title;
+                deleteEventModal.style.display = 'block';
+            }
+        }
     } else {
         newEventModal.style.display = 'block';
     }
@@ -67,9 +73,19 @@ function load() {
 
             if (eventForDay) {
                 const eventDiv = document.createElement('div');
-                eventDiv.classList.add('event');
-                eventDiv.innerText = eventForDay.title;
-                daySquare.appendChild(eventDiv);
+                for (let i = 0; i<events.length; i++){
+                        console.log(events[i].user);
+                    if (currentUserId === events[i].user) {
+                        eventDiv.classList.add('event')
+                        eventDiv.innerText = eventForDay.title;
+                        daySquare.appendChild(eventDiv);
+                    }
+                }
+                // eventDiv.classList.add('event');
+
+
+
+
             }
 
             daySquare.addEventListener('click', () => openModal(dayString));
@@ -91,6 +107,8 @@ function closeModal() {
     load();
 }
 
+let currentUserId = $("#user-id").attr("user-id")
+
 function saveEvent() {
     if (eventTitleInput.value) {
         eventTitleInput.classList.remove('error');
@@ -98,6 +116,7 @@ function saveEvent() {
         events.push({
             date: clicked,
             title: eventTitleInput.value,
+            user: currentUserId
         });
 
         localStorage.setItem('events', JSON.stringify(events));
@@ -132,3 +151,24 @@ function initButtons() {
 
 initButtons();
 load();
+
+const client = filestack.init(FILESTACKKEY);
+$("#profilePicChangeButton").on("click", function(){
+    client.picker({
+        accept: ["image/*"],
+    transformations: {
+      circle: true,
+      crop: false,
+      rotate: false,
+      force: true
+    },
+    onFileUploadFinished: function(file){
+      $("#profilePicInput").val(file.url);
+      $("#profilePicForm").submit();
+    }
+  }).open();
+})
+
+
+
+});
