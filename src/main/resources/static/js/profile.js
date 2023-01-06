@@ -174,5 +174,4 @@ $("#profilePicChangeButton").on("click", function(){
 })
 
 
-
 });
