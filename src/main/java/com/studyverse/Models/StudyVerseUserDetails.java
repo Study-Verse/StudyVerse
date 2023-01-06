@@ -7,6 +7,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 public class StudyVerseUserDetails extends User implements UserDetails{
 
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return null;
