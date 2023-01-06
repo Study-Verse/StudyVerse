@@ -49,7 +49,7 @@ public class CardController {
         model.addAttribute("cardList",set.getCardList());
         Card newCard = new Card();
         model.addAttribute("card", newCard);
-        return "/createCard";
+        return "createCard";
     }
 
     @PostMapping("card-create/{setId}")
@@ -84,13 +84,13 @@ public class CardController {
     @GetMapping("study-cards/{id}")
     public String studyCards(Model model, @PathVariable long id) {
         model.addAttribute("eachCard", cardSetDao.findById(id).getCardList());
-        return "/study";
+        return "study";
 
     }
     //    ============ self test get mapping
     @GetMapping("self-test")
     public String test(){
-        return "/self-test";
+        return "self-test";
     }
 
 
