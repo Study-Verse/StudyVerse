@@ -11,6 +11,9 @@ public class Quiz {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @Column
+    private String tag;
+
 
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "quiz")
     @JsonBackReference
