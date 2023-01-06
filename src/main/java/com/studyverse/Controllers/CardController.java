@@ -87,11 +87,11 @@ public class CardController {
         return "study";
 
     }
-    //    ============ self test get mapping
-    @GetMapping("self-test")
-    public String test(){
-        return "self-test";
-    }
+//    //    ============ self test get mapping
+//    @GetMapping("self-test")
+//    public String test(){
+//        return "self-test";
+//    }
 
 
 

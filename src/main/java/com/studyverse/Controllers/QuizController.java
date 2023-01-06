@@ -2,8 +2,12 @@ package com.studyverse.Controllers;
 
 import com.studyverse.Models.Quiz;
 import com.studyverse.Repositories.QuizRepository;
+import com.studyverse.Services.Utils;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
@@ -18,11 +22,27 @@ public class QuizController {
    }
 
 //   api for getting all the quiz made
-    @GetMapping("quiz-api/api")
+    @GetMapping("/quiz-api/api")
     public @ResponseBody List<Quiz> quizList(){
         return quizDao.findAll();
     }
 
+
+    //    ============ self test get mapping
+    @GetMapping("/self-test")
+    public String test(Model model){
+       model.addAttribute("newQuiz", new Quiz());
+
+
+        return "self-test";
+    }
+
+    @PostMapping("/newQuiz")
+    public String addNewQuiz (@ModelAttribute Quiz quiz){
+       quiz.setUser(Utils.currentUser());
+       quizDao.save(quiz);
+       return "redirect:/self-test";
+    }
 
 
 
