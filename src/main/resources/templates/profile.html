@@ -18,6 +18,14 @@
           <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
                class="rounded-circle img-fluid" style="width: 150px;">
           <h5 class="my-3"> <span th:text="${#authentication.principal.username}"></span> </h5>
+
+          <button id="uploadProfilePic">Change Profile Picture</button>
+          <form th:method="POST" th:action="@{/uploadPic}">
+            <label for="profilePicUrl">Submit Picture</label>
+            <input id="profilePicUrl" name="picUrl">
+            <button type="submit">Submit</button>
+          </form>
+
           <p class="text-muted mb-1">Full Stack Developer</p>
           <p class="text-muted mb-4">Bay Area, San Francisco, CA</p>
           <span class="time" th:text="${#dates.format(#dates.createNow(), 'hh:mm a')}"></span>
@@ -85,17 +93,6 @@
     </div>
   </div>
   </div>
-  </div>
-              </form>
-<!--              end of editing user info-->
-            </div>
-          </div>
-          <!--            End of info on table-->
-        </div>
-      </div>
-    </div>
-
-
 
 </section>
 
@@ -144,11 +141,13 @@
 <div id="modalBackDrop"></div>
 
 <footer th:replace="partials/partials :: footer-fragment"></footer>
-<script th:src="@{/js/profile.js}"></script>
-
+<script th:src="@{/js/jquery3.6.3.js}"></script>
 <script th:src="@{js/main.js}"></script>
+<script th:src="@{js/keys.js}"></script>
+<script th:src="@{/js/profile.js}"></script>
+<script src="//static.filestackapi.com/filestack-js/3.x.x/filestack.min.js"></script>
 
-<div th:replace="partials/partials :: scripts"></div>
+  <div th:replace="partials/partials :: scripts"></div>
 </div>
 
 </body>

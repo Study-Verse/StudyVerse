@@ -56,6 +56,11 @@ public class UserController {
         return "profile";
     }
 
-
+    @PostMapping("/uploadPic")
+    public String getProfilePic(@RequestParam(name="picUrl") String url){
+        User currentUser = Utils.currentUser();
+        currentUser.setProfilePictureURL(url);
+        return "redirect:/profile";
+    }
 
 } // End of UserController
