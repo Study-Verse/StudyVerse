@@ -38,4 +38,9 @@ public class StudyVerseUserDetails extends User implements UserDetails{
     public StudyVerseUserDetails(long id, String username, String email, String password) {
         super(id, username, email, password);
     }
+
+    @Override
+    public String getProfilePic() {
+        return super.getProfilePic();
+    }
 }

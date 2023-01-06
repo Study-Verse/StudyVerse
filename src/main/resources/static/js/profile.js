@@ -1,189 +1,112 @@
-$('document').ready(async function(){
-
-    let nav = 0;
-    let clicked = null;
-    let events = localStorage.getItem('events') ? JSON.parse(localStorage.getItem('events')) : [];
-
-    const calendar = document.getElementById('calendar');
-    const newEventModal = document.getElementById('newEventModal');
-    const deleteEventModal = document.getElementById('deleteEventModal');
-    const backDrop = document.getElementById('modalBackDrop');
-    const eventTitleInput = document.getElementById('eventTitleInput');
-    const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-
-    function openModal(date) {
-        clicked = date;
-
-        const eventForDay = events.find(e => e.date === clicked);
-
-        if (eventForDay) {
-            for (let i = 0; i<events.length; i++) {
-                if (currentUserId == events[i].user) {
-                    document.getElementById('eventText').innerText = eventForDay.title;
-                    deleteEventModal.style.display = 'block';
-                }
-            }
-        } else {
-            newEventModal.style.display = 'block';
-        }
-
-        backDrop.style.display = 'block';
-    }
-
-    function load() {
-        const dt = new Date();
-
-        if (nav !== 0) {
-            dt.setMonth(new Date().getMonth() + nav);
-        }
-
-        const day = dt.getDate();
-        const month = dt.getMonth();
-        const year = dt.getFullYear();
-
-        const firstDayOfMonth = new Date(year, month, 1);
-        const daysInMonth = new Date(year, month + 1, 0).getDate();
-
-        const dateString = firstDayOfMonth.toLocaleDateString('en-us', {
-            weekday: 'long',
-            year: 'numeric',
-            month: 'numeric',
-            day: 'numeric',
-        });
-        const paddingDays = weekdays.indexOf(dateString.split(', ')[0]);
-
-        document.getElementById('monthDisplay').innerText =
-            `${dt.toLocaleDateString('en-us', { month: 'long' })} ${year}`;
-
-        calendar.innerHTML = '';
-
-        for(let i = 1; i <= paddingDays + daysInMonth; i++) {
-            const daySquare = document.createElement('div');
-            daySquare.classList.add('day');
-
-            const dayString = `${month + 1}/${i - paddingDays}/${year}`;
-
-            if (i > paddingDays) {
-                daySquare.innerText = i - paddingDays;
-                const eventForDay = events.find(e => e.date === dayString);
-
-                if (i - paddingDays === day && nav === 0) {
-                    daySquare.id = 'currentDay';
-                }
-
-                if (eventForDay) {
-                    const eventDiv = document.createElement('div');
-                    for (let i = 0; i<events.length; i++){
-                        console.log(events[i].user);
-                        if (currentUserId === events[i].user) {
-                            eventDiv.classList.add('event')
-                            eventDiv.innerText = eventForDay.title;
-                            daySquare.appendChild(eventDiv);
-                        }
-                    }
-                    // eventDiv.classList.add('event');
-
-
-
-
-                }
-
-                daySquare.addEventListener('click', () => openModal(dayString));
-            } else {
-                daySquare.classList.add('padding');
-            }
-
-            calendar.appendChild(daySquare);
-        }
-    }
-
-    function closeModal() {
-        eventTitleInput.classList.remove('error');
-        newEventModal.style.display = 'none';
-        deleteEventModal.style.display = 'none';
-        backDrop.style.display = 'none';
-        eventTitleInput.value = '';
-        clicked = null;
-        load();
-    }
-
-    let currentUserId = $("#user-id").attr("user-id")
-
-    function saveEvent() {
-        if (eventTitleInput.value) {
-            eventTitleInput.classList.remove('error');
-
-            events.push({
-                date: clicked,
-                title: eventTitleInput.value,
-                user: currentUserId
-            });
-
-            localStorage.setItem('events', JSON.stringify(events));
-            closeModal();
-        } else {
-            eventTitleInput.classList.add('error');
-        }
-    }
-
-    function deleteEvent() {
-        events = events.filter(e => e.date !== clicked);
-        localStorage.setItem('events', JSON.stringify(events));
-        closeModal();
-    }
-
-    function initButtons() {
-        document.getElementById('nextButton').addEventListener('click', () => {
-            nav++;
-            load();
-        });
-
-        document.getElementById('backButton').addEventListener('click', () => {
-            nav--;
-            load();
-        });
-
-        document.getElementById('saveButton').addEventListener('click', saveEvent);
-        document.getElementById('cancelButton').addEventListener('click', closeModal);
-        document.getElementById('deleteButton').addEventListener('click', deleteEvent);
-        document.getElementById('closeButton').addEventListener('click', closeModal);
-    }
-
-    initButtons();
-    load();
-
-
-
-
-
-
-
-
-
-
-// This is for the profile picture
-    const keys = (await fetch(
-        `${window.location.protocol}//${window.location.host}/keys`)
-        .then(results => results.json()));
-
-    const client = filestack.init(keys.fileStackKey);
-    $("#profilePicChangeButton").on("click", function(){
-        client.picker({
-            accept: ["image/*"],
-            transformations: {
-                circle: true,
-                crop: false,
-                rotate: false,
-                force: true
-            },
-            onFileUploadFinished: function(file){
-                $("#profilePicInput").val(file.url);
-                $("#profilePicForm").submit();
-            }
-        }).open();
+function goToCardSet(cardSetId){
+    window.location.replace(`/study-cards/${cardSetId}`)
+}
+//function for letting the SVGs show on mouseOver
+if(window.innerWidth > 768){
+    $(".card-sets").mouseenter(function (){
+        $(this).children(".svg").removeClass("display-none");
     })
 
+    $(".card-sets").mouseleave(function (){
+        $(this).children(".svg").addClass("display-none");
+    })
+}
+//Function to show the SVGs automatically if the screen size is smaller than 768, this doesn't work on resizing the
+// screen only if you start off at that screen size
+if(window.innerWidth < 768){
+    $(".svg").removeClass("display-none");
+}
 
-});
+$(document).ready(function(){
+    // this deletes card sets
+    $(".trash-svg").click(function(event){
+        event.stopPropagation();
+        window.location.replace(`${$(this).attr("data-id")}/delete`)
+    });
+    // model pop-up functionality for each set
+    $(".edit-svg").on("click", function(event){
+        event.stopPropagation();
+        $(this).parent().siblings(".card-modal").removeClass("display-none");
+    });
+    // this redirects to the view where you can add cards to your set
+    $(".add-cards").on("click", function(event){
+        event.stopPropagation();
+        window.location.replace(`/card-create/${$(this).attr("data-name")}`)
+    });
+
+    $(".close").on("click", function(){
+        $(".card-modal").addClass("display-none");
+    });
+
+    $(".card-modal").click(function(event){
+        event.stopPropagation();
+    })
+    //Create Set Modal
+    $("#create-set-button").on("click", function(){
+        $(this).parent().siblings(".card-modal").removeClass("display-none");
+    })
+
+    $(".close").on("click", function(){
+        $(".card-modal").addClass("display-none");
+    })
+
+    $('#recipeCarousel').carousel({
+        interval: 10000
+    })
+
+    $('.carousel .carousel-item').each(function(){
+        var minPerSlide = 3;
+        var next = $(this).next();
+        if (!next.length) {
+            next = $(this).siblings(':first');
+        }
+        next.children(':first-child').clone().appendTo($(this));
+
+        for (var i=0;i<minPerSlide;i++) {
+            next=next.next();
+            if (!next.length) {
+                next = $(this).siblings(':first');
+            }
+
+            next.children(':first-child').clone().appendTo($(this));
+        }
+    });
 
 
+
+
+
+
+
+
+
+
+
+    $("#myCarousel").carousel();
+
+    // Enable Carousel Indicators
+    $(".item1").click(function(){
+        $("#myCarousel").carousel(0);
+    });
+    $(".item2").click(function(){
+        $("#myCarousel").carousel(1);
+    });
+    $(".item3").click(function(){
+        $("#myCarousel").carousel(2);
+    });
+    $(".item4").click(function(){
+        $("#myCarousel").carousel(3);
+    });
+
+    // Enable Carousel Controls
+    $(".left").click(function(){
+        $("#myCarousel").carousel("prev");
+    });
+    $(".right").click(function(){
+        $("#myCarousel").carousel("next");
+    });
+
+
+
+
+})//End of document.ready

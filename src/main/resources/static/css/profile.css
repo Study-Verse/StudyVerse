@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 #profile-info-container {
     position: relative;
     display: flex;
@@ -34,11 +34,7 @@
     visibility: visible;
     opacity: 1;
 }
-=======
-/*.edit-user-info-btn {*/
-/*	all: unset;*/
-/*}*/
->>>>>>> 90f702d (Finsihed profile update functionality)
+
 
 button {
     width: 75px;
