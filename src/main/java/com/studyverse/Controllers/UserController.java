@@ -23,7 +23,7 @@ public class UserController {
     @GetMapping("/register")
     public String showRegistrationForm(Model model){
         model.addAttribute("user", new User());
-        return "/register";
+        return "register";
     }
 
     @PostMapping("/register")
@@ -37,7 +37,7 @@ public class UserController {
     @GetMapping("/profile")
     public String profile(Model model){
         model.addAttribute("user",usersDao.findById(Utils.currentUser().getId()));
-        return "/profile";
+        return "profile";
     }
 
 //  Edit profile
