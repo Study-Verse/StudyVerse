@@ -29,7 +29,8 @@ public class QuizController {
 
     @GetMapping("/current-user-quiz-api/api")
     public @ResponseBody List<Quiz> currentUserQuizList(){
-        return Utils.currentUser().getQuiz();
+       List<Quiz> quizList = Utils.currentUser().getQuiz();
+        return quizList;
     }
 
 
