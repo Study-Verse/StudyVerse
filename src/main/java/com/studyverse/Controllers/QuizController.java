@@ -27,6 +27,12 @@ public class QuizController {
         return quizDao.findAll();
     }
 
+    @GetMapping("/current-user-quiz-api/api")
+    public @ResponseBody List<Quiz> currentUserQuizList(){
+        return Utils.currentUser().getQuiz();
+    }
+
+
 
     //    ============ self test get mapping
     @GetMapping("/self-test")

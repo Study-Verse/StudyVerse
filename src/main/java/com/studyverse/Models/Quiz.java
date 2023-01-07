@@ -1,6 +1,7 @@
 package com.studyverse.Models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
 import java.util.List;
@@ -12,6 +13,8 @@ public class Quiz {
     private long id;
 
     @Column
+    private String name;
+    @Column
     private String tag;
 
 
@@ -20,6 +23,7 @@ public class Quiz {
     private List<Question> questionList;
 
     @ManyToOne
+    @JsonManagedReference
     private User user;
 
 // constructors
@@ -30,10 +34,12 @@ public class Quiz {
         this.id = id;
     }
 
-    public Quiz(long id, String tag) {
+    public Quiz(long id, String tag,String name) {
         this.id = id;
         this.tag = tag;
+        this.name = name;
     }
+
 
     public Quiz(long id, String tag, List<Question> questionList) {
         this.id = id;
@@ -79,5 +85,13 @@ public class Quiz {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

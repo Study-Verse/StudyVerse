@@ -93,5 +93,11 @@ public class User {
         this.profilePic = profilePic;
     }
 
+    public List<Quiz> getQuiz() {
+        return quiz;
+    }
 
+    public void setQuiz(List<Quiz> quiz) {
+        this.quiz = quiz;
+    }
 }//End of class

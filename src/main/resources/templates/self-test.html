@@ -12,13 +12,15 @@
     <nav th:replace="partials/partials :: navbar(user=${user})"></nav>
 <!-- Make a new quiz-->
     <div>
+        <h2>Make a new quiz here:</h2>
         <form method="POST" th:action="@{/newQuiz}" th:object="${newQuiz}">
-            <lable for="tag"></lable>
+            <label for="quizName">Quiz name</label>
+            <input id="quizName" type="text" th:field="*{name}" >
+            <lable for="tag">Quiz Tag(e.g. cars, nature, programing)</lable>
             <input id="tag" type="text" th:field="*{tag}">
-
+            <input type="submit" value="Submit">
         </form>
     </div>
-
 
 <!-- Search for a quiz-->
 
