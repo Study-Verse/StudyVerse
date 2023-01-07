@@ -19,7 +19,7 @@ target/
 *.iml
 *.ipr
 keysOld.js
-
+keys.js
 ### NetBeans ###
 /nbproject/private/
 /nbbuild/
