@@ -1,21 +1,5 @@
 $(document).ready(function(){
     //Edit Set Page - Remaining characters for front face and back face
-    let backFaceAdd = $("#backFaceAdd");
-    let frontFaceAdd =  $("#frontFaceAdd");
-    $(window).on("click", function(){
-        $("#backRemainingChars").css("display", "none");
-        $("#frontRemainingChars").css("display", "none");
-    })
-    backFaceAdd.on("click" ,(e) =>  { e.stopPropagation(); $("#backRemainingChars").css("display", "")});
-    backFaceAdd.on("input", function(){
-        $("#backRemainingChars").css("display", "");
-        $("#backRemainingChars").text($("#backFaceAdd").attr("maxlength") - $("#backFaceAdd").val().length);
-    })
-    frontFaceAdd.on("click" ,(e) =>  { e.stopPropagation(); $("#frontRemainingChars").css("display", "")});
-    frontFaceAdd.on("input", function(){
-        $("#frontRemainingChars").css("display", "");
-        $("#frontRemainingChars").text($("#frontFaceAdd").attr("maxlength") - $("#frontFaceAdd").val().length);
-    })
 
     let editSetFlashCard = $(".edit-set-flashcard");
     editSetFlashCard.on("click", function(){
@@ -30,7 +14,6 @@ $(document).ready(function(){
         $(this).children(".cardButtonsWrapper").css("width", "");
         $(this).children(".cardTextWrapper").css("width", "100%");
     })
-
     let pForFrontFace =  $('.pForFrontFace');
     let pForBackFace =  $('.pForBackFace');
     $(".card-buttons-edit").on("click", function(){
@@ -66,7 +49,7 @@ $(document).ready(function(){
 
     });
 
-    //This lets you reset the values of the p tag when the user presses the cancel button
+    //This lets you reset the values of the p tag when the user presses the cancel button for editing a card
     let originalValueFront = "";
     let originalValueBack = "";
     $(".pForFrontFace").focus(function() {
@@ -84,19 +67,97 @@ $(document).ready(function(){
         $(this).siblings(".pForBackFace").html(originalValueBack);
     })
 
-    //Button to save the card
-    document.getElementById("save_card").addEventListener("click", () => {
-        addFlashcard();
-    });
 
-    //Shows the create card form
+    //Add Card Box
     $("#show_card_box").on("click", () => {
-       $("#create_card").css("display", "block");
+        let addCardFormHolder =  $("#addCardFormHolder");
+       $("#addCardSVG").css("display", "none");
+        addCardFormHolder.css("display", "flex");
+        $("html, body").scrollTop(addCardFormHolder.offset().top);
+        addCardFormHolder.children("form").children("#addFrontFace").focus();
     });
-    //Closes the create card form
-    $("#close_card_box").on("click", () => {
-        $("#create_card").css("display", "none");
+    $("#addCardSVG").on("click", function(){
+        let addCardFormHolder =  $("#addCardFormHolder");
+        $(this).css("display", "none");
+        addCardFormHolder.css("display", "flex");
+        addCardFormHolder.children("form").children("#addFrontFace").focus();
     });
+    let addFrontFace = $("#addFrontFace");
+    let addBackFace = $("#addBackFace");
+    addFrontFace.on("keydown", function(e){
+        if($(this).text().length === 500 && e.keyCode !== 8){
+            e.preventDefault();
+        }
 
+    });
+    addFrontFace.on("input", function(){
+        $('#frontFaceInput').val($(this).text());
+        $("#frontFaceSpan").text(500 - $(this).text().length + " characters left");
+    })
+    addFrontFace.on("paste", function(e) {
+        let pastedText;
+        if (window.clipboardData && window.clipboardData.getData) { // IE
+            pastedText = window.clipboardData.getData('Text');
+        } else if (e.originalEvent.clipboardData && e.originalEvent.clipboardData.getData) { // other browsers
+            pastedText = e.originalEvent.clipboardData.getData('text/plain');
+        }
+        let currentText = $(this).text();
+        if ((currentText + pastedText).length > 500) {
+            pastedText = pastedText.substring(0, 500 - currentText.length);
+        }
+        let sel = window.getSelection();
+        let range = sel.getRangeAt(0);
+        range.deleteContents();
+        let textNode = document.createTextNode(pastedText);
+        range.insertNode(textNode);
+        range.setStartAfter(textNode);
+        range.setEndAfter(textNode);
+        sel.removeAllRanges();
+        sel.addRange(range);
+        e.preventDefault();
+        $("#frontFaceSpan").text(500 - $(this).text().length + " characters left");
+    });
+    addBackFace.on("keydown", function(e){
+        if($(this).text().length === 500 && e.keyCode !== 8){
+            e.preventDefault();
+        }
+
+    });
+    addBackFace.on("input", function(){
+        $('#backFaceInput').val($(this).text())
+        $("#backFaceSpan").text(500 - $(this).text().length + " characters left");
+    })
+    addBackFace.on("paste", function(e) {
+        let pastedText;
+        if (window.clipboardData && window.clipboardData.getData) { // IE
+            pastedText = window.clipboardData.getData('Text');
+        } else if (e.originalEvent.clipboardData && e.originalEvent.clipboardData.getData) { // other browsers
+            pastedText = e.originalEvent.clipboardData.getData('text/plain');
+        }
+        let currentText = $(this).text();
+        if ((currentText + pastedText).length > 500) {
+            pastedText = pastedText.substring(0, 500 - currentText.length);
+        }
+        let sel = window.getSelection();
+        let range = sel.getRangeAt(0);
+        range.deleteContents();
+        let textNode = document.createTextNode(pastedText);
+        range.insertNode(textNode);
+        range.setStartAfter(textNode);
+        range.setEndAfter(textNode);
+        sel.removeAllRanges();
+        sel.addRange(range);
+        e.preventDefault();
+        $("#backFaceSpan").text(500 - $(this).text().length + " characters left");
+    });
+    $("#cancelAdd").on("click", function(e){
+        e.preventDefault();
+        $("#addCardSVG").css("display", "flex");
+        $("#addCardFormHolder").css("display", "none");
+        $("#addFrontFace").text("");
+        $("#addBackFace").text("");
+        $("#backFaceSpan").text("");
+        $("#frontFaceSpan").text("");
+    });
 
 })//End of Document.ready
