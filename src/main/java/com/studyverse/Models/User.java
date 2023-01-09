@@ -101,14 +101,12 @@ public class User {
         this.profilePic = profilePic;
     }
 
-<<<<<<< HEAD
     public List<Quiz> getQuiz() {
         return quiz;
     }
 
     public void setQuiz(List<Quiz> quiz) {
-        this.quiz = quiz;
-=======
+        this.quiz = quiz;}
     public List<Card> getCardList() {
         return cardList;
     }
@@ -131,7 +129,6 @@ public class User {
 
     public void setEvents(List<Events> events) {
         this.events = events;
->>>>>>> 1f2e24a (working on calender)
     }
 }//End of class
 

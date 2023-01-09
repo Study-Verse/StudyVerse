@@ -1,6 +1,9 @@
 package com.studyverse.Models;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
+import java.util.Date;
 
 
 @Entity
@@ -23,7 +26,9 @@ public class Events {
     @Column (length = 500)
     private String title;
 
-
+    @DateTimeFormat(pattern = "dd-MM-yyyy")
+    @Column(name = "date")
+    private Date date;
 
 //    Getters and Setters
 

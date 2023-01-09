@@ -1,110 +1,160 @@
-.SPContainer {
-	display: flex;
-	flex-direction: column;
-	padding: 0;
-	background-image: url("/img/dorm-studying.jpeg"),linear-gradient(0deg, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.42));
-	background-blend-mode: color;
-	flex-grow: 1;
-	background-size: cover;
-	background-position: center center;
-	justify-content: center;
+/*.SPContainer {*/
+/*	display: flex;*/
+/*	flex-direction: column;*/
+/*	padding: 0;*/
+/*	background-image: url("/img/dorm-studying.jpeg"),linear-gradient(0deg, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.42));*/
+/*	background-blend-mode: color;*/
+/*	flex-grow: 1;*/
+/*	background-size: cover;*/
+/*	background-position: center center;*/
+/*	justify-content: center;*/
 
-}
-.container{
-	max-width: none!important;
-	margin-left: 0!important;
-	margin-right: 0!important;
-}
-.column {
-	display: flex;
-	flex-direction: column;
-}
-.SPContainer, .column{
-	justify-content: center;
-	align-items: center;
-}
+/*}*/
+/*.container{*/
+/*	max-width: none!important;*/
+/*	margin-left: 0!important;*/
+/*	margin-right: 0!important;*/
+/*}*/
+/*.column {*/
+/*	display: flex;*/
+/*	flex-direction: column;*/
+/*}*/
+/*.SPContainer, .column{*/
+/*	justify-content: center;*/
+/*	align-items: center;*/
+/*}*/
 
-.page-wrapper{
-	display: flex;
-	flex-direction: column;
-	min-height: 100vh;
-}
+/*.page-wrapper{*/
+/*	display: flex;*/
+/*	flex-direction: column;*/
+/*	min-height: 100vh;*/
+/*}*/
 
-.page-wrapper.splash-page-wrapper{
-	/*background-color: rgba(45, 0, 69);*/
-	align-items: center;
-	justify-content: center;
-	width: 100%;
-}
+/*.page-wrapper.splash-page-wrapper{*/
+/*	!*background-color: rgba(45, 0, 69);*!*/
+/*	align-items: center;*/
+/*	justify-content: center;*/
+/*	width: 100%;*/
+/*}*/
 
-.image.splash-page-logo{
-	width: 100%;
-	position: absolute;
-}
+/*.image.splash-page-logo{*/
+/*	width: 100%;*/
+/*	position: absolute;*/
+/*}*/
 
-.SPHeading1{
-	width: 523px;
-	height: 65px;
-	font-style: normal;
-	font-weight: 300;
-	font-size: 54px;
-	line-height: 65px;
-	display: flex;
-	align-items: center;
-	text-align: center;
-	text-transform: uppercase;
-	color: #FFFFFF;
-}
+/*.SPHeading1{*/
+/*	width: 523px;*/
+/*	height: 65px;*/
+/*	font-style: normal;*/
+/*	font-weight: 300;*/
+/*	font-size: 54px;*/
+/*	line-height: 65px;*/
+/*	display: flex;*/
+/*	align-items: center;*/
+/*	text-align: center;*/
+/*	text-transform: uppercase;*/
+/*	color: #FFFFFF;*/
+/*}*/
 
-.SPHeading2 {
-	width: 593px;
-	height: 113px;
-	font-style: normal;
-	font-weight: 600;
-	font-size: 93px;
-	line-height: 113px;
-	/* identical to box height */
+/*.SPHeading2 {*/
+/*	width: 593px;*/
+/*	height: 113px;*/
+/*	font-style: normal;*/
+/*	font-weight: 600;*/
+/*	font-size: 93px;*/
+/*	line-height: 113px;*/
+/*	!* identical to box height *!*/
 
-	display: flex;
-	align-items: center;
-	text-align: center;
-	text-transform: uppercase;
-	color: #FFFFFF;
-}
+/*	display: flex;*/
+/*	align-items: center;*/
+/*	text-align: center;*/
+/*	text-transform: uppercase;*/
+/*	color: #FFFFFF;*/
+/*}*/
 
-.content-title{
-	color: #F2C75B;
-}
+/*.content-title{*/
+/*	color: #F2C75B;*/
+/*}*/
 
-.content-text {
-	padding-left: 30px;
-	padding-right: 30px;
-}
+/*.content-text {*/
+/*	padding-left: 30px;*/
+/*	padding-right: 30px;*/
+/*}*/
 
-.message{
-	display: flex;
-	align-items: center;
-	text-align: center;
-}
+/*.message{*/
+/*	display: flex;*/
+/*	align-items: center;*/
+/*	text-align: center;*/
+/*}*/
 
-.rectangle{
-	height: 50mm;
-	width: 90mm;
-	background-color: #5EC5DF;
-	opacity: 60%;
+/*.rectangle{*/
+/*	height: 50mm;*/
+/*	width: 90mm;*/
+/*	background-color: #5EC5DF;*/
+/*	opacity: 60%;*/
 
-}
+/*}*/
 
 @media (max-width: 600px){
-	.SPContainer{
-		display: flex;
-		flex-direction: column;
-		padding: 0;
-		background-image: url("/img/dorm-studying.jpeg"),linear-gradient(0deg, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.42));
-		background-blend-mode: color;
-		flex-grow: 1;
-		object-fit: scale-down;
-		max-width: 100%;
+	/*.SPContainer{*/
+	/*	display: flex;*/
+	/*	flex-direction: column;*/
+	/*	padding: 0;*/
+	/*	!*background-image: url("/img/dorm-studying.jpeg"),linear-gradient(0deg, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.42));*!*/
+	/*	background-blend-mode: color;*/
+	/*	flex-grow: 1;*/
+	/*	object-fit: scale-down;*/
+	/*	max-width: 100%;*/
 
+	/*}*/
+
+	#searchForCards {
+		display: none;
 	}
+
 }
+
+
+
+
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+	width: 85%;
+	margin: auto;
+}
+
+#infoWeb {
+	display: flex;
+	justify-content: center;
+}
+
+#fixedNav {
+	margin: auto;
+}
+
+/* This is for the nav bar because bootstrap makes it have 4px bottom*/
+.navbar {
+	margin-bottom: 0px !important;
+}
+
+/*This is for the nav bar also to have the right sections since bootstrap moves it*/
+.navbar-collapse.collapse.w-100.order-3.collapse-portion{
+	display: flex !important;
+}
+
+.button-color {
+	background-color: yellow;
+	color: purple;
+}
+
+
+#btn-color1, #btn-color2, #btn-color3 {
+	background-color: yellow;
+	color: black;
+}
+
+
+
+
+
+
