@@ -43,7 +43,6 @@ header{
     background-color: var(--pageMainColor);
 }
 
-
 #create_card{
     /*display: none;*/
     width: 370px;
@@ -73,12 +72,11 @@ header{
     margin: 10px auto auto;
     padding: 0 10px;
 }
-
 .edit-set-flashcard{
     display: flex;
     flex-direction: column;
     width: 700px;
-    margin: 10px;
+    margin-top: 10px;
     background-color: var(--pageMainColor);
     color: white;
     text-align: center;
@@ -94,14 +92,14 @@ header{
 .edit-set-flashcard .cardTextWrapper {
     width: 100%;
 }
-.cardTextWrapper p{
+.cardTextWrapper p, #addCardFormHolder p{
     overflow-wrap: break-word;
     width: 600px;
 }
 .card-buttons-delete {
     all: unset;
 }
-.p-tags-active {
+.p-tags-active, #addCardFormHolder p {
     background-color: #2c2c2c;
 }
 .edit-form {
@@ -114,7 +112,44 @@ header{
     width: 100%;
 }
 
+#addCardSVG{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 700px;
+    margin-top: 10px;
+    background-color: var(--pageMainColor);
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.9);
+}
+#addCardSVG:hover{
+    color:#8854C0
+}
+#addCardSVG svg {
+    height:18px;
+    width: 18px;
 
+}
+#addCardFormHolder{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    width: 700px;
+    margin-top: 10px;
+    background-color: var(--pageMainColor);
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.9);
+}
+#addCardFormHolder form {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
 @media(max-width:768px){
     .flashcard{margin: auto;}
 
@@ -127,12 +162,27 @@ header{
     .edit-set-flashcard{
         width: 620px;
     }
+    #addCardSVG {
+        width: 620px;
+    }
+    #addCardFormHolder{
+        width: 620px;
+    }
 }
 @media(max-width: 625px){
     .edit-set-flashcard{
         width: 560px;
     }
     .cardTextWrapper p {
+        width: 530px;
+    }
+    #addCardSVG {
+        width: 560px;
+    }
+    #addCardFormHolder{
+        width: 560px;
+    }
+    #addCardFormHolder p {
         width: 530px;
     }
 }
@@ -143,12 +193,30 @@ header{
     .cardTextWrapper p {
         width: 490px;
     }
+    #addCardSVG {
+        width: 505px;
+    }
+    #addCardFormHolder{
+        width: 505px;
+    }
+    #addCardFormHolder p {
+        width: 490px;
+    }
 }
-@media(max-width: 504px){
+@media(max-width: 507px){
     .edit-set-flashcard{
-        width: 495px;
+        width: 490px;
     }
     .cardTextWrapper p {
+        width: 488px;
+    }
+    #addCardFormHolder p {
+        width: 488px;
+    }
+    #addCardSVG {
+        width: 490px;
+    }
+    #addCardFormHolder{
         width: 490px;
     }
 }
@@ -159,10 +227,7 @@ header{
         flex-direction: column;
         align-items: center;
     }
-
     #create_card{width: 95%;}
-
     .flashcard{width: 100%;}
-
 }
 

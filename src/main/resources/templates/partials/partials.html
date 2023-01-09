@@ -8,8 +8,7 @@
         <title th:text="${title}"></title>
         <!-- Bootstrap -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-
-       <!-- Bootstrap Icons -->
+        <!-- Bootstrap Icons -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
         <link rel="stylesheet" th:href="@{/css/global.css}">
         <link rel="icon" type="image/x-icon" th:href="@{/img/studyverseIcon.png}">
@@ -40,11 +39,7 @@
                 <li class="nav-item">
                     <a class="nav-link" th:href="@{/self-test}">Test</a>
                 </li>
-<<<<<<< HEAD
                 <!--                <li sec:authorize="isAuthenticated()" class="nav-item">-->
-=======
-<!--                <li sec:authorize="isAuthenticated()" class="nav-item">-->
->>>>>>> cf36216045fc6164bb798fd32973114ca76eae72
                 <li class="nav-item">
                     <a class="nav-link" th:href="@{/profile}">Profile</a>
                 </li>
@@ -83,6 +78,10 @@
                 </li>
                 <!--Profile-->
 
+                <li id="profile-dropdown" sec:authorize="isAuthenticated()">
+                    <div class="dropstart">
+                        <a type="button" data-bs-toggle="dropdown"
+                           aria-expanded="false">
 <<<<<<< HEAD
                 <li id="profile-dropdown" sec:authorize="isAuthenticated()">
                     <div class="dropstart">
@@ -90,7 +89,7 @@
                            aria-expanded="false">
 
                             <div class="user-profile-logo">
-                                <img class="user-profile-badge" th:if="${user == null}" th:src="@{https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp}">
+                                <img class="user-profile-badge" th:if="${user == null}" th:src="@{/img/studyverseIcon.png}">
                                 <img class="user-profile-badge" th:if="${user != null}" th:src="${user.getProfilePic()}">
                             </div>
                         </a>
@@ -101,25 +100,6 @@
                         </ul>
                     </div>
                 </li>
-=======
-               <li id="profile-dropdown" sec:authorize="isAuthenticated()">
-                   <div class="dropstart">
-                       <a type="button" data-bs-toggle="dropdown"
-                          aria-expanded="false">
-
-                           <div class="user-profile-logo">
-                               <img class="user-profile-badge" th:if="${user == null}" th:src="@{https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp}">
-                               <img class="user-profile-badge" th:if="${user != null}" th:src="${user.getProfilePic()}">
-                           </div>
-                       </a>
-                       <ul class="dropdown-menu profile-dropdown-menu">
-                           <li><a>Account Settings</a></li>
-                           <li> <form id="logoutForm" th:action="@{/logout}" method="post">
-                           </form><a href="#" onclick="document.getElementById('logoutForm').submit();">Log Out</a></li>
-                       </ul>
-                   </div>
-                   </li>
->>>>>>> cf36216045fc6164bb798fd32973114ca76eae72
                 <!--End of profile-->
 
             </ul>
@@ -146,7 +126,6 @@
 <!--Scripts Fragment-->
 <div th:fragment="scripts" th:remove="tag">
     <!-- Bootstrap JS Bundle with Popper -->
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script th:src="@{/js/sitebar.js}"></script>
 </div>

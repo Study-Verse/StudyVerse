@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 
 @Controller
 public class UserController {
@@ -22,7 +23,6 @@ public class UserController {
     public UserController(UserRepository usersDao, PasswordEncoder passwordEncoder, EventsRepository eventsDao) {
         this.usersDao = usersDao;
         this.passwordEncoder = passwordEncoder;
-        this.eventsDao = eventsDao;
     }
 
     @GetMapping("/register")
@@ -45,8 +45,6 @@ public class UserController {
         model.addAttribute("events", new Events());
         model.addAttribute("calender", new Calendar());
         model.addAttribute("currentEvents", usersDao.findById(Utils.currentUser().getId()).getEvents());
-
-
         return "profile";
     }
 
@@ -66,7 +64,6 @@ public class UserController {
         User user = usersDao.findById(Utils.currentUser().getId());
         user.setProfilePic(url);
         usersDao.save(user);
-
         return "redirect:/profile";
     }
 

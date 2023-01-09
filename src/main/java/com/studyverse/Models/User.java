@@ -1,4 +1,5 @@
 package com.studyverse.Models;
+
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import javax.persistence.*;
 import java.util.List;
@@ -27,8 +28,6 @@ public class User {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
     private List<Card> cardList;
 
-    //End of Instance Variables
-
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "user")
     private Calendar calendar;
 
@@ -37,18 +36,7 @@ public class User {
 
     //End of Instance Variables
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
-    @JsonBackReference
-    private List<Quiz> quiz;
-
-
     //Constructors
-    @Column
-    private String profilePictureURL;
-//    constructor
-
-    //Constructors
-
     public User() {
     }
     public User(long id, String username, String email){
@@ -67,8 +55,18 @@ public class User {
         this.password = password;
     }
 
-//    setters and getters
+    public User(long id, String username, String email, String password, String profilePic) {
+        this.id = id;
+        this.username = username;
+        this.email = email;
+        this.password = password;
+        this.profilePic = profilePic;
+    }
 
+    //End of Constructors
+
+
+    //Setters and Getters
     public long getId() {
         return id;
     }
@@ -106,12 +104,6 @@ public class User {
         this.profilePic = profilePic;
     }
 
-    public List<Quiz> getQuiz() {
-        return quiz;
-    }
-
-    public void setQuiz(List<Quiz> quiz) {
-        this.quiz = quiz;}
     public List<Card> getCardList() {
         return cardList;
     }
