@@ -44,7 +44,6 @@ public class UserController {
         model.addAttribute("events", new Events());
         model.addAttribute("calender", new Calendar());
         model.addAttribute("currentEvents", usersDao.findById(Utils.currentUser().getId()).getEvents());
-
         return "profile";
     }
 
