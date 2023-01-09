@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
 <head>
   <div th:replace="partials/partials :: head-fragment(' Profile')"></div>
   <link th:rel="stylesheet" th:href="@{/css/profile.css}">
@@ -8,8 +8,9 @@
 </head>
 <body>
 <nav th:replace="partials/partials :: navbar"></nav>
+<div sec:authorize="isAuthenticated()">
 
-<h1>Profile</h1>
+<h1>Your Profile</h1>
 <section style="background-color: #eee;">
   <div class="row">
     <div class="col-lg-4">
@@ -130,48 +131,95 @@
               </div>
               <p class="mt-4 mb-1" style="font-size: .77rem;">Backend API</p>
               <div class="progress rounded mb-2" style="height: 5px;">
-                <div class="progress-bar" role="progressbar" style="width: 66%" aria-valuenow="66"
-                     aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" style="width: 66%" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
+<!--            End of info on table-->
           </div>
         </div>
         <div class="col-md-6">
           <div class="card mb-4 mb-md-0">
             <div class="card-body">
-              <p class="mb-4"><span class="text-primary font-italic me-1">assigment</span> Project Status
-              </p>
+              <p class="mb-4"><span class="text-primary font-italic me-1">assigment</span> Project Status</p>
               <p class="mb-1" style="font-size: .77rem;">Web Design</p>
               <div class="progress rounded" style="height: 5px;">
-                <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80"
-                     aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
-              <p class="mt-4 mb-1" style="font-size: .77rem;">Website Markup</p>
-              <div class="progress rounded" style="height: 5px;">
-                <div class="progress-bar" role="progressbar" style="width: 72%" aria-valuenow="72"
-                     aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-              <p class="mt-4 mb-1" style="font-size: .77rem;">One Page</p>
-              <div class="progress rounded" style="height: 5px;">
-                <div class="progress-bar" role="progressbar" style="width: 89%" aria-valuenow="89"
-                     aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-              <p class="mt-4 mb-1" style="font-size: .77rem;">Mobile Template</p>
-              <div class="progress rounded" style="height: 5px;">
-                <div class="progress-bar" role="progressbar" style="width: 55%" aria-valuenow="55"
-                     aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-              <p class="mt-4 mb-1" style="font-size: .77rem;">Backend API</p>
-              <div class="progress rounded mb-2" style="height: 5px;">
-                <div class="progress-bar" role="progressbar" style="width: 66%" aria-valuenow="66"
-                     aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+        </div>
+<!--      Beginning of edit modal-->
+        <div class="profile-edit-modal display-none">
+          <div class="profile-edit-content">
+            <form th:action="@{/profile/edit}" method="post" th:object="${user}"></form>
+            <div class="edit-info-popup">
+              <h5>Edit info</h5>
+              <input type="text" name="edit-username" class="changed-info" th:value="${user.getUsername()}">
+              <br>
+              <input type="text" name="edit-email" class="changed-info" th:value="${user.getEmail()}">
+              <br>
+              <button class="edit-user-info-btn" type="submit">Update</button>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="card mb-4 mb-md-0">
+                <div class="card-body">
+                  <p class="mb-4"><span class="text-primary font-italic me-1">assigment</span> Project Status
+                  </p>
+                  <p class="mb-1" style="font-size: .77rem;">Web Design</p>
+                  <div class="progress rounded" style="height: 5px;">
+                    <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80"
+                         aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  <p class="mt-4 mb-1" style="font-size: .77rem;">Website Markup</p>
+                  <div class="progress rounded" style="height: 5px;">
+                    <div class="progress-bar" role="progressbar" style="width: 72%" aria-valuenow="72"
+                         aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  <p class="mt-4 mb-1" style="font-size: .77rem;">One Page</p>
+                  <div class="progress rounded" style="height: 5px;">
+                    <div class="progress-bar" role="progressbar" style="width: 89%" aria-valuenow="89"
+                         aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  <p class="mt-4 mb-1" style="font-size: .77rem;">Mobile Template</p>
+                  <div class="progress rounded" style="height: 5px;">
+                    <div class="progress-bar" role="progressbar" style="width: 55%" aria-valuenow="55"
+                         aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  <p class="mt-4 mb-1" style="font-size: .77rem;">Backend API</p>
+                  <div class="progress rounded mb-2" style="height: 5px;">
+                    <div class="progress-bar" role="progressbar" style="width: 66%" aria-valuenow="66"
+                         aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </div>
+                <p class="mt-4 mb-1" style="font-size: .77rem;">Website Markup</p>
+                <div class="progress rounded" style="height: 5px;">
+                  <div class="progress-bar" role="progressbar" style="width: 72%" aria-valuenow="72"
+                       aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <p class="mt-4 mb-1" style="font-size: .77rem;">One Page</p>
+                <div class="progress rounded" style="height: 5px;">
+                  <div class="progress-bar" role="progressbar" style="width: 89%" aria-valuenow="89"
+                       aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <p class="mt-4 mb-1" style="font-size: .77rem;">Mobile Template</p>
+                <div class="progress rounded" style="height: 5px;">
+                  <div class="progress-bar" role="progressbar" style="width: 55%" aria-valuenow="55"
+                       aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <p class="mt-4 mb-1" style="font-size: .77rem;">Backend API</p>
+                <div class="progress rounded mb-2" style="height: 5px;">
+                  <div class="progress-bar" role="progressbar" style="width: 66%" aria-valuenow="66"
+                       aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
   </div>
 </section>
 
@@ -200,9 +248,7 @@
 
 <div id="newEventModal">
   <h2>New Event</h2>
-
   <input id="eventTitleInput" placeholder="Event Title" />
-
   <button id="saveButton">Save</button>
   <button id="cancelButton">Cancel</button>
 </div>
