@@ -76,6 +76,7 @@ body {
 	padding: 0.8rem;
 	background-color: #2f1046;
 	color: white;
+	width: 100%;
 }
 #footer {
 	position: fixed;
@@ -125,6 +126,11 @@ body {
 		right: 0;
 	}
 }
+
+
+
+
+
 /*// Small devices (landscape phones, 576px and down)*!*!*/
 @media (max-width: 576px) {
 	#site-bar-search{
@@ -153,7 +159,5 @@ body {
 @media (min-width: 1400px) {
 
 }
-
-
 
 
