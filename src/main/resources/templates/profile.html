@@ -12,23 +12,108 @@
   <h1>Profile</h1>
 
 
-  <div id="profile-info-container">
-    <form id="profilePicForm" th:method="Post" th:action="@{/profilePic}" style="display: none">
-    <input name="profilePicInput" id="profilePicInput" type="text">
-  </form>
-    <img th:if="${user.getProfilePic() != null}"
-         th:src="${user.getProfilePic()}" alt="Profile Picture"
-         class="profileImg rounded-circle img-fluid" style="width: 150px;"/>
-    <img th:if="${user.getProfilePic() == null}"
-         th:src="@{https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp}" alt="Profile Picture"
-         class="profileImg rounded-circle img-fluid" style="width: 150px;"/>
-    <p id="profilePicChangeButton">Change</p>
+<!--  <div id="profile-info-container">-->
+<!--    <form id="profilePicForm" th:method="Post" th:action="@{/profilePic}" style="display: none">-->
+<!--    <input name="profilePicInput" id="profilePicInput" type="text">-->
+<!--  </form>-->
+<!--    <img th:if="${user.getProfilePic() != null}"-->
+<!--         th:src="${user.getProfilePic()}" alt="Profile Picture"-->
+<!--         class="profileImg rounded-circle img-fluid" style="width: 150px;"/>-->
+<!--    <img th:if="${user.getProfilePic() == null}"-->
+<!--         th:src="@{https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp}" alt="Profile Picture"-->
+<!--         class="profileImg rounded-circle img-fluid" style="width: 150px;"/>-->
+<!--    <p id="profilePicChangeButton">Change</p>-->
+<!--  </div>-->
+
+
+
+
+
+
+  <div class="row">
+    <div class="col-lg-2">
+      <div class="card mb-4">
+        <div class="card-body text-center">
+
+          <div id="profile-info-container">
+            <form id="profilePicForm" th:method="Post" th:action="@{/profilePic}" style="display: none">
+              <input name="profilePicInput" id="profilePicInput" type="text">
+            </form>
+            <img th:if="${user.getProfilePic() != null}"
+                 th:src="${user.getProfilePic()}" alt="Profile Picture"
+                 class="profileImg rounded-circle img-fluid" style="width: 150px;"/>
+            <img th:if="${user.getProfilePic() == null}"
+                 th:src="@{https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp}" alt="Profile Picture"
+                 class="profileImg rounded-circle img-fluid" style="width: 150px;"/>
+            <p id="profilePicChangeButton">Change</p>
+          </div>
+
+          <h5 class="my-3 mt-3"><span th:text="${#authentication.principal.username}"></span></h5>
+
+        </div>
+      </div>
+
+    </div>
+    <div class="col-lg-8">
+      <div class="card mb-4">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-sm-3">
+              <p class="mb-0">Username:</p>
+            </div>
+            <div class="col-sm-9">
+              <p class="text-muted mb-0"><span th:text="${#authentication.principal.username}"></span></p>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-sm-3">
+              <p class="mb-0">Email</p>
+            </div>
+            <div class="col-sm-9">
+              <p class="text-muted mb-0"><span th:text="${#authentication.principal.email}"></span></p>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-sm-3">
+              <p class="mb-0">Phone</p>
+            </div>
+            <div class="col-sm-9">
+              <p class="text-muted mb-0">(097) 234-5678</p>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-sm-3">
+              <p class="mb-0">Mobile</p>
+            </div>
+            <div class="col-sm-9">
+              <p class="text-muted mb-0">(098) 765-4321</p>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-sm-3">
+              <p class="mb-0">Address</p>
+            </div>
+            <div class="col-sm-9">
+              <p class="text-muted mb-0">Bay Area, San Francisco, CA</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+
+
+
+
 
 <!--did this with gonzalo so we can get the events-->
 <!--      <div th:data-currentEvents="${currentEvents}" id="current"></div>-->
 
-  <div id="MiddleCalendar">
+  <div id="MiddleCalendar" class="calenderContainer mb-5">
   <div id="container" sec:authorize="isAuthenticated()">
     <input type="hidden" th:user-id="${#authentication.principal.id}" id="user-id">
     <div id="header">
@@ -81,7 +166,7 @@
 
 
 
-  <footer th:replace="partials/partials :: footer-fragment"></footer>
+  <footer th:replace="partials/partials :: footer-fragment" class="mt-5"></footer>
   <script th:src="@{/js/jquery-3.6.1.min.js}"></script>
   <script th:src="@{js/keys.js}"></script>
   <script src="//static.filestackapi.com/filestack-js/3.x.x/filestack.min.js"></script>
