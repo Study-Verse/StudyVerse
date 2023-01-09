@@ -1,5 +1,6 @@
 package com.studyverse.Controllers;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.studyverse.Models.Calendar;
 import com.studyverse.Models.Events;
 import com.studyverse.Models.User;
@@ -34,7 +35,7 @@ public class CalendarController {
 
 
     @PostMapping("/addEvent")
-    public String addEvent(Model model, @ModelAttribute Events events){
+    public String addEvent(Model model, @ModelAttribute Events events) {
         User user = Utils.currentUser();
         Calendar calendar = calendarDao.findById(1);
         calendar.setUser(user);

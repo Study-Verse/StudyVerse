@@ -62,6 +62,7 @@ body{
     text-align: center;
     margin: 10px 4px;
     background-image: url("/img/flashcard.jpeg");
+    padding: 3vh 0;
 }
 /*.card-sets{*/
 /*    height: 184px;*/
@@ -82,9 +83,10 @@ body{
 }
 
 .svg {
-    position: absolute;
-    top:5px;
-    right:40px;
+    /*position: absolute;*/
+    /*top:5px;*/
+    /*right:40px;*/
+    /*valeria edited this to keep the svgs in the middle*/
     color: white;
 }
 
@@ -97,8 +99,6 @@ body{
 .card-title{
     color: rgb(250 110 255);
 }
-
-
 
 
 /*Modal*/
@@ -175,6 +175,10 @@ body{
         width: 250px;
         font-size: 15px;
     }
+
+    #randomBooksContainer {
+        margin-bottom: 14vh;
+    }
 }
 @media screen and (max-width: 714px){
     .input-design {
@@ -183,6 +187,10 @@ body{
     }
     .heading{
         display:none;
+    }
+
+    #randomBooksContainer {
+        margin-bottom: 14vh;
     }
 }
 @media screen and (max-width: 320px) {
@@ -193,6 +201,10 @@ body{
     }
     .heading{
         display:none;
+    }
+
+    #randomBooksContainer {
+        margin-bottom: 14vh;
     }
 }
 
@@ -222,24 +234,16 @@ body{
 /*    object-fit: cover;*/
 /*}*/
 
-
-
-
-
-
-
-
-
-
-
-
-
 @media (max-width: 768px) {
     .carousel-inner .carousel-item > div {
         display: none;
     }
     .carousel-inner .carousel-item > div:first-child {
         display: block;
+    }
+
+    #randomBooksContainer {
+        margin-bottom: 14vh;
     }
 }
 
@@ -260,6 +264,10 @@ body{
     .carousel-inner .carousel-item-left.active,
     .carousel-inner .carousel-item-prev {
         transform: translateX(-33.333%);
+    }
+
+    #randomBooksContainer {
+        margin-bottom: 14vh;
     }
 }
 
