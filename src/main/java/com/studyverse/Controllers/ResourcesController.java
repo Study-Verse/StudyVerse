@@ -1,5 +1,7 @@
 package com.studyverse.Controllers;
 
+import com.studyverse.Repositories.UserRepository;
+import com.studyverse.Services.Utils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,8 +10,15 @@ import org.springframework.web.bind.annotation.PathVariable;
 @Controller
 public class ResourcesController {
 
+    private final UserRepository userDao;
+
+    public ResourcesController(UserRepository userDao){
+        this.userDao = userDao;
+    }
+
     @GetMapping("/books")
-    public String showBookPage() {
+    public String showBookPage(Model model) {
+        model.addAttribute("user",userDao.findById(Utils.currentUser().getId()));
         return "resources";
     }
 
@@ -31,7 +40,8 @@ public class ResourcesController {
 //     View for wikipedia
 
     @GetMapping("/wiki")
-    public String showWiki(){
+    public String showWiki(Model model){
+        model.addAttribute("user",userDao.findById(Utils.currentUser().getId()));
         return "wikipedia";
     }
 
@@ -39,7 +49,8 @@ public class ResourcesController {
 
 //    About Us view
     @GetMapping("/about-us")
-    public String aboutUs(){
+    public String aboutUs(Model model) {
+        model.addAttribute("user",userDao.findById(Utils.currentUser().getId()));
         return "about-us";
     }
 
