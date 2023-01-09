@@ -72,6 +72,7 @@ public class CardSetController {
         long user = Utils.currentUser().getId();
         List<CardSet> cardSetList = cardSetDao.findByUserId(user);
         model.addAttribute("cardSetList",cardSetList);
+        model.addAttribute("user",userDao.findById(Utils.currentUser().getId()));
         return "dashboard";
     }
 
