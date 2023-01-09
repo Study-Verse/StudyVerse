@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
+  <div th:replace="partials/partials :: head-fragment('About Us')"></div>
   <meta charset="UTF-8">
   <title>Register</title>
   <link rel="stylesheet" th:href="@{/css/register.css}">
@@ -8,6 +9,7 @@
   <script th:src="@{/js/main.js}"></script>
 </head>
 <body>
+
   <div class="container">
       <form class="form-section" th:action="@{/register}" th:method="POST" th:object="${user}">
         <div class="signup-box">

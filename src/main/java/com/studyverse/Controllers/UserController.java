@@ -1,7 +1,9 @@
 package com.studyverse.Controllers;
 
-import com.studyverse.Models.CardSet;
+import com.studyverse.Models.Calendar;
+import com.studyverse.Models.Events;
 import com.studyverse.Models.User;
+import com.studyverse.Repositories.EventsRepository;
 import com.studyverse.Repositories.UserRepository;
 import com.studyverse.Services.Utils;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -15,9 +17,13 @@ import java.util.List;
 public class UserController {
     private final UserRepository usersDao;
     private final PasswordEncoder passwordEncoder;
-    public UserController(UserRepository usersDao, PasswordEncoder passwordEncoder) {
+
+    private final EventsRepository eventsDao;
+
+    public UserController(UserRepository usersDao, PasswordEncoder passwordEncoder, EventsRepository eventsDao) {
         this.usersDao = usersDao;
         this.passwordEncoder = passwordEncoder;
+        this.eventsDao = eventsDao;
     }
 
     @GetMapping("/register")
@@ -37,6 +43,9 @@ public class UserController {
     @GetMapping("/profile")
     public String profile(Model model){
         model.addAttribute("user",usersDao.findById(Utils.currentUser().getId()));
+        model.addAttribute("events", new Events());
+        model.addAttribute("calender", new Calendar());
+        model.addAttribute("currentEvents", usersDao.findById(Utils.currentUser().getId()).getEvents());
         return "profile";
     }
 

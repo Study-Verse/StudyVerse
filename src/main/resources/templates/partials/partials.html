@@ -33,21 +33,21 @@
                 <li class="nav-item">
                     <a th:href="@{/dashboard}" class="nav-link" >Home</a>
                 </li>
-<!--                <li class="nav-item">-->
-<!--                    <a class="nav-link" th:href="@{/study-cards}">Study</a>-->
-<!--                </li>-->
+                <!--                <li class="nav-item">-->
+                <!--                    <a class="nav-link" th:href="@{/study-cards}">Study</a>-->
+                <!--                </li>-->
                 <li class="nav-item">
                     <a class="nav-link" th:href="@{/self-test}">Test</a>
                 </li>
-<!--                <li sec:authorize="isAuthenticated()" class="nav-item">-->
+                <!--                <li sec:authorize="isAuthenticated()" class="nav-item">-->
                 <li class="nav-item">
                     <a class="nav-link" th:href="@{/profile}">Profile</a>
                 </li>
                 <li sec:authorize="isAuthenticated()" class="nav-item">
-                    <a class="nav-link" th:href="@{books}">Books</a>
+                    <a class="nav-link" th:href="@{/books}">Books</a>
                 </li>
                 <li sec:authorize="isAuthenticated()" class="nav-item">
-                    <a class="nav-link" th:href="@{wiki}">Wikipedia</a>
+                    <a class="nav-link" th:href="@{/wiki}">Wikipedia</a>
                 </li>
 
             </ul>
@@ -78,23 +78,28 @@
                 </li>
                 <!--Profile-->
 
-               <li id="profile-dropdown" sec:authorize="isAuthenticated()">
-                   <div class="dropstart">
-                       <a type="button" data-bs-toggle="dropdown"
-                          aria-expanded="false">
+                <li id="profile-dropdown" sec:authorize="isAuthenticated()">
+                    <div class="dropstart">
+                        <a type="button" data-bs-toggle="dropdown"
+                           aria-expanded="false">
+<<<<<<< HEAD
+                <li id="profile-dropdown" sec:authorize="isAuthenticated()">
+                    <div class="dropstart">
+                        <a type="button" data-bs-toggle="dropdown"
+                           aria-expanded="false">
 
-                           <div class="user-profile-logo">
-                               <img class="user-profile-badge" th:if="${user == null}" th:src="@{https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp}">
-                               <img class="user-profile-badge" th:if="${user != null}" th:src="${user.getProfilePic()}">
-                           </div>
-                       </a>
-                       <ul class="dropdown-menu profile-dropdown-menu">
-                           <li><a>Account Settings</a></li>
-                           <li> <form id="logoutForm" th:action="@{/logout}" method="post">
-                           </form><a href="#" onclick="document.getElementById('logoutForm').submit();">Log Out</a></li>
-                       </ul>
-                   </div>
-                   </li>
+                            <div class="user-profile-logo">
+                                <img class="user-profile-badge" th:if="${user == null}" th:src="@{/img/studyverseIcon.png}">
+                                <img class="user-profile-badge" th:if="${user != null}" th:src="${user.getProfilePic()}">
+                            </div>
+                        </a>
+                        <ul class="dropdown-menu profile-dropdown-menu">
+                            <li><a>Account Settings</a></li>
+                            <li> <form id="logoutForm" th:action="@{/logout}" method="post">
+                            </form><a href="#" onclick="document.getElementById('logoutForm').submit();">Log Out</a></li>
+                        </ul>
+                    </div>
+                </li>
                 <!--End of profile-->
 
             </ul>
