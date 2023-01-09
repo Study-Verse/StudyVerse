@@ -101,6 +101,11 @@ body {
 	border-radius: 100%;
 }
 
+.books-announcement {
+	display: flex;
+	justify-content: center;
+}
+
 /*medium screen*/
 @media screen and (max-width: 992px){
 	.about-footer, .contact-footer, .ms-auto {
