@@ -27,7 +27,7 @@ public class QuizController {
         return quizDao.findAll();
     }
 
-    @GetMapping("/current-user-quiz-api/api")
+    @GetMapping("/current-user-quiz-api")
     public @ResponseBody List<Quiz> currentUserQuizList(){
        List<Quiz> quizList = Utils.currentUser().getQuiz();
         return quizList;
