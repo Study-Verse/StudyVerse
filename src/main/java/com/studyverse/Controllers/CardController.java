@@ -95,17 +95,6 @@ public class CardController {
         return "study";
 
     }
-    //    ============ self test get mapping
-    @GetMapping("self-test")
-    public String test(Model model) {
-        model.addAttribute("user",userDao.findById(Utils.currentUser().getId()));
-        return "self-test";
-    }
-
-
-
-
-
 
 
 

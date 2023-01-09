@@ -35,6 +35,7 @@
     opacity: 1;
 }
 
+
 button {
     width: 75px;
     cursor: pointer;
@@ -73,6 +74,7 @@ button {
     margin: auto;
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: 30px;
 }
 .day {
     width: 100px;
@@ -158,4 +160,23 @@ button {
 #MiddleCalendar {
     display: flex;
     justify-content: center;
+}
+
+#profile-info-container {
+    display: flex;
+    justify-content: center;
+}
+
+
+/* This is to center the profile picture*/
+.card-body.text-center {
+    display: flex;
+}
+
+.text-center {
+    text-align: center!important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
 }
