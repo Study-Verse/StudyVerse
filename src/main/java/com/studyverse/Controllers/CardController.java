@@ -1,5 +1,7 @@
 package com.studyverse.Controllers;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.studyverse.Models.Card;
 import com.studyverse.Models.CardSet;
 import com.studyverse.Models.User;
@@ -7,6 +9,7 @@ import com.studyverse.Repositories.CardRepository;
 import com.studyverse.Repositories.CardSetRepository;
 import com.studyverse.Repositories.UserRepository;
 import com.studyverse.Services.Utils;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -36,7 +39,12 @@ public class CardController {
     }
 
     @GetMapping
-    public String landingPage(){
+    public String landingPage(Model model) {
+        if(!SecurityContextHolder.getContext().getAuthentication().getPrincipal().equals("anonymousUser")) {
+            model.addAttribute("user",userDao.findById(Utils.currentUser().getId()));
+        } else {
+            model.addAttribute("user", null);
+        }
         return "splashpage";
     }
 
