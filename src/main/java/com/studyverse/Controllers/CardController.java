@@ -89,7 +89,7 @@ public class CardController {
     }
     //    ============ self test get mapping
     @GetMapping("self-test")
-    public String test(){
+    public String test( ){
         return "self-test";
     }
 

@@ -8,6 +8,9 @@ import org.springframework.security.core.userdetails.UserDetails;
 public class StudyVerseUserDetails extends User implements UserDetails{
 
 
+    public StudyVerseUserDetails(long id, String username, String email, String password, String profilePic) {
+    super(id, username, email, password, profilePic);}
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return null;
@@ -36,9 +39,9 @@ public class StudyVerseUserDetails extends User implements UserDetails{
     public StudyVerseUserDetails() {
     }
 
-    public StudyVerseUserDetails(long id, String username, String email, String password) {
-        super(id, username, email, password);
-    }
+//    public StudyVerseUserDetails(long id, String username, String email, String password) {
+//        super(id, username, email, password);
+//    }
 
     @Override
     public String getProfilePic() {
