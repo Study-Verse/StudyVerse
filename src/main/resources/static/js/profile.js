@@ -152,6 +152,16 @@ function initButtons() {
 initButtons();
 load();
 
+
+
+
+
+
+
+
+
+
+// This is for the profile picture
 const keys = (await fetch(
     `${window.location.protocol}//${window.location.host}/keys`)
     .then(results => results.json()));
@@ -172,7 +182,6 @@ $("#profilePicChangeButton").on("click", function(){
     }
   }).open();
 })
-
 
 
 });

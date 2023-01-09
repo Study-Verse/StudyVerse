@@ -17,13 +17,23 @@ public class User {
     private String email;
     @Column(nullable = false, length = 200)
     private String password;
+
+    @Column
+    private String profilePic;
+
+
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "user")
     @JsonBackReference
     private List<CardSet> cardSetList;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
     private List<Card> cardList;
-    @Column
-    private String profilePic;
+
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "user")
+    private Calendar calendar;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
+    private List<Events> events;
+
     //End of Instance Variables
 
     //Constructors
@@ -94,5 +104,27 @@ public class User {
         this.profilePic = profilePic;
     }
 
+    public List<Card> getCardList() {
+        return cardList;
+    }
 
+    public void setCardList(List<Card> cardList) {
+        this.cardList = cardList;
+    }
+
+    public Calendar getCalendar() {
+        return calendar;
+    }
+
+    public void setCalendar(Calendar calendar) {
+        this.calendar = calendar;
+    }
+
+    public List<Events> getEvents() {
+        return events;
+    }
+
+    public void setEvents(List<Events> events) {
+        this.events = events;
+    }
 }//End of class
