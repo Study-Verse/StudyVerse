@@ -61,6 +61,24 @@ body{
     overflow-wrap: break-word;
     text-align: center;
     margin: 10px 4px;
+    background-image: url("/img/flashcard.jpeg");
+}
+/*.card-sets{*/
+/*    height: 184px;*/
+/*    width: 334px;*/
+/*    background-color: #18021b;*/
+/*}*/
+.accordion > div{
+    width:33%;
+    height: auto;
+    overflow:hidden;
+    border:1px solid #1f1f1f;
+    position:relative;
+
+}
+
+.card-sets svg:hover {
+    color: rgb(250 110 255);
 }
 
 .svg {
@@ -74,19 +92,13 @@ body{
     display: none;
 }
 
-.card-sets svg:hover {
-    color: rgb(250 110 255);
-}
+
 
 .card-title{
     color: rgb(250 110 255);
 }
 
-.card-sets{
-    height: 184px;
-    width: 334px;
-    background-color: #18021b;
-}
+
 
 
 /*Modal*/
@@ -193,30 +205,22 @@ body{
 .accordion{
     display:flex;
     flex-wrap:nowrap;
-    overflow:hidden;
+    overflow-x: scroll;
     width:100%;
-    height:350px
+    height: 30vh;
 }
 
-.accordion > div{
-    width:50%;
-    flex-grow:1;
-    flex-shrink:1;
-    overflow:hidden;
-    transition:all .3s ease;
-    border:1px solid #1f1f1f;
-    position:relative
-}
 
-.accordion > div:hover{
-    flex-shrink:0
-}
 
-.accordion div img{
-    width:100%;
-    height:100%;
-    object-fit: cover;
-}
+/*.accordion > div:hover{*/
+/*    flex-shrink:0*/
+/*}*/
+
+/*.accordion div img{*/
+/*    width:100%;*/
+/*    height:100%;*/
+/*    object-fit: cover;*/
+/*}*/
 
 
 
