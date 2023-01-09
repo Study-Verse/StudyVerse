@@ -64,9 +64,10 @@ body{
 }
 
 .svg {
-    position: absolute;
-    top:5px;
-    right:40px;
+    /*position: absolute;*/
+    /*top:5px;*/
+    /*right:40px;*/
+    /*valeria edited this to keep the svgs in the middle*/
     color: white;
 }
 
@@ -217,18 +218,6 @@ body{
     height:100%;
     object-fit: cover;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 @media (max-width: 768px) {
     .carousel-inner .carousel-item > div {
