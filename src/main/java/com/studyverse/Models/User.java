@@ -27,6 +27,8 @@ public class User {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
     private List<Card> cardList;
 
+    //End of Instance Variables
+
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "user")
     private Calendar calendar;
 
@@ -44,6 +46,8 @@ public class User {
     @Column
     private String profilePictureURL;
 //    constructor
+
+    //Constructors
 
     public User() {
     }
@@ -64,6 +68,7 @@ public class User {
     }
 
 //    setters and getters
+
     public long getId() {
         return id;
     }
@@ -131,4 +136,3 @@ public class User {
         this.events = events;
     }
 }//End of class
-

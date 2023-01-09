@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+
 @Controller
 public class UserController {
     private final UserRepository usersDao;
@@ -44,6 +45,7 @@ public class UserController {
         model.addAttribute("events", new Events());
         model.addAttribute("calender", new Calendar());
         model.addAttribute("currentEvents", usersDao.findById(Utils.currentUser().getId()).getEvents());
+
 
         return "profile";
     }
