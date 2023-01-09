@@ -49,7 +49,8 @@ public class ResourcesController {
 
 //    About Us view
     @GetMapping("/about-us")
-    public String aboutUs(){
+    public String aboutUs(Model model) {
+        model.addAttribute("user",userDao.findById(Utils.currentUser().getId()));
         return "about-us";
     }
 
