@@ -80,6 +80,7 @@ public class CardSetController {
     @GetMapping("/search/{tag}")
     public String searchView(Model model, @PathVariable String tag){
         model.addAttribute("cardSets", cardSetDao.findByTag(tag));
+        model.addAttribute("user",userDao.findById(Utils.currentUser().getId()));
         return "searchView";
     }
 
