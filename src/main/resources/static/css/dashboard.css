@@ -83,11 +83,7 @@ body{
 }
 
 .svg {
-    /*position: absolute;*/
-    /*top:5px;*/
-    /*right:40px;*/
-    /*valeria edited this to keep the svgs in the middle*/
-    color: white;
+    color: black;
 }
 
 .display-none{
