@@ -23,6 +23,7 @@ public class UserController {
     public UserController(UserRepository usersDao, PasswordEncoder passwordEncoder, EventsRepository eventsDao) {
         this.usersDao = usersDao;
         this.passwordEncoder = passwordEncoder;
+        this.eventsDao = eventsDao;
     }
 
     @GetMapping("/register")
