@@ -23,7 +23,6 @@ public class Quiz {
     private List<Question> questionList;
 
     @ManyToOne
-    @JsonManagedReference
     private User user;
 
 // constructors
