@@ -28,7 +28,7 @@
 <!-- Search for a quiz-->
 
 <!-- Quiz -->
-<div class="flex" >
+<div class="flex" hidden >
     <div class="wrapper">
     <div class = "quiz-container">
         <div class = "quiz-head">
@@ -56,12 +56,13 @@
 </div><!--end of quiz wrapper-->
 </div>
 
+
+    <div th:replace="partials/partials :: scripts"></div>
+    <script th:src="@{js/main.js}"></script>
+    <script th:src="@{/js/sitebar.js}"></script>
+    <script th:src="@{/js/quiz.js}"></script>
 <footer th:replace="partials/partials :: footer-fragment"></footer>
 
-<div th:replace="partials/partials :: scripts"></div>
-<script th:src="@{js/main.js}"></script>
-<script th:src="@{/js/sitebar.js}"></script>
-<script th:src="@{/js/quiz.js}"></script>
 
 </body>
 </html>

@@ -36,8 +36,8 @@ public class User {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
     private List<Events> events;
 
-    @OneToMany
-    @JsonManagedReference
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
+    @JsonBackReference
     private List<Quiz> quizList;
 
     //End of Instance Variables
