@@ -5,8 +5,9 @@
 }
 .main-container{
     display:flex;
+    flex-direction: column;
     justify-content: center;
-    align-content: center;
+    align-items: center;
 }
 .study-card-container{
     display: flex;
@@ -15,6 +16,11 @@
     width: 100%;
     margin: auto;
     padding: 0 10px;
+}
+.frontOrBack{
+    position: absolute;
+    top:0;
+    left: 0;
 }
 /*Flashcard to house front and back face*/
 .flashcard{
@@ -42,15 +48,6 @@
 .flashcard:hover .card-inner{
     transform: rotateY(180deg);
 }
-.front-face {
-    background-color: red;
-    color: black;
-}
-.back-face{
-    background-color: dodgerblue;
-    transform: rotateY(180deg);
-}
-
 #carouselWrapper{
     position: relative;
     display: flex;
@@ -62,9 +59,11 @@
     top: 50%;
 }
 #carouselWrapper .prev {
+    color: white;
     right: 90%
 }
 #carouselWrapper .next {
+    color: white;
     left: 90%
 }
 .carousel {
@@ -124,11 +123,12 @@
 .carousel-flashcard:not(.active) {
     display: none;
 }
-.carousel-flashcard .carousel-front-face p,
-.carousel-flashcard .carousel-back-face p {
+.carousel-flashcard .carousel-front-face .cardText,
+.carousel-flashcard .carousel-back-face .cardText {
     word-break: break-word;
     width: 70%;
 }
+
 @media (max-width: 672px ){
     .carousel-flashcard{
         width: 630px;
