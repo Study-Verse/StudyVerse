@@ -13,7 +13,7 @@
   <div class="container">
       <form class="form-section" th:action="@{/register}" th:method="POST" th:object="${user}">
         <div class="signup-box">
-          <h1 class="heading">StudyVERSE</h1>
+          <h1 class="heading"><a class="studyverseLogin" th:href="@{/}">StudyVERSE</a></h1>
           <h2>Register</h2>
           <input type="text" class="username input-design" placeholder="Create a Username" th:field="*{username}">
           <input type="email" class="email input-design" placeholder="Enter your Email" th:field="*{email}">

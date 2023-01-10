@@ -13,7 +13,7 @@
 <div class="container">
     <form class="form-section" th:action="@{/login}" method="post">
         <div class="login-box">
-            <h1 class="heading">StudyVERSE</h1>
+            <h1 class="heading"><a class="studyverseLogin" th:href="@{/}">StudyVERSE</a></h1>
             <div th:if="${param.error}" class="invalidText">
                 <p>Invalid Username Or Password</p>
             </div>
@@ -25,6 +25,8 @@
         </div>
     </form>
 </div>
+
+
 <script th:src="@{js/jquery-3.6.1.min.js}"></script>
 <script th:src="@{js/main.js}"></script>
 </body>
