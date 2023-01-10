@@ -86,8 +86,16 @@ $(function() {
             success: function(data) {
                 console.log(data);
                 $(".outputWikiSearch").html();
-                for(let i=0;i<data[1].length;i++){
-                    $(".outputWikiSearch").prepend("<div><div class='well'><a href="+data[3][i]+"><h2>" + data[1][i]+ "</h2>" + "<p>" + data[2][i] + "</p></a></div></div>");
+                for(let i=0;i< 9;i++){
+                    $(".outputWikiSearch").prepend(`
+                    <div class='link-container'>
+                        <div class='well'>
+                            <a href="${data[3][i]}">
+                                <h2> ${data[1][i]}</h2>
+                                <p>${data[2][i]}</p>
+                            </a>
+                        </div>
+                    </div>`);
                 }
             }
         })
