@@ -20,6 +20,7 @@
                 <div class="card-info" th:card-set-id="${cardSet.id}">
                     <h1 class="card-title" th:text="${cardSet.getTitle()}"></h1>
                     <h2 class="card-tag" th:text="${cardSet.getTag()}"></h2>
+                    <h2 th:text="${cardSet.getCardList().size()}+ ' Cards'"></h2>
                 </div>
             </div>
         </div>
@@ -29,6 +30,11 @@
 
 
 <div class="outputWikiSearch"></div>
+
+
+
+<!--Learn something new-->
+<a href="https://en.wikipedia.org/wiki/Special:Random" class="btn btn-primary mb-5" target="_blank">Learn Something New!</a>
 
 
 

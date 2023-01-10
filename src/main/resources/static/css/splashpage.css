@@ -14,19 +14,6 @@
 	margin: auto;
 }
 
-/* This is for the nav bar because bootstrap makes it have 4px bottom*/
-.navbar {
-	margin-bottom: 0px !important;
-}
-
-@media (min-width:991px ) {
-	.navbar-collapse.collapse.w-100.order-3.collapse-portion{
-		display: flex !important;
-	}
-}
-
-/*This is for the nav bar also to have the right sections since bootstrap moves it*/
-
 
 .button-color {
 	background-color: yellow;
@@ -38,6 +25,46 @@
 	background-color: yellow;
 	color: black;
 }
+
+
+
+/* This is for the nav bar because bootstrap makes it have 4px bottom*/
+.navbar {
+	margin-bottom: 0px !important;
+}
+
+
+
+
+@media (min-width:991px ) {
+	.navbar-collapse.collapse.w-100.order-3.collapse-portion{
+		display: flex !important;
+	}
+}
+
+@media (max-width: 600px){
+
+	.carouselH1 {
+		font-size: 2rem;
+	}
+
+	.carouselH3 {
+		font-size: 1rem;
+		margin-top: 3px;
+	}
+
+	#btn-color1, #btn-color2, #btn-color3 {
+		font-size: 1rem;
+		line-height: .5;
+	}
+
+
+
+
+}
+
+
+
 
 
 
