@@ -28,6 +28,13 @@ h2 {
     visibility: hidden;
 }
 
+
+#middleBookView {
+    display: flex;
+    justify-content: center;
+}
+
+
 /*This hides the cards when you search for a book*/
 /*.hideCards {*/
 /*    display: none;*/
