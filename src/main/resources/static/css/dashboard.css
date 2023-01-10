@@ -51,10 +51,12 @@ body{
     position: relative;
     overflow-wrap: break-word;
     text-align: center;
-    margin: 10px 8px;
+    margin: 10px 10px;
     background-image: url("/img/flashcard.jpeg");
     padding: 3vh 0;
     width: 33%;
+    box-shadow: 1px 1px 2px 2px;
+
 }
 .card-sets svg:hover {
     color: rgb(250 110 255);
