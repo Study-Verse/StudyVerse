@@ -18,8 +18,9 @@ target/
 *.iws
 *.iml
 *.ipr
+keys.js
 keysOld.js
-
+keys.js
 ### NetBeans ###
 /nbproject/private/
 /nbbuild/

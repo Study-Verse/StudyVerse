@@ -34,6 +34,9 @@ public class User {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
     private List<Events> events;
 
+    @OneToMany
+    private List<Quiz> quizList;
+
     //End of Instance Variables
 
     //Constructors
@@ -126,5 +129,13 @@ public class User {
 
     public void setEvents(List<Events> events) {
         this.events = events;
+    }
+
+    public List<Quiz> getQuiz() {
+        return quizList;
+    }
+
+    public void setQuiz(List<Quiz> quizList) {
+        this.quizList = quizList;
     }
 }//End of class
