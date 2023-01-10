@@ -16,7 +16,7 @@ window.speechSynthesis.onvoiceschanged = () => {
 // Adding event listener for play button
 $(".soundSVG").on('click', function(e)  {
     e.stopPropagation();
-    speech.text = $(this).parent().parent().text();
+    speech.text = $(this).parent().parent().children(".cardText").text();
     window.speechSynthesis.speak(speech);
 });
 
@@ -107,6 +107,12 @@ $("#cancel").on("click", () => {
     window.speechSynthesis.cancel();
 });
 
+
+
 });// end of js file
 
 
+window.onbeforeunload = function () {
+    // your function call here
+    window.speechSynthesis.cancel();
+};
