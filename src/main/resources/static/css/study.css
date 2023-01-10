@@ -1,4 +1,8 @@
 /*Container where html is being inserted via API*/
+#study-header{
+    background-color: #2f1046;
+    color: white;
+}
 .main-container{
     display:flex;
     justify-content: center;
@@ -106,6 +110,7 @@
 }
 .carousel-flashcard .soundSVG:hover,#carouselWrapper .prev:hover, #carouselWrapper .next:hover  {
     color: rgb(250 110 255);
+    cursor: pointer;
 }
 .carousel-flashcard.flipped .carousel-front-face {
     transform: rotateY(180deg);
