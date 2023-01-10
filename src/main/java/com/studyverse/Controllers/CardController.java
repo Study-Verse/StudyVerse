@@ -40,9 +40,11 @@ public class CardController {
 
     @GetMapping
     public String landingPage(Model model) {
+       // check if the user is logged in or registered
         if(!SecurityContextHolder.getContext().getAuthentication().getPrincipal().equals("anonymousUser")) {
             model.addAttribute("user",userDao.findById(Utils.currentUser().getId()));
         } else {
+            // here user is either not logged in or not registered
             model.addAttribute("user", null);
         }
         return "splashpage";

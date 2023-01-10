@@ -2,6 +2,7 @@ package com.studyverse.Controllers;
 
 import com.studyverse.Models.Quiz;
 import com.studyverse.Repositories.QuizRepository;
+import com.studyverse.Repositories.UserRepository;
 import com.studyverse.Services.Utils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,10 +17,14 @@ import java.util.List;
 public class QuizController {
 
     private final QuizRepository quizDao;
+    private final UserRepository userDao;
 
-   public QuizController(QuizRepository quizDao){
+   public QuizController(QuizRepository quizDao, UserRepository userDao){
        this.quizDao = quizDao;
+       this.userDao = userDao;
    }
+
+//   public
 
 //   api for getting all the quiz made
     @GetMapping("/quiz-api/api")
@@ -39,8 +44,7 @@ public class QuizController {
     @GetMapping("/self-test")
     public String test(Model model){
        model.addAttribute("newQuiz", new Quiz());
-
-
+        model.addAttribute("user",userDao.findById(Utils.currentUser().getId()));
         return "self-test";
     }
 
