@@ -60,22 +60,10 @@ body{
     position: relative;
     overflow-wrap: break-word;
     text-align: center;
-    margin: 10px 4px;
+    margin: 10px 8px;
     background-image: url("/img/flashcard.jpeg");
     padding: 3vh 0;
-}
-/*.card-sets{*/
-/*    height: 184px;*/
-/*    width: 334px;*/
-/*    background-color: #18021b;*/
-/*}*/
-.accordion > div{
-    width:33%;
-    height: auto;
-    overflow:hidden;
-    border:1px solid #1f1f1f;
-    position:relative;
-
+    width: 33%;
 }
 
 .card-sets svg:hover {
