@@ -14,7 +14,7 @@
     </div>
 
     <div id="welcome-create-header">
-        <h3>Welcome: <span th:text="${#authentication.principal.username}"></span></h3>
+        <h3>Welcome back <span th:text="${#authentication.principal.username}"></span></h3>
         <button id="create-set-button">Create New Set</button>
     </div>
 
@@ -39,7 +39,7 @@
     <div class="cards-book-wrapper">
         <!--This is the beginning-->
         <div id="acc-wrapper">
-            <div class="accordion row">
+            <div class="card-set-container row">
                 <div  class="card-sets column-4" th:data-name="${cardSet.getId()}" th:each="cardSet: ${cardSetList}" onclick="goToCardSet(this.getAttribute('data-name'))">
 
 <!--                    card contests-->

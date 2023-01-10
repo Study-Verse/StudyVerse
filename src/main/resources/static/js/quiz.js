@@ -23,5 +23,3 @@ getQuizzes()
             console.log(err);
         })
     }
-
-
