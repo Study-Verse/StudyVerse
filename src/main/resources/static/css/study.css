@@ -1,4 +1,9 @@
 /*Container where html is being inserted via API*/
+.main-container{
+    display:flex;
+    justify-content: center;
+    align-content: center;
+}
 .study-card-container{
     display: flex;
     justify-content: center;
@@ -45,6 +50,7 @@
 #carouselWrapper{
     position: relative;
     display: flex;
+    width: fit-content;
     justify-content: center;
 }
 #carouselWrapper .carouselButtons {
@@ -92,8 +98,14 @@
     transform: rotateY(180deg);
 }
 .carousel-flashcard .soundSVG {
-    height: 25px;
-    width: 25px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 35px;
+    width: 35px;
+}
+.carousel-flashcard .soundSVG:hover,#carouselWrapper .prev:hover, #carouselWrapper .next:hover  {
+    color: rgb(250 110 255);
 }
 .carousel-flashcard.flipped .carousel-front-face {
     transform: rotateY(180deg);
@@ -107,4 +119,38 @@
 .carousel-flashcard:not(.active) {
     display: none;
 }
-
+.carousel-flashcard .carousel-front-face p,
+.carousel-flashcard .carousel-back-face p {
+    word-break: break-word;
+    width: 70%;
+}
+@media (max-width: 672px ){
+    .carousel-flashcard{
+        width: 630px;
+    }
+}
+@media (max-width: 645px ){
+    .carousel-flashcard{
+        width: 602px;
+    }
+}
+@media (max-width: 606px ){
+    .carousel-flashcard{
+        width: 570px;
+    }
+}
+@media (max-width: 573px ){
+    .carousel-flashcard{
+        width: 533px;
+    }
+}
+@media (max-width: 537px ){
+    .carousel-flashcard{
+        width: 502px;
+    }
+}
+@media (max-width: 505px ){
+    .carousel-flashcard{
+        width: 465px;
+    }
+}
