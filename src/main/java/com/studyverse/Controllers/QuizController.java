@@ -44,7 +44,7 @@ public class QuizController {
     @GetMapping("/self-test")
     public String test(Model model){
        model.addAttribute("newQuiz", new Quiz());
-        model.addAttribute("user",userDao.findById(Utils.currentUser().getId()));
+       model.addAttribute("usersQuizes", Utils.currentUser().getQuiz());
         return "self-test";
     }
 
