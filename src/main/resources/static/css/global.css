@@ -22,7 +22,7 @@ body {
 }
 .profile-dropdown-menu a{
 	text-decoration: none;
-	color: white;
+	color: black !important;
 }
 .profile-dropdown-menu a:hover{
 	text-decoration: none;
