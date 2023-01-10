@@ -5,8 +5,8 @@ html:focus-within{
 }
 
 body {
-	font-family: 'Alfa Slab One', cursive;
-	font-family: 'Numans', sans-serif;
+	font-family: 'Alfa Slab One', cursive !important;
+	font-family: 'Numans', sans-serif !important;
 }
 
 .dropdown-menu{
