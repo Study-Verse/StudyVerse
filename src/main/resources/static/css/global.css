@@ -4,7 +4,8 @@ html:focus-within{
 }
 
 body {
-	font-family: sans-serif;
+	font-family: 'Alfa Slab One', cursive;
+	font-family: 'Numans', sans-serif;
 }
 
 .dropdown-menu{
