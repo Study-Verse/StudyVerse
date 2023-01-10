@@ -32,8 +32,7 @@ public class CardSetController {
 
     //CREATE SET
     @PostMapping("/create-set")
-    public String createCardSet(@RequestParam(name="set-title") String title,
-                                @RequestParam(name="set-tag") String tag){
+    public String createCardSet(@RequestParam(name="set-title") String title, @RequestParam(name="set-tag") String tag){
         User user = Utils.currentUser();
         CardSet cardSet = new CardSet();
         cardSet.setTitle(title);
@@ -72,7 +71,7 @@ public class CardSetController {
         long user = Utils.currentUser().getId();
         List<CardSet> cardSetList = cardSetDao.findByUserId(user);
         model.addAttribute("cardSetList",cardSetList);
-        model.addAttribute("user",userDao.findById(Utils.currentUser().getId()));
+        model.addAttribute("user",userDao.findById(user));
         return "dashboard";
     }
 

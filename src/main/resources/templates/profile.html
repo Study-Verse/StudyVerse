@@ -24,7 +24,7 @@
                  th:src="${user.getProfilePic()}" alt="Profile Picture"
                  class="profileImg rounded-circle img-fluid" style="width: 150px;"/>
             <img th:if="${user.getProfilePic() == null}"
-                 th:src="@{https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp}" alt="Profile Picture"
+                 th:src="@{/img/studyverseIcon.png}" alt="Profile Picture"
                  class="profileImg rounded-circle img-fluid" style="width: 150px;"/>
             <p id="profilePicChangeButton">Change</p>
           </div>
