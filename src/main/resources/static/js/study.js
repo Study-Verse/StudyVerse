@@ -30,6 +30,7 @@ $(function (){
     const prevButton = $('.prev');
     const nextButton = $('.next');
     let currentIndex = 0;
+    $("#cardCounter").text(currentIndex + 1 + "/" + cards.length);
     cards.each((index, card) => {
         $(card).click(() => {
             $(card).toggleClass('flipped');
@@ -40,13 +41,16 @@ $(function (){
         } else {
             $(card).removeClass('active');
         }
+
     });
     prevButton.click(() => {
         currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+        $("#cardCounter").text(currentIndex - 1 + "/" + cards.length);
         updateCards();
     });
     nextButton.click(() => {
         currentIndex = (currentIndex + 1) % cards.length;
+        $("#cardCounter").text(currentIndex + 1 + "/" + cards.length);
         updateCards();
     });
     function updateCards() {
