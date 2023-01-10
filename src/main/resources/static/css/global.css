@@ -104,6 +104,14 @@ body {
 	justify-content: center;
 }
 
+
+
+.studyverseLogin {
+	text-decoration: none;
+	color: rgb(250 110 255);
+}
+
+
 /*medium screen*/
 @media screen and (max-width: 992px){
 	.about-footer, .contact-footer, .ms-auto {
