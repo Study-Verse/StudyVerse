@@ -17,9 +17,19 @@ h2{
     height: 20rem;
     width: 20rem;
     overflow-y: hidden;
+    position: relative;
+
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
 }
 
-.card-body{
+.front{
+    transform: rotateY(180deg);
+}
+
+.card-back{
+    transform: rotateY(0deg);
     display: none;
 }
 
