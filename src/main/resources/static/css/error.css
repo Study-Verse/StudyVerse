@@ -1,0 +1,15 @@
+.body {
+    background-image: url("/img/error-astronaut.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+
+/*@media (max-width: 576px) {*/
+/*    body {*/
+/*        background-size: cover;*/
+/*        background-repeat: no-repeat;*/
+/*    }*/
+
+/*}*/
