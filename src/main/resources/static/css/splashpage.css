@@ -54,10 +54,22 @@
 
 
 
+p.content-desc {
+	margin-top: 8rem;
+}
+
+
+#contentForCards {
+	line-height: 9rem;
+}
+
+
 @media (min-width:991px ) {
 	.navbar-collapse.collapse.w-100.order-3.collapse-portion{
 		display: flex !important;
 	}
+
+
 }
 
 @media (max-width: 600px){
@@ -78,6 +90,19 @@
 
 
 
+	p.content-desc {
+		font-size: 2rem;
+		display: flex;
+		/* justify-content: center; */
+		margin-top: 2rem;
+
+	}
+
+
+	img.astronaut-on-saturn {
+		width: 20vh;
+		height: 20vh;
+	}
 
 }
 
