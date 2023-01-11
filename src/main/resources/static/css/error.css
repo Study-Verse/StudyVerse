@@ -1,9 +1,22 @@
-.body {
-    background-image: url("/img/error-astronaut.webp");
-    background-size: cover;
-    background-repeat: no-repeat;
+ #picture-container{
+      background-image: url(/img/error-astronaut.webp);
+      background-size: contain;
+      width: 100vw;
+      height: 67vw;
+      background-repeat: no-repeat;
 }
 
+ #goHome {
+       position: absolute;
+       bottom: -11vh;
+       height: 5rem;
+       width: 18rem;
+       font-weight: bolder;
+       font-size: 2rem;
+       left: 42%;
+       border-radius: 1rem;
+       color: black;
+ }
 
 
 /*@media (max-width: 576px) {*/
