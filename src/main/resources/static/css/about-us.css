@@ -8,21 +8,34 @@ h2{
     text-align: center;
     color: lightskyblue;
 }
-
-.card-colum{
-    text-align: center;
+.developers-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20vh;
 }
 
-.card{
-    height: 20rem;
-    width: 20rem;
+.card-inner{
+    width: 45vh;
+    height: 50vh;
+    align-self: center;
     overflow-y: hidden;
+    margin: 0 10vh 2vw 2vw;
 }
 
-.card-body{
+.card-front{
+    height: fit-content;
+
+}
+
+.card-back{
     display: none;
 }
-
-.picture{
-    object-fit: cover;
+/*large screen */
+@media only screen and (min-width: 600px) and (max-width: 2000px) {
+    .developers-container{
+        margin-bottom: 10vh;
+        flex-direction: row;
+    }
 }
+
