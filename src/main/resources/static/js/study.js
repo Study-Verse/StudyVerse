@@ -31,7 +31,7 @@ $(function (){
     nextButton.click(() => {
         currentIndex = (currentIndex + 1) % cards.length;
         cardCounter = cardCounter + 1;
-        if(cardCounter >= 7){
+        if(cardCounter >= cards.length + 1){
             cardCounter = 1;
         }
         $("#cardCounter").text(cardCounter + "/" + cards.length);
