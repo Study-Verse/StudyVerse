@@ -9,13 +9,16 @@
     <div class="page-wrapper splash-page-wrapper">
         <nav th:replace="partials/partials :: navbar(user=${user})"></nav>
     </div>
+<!--    start of content wrapper-->
+    <div class="content-wrapper">
+
     <div id="study-header">
         <h1 th:text="'CardSet: ' + ${cardSet.getTitle()}"></h1>
-        <button id="play-all">Play All</button>
+
     </div>
     <div class="main-container">
-
         <div id="carouselWrapper">
+
             <div th:each="card: ${eachCard}" class="carousel">
                 <div class="carousel-flashcard">
                     <div class="carousel-front-face">
@@ -49,9 +52,15 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor" class="carouselButtons next bi-arrow-right-circle" viewBox="0 0 16 16">
                 <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
             </svg>
+            <span id="cardCounter"></span>
         </div>
-        <span id="cardCounter"></span>
+        <div class="features-wrapper">
+        <button id="play-all" class="feature-buttons">Play All</button>
+        </div>
     </div>
+
+    </div>
+<!--    end of content wrapper-->
     <footer th:replace="partials/partials :: footer-fragment"></footer>
     <div th:replace="partials/partials :: scripts"></div>
     <script th:src="@{/js/jquery3.6.3.js}"></script>

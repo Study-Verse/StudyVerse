@@ -1,7 +1,6 @@
 body{
     background-color: ghostwhite;
 }
-
 .card-set-container{
     display: flex;
     flex-wrap: nowrap;
@@ -15,7 +14,6 @@ body{
     justify-content: start;
     padding: 60px 20px;
 }
-
 .card-sets{
     position: relative;
     overflow-wrap: break-word;
@@ -32,7 +30,6 @@ body{
 .card-sets:hover{
     transform: scale(1.05);
 }
-
 .card-sets svg:hover {
     color: rgb(250 110 255);
 }
@@ -46,13 +43,10 @@ body{
     color: rgb(250 110 255);
     line-height: 51px;;
 }
-
 .card-sets h2 {
     font-size: 23px;
     line-height: 32px;
 }
-
-
 /* welcome bar*/
 .create-set-box{
     display: flex;
@@ -73,7 +67,6 @@ body{
 #welcome-create-header h3{
     justify-self: center;
 }
-
 #create-set-button{
     border-radius: 50px;
     display: flex;
@@ -82,7 +75,6 @@ body{
     background-color: whitesmoke;
     color:#2f1046 ;
 }
-
 /*Modal*/
 .input-design {
     height: 60px;
@@ -118,7 +110,6 @@ body{
     background-color: rgb(0,0,0);
     background-color: rgba(0,0,0,0.4);
 }
-
 /*This centers the whole modal*/
 .card-modal-content {
     background-color: #18021b;
@@ -140,14 +131,12 @@ body{
 }
 /*End of Modal*/
 
+
 #startHere {
     background-image: url(/img/astronautoPointing.png);
     height: 30vh;
     position: absolute;
     right: 0;
-}
-
-#middleContainer {
 }
 
 /* Random Book Style*/
@@ -163,7 +152,6 @@ body{
     padding-left: 1rem;
     padding-right: 5rem;
 }
-
 
 @media screen and (max-width: 1053px){
     .input-design{
@@ -199,11 +187,8 @@ body{
         margin-bottom: 14vh;
     }
 }
-
-/* Mobil view media query*/
-
-@media screen and (max-width: 320px)
-{
+/* Mobile view media query*/
+@media screen and (max-width: 320px) {
 
         .input-design {
             height: 50px;

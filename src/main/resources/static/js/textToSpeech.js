@@ -20,17 +20,26 @@ $(document).ready(function (){
         window.speechSynthesis.speak(speech);
     });
 
+    //Function that plays all the cards
     $("#play-all").on("click", function(){
-        $(".carousel-flashcard").each(function (){
-            let frontFace = $(this).children(".carousel-front-face").children(".cardText").text();
-            let backFace = $(this).children(".carousel-back-face").children(".cardText").text();
-            let speak = new SpeechSynthesisUtterance(frontFace);
-            // let jingle = new Audio("classpath:/audio/cartoonWaiting.mp3");
-            speechSynthesis.speak(speak);
-            // jingle.play();
-                let speakBackFace = new SpeechSynthesisUtterance(backFace);
-                speechSynthesis.speak(speakBackFace);
-        })
+        let index = 0;
+        speakCard();
+        function speakCard(){
+            if(index < $('.carousel-flashcard').length){
+                let cardIndex = "Card number " + (index + 1);
+                let frontFace = $('.carousel-flashcard').eq(index).children(".carousel-front-face").children(".cardText").text();
+                let backFace = $('.carousel-flashcard').eq(index).children(".carousel-back-face").children(".cardText").text();
+                let speakIndex = new SpeechSynthesisUtterance(cardIndex);
+                let speak = new SpeechSynthesisUtterance(frontFace);
+                speechSynthesis.speak(speakIndex);
+                speechSynthesis.speak(speak);
+                setTimeout(()=>{
+                    speechSynthesis.speak(new SpeechSynthesisUtterance(backFace));
+                    index++;
+                    speakCard();
+                }, 7000)
+            }
+        }
     })
     // Adding event listener to button for TTS
     $("#talk").on('click', () => {
