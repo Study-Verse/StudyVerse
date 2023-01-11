@@ -1,3 +1,6 @@
+body{
+    background-color: ghostwhite;
+}
 /*Container where html is being inserted via API*/
 #study-header{
     background-color: ghostwhite;
@@ -65,11 +68,11 @@
     top: 50%;
 }
 #carouselWrapper .prev {
-    color: white;
+    color: #4d1a53;
     right: 85%
 }
 #carouselWrapper .next {
-    color: white;
+    color: #4d1a53;
     left: 85%
 }
 .carousel {
@@ -95,11 +98,16 @@
     backface-visibility: hidden;
     transition: transform 0.7s ease-in-out;
     text-align: center;
-    background-color: #4d1a53;
-    color: white;
+    /*background-color: #4d1a53;*/
+    background-image: linear-gradient(rgba(255, 255, 255, 0.80), rgba(255, 255, 255, 0.80) ),url(/img/flashcard.jpeg);
+    color: black;
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 0px 0px 12px -2px #00000061;
+    overflow-wrap: break-word;
+
+
 }
 .carousel-flashcard .carousel-front-face {
     transform: rotateY(0deg);
