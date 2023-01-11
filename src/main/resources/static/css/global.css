@@ -39,8 +39,8 @@ body {
 .search-bar{
 	outline: none;
 	border: none;
-	background-color: #4d1a53;
-	color: white;
+	background-color: ghostwhite;
+	color: black;
 	border-radius: 50px;
 	padding-left: 30px;
 	font-size: 18px;
@@ -119,20 +119,27 @@ body {
 		padding: 0;
 		color: white;
 	}
-	#site-bar-search-link {
-		visibility: collapse;
-	}
+
+
+	/*#site-bar-search-link {*/
+	/*	visibility: collapse;*/
+	/*}*/
+
+
+
 	.icon{
 		display: flex;
 		position: relative;
 		visibility: visible;
 	}
+
 	.searchBtn {
 		position: relative;
 		left: 0;
 		top: 2.5px;
 		transition: 0.5s ease-in-out;
 	}
+
 	.navbar-toggler{
 		position: absolute;
 		right: 0;
@@ -145,9 +152,9 @@ body {
 
 /*// Small devices (landscape phones, 576px and down)*!*!*/
 @media (max-width: 576px) {
-	#site-bar-search-link{
-		visibility: collapse;
-	}
+	/*#site-bar-search-link{*/
+	/*	visibility: collapse;*/
+	/*}*/
 
 	.search-bar {
 		margin-bottom: 1vh;
