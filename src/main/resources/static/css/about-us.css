@@ -26,3 +26,11 @@ h2{
 .picture{
     object-fit: cover;
 }
+
+
+@media only screen and (max-width: 600px) {
+    .developers-container{
+        margin-bottom: 10vh;
+    }
+}
+
