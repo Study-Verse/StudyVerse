@@ -148,7 +148,22 @@ body{
 
 .content-wrapper{
     width: 100%;
-    overflow-x: scroll;
+    overflow-x: hidden;
+}
+/*Media query for large screens*/
+@media (min-width: 700px) and (max-width : 2000px){
+
+    #carouselWrapper{
+        width: fit-content;
+    }
+
+    .carousel-flashcard .carousel-front-face ,
+    .carousel-flashcard .carousel-back-face  {
+        word-break: break-word;
+        width: 100%;
+        font-size: 1.2rem;
+    }
+
 }
 
 @media (max-width: 672px ){
