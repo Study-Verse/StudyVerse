@@ -20,10 +20,10 @@ $(document).ready(function (){
         window.speechSynthesis.speak(speech);
     });
 
+    //Function that plays all the cards
     $("#play-all").on("click", function(){
         let index = 0;
         speakCard();
-
         function speakCard(){
             if(index < $('.carousel-flashcard').length){
                 let cardIndex = "Card number " + (index + 1);
