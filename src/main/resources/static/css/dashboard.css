@@ -130,6 +130,15 @@ body{
     cursor: pointer;
 }
 /*End of Modal*/
+
+
+#startHere {
+    background-image: url(/img/astronautoPointing.png);
+    height: 30vh;
+    position: absolute;
+    right: 0;
+}
+
 /* Random Book Style*/
 #containerBook{
     display: flex;
