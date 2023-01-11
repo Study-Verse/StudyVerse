@@ -58,8 +58,8 @@ button {
     background-color:#92a1d1;
 }
 #container {
-    max-width: 100vw;
-    overflow: hidden;
+    width: 770px;
+
 }
 #weekdays {
     width: 100%;
@@ -182,14 +182,12 @@ button {
 }
 
 /*// Small devices (landscape phones, 576px and down)*!*!*/
-@media (max-width: 576px) {
-    #calendar{
-        display: flex;
+@media (max-width: 645px) {
+    .calenderContainer{
+        visibility: hidden;
+        display: none;
     }
 
-    #container{
-        display: flex;
-    }
 }
 /*// Medium devices (tablets, 768px and up)*!*!*/
 @media (min-width: 768px) {
@@ -206,3 +204,5 @@ button {
 @media (min-width: 1400px) {
 
 }
+
+

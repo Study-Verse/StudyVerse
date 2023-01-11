@@ -1,13 +1,35 @@
-/*Container where html is being inserted via API*/
-#study-header{
-    background-color: #2f1046;
+body{
+    background-color: ghostwhite;
+}
+.feature-buttons{
+    padding: 8px;
+    outline: none;
+    cursor: pointer;
+    border: 1px solid lightgray;
+    width: 100px;
+    border-radius: 22px;
+    font-family: inherit;
+    background-color: #4d1a53;
     color: white;
 }
+.feature-buttons:hover{
+    background-color:#64316a;
+}
+/*Container where html is being inserted via API*/
+#study-header{
+    background-color: ghostwhite;
+    color: #2f1046;
+    display: flex;
+    flex-direction: column;
+    margin: 3vh 0 .4vw .4vw;
+}
 .main-container{
-    display:flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    height: 100%;
 }
 .study-card-container{
     display: flex;
@@ -51,24 +73,26 @@
 #carouselWrapper{
     position: relative;
     display: flex;
-    width: fit-content;
+    width: 90%;
     justify-content: center;
+
 }
 #carouselWrapper .carouselButtons {
     position: absolute;
     top: 50%;
 }
 #carouselWrapper .prev {
-    color: white;
-    right: 90%
+    color: #4d1a53;
+    right: 85%
 }
 #carouselWrapper .next {
-    color: white;
-    left: 90%
+    color: #4d1a53;
+    left: 85%
 }
 .carousel {
     display: flex;
     scroll-snap-type: x mandatory;
+    width: 100%;
 }
 .carousel-flashcard {
     width: 670px;
@@ -86,13 +110,18 @@
     top: 0;
     left: 0;
     backface-visibility: hidden;
-    transition: transform 0.4s ease-in-out;
+    transition: transform 0.7s ease-in-out;
     text-align: center;
-    background-color: #4d1a53;
-    color: white;
+    /*background-color: #4d1a53;*/
+    background-image: linear-gradient(rgba(255, 255, 255, 0.80), rgba(255, 255, 255, 0.80) ),url(/img/flashcard.jpeg);
+    color: black;
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 0 0 12px -2px #00000061;
+    overflow-wrap: break-word;
+
+
 }
 .carousel-flashcard .carousel-front-face {
     transform: rotateY(0deg);
@@ -119,6 +148,7 @@
 }
 .carousel-flashcard.active {
     display: flex;
+    flex-direction: row;
 }
 .carousel-flashcard:not(.active) {
     display: none;
@@ -129,7 +159,34 @@
     width: 70%;
     font-size: 1.2rem;
 }
+.content-wrapper{
+    width: 100%;
+    overflow-x: hidden;
+}
+#cardCounter {
+    position: absolute;
+    top: 0;
+}
+.features-wrapper {
+    margin-top: 8px;
+}
 
+
+/*Media query for large screens*/
+@media (min-width: 700px) and (max-width : 2000px){
+
+    #carouselWrapper{
+        width: fit-content;
+    }
+
+    .carousel-flashcard .carousel-front-face ,
+    .carousel-flashcard .carousel-back-face  {
+        word-break: break-word;
+        width: 100%;
+        font-size: 1.2rem;
+    }
+
+}
 @media (max-width: 672px ){
     .carousel-flashcard{
         width: 630px;
