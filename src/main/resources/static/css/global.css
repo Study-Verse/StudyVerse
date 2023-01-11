@@ -77,6 +77,7 @@ body {
 	background-color: #2f1046;
 	color: white;
 	width: 100%;
+	display: inherit;
 }
 #footer {
 	position: fixed;

@@ -8,11 +8,14 @@ import com.studyverse.Repositories.CardSetRepository;
 import com.studyverse.Repositories.UserRepository;
 import com.studyverse.Services.Utils;
 import jdk.jshell.execution.Util;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
 @Controller
 public class CardSetController {
@@ -63,6 +66,14 @@ public class CardSetController {
         cardSetDao.delete(card);
         return "redirect:/dashboard";
     }
+
+//    @ExceptionHandler(NoSuchElementException.class)
+//    @ResponseStatus(HttpStatus.NOT_FOUND)
+//    public ResponseEntity<String> handleNoSuchElementFoundException(NoSuchElementException exception) {
+//        return ResponseEntity
+//                .status(HttpStatus.NOT_FOUND)
+//                .body(exception.getMessage());
+//    }
     //END OF DELETE SET
 
     //    ============ dashboard get mapping
