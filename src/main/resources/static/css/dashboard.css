@@ -140,6 +140,15 @@ body{
 }
 /*End of Modal*/
 
+#startHere {
+    background-image: url(/img/astronautoPointing.png);
+    height: 30vh;
+    position: absolute;
+    right: 0;
+}
+
+#middleContainer {
+}
 
 /* Random Book Style*/
 #containerBook{
