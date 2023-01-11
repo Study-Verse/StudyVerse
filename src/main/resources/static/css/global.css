@@ -49,7 +49,8 @@ body {
 	background-color: rgb(89 37 182);
 }
 .navbar {
-	background-color: #2f1046;
+	background-color: #4B1F71;
+	/*background-color: #2f1046;*/
 }
 .navbar-brand{
 	font-weight: bold;
@@ -89,6 +90,7 @@ body {
 	max-width: none!important;
 	margin-left: 0!important;
 	margin-right: 0!important;
+	tex
 }
 #profile-dropdown{
 	display: flex;
