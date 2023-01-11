@@ -9,6 +9,9 @@
     <div class="page-wrapper splash-page-wrapper">
         <nav th:replace="partials/partials :: navbar(user=${user})"></nav>
     </div>
+<!--    start of content wrapper-->
+    <div class="content-wrapper">
+
     <div id="study-header">
         <h1 th:text="' ' + ${cardSet.getTitle()}"></h1>
     </div>
@@ -51,6 +54,9 @@
         </div>
         <span id="cardCounter"></span>
     </div>
+
+    </div>
+<!--    end of content wrapper-->
     <footer th:replace="partials/partials :: footer-fragment"></footer>
     <div th:replace="partials/partials :: scripts"></div>
     <script th:src="@{/js/jquery3.6.3.js}"></script>
