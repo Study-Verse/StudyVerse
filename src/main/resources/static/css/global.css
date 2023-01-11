@@ -22,7 +22,7 @@ body {
 }
 .profile-dropdown-menu a{
 	text-decoration: none;
-	color: black !important;
+	color: white !important;
 }
 .profile-dropdown-menu a:hover{
 	text-decoration: none;
@@ -49,8 +49,8 @@ body {
 	background-color: rgb(89 37 182);
 }
 .navbar {
-	background-color: #4B1F71;
-	/*background-color: #2f1046;*/
+	/*background-color: #4B1F71;*/
+	background-color: #2f1046;
 }
 .navbar-brand{
 	font-weight: bold;
