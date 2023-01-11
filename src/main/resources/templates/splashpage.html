@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="../static/js/jquery-3.6.1.min.js"></script>
 </head>
 <body>
     <nav id="fixedNav" th:replace="partials/partials :: navbar(user=${user})"></nav>
@@ -67,6 +68,10 @@
     </div>
     <br>
     <br>
+
+
+
+
     <div id="infoWeb">
 <!--        Pitch-->
     <div id="band" class="container text-center">
@@ -85,14 +90,20 @@
         </div>
     </div>
     <br>
+
+
+
+
     <h3>PREPARING STUDENTS FOR A SUCCESSFUL FUTURE</h3>
     <br>
 <!--    Flashcards and content-->
-    <div class="container text-center">
+    <div class="index-container text-center">
         <div class="row flashcards-content-hp">
-            <div class="col-8 flashcard-hp"></div>
-            <div class="col-4 text-content">
-                <p>Studies have shown that students who user flashcards score significantly higher on exams than those who don't</p>
+            <div class="flashcard-hp">
+                <p id="contentForCards">Studies have shown that students who user flashcards score significantly higher on exams than those who don't</p>
+
+            </div>
+            <div class="text-content">
             </div>
         </div>
     </div>
@@ -101,22 +112,22 @@
 
     <!--Book Cards-->
     <div class="container-book">
-        <div class="card-group">
-            <div class="card">
+        <div class="card-group row">
+            <div class="card col-lg-3 col-s-12 g-5">
                 <img class="card-img-top" src="/img/IMG_0004.jpeg" alt="Card image cap" style="height: 25rem">
-                <div class="card-body">
-                    <h5 class="card-title">Search for a book!</h5>
-                    <p class="card-text">Look up over thousands of books</p>
-                </div>
+            <div class="card-body">
+                <h5 class="card-title">Search for a book!</h5>
+                <p class="card-text">Look up over thousands of books</p>
+            </div>
         </div>
-        <div class="card">
+        <div class="card col-lg-3 col-s-12 g-5">
             <img class="card-img-top" src="/img/shutterstock_372270265.jpeg" alt="Card image cap" style="height: 25rem">
             <div class="card-body">
                 <h5 class="card-title">Look at previews of the book</h5>
                 <p class="card-text">Just type in the search box and you can start looking for the book</p>
             </div>
         </div>
-        <div class="card">
+        <div class="card col-lg-3 col-sm-12 g-5">
             <img class="card-img-top" src="/img/studyverseIcon.png" alt="Card image cap" style="height: 25rem">
             <div class="card-body">
                 <h5 class="card-title">Find where you can buy them</h5>
