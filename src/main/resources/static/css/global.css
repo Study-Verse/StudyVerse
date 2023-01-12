@@ -29,7 +29,7 @@ body {
 	text-decoration: none;
 	color: white;
 	font-size: 1.2rem;
-	font-weight: bold;
+	font-weight: bold !important;
 }
 #site-bar-search-link {
 	align-self: center;
@@ -59,6 +59,7 @@ body {
 	font-size: 16pt;
 	color: #FFFFFF;
 }
+
 .nav-link {
 	color: #FFFFFF;
 
