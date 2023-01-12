@@ -175,6 +175,14 @@ body{
 /*Media query for large screens*/
 @media (min-width: 700px) and (max-width : 2000px){
 
+    .carousel-flashcard {
+        width: 70vw;
+        height: 70vh;
+        perspective: 1000px;
+        scroll-snap-align: start;
+        text-align: center;
+
+    }
     #carouselWrapper{
         width: fit-content;
     }
