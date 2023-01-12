@@ -101,13 +101,13 @@ body{
 /*Modal*/
 .input-design {
     height: 60px;
-    width: 400px;
+    width: 70%;
+    text-align: center;
     outline: none;
     border: none;
     background-color: #4d1a53;
     color: white;
     border-radius: 50px;
-    padding-left: 30px;
     font-size: 18px;
 }
 .edit-set-button {
@@ -129,16 +129,16 @@ body{
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
     background-color: rgb(0,0,0);
     background-color: rgba(0,0,0,0.4);
 }
 /*This centers the whole modal*/
 .card-modal-content {
     background-color: #18021b;
+    color: white;
     margin: 15% auto;
     padding: 20px;
-    width: 40%;
+    width: 70%;
 }/* The Close Button */
 .close {
     color: #aaa;
@@ -187,27 +187,14 @@ body{
     padding-right: 5rem;
 }
 
-@media screen and (max-width: 1053px){
-    .input-design{
-        width: 250px;
-    }
-}
 @media screen and (max-width: 650px){
-    .input-design {
-        height: 50px;
-        width: 250px;
-        font-size: 15px;
-    }
+
 
     #randomBooksContainer {
         margin-bottom: 14vh;
     }
 }
 @media screen and (max-width: 714px){
-    .input-design {
-        width: 203px;
-        font-size: 15px;
-    }
     .heading{
         display:none;
     }
@@ -224,11 +211,6 @@ body{
 /* Mobile view media query*/
 @media screen and (max-width: 320px) {
 
-        .input-design {
-            height: 50px;
-            width: 220px;
-            font-size: 15px;
-        }
         .heading{
             display:none;
         }
