@@ -87,7 +87,7 @@ p.content-desc {
 
 }
 
-@media (max-width: 600px){
+@media (max-width: 700px){
 
 	.carouselH1 {
 		font-size: 2rem;
@@ -120,6 +120,8 @@ p.content-desc {
 
 	.soundSVG {
 		margin-bottom: -100px;
+	.card-img-top {
+		display: flex;
 	}
 
 }
