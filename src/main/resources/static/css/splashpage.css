@@ -63,6 +63,21 @@ p.content-desc {
 	line-height: 9rem;
 }
 
+.card-img-top {
+	display: flex;
+}
+
+.sound-pitch{
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+}
+
+.soundSVG {
+	grid-column-start: 2;
+	margin-bottom: -350px;
+}
+
+
 
 @media (min-width:991px ) {
 	.navbar-collapse.collapse.w-100.order-3.collapse-portion{
@@ -98,12 +113,13 @@ p.content-desc {
 
 	}
 
-
 	img.astronaut-on-saturn {
 		width: 20vh;
 		height: 20vh;
 	}
 
+	.soundSVG {
+		margin-bottom: -100px;
 	.card-img-top {
 		display: flex;
 	}

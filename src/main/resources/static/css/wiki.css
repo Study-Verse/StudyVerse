@@ -39,6 +39,9 @@ h2 {
     font-family: sans-serif;
 }
 
+
+/*Ouput for search bar*/
+
 .outputWikiSearch{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -48,6 +51,24 @@ h2 {
     margin-top: 6rem;
 }
 
-.link-container {
-
+#ContainerForWikiSearch {
+    margin-top: 5rem;
 }
+
+#wikiverse {
+    display: flex;
+    justify-content: center;
+}
+
+#astroStar {
+    height: 20vh;
+}
+
+#newLearning {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10vh;
+}
+
