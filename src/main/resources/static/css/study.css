@@ -177,7 +177,7 @@ body{
 
     .carousel-flashcard {
         width: 70vw;
-        height: 70vh;
+        height: 50vh;
         perspective: 1000px;
         scroll-snap-align: start;
         text-align: center;
