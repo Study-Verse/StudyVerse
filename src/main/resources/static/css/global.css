@@ -72,6 +72,9 @@ body {
 .icon{
 	display: none;
 }
+.copyright{
+	text-align: end;
+}
 #footer{
 	padding: 0.8rem;
 	background-color: #2f1046;
@@ -82,6 +85,10 @@ body {
 #footer {
 	position: fixed;
 	bottom: 0;
+}
+.footer-row{
+	display: flex;
+	justify-content: space-between;
 }
 .nav-item {
 	display: flex;
@@ -162,6 +169,7 @@ h3 {
 		right: 0;
 	}
 }
+
 
 
 
