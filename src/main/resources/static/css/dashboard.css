@@ -61,7 +61,7 @@ body{
     display: none;
 }
 .card-title{
-    color: rgb(250 110 255);
+    color: #ED716C;
     line-height: 51px;;
 }
 .card-sets h2 {
@@ -91,12 +91,12 @@ body{
 }
 #create-set-button{
     position: relative;
-    border-radius: 50px;
+    border-radius: 6px;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: whitesmoke;
-    color:#2f1046 ;
+    background-color: #767CC7;
+    color: white;
 }
 /*Modal*/
 .input-design {
@@ -146,6 +146,7 @@ body{
     font-size: 28px;
     font-weight: bold;
 }
+
 .close:hover,
 .close:focus {
     color: black;
@@ -153,6 +154,11 @@ body{
     cursor: pointer;
 }
 /*End of Modal*/
+
+a.btn.btn-secondary {
+    background: #767CC7;
+}
+
 
 #filler-astronaut{
     display: flex;
