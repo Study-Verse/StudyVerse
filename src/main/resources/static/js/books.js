@@ -176,6 +176,7 @@ $(document).ready(function() {
         let viewUrl = 'bookView/'+bookIsbn; //constructing link for book viewer
         //This creates the cards
         let htmlCard = `
+<div class="random-book-wrapper">
            <div>
              <img src="${bookImg}" alt="Book Image">
            </div>
@@ -184,7 +185,8 @@ $(document).ready(function() {
                <p class="card-text">Author: ${author}</p>
                <p class="card-text">Publisher: ${publisher}</p>
                <a target="_blank" href="${viewUrl}" class="btn btn-secondary">Read Book</a>
-           </div>`
+           </div>
+</div>`
         return htmlCard;
     }
 
