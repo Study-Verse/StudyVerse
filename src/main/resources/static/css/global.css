@@ -17,7 +17,7 @@ body {
 }
 .profile-dropdown-menu{
 	text-align: center;
-	background-color: #4e1a53;
+	background-color: #4e1a53 !important;
 	border: 1px solid;
 }
 .profile-dropdown-menu a{
