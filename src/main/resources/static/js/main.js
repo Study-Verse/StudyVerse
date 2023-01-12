@@ -106,6 +106,18 @@ $(document).ready(function(){
         $("#myCarousel").carousel("next");
     });
 
+    if($(".card-sets").length === 0){
+        $("#startHere").css("display", "");
+        $("#jumboContainer").css("display", "");
+        $("#randomBooksContainer").css("display", "none");
+        $("#filler-astronaut").css("display", "");
+
+    } else {
+        $("#startHere").css("display", "none");
+        $("#jumboContainer").css("display", "none");
+        $("#randomBooksContainer").css("display", "")
+        $("#filler-astronaut").css("display", "none");
+    }
 
 
 
