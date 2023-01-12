@@ -149,13 +149,22 @@ body{
 }
 /*End of Modal*/
 
+#filler-astronaut{
+    display: flex;
+    justify-content: center;
+}
+
+#astronautCoderImage {
+    height: 40vh;
+}
+
 
 #startHere {
     background-image: url(/img/astronautoPointing.png);
     height: 16vh;
     position: absolute;
     right: 26%;
-    top: 10%;
+    top: 100%;
     transform: scaleX(-1);
 }
 
