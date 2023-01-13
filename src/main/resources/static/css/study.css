@@ -7,9 +7,9 @@ body{
     cursor: pointer;
     border: 1px solid lightgray;
     width: 100px;
-    border-radius: 22px;
+    border-radius: 14px;
     font-family: inherit;
-    background-color: #4d1a53;
+    background-color: #acacdb;
     color: white;
 }
 .feature-buttons:hover{
@@ -102,7 +102,23 @@ body{
     text-align: center;
 
 }
-.carousel-flashcard .carousel-front-face,
+.carousel-flashcard .carousel-front-face{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    transition: transform 0.7s ease-in-out;
+    text-align: center;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 12px -2px #000000;
+    overflow-wrap: break-word;
+    background-color: ghostwhite;
+}
 .carousel-flashcard .carousel-back-face {
     width: 100%;
     height: 100%;
@@ -112,7 +128,6 @@ body{
     backface-visibility: hidden;
     transition: transform 0.7s ease-in-out;
     text-align: center;
-    /*background-color: #4d1a53;*/
     background-image: linear-gradient(rgba(255, 255, 255, 0.80), rgba(255, 255, 255, 0.80) ),url(/img/flashcard.jpeg);
     color: black;
     display: flex;
@@ -137,7 +152,7 @@ body{
     width: 35px;
 }
 .carousel-flashcard .soundSVG:hover,#carouselWrapper .prev:hover, #carouselWrapper .next:hover  {
-    color: rgb(250 110 255);
+    color: #acacdb;
     cursor: pointer;
 }
 .carousel-flashcard.flipped .carousel-front-face {
@@ -187,7 +202,11 @@ body{
         width: fit-content;
     }
 
-    .carousel-flashcard .carousel-front-face ,
+    .carousel-flashcard .carousel-front-face{
+        word-break: break-word;
+        width: 100%;
+        font-size: 1.2rem;
+    }
     .carousel-flashcard .carousel-back-face  {
         word-break: break-word;
         width: 100%;
