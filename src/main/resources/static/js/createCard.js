@@ -160,4 +160,11 @@ $(document).ready(function(){
         $("#frontFaceSpan").text("");
     });
 
+
+    if($(".cardItem").length === 0){
+        $("#jumboContainer").css("display", "flex");
+    } else {
+        $("#jumboContainer").css("display", "none");
+    }
+
 })//End of Document.ready
