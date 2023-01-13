@@ -24,12 +24,15 @@ body {
 	text-decoration: none;
 	color: white !important;
 }
+
+
 .profile-dropdown-menu a:hover{
 	text-decoration: none;
 	color: white;
 	font-size: 1.2rem;
 	font-weight: bold;
 }
+
 #site-bar-search-link {
 	align-self: center;
 }
@@ -65,10 +68,12 @@ body {
 	color: lavender;
 
 }
+
 .nav-link:hover {
 	color: lavender;
 
 }
+
 .icon{
 	display: none;
 }
@@ -135,6 +140,14 @@ h3 {
 	text-decoration: none;
 	color: rgb(250 110 255);
 }
+
+
+
+
+i.bi.bi-list {
+	 display: none;
+}
+
 
 
 /*medium screen*/

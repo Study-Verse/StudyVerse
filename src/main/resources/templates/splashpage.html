@@ -2,18 +2,14 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html" lang="en">
 <head>
     <div th:replace="partials/partials :: head-fragment('Splash Page')"></div>
-    <link rel="stylesheet" href="/css/global.css">
-    <link rel="stylesheet" href="/css/splashpage.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script src="../static/js/jquery-3.6.1.min.js"></script>
+    <link rel="stylesheet" th:href="@{/css/global.css}">
+    <link rel="stylesheet" th:href="@{/css/splashpage.css}">
+    <link rel="stylesheet" th:href="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css}">
+    <script th:src="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js}"></script>
+    <script th:src="@{js/jquery-3.6.1.min.js}"></script>
 </head>
 <body>
     <nav id="fixedNav" th:replace="partials/partials :: navbar(user=${user})"></nav>
-
-
-
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">
@@ -35,7 +31,7 @@
             </div>
 
             <div class="item">
-                <img src="/img/peopleStudying.jpeg" alt="Chania">
+                <img src="/img/flashcardsStudy%20copy.png" alt="flashcards">
                 <div class="carousel-caption">
                     <h1 class="carouselH1">Flash Cards</h1>
                     <h3 class="carouselH3">Create card sets to help you study along the way</h3>
@@ -68,91 +64,64 @@
     </div>
     <br>
     <br>
-
-
-
-
+    <!--Pitch and AstroNaut Picture-->
     <div id="infoWeb">
-<!--        Pitch-->
     <div id="band" class="container text-center">
         <div class="row content-text">
-    <br>
+            <br>
             <br>
             <div class="col-6">
             <p class="content-desc">Achieve a deeper level of processing and understanding on this free and self-directed website</p>
             </div>
-            <div class="col-6">
-                    <div class="astronaut-img1">
+            <div class="col-6 d-flex justify-content-center align-items-center">
                         <img class="astronaut-on-saturn" src="/img/astronautReading.png">
-                    </div>
                 </div>
             </div>
         </div>
     </div>
     <br>
-
-
-
-
     <h3>PREPARING STUDENTS FOR A SUCCESSFUL FUTURE</h3>
     <br>
-<!--    Flashcards and content-->
-    <div class="index-container text-center">
-        <div class="row flashcards-content-hp">
-            <div class="flashcard-hp">
+    <!--FlashCard Demo-->
+    <div class="splash-page-card-container">
+        <div class="flashcard-hp ">
+            <div class="front-hp ">
                 <p id="contentForCards">Studies have shown that students who use flashcards score significantly higher on exams than those who don't</p>
-
             </div>
-            <div class="text-content">
+            <div class="back-hp  ">
+                <p>Back</p>
             </div>
         </div>
     </div>
-<!--TTS pitch-->
-    <div class="container sound-pitch">
-    <h3>Study on the go with our text-to-speech feature</h3>
-        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="soundSVG bi bi-volume-up-fill" viewBox="-6.5 0 30 30">
-            <path d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z"/>
-            <path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89l.706.706z"/>
-            <path d="M8.707 11.182A4.486 4.486 0 0 0 10.025 8a4.486 4.486 0 0 0-1.318-3.182L8 5.525A3.489 3.489 0 0 1 9.025 8 3.49 3.49 0 0 1 8 10.475l.707.707zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06z"/>
-        </svg>
-    </div>
-
-
-
-    <!--Book Cards-->
+    <!--Features Grid-->
     <div class="container-book">
-        <div class="card-group row">
-            <div class="card col-lg-3 col-s-12 g-5">
-                <img class="card-img-top" src="/img/IMG_0004.jpeg" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Search for a book!</h5>
-                <p class="card-text">Look up over thousands of books</p>
-            </div>
-        </div>
+    <div class="card-group row">
         <div class="card col-lg-3 col-s-12 g-5">
-            <img class="card-img-top" src="/img/shutterstock_372270265.jpeg" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Look at previews of the book</h5>
-                <p class="card-text">Just type in the search box and you can start looking for the book</p>
-            </div>
-        </div>
-        <div class="card col-lg-3 col-sm-12 g-5">
-            <img class="card-img-top" src="/img/studyverseIcon.png" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Find where you can buy them</h5>
-                <p class="card-text">You can also see where you can get a hard copy of the book</p>
-            </div>
+            <img class="card-img-top" src="/img/coffee-guy.png" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Search for a book!</h5>
+            <p class="card-text">Look up over thousands of books</p>
         </div>
     </div>
+    <div class="card col-lg-3 col-s-12 g-5">
+        <img class="card-img-top" src="/img/studyverseIcon.png" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Find where you can buy them</h5>
+            <p class="card-text">You can also see where you can get a hard copy of the book</p>
+        </div>
     </div>
-
-<br><br><br>
-
-
+    <div class="card col-lg-3 col-sm-12 g-5">
+        <img class="card-img-top" src="/img/megaphone-guy.png" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Study on the go with our text-to-speech feature</h5>
+            <p class="card-text">Just type in the search box and you can start looking for the book</p>
+        </div>
+    </div>
+</div>
+</div>
 
     <div th:replace="partials/partials :: scripts"></div>
-        <footer id="fixedFooter" th:replace="partials/partials :: footer-fragment"></footer>
+    <footer id="fixedFooter" th:replace="partials/partials :: footer-fragment"></footer>
 
 </body>
-
 </html>

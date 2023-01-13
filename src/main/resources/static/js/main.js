@@ -121,4 +121,22 @@ $(document).ready(function(){
 
 
 
+    //card on home page
+
+    const card = $('.flashcard-hp > div'); // Get the card element
+
+    let isFlipped = false; // Keep track of whether the card is flipped or not
+
+    setInterval(function (){
+
+        if (!card.hasClass("flipCard")){
+            card.addClass("flipCard");
+        } else {
+            card.removeClass("flipCard");
+        }
+    },5000);
+
+
+
+
 })//End of document.ready

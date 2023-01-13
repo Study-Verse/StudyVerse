@@ -18,11 +18,38 @@
        color: black;
  }
 
+ #errorMessageMobileContainer{
+     display: none;
+ }
 
-/*@media (max-width: 576px) {*/
-/*    body {*/
-/*        background-size: cover;*/
-/*        background-repeat: no-repeat;*/
-/*    }*/
+ @media (max-width: 992px) {
 
-/*}*/
+
+     #picture-container{
+         background-image: none;
+     }
+
+     #errorMessageMobileContainer{
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         height: 100vh; /* 100% of the viewport height */
+         flex-direction: column;
+     }
+
+     #errorAstro {
+         height: 42vh;
+     }
+
+     #goHome {
+         display: none;
+     }
+
+     #buttonMobileError {
+         background-color: white;
+         color: black;
+         height: 8vh;
+         border-radius: 16px;
+     }
+
+ }
