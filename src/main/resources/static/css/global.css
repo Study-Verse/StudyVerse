@@ -159,7 +159,7 @@ i.bi.bi-list {
 
 
 	/*#site-bar-search-link {*/
-	/*	visibility: collapse;*/
+	/* visibility: collapse;*/
 	/*}*/
 
 
@@ -191,7 +191,7 @@ i.bi.bi-list {
 /*// Small devices (landscape phones, 576px and down)*!*!*/
 @media (max-width: 576px) {
 	/*#site-bar-search-link{*/
-	/*	visibility: collapse;*/
+	/* visibility: collapse;*/
 	/*}*/
 
 	.search-bar {
@@ -217,5 +217,3 @@ i.bi.bi-list {
 @media (min-width: 1400px) {
 
 }
-
-

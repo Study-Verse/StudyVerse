@@ -28,64 +28,56 @@
                  class="profileImg rounded-circle img-fluid" style="width: 150px;"/>
             <p id="profilePicChangeButton">Change</p>
           </div>
-
           <h5 class="my-3 mt-3"><span th:text="${#authentication.principal.username}"></span></h5>
-
         </div>
       </div>
-
     </div>
+<!--    Beginning of User Info-->
+<!--  <form class="user-info-block" th:method="post" th:action="@{/profile}">-->
     <div class="col-lg-8">
       <div class="card mb-4">
         <div class="card-body">
           <div class="row">
             <div class="col-sm-3">
-              <p class="mb-0">Username:</p>
+              <p class="mb-0">Username: </p>
             </div>
             <div class="col-sm-9">
-              <p class="text-muted mb-0"><span th:text="${#authentication.principal.username}"></span></p>
+              <p class="text-muted mb-0"><span id="username" class="user-info" th:text="${#authentication.principal.username}"></span></p>
             </div>
           </div>
           <hr>
           <div class="row">
             <div class="col-sm-3">
-              <p class="mb-0">Email</p>
+              <p class="mb-0">Email: </p>
             </div>
             <div class="col-sm-9">
-              <p class="text-muted mb-0"><span th:text="${#authentication.principal.email}"></span></p>
+              <p class="text-muted mb-0"><span id="email" class="user-info" th:text="${#authentication.principal.email}"></span></p>
             </div>
           </div>
           <hr>
           <div class="row">
             <div class="col-sm-3">
-              <p class="mb-0">Phone</p>
+              <p class="mb-0">Login Date: </p>
             </div>
             <div class="col-sm-9">
-              <p class="text-muted mb-0">(097) 234-5678</p>
-            </div>
-          </div>
-          <hr>
-          <div class="row">
-            <div class="col-sm-3">
-              <p class="mb-0">Mobile</p>
-            </div>
-            <div class="col-sm-9">
-              <p class="text-muted mb-0">(098) 765-4321</p>
-            </div>
-          </div>
-          <hr>
-          <div class="row">
-            <div class="col-sm-3">
-              <p class="mb-0">Address</p>
-            </div>
-            <div class="col-sm-9">
-              <p class="text-muted mb-0">Bay Area, San Francisco, CA</p>
+              <p class="text-muted mb-0 login-date"><span class="login-date" th:text="${#dates.format(#dates.createNow(), 'MM/dd/yyyy')}"></span></p>
             </div>
           </div>
         </div>
       </div>
+
+      <!--      End of User info-->
+        <!--    Editing user info-->
+        <div class="user-Item edit-user-info">
+          <div class="edit-user-info-btn">
+            <button class="user-info-btn" data-toggle="modal" data-target="profile-edit-modal">Edit</button>
+          </div>
+        </div>
+        <!--              end of editing user info-->
     </div>
+<!--  </form>-->
   </div>
+
 
 
 
@@ -146,6 +138,8 @@
   </div>
 
 
+  <form class="user-info-block" th:method="post" th:action="@{/profile}"></form>
+<!--  ^^^ensures that we have this input with csrf-->
 
 
 

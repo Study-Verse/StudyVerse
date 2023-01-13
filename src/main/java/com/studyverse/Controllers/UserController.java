@@ -1,5 +1,7 @@
 package com.studyverse.Controllers;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.studyverse.Models.Calendar;
 import com.studyverse.Models.Events;
 import com.studyverse.Models.User;
@@ -51,13 +53,15 @@ public class UserController {
 
 //  Edit profile
     @PostMapping ("/profile")
-    String editProfile(@RequestParam(name="username") String username, @RequestParam(name="email")String email, @RequestParam(name="id") long id, Model model){
-        model.addAttribute("user",usersDao.findById(Utils.currentUser().getId()));
-        User user = usersDao.findById(id);
-        user.setUsername(username);
-        user.setEmail(email);
+    public @ResponseBody void editProfile(@RequestBody User editedUser, Model model) throws JsonProcessingException {
+        ObjectMapper mapper = new ObjectMapper();
+        System.out.println("inside edit profile");
+        System.out.printf("editedUser: %n%s%n", mapper.writeValueAsString(editedUser));
+        User user = usersDao.findById(Utils.currentUser().getId());
+        user.setUsername(editedUser.getUsername());
+        user.setEmail(editedUser.getEmail());
+        System.out.printf("User we will save after changing: %n%s%n", mapper.writeValueAsString(user));
         usersDao.save(user);
-        return "profile";
     }
 
     @PostMapping("/profilePic")

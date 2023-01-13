@@ -7,17 +7,10 @@ $(document).ready(function() {
     });
 
 
-
-
-
-
-
 //  Search bar
 $("#site-bar-search-link").on("click", function (){
     let inputSearchText = $("#searchForCards").val();
     window.location.replace(`/search/${inputSearchText}`);
-
-
     });
 
 });
