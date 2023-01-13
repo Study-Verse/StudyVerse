@@ -8,6 +8,8 @@
 #infoWeb {
 	display: flex;
 	justify-content: center;
+	margin-top: 2vh;
+	margin-bottom: 2vh;
 }
 
 #fixedNav {
@@ -43,7 +45,7 @@
 
 .flashcard-hp {
 	width: 670px;
-	height: 410px;
+	height: 350px;
 	perspective: 1000px;
 	scroll-snap-align: start;
 	text-align: center;
@@ -101,12 +103,6 @@
 .text-content {
 	font-size: 20px;
 	margin: 10px;
-}
-
-
-
-p.content-desc {
-	margin-top: 8rem;
 }
 
 
