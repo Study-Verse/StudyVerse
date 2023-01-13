@@ -117,6 +117,7 @@ header{
     justify-content: center;
     align-items: center;
     width: 700px;
+    height: 40px;
     margin-top: 10px;
     background-color: var(--pageMainColor);
     color: white;
@@ -128,9 +129,25 @@ header{
     color:#8854C0
 }
 #addCardSVG svg {
-    height:18px;
-    width: 18px;
+    height:35px;
+    width: 35px;
 
+}
+#astronaut-no-cards{
+    height: 300px;
+    width: 300px;
+}
+#jumboContainer{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+.jumbotron {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
 }
 #addCardFormHolder{
     display: flex;
