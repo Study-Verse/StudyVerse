@@ -16,7 +16,7 @@ body {
     align-items: center;
     flex-direction: column;
     gap: 30px;
-    background-color: rgb(45 0 69);
+    background-image: url("../img/space-background.png");
 }
 
 .heading {
