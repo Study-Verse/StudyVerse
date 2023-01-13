@@ -88,6 +88,7 @@
 .front-hp.flipCard{
 	transform: rotateY(0deg);
 }
+/*flip card comment */
 .front-hp,
 .back-hp.flipCard{
 	transform: rotateY(180deg);
