@@ -107,7 +107,17 @@
 
 
 #contentForCards {
-	line-height: 9rem;
+	font-size: 5rem;
+	font-weight: 900;
+}
+
+.card-group.row {
+	margin-bottom: 12vh;
+}
+
+#backforcard{
+	font-size: 3rem;
+	font-weight: 900;
 }
 
 .card-img-top {
