@@ -152,13 +152,38 @@ function initButtons() {
 initButtons();
 load();
 
+// //Edit user details functionality
+//     $(".user-info-btn").on('click', function(e){
+//         let userContent = $(this).parent().siblings(".user-info").children("p");
+//     })
+// });
 
-
-
-
-
-
-
+let editUserInfo = $(".edit-user-info");
+    editUserInfo.on("click", async function(){
+        if ($(".user-info-btn").text() === "Submit"){
+            $(".user-info-btn").text("Edit");
+            $(".user-info").attr("contenteditable", "false");
+            let username = $("#username").text()
+            let email = $("#email").text()
+            let user = {
+                username:username,
+                email:email
+            }
+            let userDetails = {
+                method:"post",
+                headers:{
+                    "X-CSRF-TOKEN":$("input[name='_csrf']").attr("value"),
+                    "Content-Type": 'application/json'
+                },
+                body:JSON.stringify(user)
+            }
+            console.log(userDetails);
+            await fetch(`${window.location.protocol}//${window.location.host}/profile`,userDetails);
+        } else {
+            $(".user-info").attr("contenteditable", "true");
+            $(".user-info-btn").text("Submit");
+        }
+    })
 
 
 // This is for the profile picture
@@ -182,6 +207,5 @@ $("#profilePicChangeButton").on("click", function(){
     }
   }).open();
 })
-
 
 });

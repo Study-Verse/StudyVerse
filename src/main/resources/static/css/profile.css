@@ -46,6 +46,11 @@ button {
     border-radius: 5px;
     color: white;
 }
+
+.user-info-btn {
+    text-decoration-color: black;
+    color: #767CC7;
+}
 #header {
     padding: 10px;
     color: #d36c6c;

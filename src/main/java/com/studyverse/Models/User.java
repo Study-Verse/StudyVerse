@@ -1,6 +1,7 @@
 package com.studyverse.Models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
@@ -25,7 +26,7 @@ public class User {
 
 
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "user")
-    @JsonBackReference
+//    @JsonBackReference
     private List<CardSet> cardSetList;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
     private List<Card> cardList;
@@ -37,7 +38,7 @@ public class User {
     private List<Events> events;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
-    @JsonBackReference
+//    @JsonBackReference
     private List<Quiz> quizList;
 
     //End of Instance Variables
@@ -97,6 +98,7 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+    @JsonIgnore
     public List<CardSet> getCardSetList() {
         return cardSetList;
     }
@@ -109,7 +111,7 @@ public class User {
     public void setProfilePic(String profilePic) {
         this.profilePic = profilePic;
     }
-
+    @JsonIgnore
     public List<Card> getCardList() {
         return cardList;
     }
@@ -117,7 +119,7 @@ public class User {
     public void setCardList(List<Card> cardList) {
         this.cardList = cardList;
     }
-
+    @JsonIgnore
     public Calendar getCalendar() {
         return calendar;
     }
@@ -125,7 +127,7 @@ public class User {
     public void setCalendar(Calendar calendar) {
         this.calendar = calendar;
     }
-
+    @JsonIgnore
     public List<Events> getEvents() {
         return events;
     }
@@ -133,7 +135,7 @@ public class User {
     public void setEvents(List<Events> events) {
         this.events = events;
     }
-
+    @JsonIgnore
     public List<Quiz> getQuiz() {
         return quizList;
     }
