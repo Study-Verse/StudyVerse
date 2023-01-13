@@ -46,6 +46,13 @@
 	transition: all ease .3s;
 	box-shadow: 0px 0px 12px -2px #00000061;
 }
+.flashcard-front{
+
+}
+.flashcard-back:hover{
+	transform: rotateY(180deg);
+}
+
 
 .text-content {
 	font-size: 20px;
@@ -124,6 +131,11 @@ p.content-desc {
 	.card-img-top {
 		display: flex;
 	}
+
+
+
+
+
 
 }
 

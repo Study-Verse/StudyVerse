@@ -121,4 +121,25 @@ $(document).ready(function(){
 
 
 
+    //card on home page
+
+    const card = $('.flashcard-front'); // Get the card element
+
+    let isFlipped = false; // Keep track of whether the card is flipped or not
+
+    setInterval(function (){
+
+        if (isFlipped) {
+            card.classList.remove("flip"); // Remove the "flip" class
+            isFlipped = false;
+        } else {
+            card.classList.add("flip"); // Add the "flip" class
+            isFlipped = true;
+        }
+
+    },10000)
+
+
+
+
 })//End of document.ready
