@@ -134,7 +134,7 @@ $(document).ready(function(){
         } else {
             card.removeClass("flipCard");
         }
-    },2000);
+    },5000);
 
 
 
