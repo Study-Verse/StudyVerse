@@ -100,7 +100,6 @@ body{
     perspective: 1000px;
     scroll-snap-align: start;
     text-align: center;
-
 }
 .carousel-flashcard .carousel-front-face{
     width: 100%;
@@ -135,8 +134,6 @@ body{
     align-items: center;
     box-shadow: 0 0 12px -2px #00000061;
     overflow-wrap: break-word;
-
-
 }
 .carousel-flashcard .carousel-front-face {
     transform: rotateY(0deg);
