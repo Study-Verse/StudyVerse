@@ -142,6 +142,14 @@ h3 {
 }
 
 
+
+
+i.bi.bi-list {
+	 display: none;
+}
+
+
+
 /*medium screen*/
 @media screen and (max-width: 992px){
 	.about-footer, .contact-footer, .ms-auto {
