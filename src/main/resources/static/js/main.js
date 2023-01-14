@@ -72,16 +72,6 @@ $(document).ready(function(){
         }
     });
 
-
-
-
-
-
-
-
-
-
-
     $("#myCarousel").carousel();
 
     // Enable Carousel Indicators
