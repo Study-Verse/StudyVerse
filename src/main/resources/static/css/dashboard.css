@@ -101,7 +101,7 @@ body{
 /*Modal*/
 .input-design {
     height: 60px;
-    width: 70%;
+    width: 100%;
     text-align: center;
     outline: none;
     border: none;
@@ -120,6 +120,7 @@ body{
     font-size: 22px;
     border: none;
     cursor: pointer;
+    margin: 1vh;
 }
 .card-modal {
     /*display: none; !* Hidden by default *!*/
