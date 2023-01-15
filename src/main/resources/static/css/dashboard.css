@@ -2,106 +2,114 @@ body{
     background-color: ghostwhite;
 }
 
-#containerBook{
+#jumboContainer{
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
 }
-
-/*book info is in books.js*/
-#bookinfo {
-    margin-left: inherit;
-    padding-left: 1rem;
-    padding-right: 5rem;
-}
-
-#create-form{
-    text-align: center;
-}
-
-#welcome-create-header{
-    background-color: #2f1046;
-    color: white;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-#welcome-create-header h3{
-    justify-self: center;
-}
-
-.create-set-box{
+.jumbotron {
     display: flex;
     flex-direction: column;
-    align-items: center;
-}
-
-#create-set-button{
-    border-radius: 50px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #4e1a53;
-    color: white;
-
-}
-
-#card-set-wrapper {
-    display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    color: white;
     text-align: center;
 }
-
+#filler-astronaut{
+    width: 100%;
+    height: 10px;
+}
+.card-set-container{
+    display: flex;
+    overflow-x: scroll;
+    width: 100%;
+    /* height: 30vh; */
+    column-gap: 20px;
+    background: ghostwhite;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 60px 20px;
+    justify-content: center;
+}
 .card-sets{
     position: relative;
     overflow-wrap: break-word;
     text-align: center;
-    margin: 10px 4px;
-}
+    margin: 10px 10px;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.80), rgba(255, 255, 255, 0.80) ),url(/img/flashcard.jpeg);
+    padding: 3vh 0;
+    width: 440px;
+    height: 230px;
+    transition: all ease .3s;
+    box-shadow: 0px 0px 12px -2px #00000061
 
-.svg {
-    position: absolute;
-    top:5px;
-    right:40px;
-    color: white;
 }
+/*.card-sets:hover{*/
+/*    transform: scale(1.05);*/
+/*}*/
 
-.display-none{
-    display: none;
+.random-book-wrapper{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10vh;
 }
 
 .card-sets svg:hover {
     color: rgb(250 110 255);
 }
-
+.svg {
+    color: black;
+}
+.display-none{
+    display: none;
+}
 .card-title{
-    color: rgb(250 110 255);
+    color: #ED716C;
+    line-height: 51px;;
 }
-
-.card-sets{
-    height: 184px;
-    width: 334px;
-    background-color: #18021b;
+.card-sets h2 {
+    font-size: 23px;
+    line-height: 32px;
 }
-
-
+/* welcome bar*/
+.create-set-box{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+}
+#create-form{
+    text-align: center;
+}
+#welcome-create-header{
+    background-color: ghostwhite;
+    color: #2f1046;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 2vh;
+}
+#welcome-create-header h3{
+    justify-self: center;
+}
+#create-set-button{
+    position: relative;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #767CC7;
+    color: white;
+}
 /*Modal*/
 .input-design {
     height: 60px;
-    width: 400px;
+    width: 100%;
+    text-align: center;
     outline: none;
     border: none;
     background-color: #4d1a53;
     color: white;
     border-radius: 50px;
-    padding-left: 30px;
     font-size: 18px;
 }
-
 .edit-set-button {
     height: 60px;
     width: 150px;
@@ -112,8 +120,8 @@ body{
     font-size: 22px;
     border: none;
     cursor: pointer;
+    margin: 1vh;
 }
-
 .card-modal {
     /*display: none; !* Hidden by default *!*/
     position: fixed; /* Stay in place */
@@ -122,99 +130,100 @@ body{
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
     background-color: rgb(0,0,0);
     background-color: rgba(0,0,0,0.4);
 }
-
 /*This centers the whole modal*/
 .card-modal-content {
     background-color: #18021b;
+    color: white;
     margin: 15% auto;
     padding: 20px;
-    width: 40%;
+    width: 70%;
 }/* The Close Button */
-
 .close {
     color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
 }
+
 .close:hover,
 .close:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
 }
-
 /*End of Modal*/
 
-
-
-@media screen and (max-width: 1053px){
-    .input-design{
-        width: 250px;
-    }
+a.btn.btn-secondary {
+    background: #767CC7;
 }
+
+
+#filler-astronaut{
+    display: flex;
+    justify-content: center;
+}
+
+#astronautCoderImage {
+    height: 40vh;
+}
+
+
+#startHere {
+    background-image: url(/img/astronautoPointing.png);
+    height: 16vh;
+    position: absolute;
+    right: 26%;
+    top: 100%;
+    transform: scaleX(-1);
+}
+
+/* Random Book Style*/
+#containerBook{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+/*book info is in books.js*/
+#bookinfo {
+    margin-left: inherit;
+    padding-left: 1rem;
+    padding-right: 5rem;
+}
+
 @media screen and (max-width: 650px){
-    .input-design {
-        height: 50px;
-        width: 250px;
-        font-size: 15px;
+
+
+    #randomBooksContainer {
+        margin-bottom: 14vh;
     }
 }
 @media screen and (max-width: 714px){
-    .input-design {
-        width: 203px;
-        font-size: 15px;
-    }
     .heading{
         display:none;
     }
+    .card-sets{
+        width: 100%;
+        font-size: 34px;
+
+    }
+
+    #randomBooksContainer {
+        margin-bottom: 14vh;
+    }
 }
+/* Mobile view media query*/
 @media screen and (max-width: 320px) {
-    .input-design {
-        height: 50px;
-        width: 220px;
-        font-size: 15px;
-    }
-    .heading{
-        display:none;
-    }
-}
 
-.acc-wrapper{
-    margin: 30px auto;
-    width:70%;
+        .heading{
+            display:none;
+        }
+
+        #randomBooksContainer {
+            margin-bottom: 14vh;
+        }
 
 }
-
-.accordion{
-    display:flex;
-    flex-wrap:nowrap;
-    overflow:hidden;
-    width:100%;
-    height:350px
-}
-
-.accordion > div{
-    width:50%;
-    flex-grow:1;
-    flex-shrink:1;
-    overflow:hidden;
-    transition:all .3s ease;
-    border:1px solid #1f1f1f;
-    position:relative
-}
-
-.accordion > div:hover{
-    flex-shrink:0
-}
-
-.accordion div img{
-    width:100%;
-    height:100%;
-    object-fit: cover;
-}
-

@@ -8,11 +8,14 @@ import com.studyverse.Repositories.CardSetRepository;
 import com.studyverse.Repositories.UserRepository;
 import com.studyverse.Services.Utils;
 import jdk.jshell.execution.Util;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
 @Controller
 public class CardSetController {
@@ -32,8 +35,7 @@ public class CardSetController {
 
     //CREATE SET
     @PostMapping("/create-set")
-    public String createCardSet(@RequestParam(name="set-title") String title,
-                                @RequestParam(name="set-tag") String tag){
+    public String createCardSet(@RequestParam(name="set-title") String title, @RequestParam(name="set-tag") String tag){
         User user = Utils.currentUser();
         CardSet cardSet = new CardSet();
         cardSet.setTitle(title);
@@ -64,6 +66,14 @@ public class CardSetController {
         cardSetDao.delete(card);
         return "redirect:/dashboard";
     }
+
+//    @ExceptionHandler(NoSuchElementException.class)
+//    @ResponseStatus(HttpStatus.NOT_FOUND)
+//    public ResponseEntity<String> handleNoSuchElementFoundException(NoSuchElementException exception) {
+//        return ResponseEntity
+//                .status(HttpStatus.NOT_FOUND)
+//                .body(exception.getMessage());
+//    }
     //END OF DELETE SET
 
     //    ============ dashboard get mapping
@@ -72,19 +82,17 @@ public class CardSetController {
         long user = Utils.currentUser().getId();
         List<CardSet> cardSetList = cardSetDao.findByUserId(user);
         model.addAttribute("cardSetList",cardSetList);
-        return "/dashboard";
+        model.addAttribute("user",userDao.findById(user));
+        return "dashboard";
     }
 
+    //    This is the Search view
+    @GetMapping("/search/{tag}")
+    public String searchView(Model model, @PathVariable String tag){
+        model.addAttribute("cardSets", cardSetDao.findByTag(tag));
+        model.addAttribute("user",userDao.findById(Utils.currentUser().getId()));
+        return "searchView";
+    }
 
-
-
-
-//    This takes you to study but with your cards
-//    @PostMapping("/dashboard/{set-id}")
-//    public String yourStudyCards(@PathVariable long id,Model model){
-//        CardSet set = cardSetDao.findById(id);
-//        model.addAttribute(set);
-//        return "redirect:/study/{set-id}";
-//    }
 
 }//End of class

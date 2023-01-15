@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <div th:replace="partials/partials :: head-fragment('Ooops There Is A Error')"></div>
+    <link rel="stylesheet" th:href="@{/css/error.css}">
+
+
+    <meta charset="UTF-8">
+</head>
+<html>
+<body>
+
+<div id="picture-container">
+
+    <a href="/" id="goHome"></a>
+
+    <div id="errorMessageMobileContainer">
+        <h1 id="errorMessageMobile">Ooops There was a error 😮</h1>
+        <h3 id="workingOnIt">Our Engineers are working on it</h3>
+        <img id="errorAstro" src="/img/astronautError.png">
+
+        <a href="/" ><button id="buttonMobileError">Go Home</button></a>
+
+    </div>
+
+
+</div>
+
+</body>
+</html>

@@ -10,11 +10,13 @@
     <script type="text/javascript" src="https://www.google.com/books/jsapi.js"></script>
 </head>
 <body>
-<nav th:replace="partials/partials :: navbar"></nav>
+<nav th:replace="partials/partials :: navbar(user=${user})"></nav>
 
-<div class="container">
-    <div class="text-center centerBook" id="viewerCanvas" style="width: 800px; height: 600px"></div>
+<div class="container" id="middleBookView">
+    <div class="text-center" id="viewerCanvas" style="width: 800px; height: 600px"></div>
 </div>
+
+
 
 <script type="text/javascript">
     google.books.load();
@@ -39,6 +41,7 @@
     }
     google.books.setOnLoadCallback(initialize);
 </script>
+
 
 
 </body>

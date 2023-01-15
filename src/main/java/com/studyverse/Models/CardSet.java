@@ -20,7 +20,7 @@ public class CardSet {
     @ManyToOne
     @JsonManagedReference
     private User user;
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable
             (
             name = "card_sets_and_cards",
@@ -43,7 +43,6 @@ public class CardSet {
         this.title = title;
     }
     //End of Constructors
-
 
     //Setters and getters
     public long getId() {

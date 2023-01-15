@@ -1,0 +1,55 @@
+ #picture-container{
+      background-image: url(/img/error-astronaut.webp);
+      background-size: contain;
+      width: 100vw;
+      height: 67vw;
+      background-repeat: no-repeat;
+}
+
+ #goHome {
+       position: absolute;
+       bottom: -11vh;
+       height: 67vh;
+       width: 18rem;
+       font-weight: bolder;
+       font-size: 2rem;
+       left: 42%;
+       border-radius: 1rem;
+       color: black;
+ }
+
+ #errorMessageMobileContainer{
+     display: none;
+ }
+
+ @media (max-width: 992px) {
+
+
+     #picture-container{
+         background-image: none;
+     }
+
+     #errorMessageMobileContainer{
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         height: 100vh; /* 100% of the viewport height */
+         flex-direction: column;
+     }
+
+     #errorAstro {
+         height: 42vh;
+     }
+
+     #goHome {
+         display: none;
+     }
+
+     #buttonMobileError {
+         background-color: white;
+         color: black;
+         height: 8vh;
+         border-radius: 16px;
+     }
+
+ }

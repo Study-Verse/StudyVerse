@@ -1,19 +1,68 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <div th:replace="partials/partials :: head-fragment('Test')"></div>
     <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/quiz.css">
     <meta charset="UTF-8">
     <title>Self Test</title>
+
 </head>
 <body>
-<nav th:replace="partials/partials :: navbar"></nav>
+    <nav th:replace="partials/partials :: navbar(user=${user})"></nav>
+<!-- Make a new quiz-->
+    <div>
+        <h2>Make a new quiz here:</h2>
+        <form method="POST" th:action="@{/newQuiz}" th:object="${newQuiz}">
+            <label for="quizName">Quiz name</label>
+            <input id="quizName" type="text" th:field="*{name}" >
+            <lable for="tag">Quiz Tag(e.g. cars, nature, programing)</lable>
+            <input id="tag" type="text" th:field="*{tag}">
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+<!-- Users Quizzes-->
+    <section class="quizzes-container">
+
+    </section>
+<!-- Search for a quiz-->
+
+<!-- Quiz -->
+<div class="flex" hidden >
+    <div class="wrapper">
+    <div class = "quiz-container">
+        <div class = "quiz-head">
+            <h1 class = "quiz-title">Quiz Game</h1>
+            <div class = "quiz-score flex">
+                <span id = "correct-score"></span>/<span id = "total-question"></span>
+            </div>
+        </div><!--quiz head end -->
+        <div class = "quiz-body">
+                <h2 class = "quiz-question" id = "question"><!--What is the full form of HTTP? --></h2>
+                <ul class = "quiz-options">
+                    <li>1. Hyper text transfer package</li>
+                    <li>2. Hyper text transfer protocol</li>
+                    <li>3. Hyphenation text test program</li>
+                    <li>4. None of the above</li>
+                </ul>
+                <div id = "result">
+                </div>
+            <div class = "quiz-foot">
+                <button type = "button" id = "check-answer">Check Answer</button>
+                <button type = "button" id = "play-again">Play Again!</button>
+            </div>
+            </div>
+        </div><!--End of quiz body-->
+</div><!--end of quiz wrapper-->
+</div>
 
 
+    <div th:replace="partials/partials :: scripts"></div>
+    <script th:src="@{js/main.js}"></script>
+    <script th:src="@{/js/sitebar.js}"></script>
+    <script th:src="@{/js/quiz.js}"></script>
+<footer th:replace="partials/partials :: footer-fragment"></footer>
 
-<div th:replace="partials/partials :: scripts"></div>
-<script th:src="@{js/main.js}"></script>
-<script th:src="@{/js/sitebar.js}"></script>
 
 </body>
 </html>

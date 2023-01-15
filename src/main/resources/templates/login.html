@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
+    <div th:replace="partials/partials :: head-fragment('About Us')"></div>
     <meta charset="UTF-8">
     <title>Login</title>
     <link rel="stylesheet" th:href="@{/css/login.css}">
@@ -8,22 +9,27 @@
     <script th:src="@{/js/main.js}"></script>
 </head>
 <body>
-    <div class="container">
-            <form class="form-section" th:action="@{/login}" method="post">
-                <div class="login-box">
-                    <h1 class="heading">StudyVERSE</h1>
-                    <div th:if="${param.error}" class="invalidText">
-                        <p>Invalid Username Or Password</p>
-                    </div>
-                    <h2>Log In</h2>
-                    <input type="text" name="username" class="input-design" placeholder="Username">
-                    <input type="password" name="password" class="password input-design" placeholder="Password">
-                    <button class="login-button" type="submit" value="Log in">Login</button>
-                    <a th:href="@{/register}">Sign Up</a>
-                </div>
-            </form>
-    </div>
-    <script th:src="@{js/jquery-3.6.1.min.js}"></script>
-    <script th:src="@{js/main.js}"></script>
+<div class="container">
+    <form class="form-section" th:action="@{/login}" method="post">
+        <div class="login-box">
+            <h1 class="heading"><a class="studyverseLogin" th:href="@{/}">StudyVERSE</a></h1>
+            <div th:if="${param.error}" class="invalidText">
+                <p>Invalid Username Or Password</p>
+            </div>
+            <h2>Log In</h2>
+            <input type="text" name="username" class="input-design" placeholder="Username">
+            <input type="password" name="password" class="password input-design" placeholder="Password">
+            <button class="login-button" type="submit" value="Log in">Login</button>
+            <a th:href="@{/register}">Sign Up</a>
+        </div>
+    </form>
+</div>
+
+
+<script th:src="@{js/jquery-3.6.1.min.js}"></script>
+<script th:src="@{js/main.js}"></script>
 </body>
 </html>
+
+
+<!--Need to make studyverse a link-->

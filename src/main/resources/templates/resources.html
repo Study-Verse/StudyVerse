@@ -7,14 +7,14 @@
 </head>
 <body>
 <div class="page-wrapper">
-    <nav th:replace="partials/partials :: navbar"></nav>
+    <nav th:replace="partials/partials :: navbar(user=${user})"></nav>
 </div>
 
 <!--Jumbotron-->
 <div class="container-fluid my-4 bg-light rounded-3 py-4 px-0 " id="main-heading" style="background-image: url('/img/booksbanner.webp'); height: 346px" >
     <h1 class="display-2 text-center bg-light bg-opacity-75 my-5">Search for a Book</h1>
 
-    <div class="container">
+    <div class="search-container-book">
         <div class="row">
             <div id="input" class="input-group col-lg-6 col-md-8 col-sm-12">
                 <input id="search-box" type="text" class="form-control" placeholder="Search Books!...">
@@ -66,6 +66,7 @@
 </div>
 
 <div th:replace="partials/partials :: scripts"></div>
+<footer id="fixedFooter" th:replace="partials/partials :: footer-fragment"></footer>
 <script th:src="@{js/main.js}"></script>
 <script th:src="@{/js/sitebar.js}"></script>
 

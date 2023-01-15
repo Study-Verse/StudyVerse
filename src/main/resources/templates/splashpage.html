@@ -1,29 +1,127 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html" lang="en">
 <head>
     <div th:replace="partials/partials :: head-fragment('Splash Page')"></div>
-    <link rel="stylesheet" href="/css/global.css">
-    <link rel="stylesheet" href="/css/splashpage.css">
+    <link rel="stylesheet" th:href="@{/css/global.css}">
+    <link rel="stylesheet" th:href="@{/css/splashpage.css}">
+    <link rel="stylesheet" th:href="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css}">
+    <script th:src="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js}"></script>
+    <script th:src="@{js/jquery-3.6.1.min.js}"></script>
 </head>
 <body>
+    <nav id="fixedNav" th:replace="partials/partials :: navbar(user=${user})"></nav>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
 
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <img src="/img/peopleStudying.jpeg" alt="Welcome">
+                <div class="carousel-caption">
+                    <h1 class="carouselH1">Welcome</h1>
+                    <h3 class="carouselH3">To Your Number 1 Study Spot</h3>
+                    <a th:href="@{/register}"  id="btn-color1" class="btn btn-lg active joinNowButton" role="button" aria-pressed="true">Join Now!</a>
 
-<div class="page-wrapper splash-page-wrapper">
-    <nav th:replace="partials/partials :: navbar"></nav>
+                </div>
+            </div>
 
-    <div class="container SPContainer" >
-        <div class="row">
-            <div class="column">
-                    <p class="SPHeading1">YOUR NUMBER ONE</p>
-                    <p class="SPHeading2">STUDY SPOT</p>
+            <div class="item">
+                <img src="/img/flashcardsStudy%20copy.png" alt="flashcards">
+                <div class="carousel-caption">
+                    <h1 class="carouselH1">Flash Cards</h1>
+                    <h3 class="carouselH3">Create card sets to help you study along the way</h3>
+                    <a th:href="@{/register}"  id="btn-color2" class="btn btn-lg active joinNowButton" role="button" aria-pressed="true">Join Now!</a>
+
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="/img/lightbook.jpg" alt="Flower">
+                <div class="carousel-caption">
+                    <h1 class="carouselH1">Use Our Resources</h1>
+                    <h3 class="carouselH3">You can use our books and search option to help you along the way.</h3>
+                    <a th:href="@{/register}" id="btn-color3" class="btn btn-lg active joinNowButton" role="button" aria-pressed="true">Join Now!</a>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <br>
+    <br>
+    <!--Pitch and AstroNaut Picture-->
+    <div id="infoWeb">
+    <div id="band" class="container text-center">
+        <div class="row content-text">
+            <br>
+            <br>
+            <div class="col-6">
+            <p class="content-desc">Achieve a deeper level of processing and understanding on this free and self-directed website</p>
+            </div>
+            <div class="col-6 d-flex justify-content-center align-items-center">
+                        <img class="astronaut-on-saturn" src="/img/astronautReading.png">
+                </div>
             </div>
         </div>
     </div>
-    <footer th:replace="partials/partials :: footer-fragment"></footer>
+    <br>
+    <h3>PREPARING STUDENTS FOR A SUCCESSFUL FUTURE</h3>
+    <br>
+    <!--FlashCard Demo-->
+    <div class="splash-page-card-container">
+        <div class="flashcard-hp ">
+            <div class="front-hp ">
+                <p id="contentForCards">Studies have shown... </p>
+            </div>
+            <div class="back-hp  ">
+                <p id="backforcard"> That students who use flashcards score significantly higher on exams than those who don't</p>
+            </div>
+        </div>
+    </div>
+    <!--Features Grid-->
+    <div class="container-book">
+    <div class="card-group row">
+        <div class="card col-lg-3 col-s-12 g-5">
+            <img class="card-img-top" src="/img/coffee-guy.png" alt="Card image cap">
+        <div class="card-body">
+            <h4 class="card-title font-weight-bold">Search for a book!</h4>
+            <p class="card-text">Look up over thousands of books</p>
+        </div>
+    </div>
+    <div class="card col-lg-3 col-s-12 g-5">
+        <img class="card-img-top" src="/img/studyverseIcon.png" alt="Card image cap">
+        <div class="card-body">
+            <h4 class="card-title font-weight-bold">Use our search engine, powered by Wikipedia</h4>
+            <p class="card-text"> Search it up in the search box and youll get your results</p>
+        </div>
+    </div>
+    <div class="card col-lg-3 col-sm-12 g-5">
+        <img class="card-img-top" src="/img/megaphone-guy.png" alt="Card image cap">
+        <div class="card-body">
+            <h4 class="card-title font-weight-bold">Study on the go with our text-to-speech feature</h4>
+            <p class="card-text">Just type in the search box, and you can start looking for the book</p>
+        </div>
+    </div>
+</div>
 </div>
 
-
-<div th:replace="partials/partials :: scripts"></div>
+    <div th:replace="partials/partials :: scripts"></div>
+    <footer id="fixedFooter"  th:replace="partials/partials :: footer-fragment"></footer>
 
 </body>
 </html>

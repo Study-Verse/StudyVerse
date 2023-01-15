@@ -18,96 +18,114 @@ if(window.innerWidth < 768){
 }
 
 $(document).ready(function(){
-
     // this deletes card sets
     $(".trash-svg").click(function(event){
         event.stopPropagation();
         window.location.replace(`${$(this).attr("data-id")}/delete`)
     });
-
     // model pop-up functionality for each set
     $(".edit-svg").on("click", function(event){
         event.stopPropagation();
         $(this).parent().siblings(".card-modal").removeClass("display-none");
     });
-
     // this redirects to the view where you can add cards to your set
     $(".add-cards").on("click", function(event){
         event.stopPropagation();
         window.location.replace(`/card-create/${$(this).attr("data-name")}`)
     });
 
-
-    //End of modal on click function
     $(".close").on("click", function(){
         $(".card-modal").addClass("display-none");
     });
 
-
     $(".card-modal").click(function(event){
         event.stopPropagation();
     })
-
     //Create Set Modal
     $("#create-set-button").on("click", function(){
         $(this).parent().siblings(".card-modal").removeClass("display-none");
     })
+
     $(".close").on("click", function(){
         $(".card-modal").addClass("display-none");
     })
 
-    //Edit Set Page - Remaining characters for front face and back face
-    $(window).on("click", function(){
-        $("#backRemainingChars").css("display", "none");
-        $("#frontRemainingChars").css("display", "none");
-    })
-    $("#backFaceAdd").on("click" ,(e) =>  { e.stopPropagation(); $("#backRemainingChars").css("display", "")});
-    $("#backFaceAdd").on("input", function(e){
-        $("#backRemainingChars").css("display", "");
-        $("#backRemainingChars").text($("#backFaceAdd").attr("maxlength") - $("#backFaceAdd").val().length);
-    })
-    $("#frontFaceAdd").on("click" ,(e) =>  { e.stopPropagation(); $("#frontRemainingChars").css("display", "")});
-    $("#frontFaceAdd").on("input", function(e){
-        $("#frontRemainingChars").css("display", "");
-        $("#frontRemainingChars").text($("#frontFaceAdd").attr("maxlength") - $("#frontFaceAdd").val().length);
+    $('#recipeCarousel').carousel({
+        interval: 10000
     })
 
+    $('.carousel .carousel-item').each(function(){
+        var minPerSlide = 3;
+        var next = $(this).next();
+        if (!next.length) {
+            next = $(this).siblings(':first');
+        }
+        next.children(':first-child').clone().appendTo($(this));
+
+        for (var i=0;i<minPerSlide;i++) {
+            next=next.next();
+            if (!next.length) {
+                next = $(this).siblings(':first');
+            }
+
+            next.children(':first-child').clone().appendTo($(this));
+        }
+    });
+
+    $("#myCarousel").carousel();
+
+    // Enable Carousel Indicators
+    $(".item1").click(function(){
+        $("#myCarousel").carousel(0);
+    });
+    $(".item2").click(function(){
+        $("#myCarousel").carousel(1);
+    });
+    $(".item3").click(function(){
+        $("#myCarousel").carousel(2);
+    });
+    $(".item4").click(function(){
+        $("#myCarousel").carousel(3);
+    });
+
+    // Enable Carousel Controls
+    $(".left").click(function(){
+        $("#myCarousel").carousel("prev");
+    });
+    $(".right").click(function(){
+        $("#myCarousel").carousel("next");
+    });
+
+    if($(".card-sets").length === 0){
+        $("#startHere").css("display", "");
+        $("#jumboContainer").css("display", "");
+        $("#randomBooksContainer").css("display", "none");
+        $("#filler-astronaut").css("display", "");
+
+    } else {
+        $("#startHere").css("display", "none");
+        $("#jumboContainer").css("display", "none");
+        $("#randomBooksContainer").css("display", "")
+        $("#filler-astronaut").css("display", "none");
+    }
 
 
 
-//     Search bar
+    //card on home page
 
+    const card = $('.flashcard-hp > div'); // Get the card element
 
+    let isFlipped = false; // Keep track of whether the card is flipped or not
 
-    // This gets the button
+    setInterval(function (){
 
-        $("#site-bar-search-link").click(function (){
-        let value = $(this).val().toLowerCase();
-        console.log(value);
-        let cardSetId = window.location.pathname.split("/")[2];
-        function getCardList(){
-            fetch(`/card-api/${cardSetId}`)
-                .then(response => response.json())
-                .then(data =>{
-                    data.forEach((card) =>{
-                        $(".study-card-container").append(`
-                        <div class="flashcard">
-                               <div class="card-inner"
-                                    <div class="front-face">
-                                        <p>${card.frontFace}</p>
-                                    </div>
-                                    <div class="back-face">
-                                         <p>${card.backFace}</p>
-                                    </div>
-                                </div> 
-                        </div>
-                        `)
-                    })// end of for each
-                })
-        }// end of getCardList function
-        getCardList()
+        if (!card.hasClass("flipCard")){
+            card.addClass("flipCard");
+        } else {
+            card.removeClass("flipCard");
+        }
+    },5000);
 
-    })
 
 
 

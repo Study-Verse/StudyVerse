@@ -22,7 +22,9 @@ public class StudyVerseUserDetailsService implements UserDetailsService {
         if(user == null){
             throw new UsernameNotFoundException("User details not found for user " + username);
         }else {
-            return new com.studyverse.Models.StudyVerseUserDetails(user.getId(),user.getUsername(),user.getEmail(),user.getPassword());
+            return new com.studyverse.Models.StudyVerseUserDetails(user.getId(),user.getUsername(),user.getEmail(),user.getPassword(),user.getProfilePic());
         }
     }
+
+
 }

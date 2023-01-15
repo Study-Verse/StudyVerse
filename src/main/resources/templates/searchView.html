@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <div th:replace="partials/partials :: head-fragment('Study')"></div>
+    <link th:rel="stylesheet" th:href="@{/css/study.css}">
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" th:href="@{/css/dashboard.css}">
+    <link rel="stylesheet" th:href="@{/css/wiki.css}">
+
+    <title>Study</title>
+</head>
+<body>
+<nav th:replace="partials/partials :: navbar(user=${user})"></nav>
+
+    <!--This is the beginning-->
+        <div class="card-set-container">
+            <div  class="card-sets column-4" th:data-name="${cardSet.getId()}" th:each="cardSet: ${cardSets}" onclick="goToCardSet(this.getAttribute('data-name'))">
+                <div class="card-info" th:card-set-id="${cardSet.id}">
+                    <h1 class="card-title" th:text="${cardSet.getTitle()}"></h1>
+                    <h2 class="card-tag" th:text="${cardSet.getTag()}"></h2>
+                    <h2 th:text="${cardSet.getCardList().size()}+ ' Cards'"></h2>
+                </div>
+            </div>
+        </div>
+
+
+<div id="ContainerForWikiSearch">
+    <h1 id="wikiverse">Wiki Verse</h1>
+    <div class="outputWikiSearch"></div>
+</div>
+
+
+<!--Learn something new-->
+<div id="newLearning">
+    <h3>Click Me And Learn Something New</h3>
+<a  id="aTagForAstro" href="https://en.wikipedia.org/wiki/Special:Random" target="_blank">
+    <img  id="astroStar" src="/img/learnSomethingNew.png" alt="learn something new">
+</a>
+</div>
+
+
+
+
+
+<footer th:replace="partials/partials :: footer-fragment"></footer>
+
+<script th:src="@{/js/main.js}"></script>
+<script th:src="@{/js/sitebar.js}"></script>
+<script th:src="@{/js/wiki.js}"></script>
+
+<div th:replace="partials/partials :: scripts"></div>
+
+
+</body>
+</html>

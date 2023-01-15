@@ -14,9 +14,9 @@ public class Card {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    @Column
+    @Column (length = 500)
     private String frontFace;
-    @Column
+    @Column (length = 500)
     private String backFace;
     @ManyToMany(mappedBy = "cardList")
     @JsonIgnore

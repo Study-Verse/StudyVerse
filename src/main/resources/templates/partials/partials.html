@@ -11,8 +11,11 @@
         <!-- Bootstrap Icons -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
         <link rel="stylesheet" th:href="@{/css/global.css}">
+        <link rel="icon" type="image/x-icon" th:href="@{/img/studyverseIcon.png}">
+
         <script th:src="@{/js/jquery3.6.3.js}"></script>
         <script th:src="@{/js/main.js}"></script>
+
     </div>
     <title>Partials</title>
 
@@ -20,7 +23,7 @@
 <body>
 
 <!--Navbar Fragment-->
-<nav th:fragment="navbar" id="main-navbar" class="navbar navbar-expand-lg w-100">
+<nav th:fragment="navbar(user)" id="main-navbar" class="navbar navbar-expand-lg w-100">
     <div class="container-fluid">
 
         <!-- Links on Left -->
@@ -30,22 +33,22 @@
                 <li class="nav-item">
                     <a th:href="@{/dashboard}" class="nav-link" >Home</a>
                 </li>
+                <!--                <li class="nav-item">-->
+                <!--                    <a class="nav-link" th:href="@{/study-cards}">Study</a>-->
+                <!--                </li>-->
+    <!--                COMMENTING OUT THE STUDY TAB FOR PRESENTATION           -->
 <!--                <li class="nav-item">-->
-<!--                    <a class="nav-link" th:href="@{/study-cards}">Study</a>-->
+<!--                    <a class="nav-link" th:href="@{/self-test}">Test</a>-->
 <!--                </li>-->
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/self-test}">Test</a>
-                </li>
+    <!--                COMMENTING OUT THE STUDY TAB FOR PRESENTATION           -->
+
+                <!--                <li sec:authorize="isAuthenticated()" class="nav-item">-->
                 <li class="nav-item">
                     <a class="nav-link" th:href="@{/profile}">Profile</a>
                 </li>
                 <li sec:authorize="isAuthenticated()" class="nav-item">
-                    <a class="nav-link" th:href="@{books}">Books</a>
+                    <a class="nav-link" th:href="@{/books}">Books</a>
                 </li>
-                <li sec:authorize="isAuthenticated()" class="nav-item">
-                    <a class="nav-link" th:href="@{wiki}">Wikipedia</a>
-                </li>
-
             </ul>
         </div>
 
@@ -62,9 +65,9 @@
         <!-- Links on Right -->
         <div class="navbar-collapse collapse w-100 order-3 collapse-portion">
             <ul class="navbar-nav ms-auto" id="searchUL">
-                <form class="d-flex" id="site-bar-search" th:action="@{/search}" th:method="get">
-                    <input class="search-bar me-2" type="search" placeholder="Search" aria-label="Search">
-                    <a id="site-bar-search-link" role="button" class="nav-link" href="#">Search</a>
+                <form class="d-flex" id="site-bar-search"  th:method="get">
+                    <input class="search-bar me-2" type="search" placeholder="Search Or Ask Wiki!" aria-label="Search" id="searchForCards">
+                    <a id="site-bar-search-link" role="button" class="nav-link">Search</a>
                 </form>
                 <li sec:authorize="isAnonymous()" class="nav-item">
                     <a class="nav-link" th:href="@{/login}">Login</a>
@@ -74,21 +77,21 @@
                 </li>
                 <!--Profile-->
 
-               <li id="profile-dropdown" sec:authorize="isAuthenticated()">
-                   <div class="dropstart">
-                       <a type="button" data-bs-toggle="dropdown"
-                          aria-expanded="false">
-                           <div class="user-profile-logo">
-
-                           </div>
-                       </a>
-                       <ul class="dropdown-menu profile-dropdown-menu">
-                           <li><a>Account Settings</a></li>
-                           <li> <form id="logoutForm" th:action="@{/logout}" method="post">
-                           </form><a href="#" onclick="document.getElementById('logoutForm').submit();">Log Out</a></li>
-                       </ul>
-                   </div>
-                   </li>
+                <li id="profile-dropdown" sec:authorize="isAuthenticated()">
+                    <div class="dropstart">
+                        <a type="button" data-bs-toggle="dropdown"
+                           aria-expanded="false">
+                            <div class="user-profile-logo">
+                            <img class="user-profile-badge" th:if="${user != null && user.getProfilePic() != null}" th:src="${user.getProfilePic()}">
+                            <img class="user-profile-badge" th:unless="${user != null && user.getProfilePic() != null}" th:src="@{/img/studyverseIcon.png}">
+                            </div>
+                        </a>
+                        <ul class="dropdown-menu profile-dropdown-menu">
+                            <li> <form id="logoutForm" th:action="@{/logout}" method="post">
+                            </form><a href="#" onclick="document.getElementById('logoutForm').submit();">Log Out</a></li>
+                        </ul>
+                    </div>
+                </li>
                 <!--End of profile-->
 
             </ul>
@@ -97,19 +100,15 @@
 </nav>
 
 <!--Footer Fragment-->
-<footer th:fragment="footer-fragment" id="footer" class="container footer-container">
-    <div class="row">
+<footer th:fragment="footer-fragment" id="footer" class="container footer-container mt-5">
+    <div class="row footer-row">
         <div class="col-lg-4 col-sm-12">
             <a class="about-footer me-auto" th:href="@{/about-us}">About</a>
         </div>
-        <div class="col-lg-4 col-sm-12">
-            <a class="contact-footer" th:href="@{/contact}">Contact</a>
-        </div>
-        <div class="col-lg-4 col-sm-12">
+        <div class="copyright col-lg-4 col-sm-12">
             <span class="ms-auto">&#169; 2022 StudyVERSE Industries</span>
         </div>
     </div>
-
 </footer>
 
 <!--Scripts Fragment-->
@@ -118,7 +117,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script th:src="@{/js/main.js}"></script>
     <script th:src="@{/js/sitebar.js}"></script>
-    <script th:src="@{/js/flashcard.js}"></script>
 </div>
 
 </body>
