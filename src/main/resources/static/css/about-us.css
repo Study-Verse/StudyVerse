@@ -13,6 +13,9 @@ h2{
     display: flex;
     flex-direction: column;
     margin-bottom: 20vh;
+    justify-content: space-evenly;
+    align-items: center;
+
 }
 
 .card-inner{
@@ -20,12 +23,17 @@ h2{
     height: 50vh;
     align-self: center;
     overflow-y: hidden;
-    margin: 0 10vh 2vw 2vw;
+    justify-content: center;
 }
 
 .card-front{
     height: fit-content;
+    border-radius: 1rem;
+    overflow: hidden;
+}
 
+.img-wrapper{
+    height: 44vh;
 }
 
 .card-back{
@@ -33,9 +41,14 @@ h2{
 }
 /*large screen */
 @media only screen and (min-width: 600px) and (max-width: 2000px) {
+
     .developers-container{
         margin-bottom: 10vh;
         flex-direction: row;
+    }
+
+    .img-wrapper{
+        height: 43vh;
     }
 }
 
