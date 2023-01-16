@@ -45,7 +45,7 @@ h2{
     display: none;
 }
 /*large screen */
-@media only screen and (min-width: 600px) and (max-width: 2000px) {
+@media only screen and (min-width: 1360px) and (max-width: 30000px) {
 
     .whole-page{
         height: 100vh;
