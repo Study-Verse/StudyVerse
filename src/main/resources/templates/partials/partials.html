@@ -36,11 +36,11 @@
                 <!--                <li class="nav-item">-->
                 <!--                    <a class="nav-link" th:href="@{/study-cards}">Study</a>-->
                 <!--                </li>-->
-    <!--                COMMENTING OUT THE STUDY TAB FOR PRESENTATION           -->
-<!--                <li class="nav-item">-->
-<!--                    <a class="nav-link" th:href="@{/self-test}">Test</a>-->
-<!--                </li>-->
-    <!--                COMMENTING OUT THE STUDY TAB FOR PRESENTATION           -->
+                <!--                COMMENTING OUT THE STUDY TAB FOR PRESENTATION           -->
+                <!--                <li class="nav-item">-->
+                <!--                    <a class="nav-link" th:href="@{/self-test}">Test</a>-->
+                <!--                </li>-->
+                <!--                COMMENTING OUT THE STUDY TAB FOR PRESENTATION           -->
 
                 <!--                <li sec:authorize="isAuthenticated()" class="nav-item">-->
                 <li class="nav-item">
@@ -82,8 +82,8 @@
                         <a type="button" data-bs-toggle="dropdown"
                            aria-expanded="false">
                             <div class="user-profile-logo">
-                            <img class="user-profile-badge" th:if="${user != null && user.getProfilePic() != null}" th:src="${user.getProfilePic()}">
-                            <img class="user-profile-badge" th:unless="${user != null && user.getProfilePic() != null}" th:src="@{/img/studyverseIcon.png}">
+                                <img class="user-profile-badge" th:if="${user != null && user.getProfilePic() != null}" th:src="${user.getProfilePic()}">
+                                <img class="user-profile-badge" th:unless="${user != null && user.getProfilePic() != null}" th:src="@{/img/studyverseIcon.png}">
                             </div>
                         </a>
                         <ul class="dropdown-menu profile-dropdown-menu">
@@ -114,8 +114,7 @@
 <!--Scripts Fragment-->
 <div th:fragment="scripts" th:remove="tag">
     <!-- Bootstrap JS Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <script th:src="@{/js/main.js}"></script>
+    <script th:src="@{https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js}" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script th:src="@{/js/sitebar.js}"></script>
 </div>
 
