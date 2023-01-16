@@ -128,6 +128,10 @@ $(function (){
 
     //Function that plays all the cards
     $("#play-all").on("click", function(){
+        currentIndex = 0;
+        cardCounter = 1;
+        $("#cardCounter").text(cardCounter + "/" + cards.length);
+        updateCards();
         let index = 0;
         speakCard();
         function speakCard(){
@@ -149,16 +153,18 @@ $(function (){
                         $(".carousel-flashcard").toggleClass('flipped');
                         index++;
                         cardCounter = index + 1;
+                        currentIndex = currentIndex + 1;
                         if(cardCounter >= cards.length + 1){
                             cardCounter = 1;
+                            currentIndex = 0;
                         }
-                        currentIndex = currentIndex + 1;
+
                         $("#cardCounter").text(cardCounter + "/" + cards.length);
                         updateCards();
                         speakCard();
 
                     }
-                }, 7000)
+                }, 5000)
 
             }
         }
