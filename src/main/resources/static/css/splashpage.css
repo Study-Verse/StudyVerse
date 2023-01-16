@@ -1,6 +1,18 @@
 
-.carousel-inner > .item > img,
-.carousel-inner > .item > a > img {
+.carousel-inner{
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+	height: 81vh;
+}
+.carousel-inner>.item>img{
+	display: block;
+	max-width: 100%;
+	height: 81vh !important;
+}
+
+.carousel-inner> .item > img,
+.carousel-inner> .item > a > img {
 	width: 85%;
 	margin: auto;
 }
@@ -77,7 +89,7 @@
 	backface-visibility: hidden;
 	transition: transform 0.7s ease-in-out;
 	text-align: center;
-	background-image: linear-gradient(rgba(255, 255, 255, 0.80), rgba(255, 255, 255, 0.80) ),url(/img/flashcard.jpeg);
+	background-image: linear-gradient(rgba(255, 255, 255, 0.80), rgba(255, 255, 255, 0.80) ),url(../img/flashcard.jpeg);
 	color: black;
 	display: flex;
 	justify-content: center;
@@ -145,6 +157,19 @@
 }
 
 @media (max-width: 700px){
+
+	.carousel-inner{
+		position: relative;
+		width: 100%;
+		overflow: hidden;
+		height: 41vh;
+	}
+
+	.carousel-inner>.item>img{
+		display: block;
+		max-width: 100%;
+		height: 41vh !important;
+	}
 
 	.carouselH1 {
 		font-size: 2rem;
