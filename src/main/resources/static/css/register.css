@@ -99,6 +99,14 @@ body {
     cursor: pointer;
 }
 
+#loginText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+
 /* For Responsiveness of the page */
 
 @media screen and (max-width: 650px) {

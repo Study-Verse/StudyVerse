@@ -106,6 +106,15 @@ body {
     cursor: pointer;
 }
 
+#signupText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+}
+
+
 /* For Responsiveness of the page */
 
 @media screen and (max-width: 650px) {
