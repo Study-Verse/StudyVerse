@@ -83,14 +83,17 @@ body {
 .copyright{
 	text-align: end;
 }
+
 #footer{
-	padding: 0.8rem;
+	padding: 1.7rem;
 	background-color: #2f1046;
 	color: white;
 	width: 100%;
 	display: inherit;
 	position: fixed;
 	bottom: 0;
+	margin-right: -20rem;
+	margin-left: -20rem;
 }
 
 .footer-row{
@@ -136,8 +139,6 @@ h3 {
 	display: flex;
 	justify-content: center;
 }
-
-
 
 .studyverseLogin {
 	text-decoration: none;
