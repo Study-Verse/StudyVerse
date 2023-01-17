@@ -106,11 +106,8 @@ body {
     cursor: pointer;
 }
 
-<<<<<<< HEAD
-#signUpText{
-=======
+
 #signupText {
->>>>>>> 04d0c316bf7413b78843a53e7f8032842d7ca07a
     display: flex;
     justify-content: center;
     align-items: center;
