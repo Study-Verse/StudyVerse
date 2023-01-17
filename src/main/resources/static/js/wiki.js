@@ -90,7 +90,7 @@ $(function() {
                     $(".outputWikiSearch").prepend(`
                     <div class='link-container'>
                         <div class='well'>
-                            <a href="${data[3][i]}">
+                            <a target="_blank"  href="${data[3][i]}">
                                 <h2> ${data[1][i]}</h2>
                                 <p>${data[2][i]}</p>
                             </a>
