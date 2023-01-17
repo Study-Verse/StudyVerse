@@ -7,6 +7,9 @@ html:focus-within{
 body {
 	font-family: 'Alfa Slab One', cursive !important;
 	font-family: 'Numans', sans-serif !important;
+	/*background-color: #6354d2;*/
+	/*background-image: linear-gradient(159deg, #6354d2 30%, #058fdc 51%, #C850C0 79%, #FFCC70 100%);*/
+
 }
 
 .dropdown-menu{
@@ -52,7 +55,7 @@ body {
 	background-color: rgb(89 37 182);
 }
 .navbar {
-	/*background-color: #4B1F71;*/
+	background-color: #4B1F71;
 	background-color: #2f1046;
 }
 .navbar-brand{
@@ -86,11 +89,10 @@ body {
 	color: white;
 	width: 100%;
 	display: inherit;
-}
-#footer {
 	position: fixed;
 	bottom: 0;
 }
+
 .footer-row{
 	display: flex;
 	justify-content: space-between;
