@@ -125,15 +125,24 @@ $(function (){
         updateCards();
     });
 
-
+    let timeOutForPlayAll;
+    $("#stop-play-all").on("click", function(){
+        window.speechSynthesis.cancel();
+        clearTimeout(timeOutForPlayAll);
+        $(this).css("display", "none");
+        $("#play-all").css("display", "unset");
+    })
     //Function that plays all the cards
     $("#play-all").on("click", function(){
+        $("#stop-play-all").css("display", "unset");
+        $(this).css("display", "none");
         currentIndex = 0;
         cardCounter = 1;
         $("#cardCounter").text(cardCounter + "/" + cards.length);
         updateCards();
         let index = 0;
         speakCard();
+
         function speakCard(){
             if(index < $('.carousel-flashcard').length){
                 let cardIndex = "Card number " + (index + 1);
@@ -146,7 +155,7 @@ $(function (){
                 speak.onend = function(){
                     $(".carousel-flashcard").toggleClass('flipped');
                 }
-                setTimeout(()=>{
+                timeOutForPlayAll = setTimeout(()=>{
                     let speakBackFace = new SpeechSynthesisUtterance(backFace);
                     speechSynthesis.speak(speakBackFace);
                     speakBackFace.onend = function (){
@@ -167,8 +176,13 @@ $(function (){
                 }, 5000)
 
             }
+            if(index === $('.carousel-flashcard').length){
+                $("#play-all").css("display", "unset");
+                $("#stop-play-all").css("display", "none");
+            }
         }
-    })
+    })//End of play all on click function
+
     function updateCards() {
         cards.each((index, card) => {
             if (index === currentIndex) {
@@ -180,7 +194,9 @@ $(function (){
         });
     }
 
-});
+
+
+});//End of Document Ready
 
 //Shuts off speech when tab closes
 window.onbeforeunload = function () {
