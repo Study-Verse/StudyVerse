@@ -65,11 +65,15 @@ public class CardController {
     @PostMapping("card-create/{setId}")
     public String postCard(@PathVariable long setId, @ModelAttribute Card card){
         User user = Utils.currentUser();
-        card.setUser(user);
-        cardSetDao.findById(setId).getCardList().add(card);
-        cardDao.save(card);
-        card.setCardSetList(new ArrayList<>());
-        card.getCardSetList().add(cardSetDao.findById(setId));
+        if (card.getFrontFace() != "" && card.getBackFace() !="" ){
+            card.setUser(user);
+            cardSetDao.findById(setId).getCardList().add(card);
+            cardDao.save(card);
+            card.setCardSetList(new ArrayList<>());
+            card.getCardSetList().add(cardSetDao.findById(setId));
+            return "redirect:/card-create/" + setId;
+        }
+
         return "redirect:/card-create/" + setId;
     }
 
