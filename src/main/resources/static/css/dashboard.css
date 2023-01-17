@@ -61,7 +61,7 @@ body{
     display: none;
 }
 .card-title{
-    color: #ED716C;
+    color: #7D47A1;;
     line-height: 51px;;
 }
 .card-sets h2 {
@@ -105,7 +105,7 @@ body{
     text-align: center;
     outline: none;
     border: none;
-    background-color: #4d1a53;
+    background-color: #766CC6;
     color: white;
     border-radius: 50px;
     font-size: 18px;
@@ -114,9 +114,11 @@ body{
     height: 60px;
     width: 150px;
     border-radius: 50px;
-    background-image: linear-gradient(to right,
-    rgb(250 110 255),
-    rgb(129 43 128));
+    color: whitesmoke;
+    background-color: #766CC6;
+    /*background-image: linear-gradient(to right,*/
+    /*rgb(250 110 255),*/
+    /*rgb(129 43 128));*/
     font-size: 22px;
     border: none;
     cursor: pointer;
@@ -135,11 +137,12 @@ body{
 }
 /*This centers the whole modal*/
 .card-modal-content {
-    background-color: #18021b;
+    background-color: #0000008a;
     color: white;
     margin: 15% auto;
     padding: 20px;
     width: 70%;
+    border-radius: 3rem;
 }/* The Close Button */
 .close {
     color: #aaa;
