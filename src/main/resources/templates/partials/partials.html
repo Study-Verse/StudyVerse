@@ -36,11 +36,11 @@
                 <!--                <li class="nav-item">-->
                 <!--                    <a class="nav-link" th:href="@{/study-cards}">Study</a>-->
                 <!--                </li>-->
-    <!--                COMMENTING OUT THE STUDY TAB FOR PRESENTATION           -->
-<!--                <li class="nav-item">-->
-<!--                    <a class="nav-link" th:href="@{/self-test}">Test</a>-->
-<!--                </li>-->
-    <!--                COMMENTING OUT THE STUDY TAB FOR PRESENTATION           -->
+                <!--                COMMENTING OUT THE STUDY TAB FOR PRESENTATION           -->
+                <!--                <li class="nav-item">-->
+                <!--                    <a class="nav-link" th:href="@{/self-test}">Test</a>-->
+                <!--                </li>-->
+                <!--                COMMENTING OUT THE STUDY TAB FOR PRESENTATION           -->
 
                 <!--                <li sec:authorize="isAuthenticated()" class="nav-item">-->
                 <li class="nav-item">
@@ -82,8 +82,8 @@
                         <a type="button" data-bs-toggle="dropdown"
                            aria-expanded="false">
                             <div class="user-profile-logo">
-                            <img class="user-profile-badge" th:if="${user != null && user.getProfilePic() != null}" th:src="${user.getProfilePic()}">
-                            <img class="user-profile-badge" th:unless="${user != null && user.getProfilePic() != null}" th:src="@{/img/studyverseIcon.png}">
+                                <img class="user-profile-badge" th:if="${user != null && user.getProfilePic() != null}" th:src="${user.getProfilePic()}">
+                                <img class="user-profile-badge" th:unless="${user != null && user.getProfilePic() != null}" th:src="@{/img/studyverseIcon.png}">
                             </div>
                         </a>
                         <ul class="dropdown-menu profile-dropdown-menu">
