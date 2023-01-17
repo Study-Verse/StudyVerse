@@ -38,11 +38,14 @@ public class CardSetController {
     public String createCardSet(@RequestParam(name="set-title") String title, @RequestParam(name="set-tag") String tag){
         User user = Utils.currentUser();
         CardSet cardSet = new CardSet();
-        cardSet.setTitle(title);
-        cardSet.setTag(tag);
-        cardSet.setUser(user);
-        cardSetDao.save(cardSet);
-        return "redirect:/card-create/" + cardSet.getId();
+        if (title != ""){
+            cardSet.setTitle(title);
+            cardSet.setTag(tag);
+            cardSet.setUser(user);
+            cardSetDao.save(cardSet);
+            return "redirect:/card-create/" + cardSet.getId();
+        }
+            return "redirect:/dashboard";
     }
     //END OF CREATE SET
 
