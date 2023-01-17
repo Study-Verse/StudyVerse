@@ -97,6 +97,7 @@ body{
     align-items: center;
     background-color: #767CC7;
     color: white;
+    height: 5vh;
 }
 /*Modal*/
 .input-design {
@@ -203,6 +204,10 @@ a.btn.btn-secondary {
     #randomBooksContainer {
         margin-bottom: 14vh;
     }
+
+    .create-set-button{
+        font-size: x-small;
+    }
 }
 @media screen and (max-width: 714px){
     .heading{
@@ -211,7 +216,6 @@ a.btn.btn-secondary {
     .card-sets{
         width: 100%;
         font-size: 34px;
-
     }
 
     #randomBooksContainer {
@@ -219,7 +223,7 @@ a.btn.btn-secondary {
     }
 }
 /* Mobile view media query*/
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 576px) {
 
         .heading{
             display:none;
@@ -227,6 +231,10 @@ a.btn.btn-secondary {
 
         #randomBooksContainer {
             margin-bottom: 14vh;
+        }
+
+        #create-set-button{
+            font-size: x-small;
         }
 
 }
