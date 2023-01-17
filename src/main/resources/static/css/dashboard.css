@@ -1,6 +1,43 @@
 body{
     background-color: ghostwhite;
 }
+/*Buttons*/
+.edit-set-button {
+    height: 60px;
+    width: 150px;
+    border-radius: 50px;
+    color: whitesmoke;
+    background-color: #766CC6;
+    font-size: 22px;
+    border: none;
+    cursor: pointer;
+    margin: 1vh;
+}
+.create-set-button{
+    height: 60px;
+    width: 150px;
+    border-radius: 50px;
+    color: whitesmoke;
+    background-color: #766CC6;
+    font-size: 22px;
+    border: none;
+    cursor: pointer;
+    margin: 1vh;
+}
+#create-set-button, .create-set-button{
+    position: relative;
+    border-radius: 50px;
+    color: whitesmoke;
+    background-color: #766CC6;
+    font-size: 22px;
+    border: none;
+    cursor: pointer;
+    margin: 1vh;
+}
+.edit-set-buttons{
+    display:flex;
+}
+/*End of buttons*/
 
 #jumboContainer{
     display: flex;
@@ -41,9 +78,6 @@ body{
     box-shadow: 0px 0px 12px -2px #00000061
 
 }
-/*.card-sets:hover{*/
-/*    transform: scale(1.05);*/
-/*}*/
 
 .random-book-wrapper{
     display: flex;
@@ -52,7 +86,8 @@ body{
 }
 
 .card-sets svg:hover {
-    color: rgb(250 110 255);
+    color: #7D47A1;
+    cursor: pointer;
 }
 .svg {
     color: black;
@@ -89,15 +124,7 @@ body{
 #welcome-create-header h3{
     justify-self: center;
 }
-#create-set-button{
-    position: relative;
-    border-radius: 6px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #767CC7;
-    color: white;
-}
+
 /*Modal*/
 .input-design {
     height: 60px;
@@ -110,20 +137,10 @@ body{
     border-radius: 50px;
     font-size: 18px;
 }
-.edit-set-button {
-    height: 60px;
-    width: 150px;
-    border-radius: 50px;
-    color: whitesmoke;
-    background-color: #766CC6;
-    /*background-image: linear-gradient(to right,*/
-    /*rgb(250 110 255),*/
-    /*rgb(129 43 128));*/
-    font-size: 22px;
-    border: none;
-    cursor: pointer;
-    margin: 1vh;
+.input-design::placeholder {
+    color: rgba(255, 255, 255, 0.62);
 }
+
 .card-modal {
     /*display: none; !* Hidden by default *!*/
     position: fixed; /* Stay in place */
