@@ -57,23 +57,12 @@ $(function() {
 
     });
 
-
-
-
-
-
-
-
-
-
-
-
                                  ///////////////////This is for the search bar//////////////////
 
 
 // click ajax call
-    console.log("hello")
-    console.log(window.location.href.split("/")[4])
+//     console.log("hello")
+//     console.log(window.location.href.split("/")[4])
 
         let searchTerm = window.location.href.split("/")[4]
         let url = "https://en.wikipedia.org/w/api.php?action=opensearch&search="+ searchTerm +"&format=json&callback=?";
