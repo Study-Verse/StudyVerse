@@ -13,7 +13,17 @@
     display:flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    margin-bottom: 7vh;
 }
+.all-cards-container{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+
 .header-button-holder {
     margin-right: 10px;
 }
@@ -42,6 +52,8 @@ header{
     align-items: center;
     background-color: var(--pageMainColor);
 }
+
+
 
 #create_card{
     /*display: none;*/
@@ -75,14 +87,16 @@ header{
 .edit-set-flashcard{
     display: flex;
     flex-direction: column;
-    width: 700px;
+    width: 100%;
+    height: 20vh;
     margin-top: 10px;
     background-color: var(--pageMainColor);
     color: white;
     text-align: center;
     cursor: pointer;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.9);
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 90%);
     position: relative;
+    overflow-y: scroll;
 }
 .edit-set-flashcard .cardButtonsWrapper {
     display:none;
@@ -91,6 +105,7 @@ header{
 }
 .edit-set-flashcard .cardTextWrapper {
     width: 100%;
+    margin: 1px;
 }
 .cardTextWrapper p, #addCardFormHolder p{
     overflow-wrap: break-word;

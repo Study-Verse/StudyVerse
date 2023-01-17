@@ -6,16 +6,14 @@
     <link rel="stylesheet" th:href="@{/css/createCard.css}">
 </head>
 <body>
-    <nav th:replace="partials/partials :: navbar(user=${user})"></nav>
-    <header>
-            <h1 th:text="'CardSet: ' + ${cardSet.getTitle()}"></h1>
-            <div class="header-button-holder">
-                <button id="show_card_box">Add Card</button>
-            </div>
-        </header>
-
-    <div class="edit-set-page-container">
-
+<nav th:replace="partials/partials :: navbar(user=${user})"></nav>
+<header>
+    <h1 th:text="'CardSet: ' + ${cardSet.getTitle()}"></h1>
+    <div class="header-button-holder">
+        <button id="show_card_box">Add Card</button>
+    </div>
+</header>
+<div class="edit-set-page-container">
         <!--Show all cards in the deck-->
         <div class="column all-cards-container">
             <div th:each="cards: ${cardList}">
@@ -80,9 +78,10 @@
 
             </div>
         </div>
-    </div>
+</div>
+<footer th:replace="partials/partials :: footer-fragment"></footer>
 
-<!--<footer th:replace="partials/partials :: footer-fragment"></footer>-->
+
 <div th:replace="partials/partials :: scripts"></div>
 <script th:src="@{/js/createCard.js}"></script>
 </body>
