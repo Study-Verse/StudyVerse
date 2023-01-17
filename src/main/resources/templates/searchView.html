@@ -12,10 +12,8 @@
 <body>
 <nav th:replace="partials/partials :: navbar(user=${user})"></nav>
 
-<div class="cards-book-wrapper">
     <!--This is the beginning-->
-    <div id="acc-wrapper">
-        <div class="accordion row">
+        <div class="card-set-container">
             <div  class="card-sets column-4" th:data-name="${cardSet.getId()}" th:each="cardSet: ${cardSets}" onclick="goToCardSet(this.getAttribute('data-name'))">
                 <div class="card-info" th:card-set-id="${cardSet.id}">
                     <h1 class="card-title" th:text="${cardSet.getTitle()}"></h1>
@@ -24,13 +22,11 @@
                 </div>
             </div>
         </div>
-    </div>
-</div>
 
 
 <div id="ContainerForWikiSearch">
     <h1 id="wikiverse">Wiki Verse</h1>
-<div class="outputWikiSearch"></div>
+    <div class="outputWikiSearch"></div>
 </div>
 
 

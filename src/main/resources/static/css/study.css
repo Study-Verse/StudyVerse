@@ -9,8 +9,15 @@ body{
     width: 100px;
     border-radius: 14px;
     font-family: inherit;
-    background-color: #acacdb;
+
     color: white;
+}
+#play-all{
+    background-color: #acacdb;
+}
+#stop-play-all{
+    display: none;
+    background-color: #ae0303;
 }
 .feature-buttons:hover{
     background-color:#64316a;
@@ -26,10 +33,10 @@ body{
 .main-container{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     width: 100%;
-    height: 100%;
+    height: 81vh;
 }
 .study-card-container{
     display: flex;
