@@ -29,13 +29,11 @@ h2 {
 }
 
 
-<<<<<<< HEAD
-
 /*This is to center the book whenever they click read*/
 .centerBook {
     margin: auto;
 }
-=======
+
 #middleBookView {
     display: flex;
     justify-content: center;
@@ -46,4 +44,3 @@ h2 {
 /*.hideCards {*/
 /*    display: none;*/
 /*}*/
->>>>>>> main
