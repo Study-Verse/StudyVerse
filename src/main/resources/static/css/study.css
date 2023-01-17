@@ -9,8 +9,15 @@ body{
     width: 100px;
     border-radius: 14px;
     font-family: inherit;
-    background-color: #acacdb;
+
     color: white;
+}
+#play-all{
+    background-color: #acacdb;
+}
+#stop-play-all{
+    display: none;
+    background-color: #ae0303;
 }
 .feature-buttons:hover{
     background-color:#64316a;
