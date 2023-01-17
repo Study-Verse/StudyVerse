@@ -96,6 +96,7 @@ body {
 .footer-row{
 	display: flex;
 	justify-content: space-between;
+	text-align-last: left;
 }
 .nav-item {
 	display: flex;
