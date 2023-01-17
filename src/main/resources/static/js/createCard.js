@@ -116,6 +116,8 @@ $(document).ready(function(){
         sel.addRange(range);
         e.preventDefault();
         $("#frontFaceSpan").text(500 - $(this).text().length + " characters left");
+        $('#frontFaceInput').val($(this).text());
+
     });
     addBackFace.on("keydown", function(e){
         if($(this).text().length === 500 && e.keyCode !== 8){
@@ -149,6 +151,7 @@ $(document).ready(function(){
         sel.addRange(range);
         e.preventDefault();
         $("#backFaceSpan").text(500 - $(this).text().length + " characters left");
+        $('#backFaceInput').val($(this).text())
     });
     $("#cancelAdd").on("click", function(e){
         e.preventDefault();
