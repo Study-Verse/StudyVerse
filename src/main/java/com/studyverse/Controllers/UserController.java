@@ -36,9 +36,13 @@ public class UserController {
 
     @PostMapping("/register")
     public String registerUser(@ModelAttribute User user){
-        user.setPassword(passwordEncoder.encode(user.getPassword()));
-        usersDao.save(user);
-        return "redirect:/login";
+        if (!user.getEmail().isEmpty() || !user.getPassword().isEmpty() || !user.getUsername().isEmpty()) {
+            user.setPassword(passwordEncoder.encode(user.getPassword()));
+            usersDao.save(user);
+            return "redirect:/login";
+
+        }
+            return "redirect:/register";
     }
 
 //    Takes you to the profile
