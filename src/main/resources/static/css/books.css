@@ -29,6 +29,11 @@ h2 {
 }
 
 
+/*This is to center the book whenever they click read*/
+.centerBook {
+    margin: auto;
+}
+
 #middleBookView {
     display: flex;
     justify-content: center;

@@ -18,8 +18,9 @@
           <input type="text" class="username input-design" placeholder="Create a Username" th:field="*{username}">
           <input type="email" class="email input-design" placeholder="Enter your Email" th:field="*{email}">
           <input type="password" class="password input-design" placeholder="Create a Password" th:field="*{password}">
-          <button class="sign-up-button" type="submit">Signup</button>
-          <a th:href="@{/login}">Log In</a>
+          <button class="sign-up-button" type="submit">Register</button>
+          <a class="sign-up-button" id="loginText" th:href="@{/login}">Go To Login</a>
+
         </div>
     </form>
   </div>
