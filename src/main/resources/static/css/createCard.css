@@ -126,12 +126,14 @@ header{
     color:white;
     width: 100%;
 }
-
+#addCardContainer{
+    display: inline-block;
+}
 #addCardSVG{
     display:flex;
     justify-content: center;
     align-items: center;
-    width: 700px;
+    width: 603px;
     height: 40px;
     margin-top: 10px;
     background-color: var(--pageMainColor);
