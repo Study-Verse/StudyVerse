@@ -42,7 +42,7 @@ body{
     -webkit-transform: rotate(-15deg);
     transform: rotate(-15deg);
 }
-img{
+.advisor_thumb>img{
     vertical-align: middle;
     width: 23vw;
     height: 45vh;
@@ -62,7 +62,7 @@ img{
         height: 160px;
         bottom: -90px;
     }
-    img{
+    .advisor_thumb>img{
         height: 45vh;
         width: 82vw;
     }
@@ -141,7 +141,7 @@ img{
 }
 .single_advisor_profile:hover .advisor_thumb .social-info a,
 .single_advisor_profile:focus .advisor_thumb .social-info a {
-    color: #ffffff;
+    color: #ffffff
 }
 .single_advisor_profile:hover .advisor_thumb .social-info a:hover,
 .single_advisor_profile:hover .advisor_thumb .social-info a:focus,
