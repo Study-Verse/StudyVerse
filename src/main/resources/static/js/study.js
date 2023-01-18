@@ -1,6 +1,7 @@
 function goToAddCards(CardSetId){
     window.location.replace("/card-create/" + CardSetId);
 }
+
 $(function (){
 
 //Voice
@@ -137,7 +138,12 @@ $(function (){
         $("#play-all").css("display", "unset");
     })
     //Function that plays all the cards
+    let userTimer = $("#timer-select").val();
+    $("#timer-select").on("change", function(){
+        userTimer = $(this).val();
+    })
     $("#play-all").on("click", function(){
+        console.log(userTimer);
         $("#stop-play-all").css("display", "unset");
         $(this).css("display", "none");
         currentIndex = 0;
@@ -177,7 +183,7 @@ $(function (){
                         speakCard();
 
                     }
-                }, 5000)
+                }, userTimer);
 
             }
             if(index === $('.carousel-flashcard').length){

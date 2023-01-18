@@ -13,7 +13,7 @@ body{
     color: white;
 }
 #play-all{
-    background-color: #acacdb;
+    background-color: #767cc8;
 }
 #stop-play-all{
     display: none;
@@ -22,8 +22,14 @@ body{
 .feature-buttons:hover{
     background-color:#64316a;
 }
+#timer-select{
+    border-radius: 14px;
+    height: 41px;
+}
 /*Container where html is being inserted via API*/
 #study-header{
+    justify-content: space-around;
+    align-items: center;
     background-color: ghostwhite;
     color: #2f1046;
     display: flex;
