@@ -52,7 +52,10 @@
 
         <!-- Left Name Link -->
         <div class=" mx-auto order-0">
-            <a class="navbar-brand me-2" th:href="@{/}">StudyVERSE</a>
+            <a th:if="${#authorization.expression('isAuthenticated()')}" th:href="@{/dashboard}"
+               class="navbar-brand me-2">StudyVerse</a>
+            <a th:if="${#authorization.expression('!isAuthenticated()')}" th:href="@{/}"
+               class="navbar-brand me-2">StudyVerse</a>
             <button id="navbar-toggler" class="navbar-toggler  my-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".collapse-portion">
                 <img src="../img/menu.png" alt="">
             </button>
