@@ -11,6 +11,12 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
 }
+h2 {
+    text-align: center;
+    font-weight: 900;
+    color: white;
+    text-shadow: black 1px 0 10px;
+}
 .single_advisor_profile {
     position: relative;
     margin-bottom: 50px;
