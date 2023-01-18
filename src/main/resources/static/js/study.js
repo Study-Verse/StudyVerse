@@ -1,4 +1,8 @@
+function goToAddCards(CardSetId){
+    window.location.replace("/card-create/" + CardSetId);
+}
 $(function (){
+
 //Voice
     // Creating instance for speech synthesis
     let speech = new SpeechSynthesisUtterance();
