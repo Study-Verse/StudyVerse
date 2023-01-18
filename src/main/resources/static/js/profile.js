@@ -11,24 +11,24 @@ const backDrop = document.getElementById('modalBackDrop');
 const eventTitleInput = document.getElementById('eventTitleInput');
 const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
-function openModal(date) {
-    clicked = date;
-
-    const eventForDay = events.find(e => e.date === clicked);
-
-    if (eventForDay) {
-        for (let i = 0; i<events.length; i++) {
-            if (currentUserId == events[i].user) {
-                document.getElementById('eventText').innerText = eventForDay.title;
-                deleteEventModal.style.display = 'block';
-            }
-        }
-    } else {
-        newEventModal.style.display = 'block';
-    }
-
-    backDrop.style.display = 'block';
-}
+// function openModal(date) {
+//     clicked = date;
+//
+//     const eventForDay = events.find(e => e.date === clicked);
+//
+//     if (eventForDay) {
+//         for (let i = 0; i<events.length; i++) {
+//             if (currentUserId == events[i].user) {
+//                 document.getElementById('eventText').innerText = eventForDay.title;
+//                 deleteEventModal.style.display = 'block';
+//             }
+//         }
+//     } else {
+//         newEventModal.style.display = 'block';
+//     }
+//
+//     backDrop.style.display = 'block';
+// }
 
 function load() {
     const dt = new Date();
