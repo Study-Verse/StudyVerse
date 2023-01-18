@@ -15,6 +15,9 @@ body{
 #play-all{
     background-color: #767cc8;
 }
+#play-all:hover{
+    background-color: #64316a;
+}
 #stop-play-all{
     display: none;
     background-color: #ae0303;

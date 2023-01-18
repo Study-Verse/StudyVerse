@@ -54,7 +54,6 @@ body {
     align-items: center;
 }
 
-
 .form-section {
     height: 500px;
     width: 1000px;
@@ -105,7 +104,9 @@ body {
     border: none;
     cursor: pointer;
 }
-
+.login-button:hover{
+    background-color: #64316a;
+}
 
 #signUpText {
     display: flex;
