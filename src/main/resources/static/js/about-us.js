@@ -1,8 +1,16 @@
 $(function (){
-$('.developers-container div').on("click", function (){
-    $(this).css("display:","hidden")
+
+    const card= $('.card-inner > div')
+
+
+
+$(card).on("click", function (){
     console.log("hey");
-    // $(this).toggleClass('flipped');
+    if(!$(this).hasClass("flipCard")){
+        $(this).addClass("flipCard")
+    } else{
+        $(this).removeClass("flipCard")
+    }
 })
 
 })
