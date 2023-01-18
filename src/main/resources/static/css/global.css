@@ -131,8 +131,11 @@ body {
 	width: 40vh;
 }
 
-h3 {
+h2 {
 	text-align: center;
+	font-weight: 900;
+	color: white;
+	text-shadow: black 1px 0 10px;
 }
 
 .books-announcement {
