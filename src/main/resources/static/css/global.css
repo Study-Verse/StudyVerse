@@ -179,11 +179,18 @@ i.bi.bi-list {
 	}
 
 	.navbar-toggler{
-		width: 15vw;
+		/*width: 15vw;*/
 		position: absolute;
 		right: 1vw;
 		top: .5vh;
 		box-shadow: 0 0 0 1px #ffffff;
+		border-color: white;
+	}
+
+	.my-toggler> img{
+		object-fit: contain;
+		max-width: 4vw;
+
 	}
 }
 
