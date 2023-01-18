@@ -75,10 +75,13 @@ body{
     width: 440px;
     height: 230px;
     transition: all ease .3s;
-    box-shadow: 0px 0px 12px -2px #00000061
+    box-shadow: 0 0 12px -2px #00000061
 
 }
 
+.card-sets:hover{
+    border: 1px solid #766CC6;
+}
 .random-book-wrapper{
     display: flex;
     flex-direction: row;
