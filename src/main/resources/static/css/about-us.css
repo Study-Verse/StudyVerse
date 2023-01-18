@@ -104,7 +104,9 @@ h2{
 }
 
 
-/* ===== already made css ===== */
+
+
+/* ===== bootstrap css ===== */
 
 body{
     background-image: url("../img/pillarsOfCreatino.png");
@@ -143,6 +145,14 @@ body{
     -webkit-transform: rotate(-15deg);
     transform: rotate(-15deg);
 }
+.img{
+    vertical-align: middle;
+    max-width: 22vw;
+    height: 45vh;
+    position: relative;
+    left: -5vw;
+}
+
 @media only screen and (max-width: 575px) {
     .single_advisor_profile .advisor_thumb::after {
         height: 160px;

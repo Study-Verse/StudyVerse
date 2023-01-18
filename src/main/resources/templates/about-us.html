@@ -4,6 +4,9 @@
   <div th:replace="partials/partials :: head-fragment('About Us')"></div>
   <link rel="stylesheet" href="/css/global.css">
   <link rel="stylesheet" href="/css/about-us.css">
+    <link th:href="@{https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css}" rel="stylesheet" />
+
+
 
 
 </head>
@@ -13,69 +16,143 @@
   <nav th:replace="partials/partials :: navbar(user=${user})"></nav>
 </div>  <!--End of Nav Bar-->
 <!--  End of page wrapper-->
-<div class="whole-page">
-  <div class="developers-container">
+<!--<div class="whole-page">-->
+<!--  <div class="developers-container">-->
 
-<!--    David-->
-    <div class="card-inner">
-        <h2>David Lara</h2>
-      <div class="card-front">
-          <div class="img-wrapper">
-              <img class="picture card-img-top" alt="Thumbnail [100%x225]" src="/img/david.jpg" data-holder-rendered="true">
-          </div>
-      </div>
-        <div class="card-back">
-          <p class="card-text">Insert Funny quote here...</p>
-        </div>
-    </div>
-<!--    Valeria-->
-    <div class="card-inner">
-        <h2>Valeria Canizales</h2>
-        <div class="card-front">
-          <div class="img-wrapper">
-              <img class="card-img-top"  alt="Thumbnail [100%x225]" src="/img/valeria.jpg" data-holder-rendered="true">
-          </div>
-        </div>
-        <div class="card-back">
-          <p class="card-text">Insert Funny quote here...</p>
-        </div>
-    </div>
-<!--    Valeria-->
-
-
-<!--    Nazareth-->
-    <div class="card-inner">
-        <h2>Nazareth Briseño</h2>
-        <div class="card-front">
-            <div class="img-wrapper">
-                <img class="card-img-top" alt="Thumbnail [100%x225]" src="/img/nazareth.jpg" data-holder-rendered="true">
-            </div>
-        </div>
-        <div class="card-back">
-          <p class="card-text">Insert Funny quote here...</p>
-        </div>
-    </div>
-<!--    Nazareth-->
+<!--&lt;!&ndash;    David&ndash;&gt;-->
+<!--    <div class="card-inner">-->
+<!--        <h2>David Lara</h2>-->
+<!--      <div class="card-front">-->
+<!--          <div class="img-wrapper">-->
+<!--              <img class="picture card-img-top" alt="Thumbnail [100%x225]" src="/img/david.jpg" data-holder-rendered="true">-->
+<!--          </div>-->
+<!--      </div>-->
+<!--        <div class="card-back">-->
+<!--          <p class="card-text">Insert Funny quote here...</p>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--&lt;!&ndash;    Valeria&ndash;&gt;-->
+<!--    <div class="card-inner">-->
+<!--        <h2>Valeria Canizales</h2>-->
+<!--        <div class="card-front">-->
+<!--          <div class="img-wrapper">-->
+<!--              <img class="card-img-top"  alt="Thumbnail [100%x225]" src="/img/valeria.jpg" data-holder-rendered="true">-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="card-back">-->
+<!--          <p class="card-text">Insert Funny quote here...</p>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--&lt;!&ndash;    Valeria&ndash;&gt;-->
 
 
-<!--    Fernando-->
-    <div class="card-inner">
-        <h2>Fernando Lopez</h2>
-          <div class="card-front">
-              <div class="img-wrapper">
-                  <img class="card-img-top" alt="Thumbnail [100%x225]" src="/img/fernando.jpg" data-holder-rendered="true">
-              </div>
-          </div>
-          <div class="card-back card-back">
-              <p class="card-text">Insert Funny quote here...</p>
-          </div>
-    </div>
-<!--    Fernando-->
-  </div>
-</div>
+<!--&lt;!&ndash;    Nazareth&ndash;&gt;-->
+<!--    <div class="card-inner">-->
+<!--        <h2>Nazareth Briseño</h2>-->
+<!--        <div class="card-front">-->
+<!--            <div class="img-wrapper">-->
+<!--                <img class="card-img-top" alt="Thumbnail [100%x225]" src="/img/nazareth.jpg" data-holder-rendered="true">-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="card-back">-->
+<!--          <p class="card-text">Insert Funny quote here...</p>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--&lt;!&ndash;    Nazareth&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;    Fernando&ndash;&gt;-->
+<!--    <div class="card-inner">-->
+<!--        <h2>Fernando Lopez</h2>-->
+<!--          <div class="card-front">-->
+<!--              <div class="img-wrapper">-->
+<!--                  <img class="card-img-top" alt="Thumbnail [100%x225]" src="/img/fernando.jpg" data-holder-rendered="true">-->
+<!--              </div>-->
+<!--          </div>-->
+<!--          <div class="card-back card-back">-->
+<!--              <p class="card-text">Insert Funny quote here...</p>-->
+<!--          </div>-->
+<!--    </div>-->
+<!--&lt;!&ndash;    Fernando&ndash;&gt;-->
+<!--  </div>-->
+<!--</div>-->
 <!--  End of row for creators cards-->
 
 
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12 col-sm-8 col-lg-6">
+            <!-- Section Heading-->
+            <div class="section_heading text-center wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+                <h3>Our Creative <span> Team</span></h3>
+                <p>Appland is completely creative, lightweight, clean &amp; super responsive app landing page.</p>
+                <div class="line"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <!-- Single Advisor-->
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="single_advisor_profile wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+                <!-- Team Thumb-->
+                <div class="advisor_thumb"><img src="../img/david.jpg" alt="">
+                    <!-- Social Info-->
+                    <div class="social-info"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-linkedin"></i></a></div>
+                </div>
+                <!-- Team Details-->
+                <div class="single_advisor_details_info">
+                    <h6>Samantha Sarah</h6>
+                    <p class="designation">Founder &amp; CEO</p>
+                </div>
+            </div>
+        </div>
+        <!-- Single Advisor-->
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="single_advisor_profile wow fadeInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
+                <!-- Team Thumb-->
+                <div class="advisor_thumb"><img src="../img/valeria.jpg" alt="">
+                    <!-- Social Info-->
+                    <div class="social-info"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-linkedin"></i></a></div>
+                </div>
+                <!-- Team Details-->
+                <div class="single_advisor_details_info">
+                    <h6>Nazrul Islam</h6>
+                    <p class="designation">UI Designer</p>
+                </div>
+            </div>
+        </div>
+        <!-- Single Advisor-->
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="single_advisor_profile wow fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
+                <!-- Team Thumb-->
+                <div class="advisor_thumb"><img src="../img/nazareth.jpg" alt="">
+                    <!-- Social Info-->
+                    <div class="social-info"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-linkedin"></i></a></div>
+                </div>
+                <!-- Team Details-->
+                <div class="single_advisor_details_info">
+                    <h6>Riyadh Khan</h6>
+                    <p class="designation">Developer</p>
+                </div>
+            </div>
+        </div>
+        <!-- Single Advisor-->
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="single_advisor_profile wow fadeInUp" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
+                <!-- Team Thumb-->
+                <div class="advisor_thumb"><img src="../img/fernando.jpg" alt="">
+                    <!-- Social Info-->
+                    <div class="social-info"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-linkedin"></i></a></div>
+                </div>
+                <!-- Team Details-->
+                <div class="single_advisor_details_info">
+                    <h6>Niloy Islam</h6>
+                    <p class="designation">Marketing Manager</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <footer th:replace="partials/partials :: footer-fragment"></footer>
 <script th:src="@{js/main.js}"></script>
