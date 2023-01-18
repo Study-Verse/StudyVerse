@@ -100,7 +100,6 @@ public class CardController {
         model.addAttribute("cardSet", cardSetDao.findById(id));
         model.addAttribute("eachCard", cardSetDao.findById(id).getCardList());
         return "study";
-
     }
 
 
