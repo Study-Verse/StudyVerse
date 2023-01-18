@@ -13,7 +13,10 @@ body{
     color: white;
 }
 #play-all{
-    background-color: #acacdb;
+    background-color: #767cc8;
+}
+#play-all:hover{
+    background-color: #64316a;
 }
 #stop-play-all{
     display: none;
@@ -22,14 +25,32 @@ body{
 .feature-buttons:hover{
     background-color:#64316a;
 }
+#timer-select{
+    border-radius: 14px;
+    height: 41px;
+}
 /*Container where html is being inserted via API*/
 #study-header{
+    justify-content: space-around;
+    align-items: center;
     background-color: ghostwhite;
     color: #2f1046;
     display: flex;
-    flex-direction: column;
     margin: 3vh 0 .4vw .4vw;
-    text-align: center
+}
+
+#study-header button{
+    padding: 8px;
+    outline: none;
+    cursor: pointer;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    font-family: inherit;
+    background-color: #767CC7;
+    color: white;
+}
+#study-header button:hover{
+    background-color:#64316a;
 }
 .main-container{
     display: flex;
@@ -177,7 +198,7 @@ body{
 .carousel-flashcard .carousel-back-face .cardText {
     word-break: break-word;
     width: 70%;
-    font-size: 1.2rem;
+    font-size: 2rem;
 }
 .content-wrapper{
     width: 100%;
@@ -222,6 +243,12 @@ body{
 @media (max-width: 672px ){
     .carousel-flashcard{
         width: 630px;
+    }
+    .carousel-flashcard .carousel-front-face .cardText,
+    .carousel-flashcard .carousel-back-face .cardText {
+        word-break: break-word;
+        width: 70%;
+        font-size: 1.3rem;
     }
 }
 @media (max-width: 645px ){

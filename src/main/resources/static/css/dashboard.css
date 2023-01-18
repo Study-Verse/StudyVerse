@@ -24,6 +24,9 @@ body{
     cursor: pointer;
     margin: 1vh;
 }
+.create-set-button:hover{
+    background-color: #64316a;
+}
 #create-set-button, .create-set-button{
     position: relative;
     border-radius: 50px;
@@ -37,8 +40,10 @@ body{
 .edit-set-buttons{
     display:flex;
 }
+.edit-set-buttons button:hover{
+    background-color: #64316a;
+}
 /*End of buttons*/
-
 #jumboContainer{
     display: flex;
     justify-content: center;
@@ -138,7 +143,9 @@ body{
     color: white;
     height: 5vh;
 }
-
+#create-set-button:hover{
+    background-color: #64316a;
+}
 /*Modal*/
 .input-design {
     height: 60px;
@@ -193,18 +200,13 @@ body{
 a.btn.btn-secondary {
     background: #767CC7;
 }
-
-
 #filler-astronaut{
     display: flex;
     justify-content: center;
 }
-
 #astronautCoderImage {
     height: 40vh;
 }
-
-
 #startHere {
     background-image: url(/img/astronautoPointing.png);
     height: 16vh;
