@@ -183,7 +183,7 @@ i.bi.bi-list {
 	.navbar-toggler{
 		position: absolute;
 		right: 1vw;
-		top: 1.5vh;
+		top: .5vh;
 		box-shadow: 0 0 0 1px #ffffff;
 	}
 }
