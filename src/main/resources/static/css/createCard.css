@@ -14,7 +14,7 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    margin-bottom: 7vh;
+    margin-bottom: 10vh;
 }
 .all-cards-container{
     display: flex;
@@ -88,8 +88,8 @@ header{
     width: 100%;
     height: 30vh;
     margin-top: 10px;
-    background-color: var(--pageMainColor);
-    color: white;
+    background-color: whitesmoke;
+    color: black;
     text-align: center;
     cursor: pointer;
     box-shadow: 0 2px 4px 0 rgb(0 0 0 / 90%);
@@ -98,7 +98,7 @@ header{
 }
 .edit-set-flashcard .cardButtonsWrapper {
     display:none;
-    background-color: var(--pageMainColor);
+    /*background-color: whitesmoke;*/
     justify-content: space-evenly;
 }
 .edit-set-flashcard .cardTextWrapper {
@@ -134,7 +134,7 @@ header{
     width: 603px;
     height: 40px;
     margin-top: 10px;
-    background-color: var(--pageMainColor);
+    background-color: #767CC7;
     color: white;
     text-align: center;
     cursor: pointer;
@@ -169,18 +169,31 @@ header{
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    width: 700px;
+    width: 603px;
     margin-top: 10px;
-    background-color: var(--pageMainColor);
-    color: white;
+    background-color:gainsboro;
+    color: black;
     text-align: center;
     cursor: pointer;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.9);
+    font-size: 1.2rem;
 }
 #addCardFormHolder form {
     display:flex;
     flex-direction: column;
     align-items: center;
+}
+.front{
+    background-color: whitesmoke;
+}
+.back{
+    background-color: whitesmoke;
+}
+p#addFrontFace {
+    background-color: #767CC7;
+}
+p#addBackFace {
+    background-color: #767CC7;
 }
 @media(max-width:768px){
     .flashcard{margin: auto;}
@@ -226,7 +239,7 @@ header{
         width: 490px;
     }
     #addCardSVG {
-        width: 505px;
+        width: 100vw;
     }
     #addCardFormHolder{
         width: 505px;
@@ -237,19 +250,22 @@ header{
 }
 @media(max-width: 507px){
     .edit-set-flashcard{
-        width: 490px;
+        width: 100vw;
     }
     .cardTextWrapper p {
-        width: 488px;
+        width: 100vw;
     }
     #addCardFormHolder p {
-        width: 488px;
+        width: 100vw;
     }
     #addCardSVG {
-        width: 490px;
+        width: 100vw;
     }
     #addCardFormHolder{
-        width: 490px;
+        width: 100vw;
+    }
+    #addCardContainer{
+        width: 100vw;
     }
 }
 @media(max-width:480px){
