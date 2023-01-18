@@ -52,7 +52,10 @@
 	justify-content: center;
 	width: 100vw;
 	height: 50vh;
+}
 
+.splashpage-content {
+	text-align: center;
 }
 
 .flashcard-hp {
