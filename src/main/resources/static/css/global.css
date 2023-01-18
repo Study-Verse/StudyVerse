@@ -151,10 +151,15 @@ h3 {
 
 i.bi.bi-list {
 	 display: none;
+
 }
 
 
 
+.my-toggler> img{
+	object-fit: contain;
+	max-width: 8vw;
+}
 /*medium screen*/
 @media screen and (max-width: 992px){
 	.about-footer, .contact-footer, .ms-auto {
@@ -177,7 +182,9 @@ i.bi.bi-list {
 
 	.navbar-toggler{
 		position: absolute;
-		right: 0;
+		right: 1vw;
+		top: 1.5vh;
+		box-shadow: 0 0 0 1px #ffffff;
 	}
 }
 
@@ -198,6 +205,13 @@ i.bi.bi-list {
 
 	.footer-row {
 		text-align-last: left;
+	}
+	.create-set-box{
+		height: 65vh;
+		width: 60vw;
+	}
+	.edit-set-buttons{
+	flex-direction: column;
 	}
 
 
