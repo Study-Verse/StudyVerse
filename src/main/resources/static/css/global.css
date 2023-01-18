@@ -181,6 +181,7 @@ i.bi.bi-list {
 	}
 
 	.navbar-toggler{
+		width: 15vw;
 		position: absolute;
 		right: 1vw;
 		top: .5vh;
