@@ -27,9 +27,21 @@ body{
     background-color: ghostwhite;
     color: #2f1046;
     display: flex;
-    flex-direction: column;
     margin: 3vh 0 .4vw .4vw;
-    text-align: center
+}
+
+#study-header button{
+    padding: 8px;
+    outline: none;
+    cursor: pointer;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    font-family: inherit;
+    background-color: #767CC7;
+    color: white;
+}
+#study-header button:hover{
+    background-color:#64316a;
 }
 .main-container{
     display: flex;
