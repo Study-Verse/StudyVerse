@@ -42,7 +42,7 @@ body{
     -webkit-transform: rotate(-15deg);
     transform: rotate(-15deg);
 }
-img{
+.advisor_thumb>img{
     vertical-align: middle;
     width: 23vw;
     height: 45vh;
@@ -55,7 +55,7 @@ img{
         height: 160px;
         bottom: -90px;
     }
-    img{
+    .advisor_thumb>img{
         height: 45vh;
         width: 82vw;
     }
