@@ -4,107 +4,7 @@ body{
     background-size: cover;
 }
 
-h2{
-    text-align: center;
-    color: lightskyblue;
-    text-shadow: -1px 1px 3px #ffffff;
-}
-.whole-page{
-    overflow-y: scroll;
-    display: flex;
-}
-.developers-container{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20vh;
-    justify-content: space-evenly;
-    align-items: center;
-
-}
-
-.card-inner{
-    width: 45vh;
-    height: 50vh;
-    align-self: center;
-    overflow-y: hidden;
-    justify-content: center;
-}
-
-
-.img-wrapper{
-    height: 44vh;
-}
-.card-front{
-    height: fit-content;
-    border-radius: 1rem;
-    overflow: hidden;
-    width: 100%;
-    position: relative;
-    backface-visibility: hidden;
-    transition: transform 0.7s ease-in-out;
-    text-align: center;
-    color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 0 12px -2px #000000;
-    overflow-wrap: break-word;
-    background-color: ghostwhite;
-}
-
-.card-back{
-    width: 100%;
-    height: 100%;
-
-    backface-visibility: hidden;
-    transition: transform 0.7s ease-in-out;
-    text-align: center;
-    color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 0 12px -2px #00000061;
-    overflow-wrap: break-word;
-}
-
-.card-front.flipCard{
-    transform: rotateY(0deg);
-}
-/*flip card comment */
-.card-front,
-.card-back.flipCard{
-    transform: rotateY(180deg);
-}
-
-.flipCard{
-    transform: rotateY(180deg);
-}
-/*large screen */
-@media only screen and (min-width: 1360px) and (max-width: 30000px) {
-
-    .whole-page{
-        height: 100vh;
-        width: 100%;
-        display: flex;
-        overflow-y: unset;
-    }
-    .developers-container{
-        margin-bottom: 10vh;
-        flex-direction: row;
-    }
-    .card-inner{
-        width: 35vh;
-        height: 48vh;
-    }
-
-    .img-wrapper{
-        height: 43vh;
-    }
-}
-
-
-/* ===== already made css ===== */
+/* ===== bootstrap css ===== */
 
 body{
     background-image: url("../img/pillarsOfCreatino.png");
@@ -126,7 +26,6 @@ body{
     z-index: 1;
     border-radius: 15px 15px 0 0;
     margin: 0 auto;
-    padding: 30px 30px 0 30px;
     background-color: #3f43fd;
     overflow: hidden;
 }
@@ -143,10 +42,25 @@ body{
     -webkit-transform: rotate(-15deg);
     transform: rotate(-15deg);
 }
+img{
+    vertical-align: middle;
+    width: 23vw;
+    height: 45vh;
+    position: relative;
+    object-fit: fill;
+}
+
 @media only screen and (max-width: 575px) {
     .single_advisor_profile .advisor_thumb::after {
         height: 160px;
         bottom: -90px;
+    }
+    img{
+        height: 45vh;
+        width: 82vw;
+    }
+    .row.col-12{
+        margin-bottom: 4vh;
     }
 }
 .single_advisor_profile .advisor_thumb .social-info {
@@ -158,7 +72,7 @@ body{
     text-align: right;
 }
 .single_advisor_profile .advisor_thumb .social-info a {
-    font-size: 14px;
+    font-size: 2rem;
     color: #020710;
     padding: 0 5px;
 }
@@ -166,7 +80,7 @@ body{
 .single_advisor_profile .advisor_thumb .social-info a:focus {
     color: #3f43fd;
 }
-.single_advisor_profile .advisor_thumb .social-info a:last-child {
+.o .advisor_thumb .social-info a:last-child {
     padding-right: 0;
 }
 .single_advisor_profile .single_advisor_details_info {
@@ -196,6 +110,8 @@ body{
     -webkit-transition-duration: 500ms;
     transition-duration: 500ms;
 }
+
+
 @media only screen and (min-width: 768px) and (max-width: 991px) {
     .single_advisor_profile .single_advisor_details_info h6 {
         font-size: 14px;
@@ -214,7 +130,7 @@ body{
 }
 .single_advisor_profile:hover .advisor_thumb::after,
 .single_advisor_profile:focus .advisor_thumb::after {
-    background-color: #070a57;
+    background-color: #2f1046;
 }
 .single_advisor_profile:hover .advisor_thumb .social-info a,
 .single_advisor_profile:focus .advisor_thumb .social-info a {
@@ -228,7 +144,7 @@ body{
 }
 .single_advisor_profile:hover .single_advisor_details_info,
 .single_advisor_profile:focus .single_advisor_details_info {
-    background-color: #070a57;
+    background-color: #2f1046;
 }
 .single_advisor_profile:hover .single_advisor_details_info::after,
 .single_advisor_profile:focus .single_advisor_details_info::after {
@@ -241,4 +157,9 @@ body{
 .single_advisor_profile:hover .single_advisor_details_info p,
 .single_advisor_profile:focus .single_advisor_details_info p {
     color: #ffffff;
+}
+
+
+#footer{
+    z-index: 2;
 }
