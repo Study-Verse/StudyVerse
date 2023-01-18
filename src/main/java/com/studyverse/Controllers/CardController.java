@@ -97,9 +97,14 @@ public class CardController {
 //        ============ study get mapping
     @GetMapping("study-cards/{id}")
     public String studyCards(Model model, @PathVariable long id) {
-        model.addAttribute("cardSet", cardSetDao.findById(id));
-        model.addAttribute("eachCard", cardSetDao.findById(id).getCardList());
-        return "study";
+        if(cardSetDao.findById(id).getCardList().size() != 0){
+            model.addAttribute("cardSet", cardSetDao.findById(id));
+            model.addAttribute("eachCard", cardSetDao.findById(id).getCardList());
+            return "study";
+        } else {
+           return "redirect:/card-create/" + id;
+        }
+
     }
 
 
