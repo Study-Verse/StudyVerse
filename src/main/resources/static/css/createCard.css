@@ -50,10 +50,8 @@ header{
     display:flex;
     justify-content: space-evenly;
     align-items: center;
-    background-color: ghostwhite;
+    background-color: whitesmoke;
 }
-
-
 
 #create_card{
     /*display: none;*/
