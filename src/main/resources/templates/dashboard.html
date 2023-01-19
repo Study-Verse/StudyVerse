@@ -13,7 +13,7 @@
 </div>
 
 <div id="welcome-create-header">
-    <h3>👋 Welcome <span th:text="${#authentication.principal.username}"></span></h3>
+    <h3>👋 Welcome <span th:text="${user.getUsername()}"></span></h3>
     <button id="create-set-button">Create New Set<img id="startHere" src="/img/astronautPointing.png"></button>
 </div>
 
