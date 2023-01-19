@@ -28,7 +28,7 @@
                  class="profileImg rounded-circle img-fluid" style="width: 150px;"/>
             <p id="profilePicChangeButton">Change</p>
           </div>
-          <h5 class="my-3 mt-3"><span th:text="${#authentication.principal.username}"></span></h5>
+          <h5 class="my-3 mt-3"><span th:text="${user.getUsername()}"></span></h5>
         </div>
       </div>
     </div>
@@ -42,7 +42,7 @@
               <p class="mb-0">Username: </p>
             </div>
             <div class="col-sm-9">
-              <p class="text-muted mb-0"><span id="username" class="user-info" th:text="${#authentication.principal.username}"></span></p>
+              <p class="text-muted mb-0"><span id="username" class="user-info" th:text="${user.getUsername()}"></span></p>
             </div>
           </div>
           <hr>
@@ -51,7 +51,7 @@
               <p class="mb-0">Email: </p>
             </div>
             <div class="col-sm-9">
-              <p class="text-muted mb-0"><span id="email" class="user-info" th:text="${#authentication.principal.email}"></span></p>
+              <p class="text-muted mb-0"><span id="email" class="user-info" th:text="${user.getEmail()}"></span></p>
             </div>
           </div>
           <hr>
