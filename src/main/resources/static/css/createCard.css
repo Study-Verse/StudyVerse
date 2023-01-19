@@ -113,7 +113,7 @@ header{
     all: unset;
 }
 .p-tags-active, #addCardFormHolder p {
-    background-color: #2c2c2c;
+    background-color: #767cc7;
 }
 .edit-form {
     display: flex;
