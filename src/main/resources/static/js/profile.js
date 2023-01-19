@@ -153,11 +153,6 @@ initButtons();
 load();
 
 // //Edit user details functionality
-//     $(".user-info-btn").on('click', function(e){
-//         let userContent = $(this).parent().siblings(".user-info").children("p");
-//     })
-// });
-
 let editUserInfo = $(".edit-user-info");
     editUserInfo.on("click", async function(){
         if ($(".user-info-btn").text() === "Submit"){
