@@ -114,6 +114,7 @@ header{
 }
 .p-tags-active, #addCardFormHolder p {
     background-color: #767cc7;
+    white-space: pre-wrap;
 }
 .edit-form {
     display: flex;
@@ -192,9 +193,11 @@ header{
 }
 p#addFrontFace {
     background-color: #767CC7;
+    white-space: pre-wrap;
 }
 p#addBackFace {
     background-color: #767CC7;
+    white-space: pre-wrap;
 }
 @media(max-width:768px){
     .flashcard{margin: auto;}
